@@ -3,135 +3,365 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Journey - Living with Purpose Through Every Season</title>
+    <meta name="description" content="Former military medic and CVICU nurse preparing for brain surgery. Follow my real-time journey from caregiver to patient, understanding what patients truly experience.">
+    <meta name="keywords" content="Chiari surgery, brain surgery journey, patient experience, caregiver to patient, decompression surgery, living with Chiari">
+    <title>My Journey - From Caregiver to Patient: Real-Time Surgery Experience</title>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T3TPDSC5YQ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-T3TPDSC5YQ');
+    </script>
+    
+    <style>
+        .countdown-banner {
+            background: linear-gradient(135deg, var(--navy) 0%, #2c4a7c 100%);
+            color: white;
+            text-align: center;
+            padding: 1.5rem 1rem;
+            border-bottom: 3px solid var(--gold);
+        }
+        
+        .countdown-banner h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .countdown-banner p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .countdown-item {
+            text-align: center;
+        }
+        
+        .countdown-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            display: block;
+        }
+        
+        .countdown-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .urgency-section {
+            background: #f8f9fa;
+            padding: 3rem 1rem;
+            border-left: 5px solid var(--gold);
+        }
+        
+        .urgency-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .urgency-content h2 {
+            color: var(--navy);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .journey-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .journey-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .journey-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        .journey-card h3 {
+            color: var(--navy);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+        
+        .journey-card p {
+            color: var(--charcoal);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .countdown-timer {
+                gap: 1rem;
+            }
+            
+            .countdown-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <div class="logo">My Journey</div>
             <ul class="nav-menu">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#journey">My Journey</a></li>
-                <li><a href="#updates">Updates</a></li>
-                <li><a href="#connect">Connect</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="chiari.html">What is Chiari?</a></li>
+                <li><a href="blog.html">Updates</a></li>
+                <li><a href="contact.html">Connect</a></li>
             </ul>
             <button class="mobile-menu-toggle">☰</button>
         </div>
     </nav>
 
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="hero-subtitle">A Journey of Faith & Resilience</div>
-            <h1>Finding Strength in Every Season</h1>
-            <p class="hero-verse">"We are afflicted in every way, but not crushed; perplexed, but not driven to despair"</p>
-            <p class="hero-reference">2 Corinthians 4:8-9</p>
-            <p class="hero-description">
-                Former military medic and CVICU nurse navigating life with a rare neurological condition. 
-                This is my story of service, faith, and finding purpose through the unexpected turns of life.
-            </p>
-            <div class="hero-buttons">
-                <a href="about.html" class="btn btn-primary">Read My Story</a>
-                <a href="contact.html" class="btn btn-secondary">Connect With Me</a>
+    <!-- Countdown Banner -->
+    <section class="countdown-banner">
+        <h2>🏥 Surgery Approaching</h2>
+        <p>I'm preparing for brain decompression surgery. Follow my journey in real time.</p>
+        <div class="countdown-timer" id="countdown">
+            <div class="countdown-item">
+                <span class="countdown-number" id="days">--</span>
+                <span class="countdown-label">Days</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="hours">--</span>
+                <span class="countdown-label">Hours</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="minutes">--</span>
+                <span class="countdown-label">Minutes</span>
             </div>
         </div>
     </section>
 
-    <section class="features" id="journey">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-subtitle">A Journey from Caregiver to Patient</div>
+            <h1>Bridging the Gap: Understanding What Patients Really Experience</h1>
+            <p class="hero-verse">"For the moment all discipline seems painful rather than pleasant, but later it yields the peaceful fruit of righteousness to those who have been trained by it."</p>
+            <p class="hero-reference">Hebrews 12:11</p>
+            <p class="hero-description">
+                Former military medic and CVICU nurse now living with Chiari malformation. I'm about to undergo brain surgery—and I'm sharing the entire journey so you can understand what patients truly experience. Walk with me through preparation, surgery, and recovery.
+            </p>
+            <div class="hero-buttons">
+                <a href="blog.html" class="btn btn-primary">Follow My Journey</a>
+                <a href="contact.html" class="btn btn-secondary">Share Your Story</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Right Now Section -->
+    <section class="urgency-section">
+        <div class="urgency-content">
+            <span class="status-badge">📍 Right Now: Pre-Surgery Preparations</span>
+            <h2>What I'm Experiencing Today</h2>
+            <p class="lead-text">
+                Soon, I'll undergo decompression surgery for Chiari malformation. I'm documenting everything—the fears, 
+                the preparations, the medical decisions, the waiting, and eventually, the recovery. This is what the 
+                patient experience really looks like, unfiltered and in real time.
+            </p>
+            <p>
+                The pre-surgery phase is filled with medical appointments, insurance coordination, physical preparations, 
+                and emotional processing. Each day brings new questions, concerns, and moments of both fear and hope. 
+                I'm sharing it all because this is the reality patients face that often goes unseen.
+            </p>
+            <div class="hero-buttons" style="margin-top: 2rem;">
+                <a href="blog.html" class="btn btn-primary">Read Latest Updates</a>
+                <a href="chiari.html" class="btn btn-secondary">What is Chiari?</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Cards -->
+    <section class="features">
         <div class="container">
             <div class="section-header">
-                <div class="section-tag">My Path</div>
-                <h2 class="section-title">From Serving Others to Being Served</h2>
+                <div class="section-tag">My Perspective</div>
+                <h2 class="section-title">Seeing Healthcare from Both Sides</h2>
                 <p class="section-description">
-                    My journey has taken unexpected turns, but through each chapter, I've learned that our trials can become our testimony.
+                    Having served as both caregiver and patient, I offer unique insights into what patients experience but often don't say. 
+                    Now, as I face major surgery, I'm inviting you into the reality of what this journey actually looks like—not just for understanding, but for connection.
                 </p>
             </div>
 
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <h3>Called to Serve</h3>
+            <div class="journey-cards">
+                <div class="journey-card">
+                    <div class="card-icon">🎖️</div>
+                    <h3>Called to Serve (Then Learning to Receive)</h3>
                     <p>
-                        From military medic to CVICU nurse, my life has been defined by caring for others in their most vulnerable moments. This foundation of service continues to shape who I am.
+                        From military medic to CVICU nurse, I spent years caring for others in their most vulnerable moments. 
+                        Then I became the vulnerable one—and learned what it truly means to be a patient. Now I'm walking through 
+                        one of the most vulnerable moments yet.
                     </p>
                     <a href="about.html" class="feature-link">My story →</a>
                 </div>
 
-                <div class="feature-card">
-                    <h3>Anchored in Faith</h3>
+                <div class="journey-card">
+                    <div class="card-icon">🧠</div>
+                    <h3>The Journey to Surgery</h3>
                     <p>
-                        When life doesn't go as planned, faith becomes more than belief—it becomes the anchor that holds us steady through the storm. This is where I find my hope.
+                        The decision to have brain surgery isn't made lightly. I'm sharing the whole process—the symptoms that 
+                        led here, the consultations, the second opinions, the insurance battles, the fear, the hope, and everything in between.
                     </p>
-                    <a href="about.html" class="feature-link">Read more →</a>
+                    <a href="blog.html" class="feature-link">Pre-surgery journey →</a>
                 </div>
 
-                <div class="feature-card">
-                    <h3>Living with Chiari</h3>
+                <div class="journey-card">
+                    <div class="card-icon">💡</div>
+                    <h3>What Healthcare Providers Need to Know</h3>
                     <p>
-                        Diagnosed with Chiari malformation, I went from caregiver to patient. Through this journey, I'm raising awareness and connecting with others facing similar challenges.
+                        I've worn the scrubs and the hospital gown. I've cared for post-op patients and now I'll be one. 
+                        Here's what I'm learning about the gap between clinical care and patient experience—insights that can 
+                        transform how we care for others.
                     </p>
-                    <a href="chiari.html" class="feature-link">Learn about Chiari →</a>
+                    <a href="about.html" class="feature-link">Insights for caregivers →</a>
                 </div>
 
-                <div class="feature-card">
-                    <h3>Finding Resilience</h3>
+                <div class="journey-card">
+                    <div class="card-icon">📅</div>
+                    <h3>The Daily Realities (Before & After)</h3>
                     <p>
-                        Every challenge is an opportunity to grow stronger. I'm learning that resilience isn't about never falling—it's about choosing to rise every single time.
+                        Chronic illness isn't just about medical appointments. Pre-surgery life with Chiari means constant symptom 
+                        management. Post-surgery will bring new challenges. I'm documenting what "living with it" actually means through every phase.
                     </p>
-                    <a href="blog.html" class="feature-link">Follow my journey →</a>
+                    <a href="chiari.html" class="feature-link">Living with Chiari →</a>
                 </div>
 
-                <div class="feature-card">
-                    <h3>Building Community</h3>
+                <div class="journey-card">
+                    <div class="card-icon">❤️</div>
+                    <h3>For Loved Ones & Caregivers</h3>
                     <p>
-                        No one should walk this path alone. Whether you're facing health challenges, supporting a loved one, or seeking encouragement, there's a place for you here.
+                        Supporting someone through major surgery requires understanding what they're really experiencing. These insights 
+                        can help you provide the support that truly matters—and I'm learning what that looks like from both sides.
                     </p>
-                    <a href="contact.html" class="feature-link">Join the conversation →</a>
+                    <a href="blog.html" class="feature-link">How you can help →</a>
                 </div>
 
-                <div class="feature-card">
-                    <h3>Sharing Hope</h3>
+                <div class="journey-card">
+                    <div class="card-icon">🤝</div>
+                    <h3>Community: Share Your Journey</h3>
                     <p>
-                        My mission is simple: to share hope, raise awareness, and remind others that even in our darkest moments, we are never without purpose or promise.
+                        You're not alone. Whether you're facing surgery, living with chronic illness, supporting a loved one, or working 
+                        in healthcare—your story matters. Share your experience, connect with others, and help us all understand better.
                     </p>
-                    <a href="blog.html" class="feature-link">Stay connected →</a>
+                    <a href="contact.html" class="feature-link">Share your story →</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Understanding Section -->
     <section class="mission">
         <div class="mission-content">
             <p class="mission-quote">
-                "This journey has taught me that our greatest strength often emerges from our deepest struggles, 
-                and that faith isn't the absence of fear—it's the courage to keep moving forward despite it."
+                "My mission is to help healthcare providers, caregivers, and loved ones truly understand what patients experience—through 
+                the eyes of someone who's been on both sides of the bed. Now, I'm inviting you to walk with me through one of the most 
+                vulnerable patient experiences there is."
             </p>
             <p class="mission-attribution">— My Mission</p>
         </div>
     </section>
 
-    <section class="newsletter" id="connect">
+    <!-- Newsletter/Connect Section -->
+    <section class="newsletter">
         <div class="container">
-            <h2>Stay Connected</h2>
-            <p class="newsletter-description">Join me on this journey. Get updates, encouragement, and stories of hope delivered to your inbox.</p>
-            <a href="mailto:youremail@example.com?subject=Subscribe to Updates" class="email-btn">Subscribe via Email</a>
+            <h2>Walk With Me</h2>
+            <p class="newsletter-description">
+                I'm sharing updates throughout this process—from pre-surgery preparations through recovery and beyond. 
+                Get real-time surgery updates, insights into the patient experience, and stories from our growing community.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+                <a href="contact.html" class="btn btn-primary">Subscribe for Updates</a>
+                <a href="contact.html" class="btn btn-secondary">Prayer Requests</a>
+            </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <p class="footer-verse">"For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope." — Jeremiah 29:11</p>
-        <p class="footer-text">© 2026 - Walking by faith, sharing hope, honoring service.</p>
+        <p class="footer-text">© 2026 - Bridging healthcare gaps through lived experience, faith, and honest conversation.</p>
         <div class="footer-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#journey">My Journey</a>
-            <a href="#updates">Updates</a>
-            <a href="#connect">Connect</a>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="chiari.html">Chiari Info</a>
+            <a href="blog.html">Updates</a>
+            <a href="contact.html">Contact</a>
         </div>
     </footer>
 
     <script>
+        // Set your surgery date here (YYYY, MM-1, DD, HH, MM)
+        // Example: March 15, 2026 at 7:00 AM would be: new Date(2026, 2, 15, 7, 0)
+        const surgeryDate = new Date(2026, 2, 1, 7, 0); // March 1, 2026, 7:00 AM - UPDATE THIS!
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = surgeryDate - now;
+
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = '<div style="font-size: 1.5rem; font-weight: 700;">Surgery Complete - Following Recovery</div>';
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+        }
+
+        // Update countdown every minute
+        updateCountdown();
+        setInterval(updateCountdown, 60000);
+
         // Mobile menu toggle
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
         const navMenu = document.querySelector('.nav-menu');
@@ -140,39 +370,14 @@
             navMenu.classList.toggle('active');
         });
 
-        // Smooth scrolling for anchor links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    // Close mobile menu if open
+                    target.scrollIntoView({ behavior: 'smooth' });
                     navMenu.classList.remove('active');
-                }
-            });
-        });
-
-        // Update active nav link on scroll
-        window.addEventListener('scroll', () => {
-            let current = '';
-            const sections = document.querySelectorAll('section[id]');
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            document.querySelectorAll('.nav-menu a').forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
                 }
             });
         });

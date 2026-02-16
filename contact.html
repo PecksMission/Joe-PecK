@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Connect with me to share your Chiari story, request prayer, or inquire about speaking opportunities. Let's support each other on this journey.">
-    <meta name="keywords" content="Chiari support, connect with Chiari warrior, prayer requests, speaking opportunities, chronic illness community">
-    <title>Connect With Me - Share Your Story</title>
+    <meta name="description" content="Connect with me for surgery updates, share your Chiari story, request prayer, or offer support. Join a community that understands the journey.">
+    <meta name="keywords" content="Chiari support, surgery updates, prayer requests, patient community, brain surgery support, chronic illness connection">
+    <title>Connect - Surgery Updates, Prayer Requests & Community Support</title>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     
@@ -42,6 +42,8 @@
             width: 100%;
             position: relative;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            max-height: 90vh;
+            overflow-y: auto;
         }
 
         .popup-close {
@@ -72,18 +74,60 @@
             color: var(--charcoal);
         }
 
-        .popup-content input {
+        .popup-content input,
+        .popup-content textarea {
             width: 100%;
             padding: 0.8rem;
             border: 1px solid #ddd;
             border-radius: 4px;
             font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .popup-content textarea {
+            min-height: 120px;
+            resize: vertical;
         }
 
         .success-message {
             text-align: center;
             color: var(--gold);
             font-size: 1.1rem;
+        }
+        
+        .prayer-box {
+            background: linear-gradient(135deg, var(--navy) 0%, #2c4a7c 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        
+        .prayer-box h3 {
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        
+        .prayer-box p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .prayer-box ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .prayer-box li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .prayer-box li:before {
+            content: "🙏";
+            position: absolute;
+            left: 0;
         }
     </style>
 </head>
@@ -107,7 +151,7 @@
     <section class="page-header">
         <div class="container">
             <h1>Let's Connect</h1>
-            <p class="subtitle">I'd love to hear from you—your story matters</p>
+            <p class="subtitle">Your story matters—whether you're facing surgery, supporting someone, or just want to reach out</p>
         </div>
     </section>
 
@@ -117,8 +161,25 @@
             
             <div class="contact-intro">
                 <p class="lead-text">
-                    Whether you're dealing with Chiari, know someone who is, searching for hope, or just want to 
-                    reach out—I'd love to hear from you. No story is too small, and no question is too basic.
+                    As I prepare for surgery and document this journey, I want you to know: you're not alone. Whether you're 
+                    dealing with Chiari, facing your own surgery, supporting a loved one, working in healthcare, or simply 
+                    seeking connection—I'd love to hear from you.
+                </p>
+            </div>
+
+            <!-- Current Prayer Requests -->
+            <div class="prayer-box">
+                <h3>🙏 Current Prayer Requests</h3>
+                <p>If you're comfortable praying, these are the specific ways you can support me right now:</p>
+                <ul>
+                    <li><strong>Peace during the waiting:</strong> For calm and trust as surgery approaches</li>
+                    <li><strong>Wisdom for the surgical team:</strong> For skill, precision, and discernment during the procedure</li>
+                    <li><strong>Smooth recovery:</strong> For healing without complications</li>
+                    <li><strong>Strength for my family:</strong> For those supporting me through this journey</li>
+                    <li><strong>Purpose through it all:</strong> That this experience would help others and bring glory to God</li>
+                </ul>
+                <p style="margin-top: 1.5rem; font-style: italic;">
+                    I truly believe in the power of prayer. Whether you pray once or daily, your support means more than you know.
                 </p>
             </div>
 
@@ -126,78 +187,87 @@
                 
                 <!-- Email Contact -->
                 <div class="contact-card">
-                    <h2>Send Me a Message</h2>
+                    <h2>📧 Send Me a Message</h2>
                     <p>
-                        The easiest way to reach me is via email. I try to respond to everyone personally, 
-                        though it may take a few days.
+                        The easiest way to reach me is via email. I try to respond personally to everyone, though it may 
+                        take a few days—especially as I navigate surgery and recovery.
                     </p>
                     <a href="mailto:info@pecksmission.org" class="btn btn-primary">Email Me</a>
                     <p class="contact-note">info@pecksmission.org</p>
                 </div>
 
-                <!-- Newsletter Signup -->
+                <!-- Surgery Updates Signup -->
                 <div class="contact-card newsletter-card">
-                    <h2>Join My Mailing List</h2>
+                    <h2>📬 Get Surgery Updates</h2>
                     <p>
-                        Get updates on my journey, new blog posts, and Chiari awareness resources delivered 
-                        to your inbox. I send emails sparingly—only when I have something meaningful to share.
+                        Subscribe to receive real-time updates as I go through surgery and recovery. I'll share the honest 
+                        reality—the challenges and the victories—so you can understand what this journey truly looks like.
                     </p>
-                    
-                    <button onclick="openPopup()" class="btn btn-secondary">Subscribe Now</button>
-                    <p class="form-note">Quick and easy signup</p>
+                    <button onclick="openPopup('updates')" class="btn btn-secondary">Subscribe to Updates</button>
+                    <p class="form-note">Updates sent during key moments</p>
                 </div>
 
             </div>
 
-            <!-- Additional Contact Info -->
+            <!-- Ways to Connect -->
             <div class="contact-info-section">
-                <h2>Other Ways to Connect</h2>
+                <h2>Other Ways to Connect & Support</h2>
                 
                 <div class="info-grid">
                     <div class="info-item">
-                        <h3>Share Your Story</h3>
+                        <h3>📖 Share Your Story</h3>
                         <p>
-                            If you're living with Chiari or another chronic condition and want to share your 
-                            experience, I'd be honored to listen. Your story could help others feel less alone.
+                            If you're living with Chiari, have been through surgery, or face another chronic condition—your 
+                            story can help others. I'm collecting experiences to build community and understanding.
                         </p>
+                        <button onclick="openPopup('story')" class="btn btn-secondary" style="margin-top: 1rem;">Share Your Experience</button>
                     </div>
                     
                     <div class="info-item">
-                        <h3>Prayer Requests</h3>
+                        <h3>🙏 Send Prayer or Encouragement</h3>
                         <p>
-                            As a person of faith, I believe in the power of prayer. If you need prayer or want 
-                            to share a request, please don't hesitate to reach out.
+                            Words of encouragement, prayers, or just knowing someone is thinking of me means more than I can 
+                            express. Feel free to reach out with support—it truly makes a difference.
                         </p>
+                        <a href="mailto:info@pecksmission.org?subject=Encouragement and Prayer" class="btn btn-secondary" style="margin-top: 1rem;">Send Encouragement</a>
                     </div>
                     
                     <div class="info-item">
-                        <h3>Speaking Inquiries</h3>
+                        <h3>🎤 Speaking Inquiries</h3>
                         <p>
-                            If you're interested in having me speak at your church, support group, or event 
-                            about Chiari awareness or faith through adversity, let's talk.
+                            After recovery, I'm interested in speaking about the patient experience, bridging the caregiver-patient 
+                            gap, faith through adversity, and Chiari awareness. Contact me about future opportunities.
                         </p>
+                        <a href="mailto:info@pecksmission.org?subject=Speaking Inquiry" class="btn btn-secondary" style="margin-top: 1rem;">Inquire About Speaking</a>
                     </div>
                     
                     <div class="info-item">
-                        <h3>Collaboration</h3>
+                        <h3>🤝 For Healthcare Professionals</h3>
                         <p>
-                            Interested in collaborating on Chiari awareness projects, writing opportunities, 
-                            or other initiatives? I'm open to exploring how we can work together.
+                            If you're a healthcare provider interested in understanding the patient perspective better, I'd 
+                            love to connect. My unique position offers insights that can improve patient care.
                         </p>
+                        <a href="mailto:info@pecksmission.org?subject=Healthcare Professional Inquiry" class="btn btn-secondary" style="margin-top: 1rem;">Connect as Provider</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Social Media Placeholder -->
-            <div class="social-section">
-                <h2>Follow the Journey</h2>
-                <p>Stay connected on social media (coming soon):</p>
-                <div class="social-links">
-                    <a href="#" class="social-link">Facebook</a>
-                    <a href="#" class="social-link">Instagram</a>
-                    <a href="#" class="social-link">YouTube</a>
-                </div>
-                <p class="social-note">Social media accounts launching soon!</p>
+            <!-- Community Questions -->
+            <div class="info-box success" style="margin-top: 3rem;">
+                <h3>💬 Questions I Often Receive</h3>
+                <p><strong>Q: Can I share your posts with others?</strong><br>
+                A: Absolutely! If something I've shared helps you, please share it. That's why I'm being so open about this journey.</p>
+                
+                <p><strong>Q: How can I best support someone facing surgery?</strong><br>
+                A: I'm documenting specific insights about this. Subscribe for updates, or read my blog posts for practical suggestions.</p>
+                
+                <p><strong>Q: When will you post surgery updates?</strong><br>
+                A: I'll share updates as I'm able—before surgery, immediately after (when someone can post for me), and throughout 
+                recovery. Subscribe to get notified.</p>
+                
+                <p><strong>Q: Is it okay to ask how you're doing?</strong><br>
+                A: Yes! I appreciate genuine care. Sometimes I may not have the energy to respond in detail, but knowing people 
+                care matters immensely.</p>
             </div>
 
         </div>
@@ -207,8 +277,8 @@
     <div id="emailPopup" class="popup-overlay">
         <div class="popup-content">
             <button class="popup-close" onclick="closePopup()">&times;</button>
-            <h2>Join My Mailing List</h2>
-            <p>Stay connected with updates on my journey, new blog posts, and Chiari awareness resources.</p>
+            <h2 id="popupTitle">Subscribe for Updates</h2>
+            <p id="popupDescription">Stay connected with real-time surgery updates and patient insights.</p>
             
             <form id="emailSignupForm" onsubmit="handleSubmit(event)">
                 <div class="form-group">
@@ -217,14 +287,21 @@
                 </div>
                 
                 <div class="form-group">
+                    <label for="name">Name (optional)</label>
+                    <input type="text" id="name" name="name" placeholder="Your name">
+                </div>
+                
+                <div class="form-group" id="phoneGroup">
                     <label for="phone">Phone Number (optional)</label>
                     <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
                 </div>
                 
-                <div class="form-group">
-                    <label for="name">Name (optional)</label>
-                    <input type="text" id="name" name="name" placeholder="Your name">
+                <div class="form-group" id="storyGroup" style="display: none;">
+                    <label for="story">Your Story</label>
+                    <textarea id="story" name="story" placeholder="Share your experience with Chiari, surgery, or chronic illness..."></textarea>
                 </div>
+                
+                <input type="hidden" id="formType" name="formType" value="updates">
                 
                 <button type="submit" class="btn btn-primary" id="submitBtn">
                     Subscribe
@@ -234,7 +311,7 @@
             </form>
             
             <div id="successMessage" class="success-message" style="display: none;">
-                <p>✓ Thank you for subscribing! You'll hear from me soon.</p>
+                <p>✓ Thank you! You'll receive updates as I go through this journey.</p>
             </div>
         </div>
     </div>
@@ -265,8 +342,32 @@
         });
 
         // Popup functions
-        function openPopup() {
-            document.getElementById('emailPopup').style.display = 'flex';
+        function openPopup(type) {
+            const popup = document.getElementById('emailPopup');
+            const title = document.getElementById('popupTitle');
+            const description = document.getElementById('popupDescription');
+            const storyGroup = document.getElementById('storyGroup');
+            const phoneGroup = document.getElementById('phoneGroup');
+            const formType = document.getElementById('formType');
+            const submitBtn = document.getElementById('submitBtn');
+            
+            if (type === 'story') {
+                title.textContent = 'Share Your Story';
+                description.textContent = 'Tell me about your experience. Your story can help others feel less alone.';
+                storyGroup.style.display = 'block';
+                phoneGroup.style.display = 'none';
+                formType.value = 'story';
+                submitBtn.textContent = 'Share Story';
+            } else {
+                title.textContent = 'Subscribe for Updates';
+                description.textContent = 'Stay connected with real-time surgery updates and patient insights.';
+                storyGroup.style.display = 'none';
+                phoneGroup.style.display = 'block';
+                formType.value = 'updates';
+                submitBtn.textContent = 'Subscribe';
+            }
+            
+            popup.style.display = 'flex';
             document.body.style.overflow = 'hidden';
         }
 
@@ -284,13 +385,15 @@
             
             const submitBtn = document.getElementById('submitBtn');
             const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Subscribing...';
+            submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
 
             const formData = {
                 email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
                 name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                story: document.getElementById('story').value,
+                formType: document.getElementById('formType').value,
                 timestamp: new Date().toISOString()
             };
 
