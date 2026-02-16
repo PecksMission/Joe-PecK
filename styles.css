@@ -9,13 +9,14 @@
 
 :root {
     --navy: #1e3a5f;
-    --cream: #f9f6f1;
-    --gold: #b8975a;
+    --cream: #ffffff;
+    --burgundy: #8B2635;
     --charcoal: #2c2c2c;
-    --soft-red: #a84448;
+    --accent-blue: #2B5F8A;
     --light-blue: #e8f1f5;
-    --warm-white: #ffffff;
+    --warm-white: #fafafa;
     --text-gray: #555555;
+    --border-gray: #e0e0e0;
 }
 
 body {
@@ -32,13 +33,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-    color: var(--soft-red);
+    color: var(--burgundy);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: var(--gold);
+    color: var(--accent-blue);
 }
 
 img {
@@ -57,7 +58,7 @@ nav {
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 1px solid rgba(184, 151, 90, 0.15);
+    border-bottom: 1px solid var(--border-gray);
 }
 
 .nav-container {
@@ -99,7 +100,7 @@ nav {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--gold);
+    background: var(--burgundy);
     transition: width 0.3s ease;
 }
 
@@ -109,7 +110,7 @@ nav {
 }
 
 .nav-menu a.active {
-    color: var(--gold);
+    color: var(--burgundy);
 }
 
 .mobile-menu-toggle {
@@ -169,7 +170,7 @@ nav {
 }
 
 .hero-subtitle {
-    color: var(--gold);
+    color: var(--burgundy);
     font-size: 0.95rem;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -195,7 +196,7 @@ nav {
 }
 
 .hero-reference {
-    color: var(--gold);
+    color: var(--burgundy);
     font-size: 0.9rem;
     letter-spacing: 1px;
     margin-bottom: 3rem;
@@ -241,14 +242,14 @@ nav {
 }
 
 .btn-primary {
-    background: var(--gold);
+    background: var(--burgundy);
     color: white;
 }
 
 .btn-primary:hover {
-    background: #a37d45;
+    background: #6d1f2a;
     transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(184, 151, 90, 0.4);
+    box-shadow: 0 5px 20px rgba(139, 38, 53, 0.4);
 }
 
 .btn-secondary {
@@ -340,7 +341,7 @@ section {
 }
 
 .section-tag {
-    color: var(--soft-red);
+    color: var(--burgundy);
     font-size: 0.85rem;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -368,7 +369,7 @@ section {
    FEATURES SECTION (Journey Cards)
    ============================================ */
 .features {
-    background: var(--cream);
+    background: #f8f9fa;
     padding: 8rem 2rem;
 }
 
@@ -387,7 +388,7 @@ section {
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.06);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-top: 4px solid var(--gold);
+    border-top: 4px solid var(--burgundy);
 }
 
 .feature-card:hover,
@@ -422,7 +423,7 @@ section {
 
 .feature-link,
 .card-link {
-    color: var(--soft-red);
+    color: var(--burgundy);
     font-weight: 500;
     font-size: 0.95rem;
     display: inline-flex;
@@ -433,7 +434,7 @@ section {
 
 .feature-link:hover,
 .card-link:hover {
-    color: var(--gold);
+    color: var(--accent-blue);
     gap: 0.8rem;
 }
 
@@ -462,7 +463,7 @@ section {
 }
 
 .mission-attribution {
-    color: var(--gold);
+    color: var(--burgundy);
     font-size: 1rem;
     letter-spacing: 1px;
     font-weight: 500;
@@ -535,7 +536,7 @@ section {
 }
 
 .email-btn:hover {
-    background: var(--gold);
+    background: var(--burgundy);
     color: white;
     transform: translateY(-2px);
 }
@@ -554,7 +555,7 @@ section {
     margin-top: 2.5rem;
     margin-bottom: 1.5rem;
     color: var(--navy);
-    border-left: 4px solid var(--gold);
+    border-left: 4px solid var(--burgundy);
     padding-left: 1rem;
     font-weight: 400;
 }
@@ -604,12 +605,12 @@ section {
 }
 
 .tag {
-    background: var(--cream);
+    background: var(--warm-white);
     padding: 0.6rem 1.2rem;
     border-radius: 20px;
     font-size: 0.9rem;
     color: var(--navy);
-    border: 1px solid var(--gold);
+    border: 1px solid var(--burgundy);
 }
 
 /* ============================================
@@ -627,7 +628,7 @@ section {
 }
 
 .info-box.success {
-    background: var(--gold);
+    background: var(--burgundy);
     color: white;
 }
 
@@ -661,10 +662,10 @@ section {
 }
 
 .symptom-card {
-    background: var(--cream);
+    background: var(--warm-white);
     padding: 1.5rem;
     border-radius: 8px;
-    border-left: 4px solid var(--soft-red);
+    border-left: 4px solid var(--burgundy);
 }
 
 .symptom-card strong {
@@ -683,12 +684,12 @@ section {
    CTA BOX
    ============================================ */
 .cta-box {
-    background: var(--cream);
+    background: var(--warm-white);
     padding: 2.5rem;
     border-radius: 8px;
     text-align: center;
     margin: 3rem 0;
-    border: 1px solid rgba(184, 151, 90, 0.2);
+    border: 1px solid var(--border-gray);
 }
 
 .cta-box h3 {
@@ -710,13 +711,13 @@ section {
     padding: 2.5rem;
     margin-bottom: 2.5rem;
     border-radius: 8px;
-    border-left: 4px solid var(--gold);
+    border-left: 4px solid var(--burgundy);
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .post-date {
     font-size: 0.9rem;
-    color: var(--gold);
+    color: var(--burgundy);
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 0.5rem;
@@ -736,18 +737,18 @@ section {
 }
 
 .read-more {
-    color: var(--soft-red);
+    color: var(--burgundy);
     font-weight: 500;
     display: inline-block;
     margin-top: 1rem;
 }
 
 .read-more:hover {
-    color: var(--gold);
+    color: var(--accent-blue);
 }
 
 .coming-soon-box {
-    background: var(--cream);
+    background: var(--warm-white);
     padding: 3rem;
     border-radius: 8px;
     text-align: center;
@@ -789,7 +790,7 @@ section {
 }
 
 .contact-card {
-    background: var(--cream);
+    background: var(--warm-white);
     padding: 2.5rem;
     border-radius: 8px;
 }
@@ -852,7 +853,7 @@ section {
 }
 
 .info-item {
-    background: var(--cream);
+    background: var(--warm-white);
     padding: 2rem;
     border-radius: 8px;
 }
@@ -873,7 +874,7 @@ section {
     text-align: center;
     margin-top: 4rem;
     padding: 3rem;
-    background: var(--cream);
+    background: var(--warm-white);
     border-radius: 8px;
 }
 
@@ -899,7 +900,7 @@ section {
 }
 
 .social-link:hover {
-    background: var(--gold);
+    background: var(--burgundy);
     transform: translateY(-2px);
 }
 
@@ -922,7 +923,7 @@ footer {
 .footer-verse {
     font-style: italic;
     margin-bottom: 1rem;
-    color: var(--gold);
+    color: var(--burgundy);
     font-size: 0.95rem;
 }
 
@@ -951,7 +952,7 @@ footer p {
 
 .footer-links a:hover {
     opacity: 1;
-    color: var(--gold);
+    color: var(--burgundy);
 }
 
 /* ============================================
