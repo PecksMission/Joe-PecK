@@ -104,30 +104,34 @@
         }
         
         .prayer-box h3 {
-            color: var(--gold);
+            color: white;
             margin-bottom: 1rem;
         }
         
         .prayer-box p {
             margin-bottom: 1rem;
             line-height: 1.6;
+            color: white;
         }
         
         .prayer-box ul {
             list-style: none;
             padding: 0;
+            color: white;
         }
         
         .prayer-box li {
             padding: 0.5rem 0;
             padding-left: 1.5rem;
             position: relative;
+            color: white;
         }
         
         .prayer-box li:before {
-            content: "🙏";
+            content: "•";
             position: absolute;
             left: 0;
+            color: white;
         }
     </style>
 </head>
@@ -169,7 +173,7 @@
 
             <!-- Current Prayer Requests -->
             <div class="prayer-box">
-                <h3>🙏 Current Prayer Requests</h3>
+                <h3>Current Prayer Requests</h3>
                 <p>If you're comfortable praying, these are the specific ways you can support me right now:</p>
                 <ul>
                     <li><strong>Peace during the waiting:</strong> For calm and trust as surgery approaches</li>
@@ -187,18 +191,18 @@
                 
                 <!-- Email Contact -->
                 <div class="contact-card">
-                    <h2>📧 Send Me a Message</h2>
+                    <h2>Send Me a Message</h2>
                     <p>
                         The easiest way to reach me is via email. I try to respond personally to everyone, though it may 
                         take a few days—especially as I navigate surgery and recovery.
                     </p>
-                    <a href="mailto:info@pecksmission.org" class="btn btn-primary">Email Me</a>
-                    <p class="contact-note">info@pecksmission.org</p>
+                    <a href="mailto:info@pecksmission.com" class="btn btn-primary">Email Me</a>
+                    <p class="contact-note">info@pecksmission.com</p>
                 </div>
 
                 <!-- Surgery Updates Signup -->
                 <div class="contact-card newsletter-card">
-                    <h2>📬 Get Surgery Updates</h2>
+                    <h2>Get Surgery Updates</h2>
                     <p>
                         Subscribe to receive real-time updates as I go through surgery and recovery. I'll share the honest 
                         reality—the challenges and the victories—so you can understand what this journey truly looks like.
@@ -214,8 +218,8 @@
                 <h2>Other Ways to Connect & Support</h2>
                 
                 <div class="info-grid">
-                    <div class="info-item">
-                        <h3>📖 Share Your Story</h3>
+                    <div class="info-item" style="background: #f8f9fa; padding: 2rem; border-radius: 8px;">
+                        <h3>Share Your Story</h3>
                         <p>
                             If you're living with Chiari, have been through surgery, or face another chronic condition—your 
                             story can help others. I'm collecting experiences to build community and understanding.
@@ -223,38 +227,29 @@
                         <button onclick="openPopup('story')" class="btn btn-secondary" style="margin-top: 1rem;">Share Your Experience</button>
                     </div>
                     
-                    <div class="info-item">
-                        <h3>🙏 Send Prayer or Encouragement</h3>
+                    <div class="info-item" style="background: #f8f9fa; padding: 2rem; border-radius: 8px;">
+                        <h3>Send Prayer or Encouragement</h3>
                         <p>
                             Words of encouragement, prayers, or just knowing someone is thinking of me means more than I can 
                             express. Feel free to reach out with support—it truly makes a difference.
                         </p>
-                        <a href="mailto:info@pecksmission.org?subject=Encouragement and Prayer" class="btn btn-secondary" style="margin-top: 1rem;">Send Encouragement</a>
+                        <a href="mailto:info@pecksmission.com?subject=Encouragement and Prayer" class="btn btn-secondary" style="margin-top: 1rem;">Send Encouragement</a>
                     </div>
                     
-                    <div class="info-item">
-                        <h3>🎤 Speaking Inquiries</h3>
-                        <p>
-                            After recovery, I'm interested in speaking about the patient experience, bridging the caregiver-patient 
-                            gap, faith through adversity, and Chiari awareness. Contact me about future opportunities.
-                        </p>
-                        <a href="mailto:info@pecksmission.org?subject=Speaking Inquiry" class="btn btn-secondary" style="margin-top: 1rem;">Inquire About Speaking</a>
-                    </div>
-                    
-                    <div class="info-item">
-                        <h3>🤝 For Healthcare Professionals</h3>
+                    <div class="info-item" style="background: #f8f9fa; padding: 2rem; border-radius: 8px;">
+                        <h3>For Healthcare Professionals</h3>
                         <p>
                             If you're a healthcare provider interested in understanding the patient perspective better, I'd 
                             love to connect. My unique position offers insights that can improve patient care.
                         </p>
-                        <a href="mailto:info@pecksmission.org?subject=Healthcare Professional Inquiry" class="btn btn-secondary" style="margin-top: 1rem;">Connect as Provider</a>
+                        <a href="mailto:info@pecksmission.com?subject=Healthcare Professional Inquiry" class="btn btn-secondary" style="margin-top: 1rem;">Connect as Provider</a>
                     </div>
                 </div>
             </div>
 
             <!-- Community Questions -->
             <div class="info-box success" style="margin-top: 3rem;">
-                <h3>💬 Questions I Often Receive</h3>
+                <h3>Questions I Often Receive</h3>
                 <p><strong>Q: Can I share your posts with others?</strong><br>
                 A: Absolutely! If something I've shared helps you, please share it. That's why I'm being so open about this journey.</p>
                 
@@ -318,7 +313,7 @@
 
     <!-- Footer -->
     <footer>
-        <p class="footer-verse">"For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope." — Jeremiah 29:11</p>
+        <p class="footer-verse">"He heals the brokenhearted and binds up their wounds." — Psalm 147:3</p>
         <p class="footer-text">© 2026 - Walking by faith, sharing hope, honoring service.</p>
         <div class="footer-links">
             <a href="index.html">Home</a>
@@ -416,7 +411,7 @@
 
             } catch (error) {
                 console.error('Error:', error);
-                alert('There was an error. Please email me directly at info@pecksmission.org');
+                alert('There was an error. Please email me directly at info@pecksmission.com');
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
             }
