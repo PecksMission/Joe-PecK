@@ -49,7 +49,7 @@ window.addEventListener('click', (e) => {
 
 const GOOGLE_SHEETS_URLS = {
     story: 'https://script.google.com/macros/s/AKfycbwaAXt1nW_uJzVAUaGNZsjcZ_hWuNxgr8fqjTunwIHa8yUk2kbaKunQOa-GBG3xg8zz/exec',
-    subscribe: 'YOUR_SUBSCRIBE_FORM_WEB_APP_URL_HERE'
+    subscribe: 'https://script.google.com/macros/s/AKfycbxh4o8KTKRfQONtTxsumWjdnLkvlFjy7ygaLrXyee0pOx5TRhHk6mWcE59EqMhnc_g/exec'
 };
 
 // Share Your Story Form
