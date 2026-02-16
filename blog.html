@@ -17,6 +17,160 @@
       gtag('js', new Date());
       gtag('config', 'G-T3TPDSC5YQ');
     </script>
+    
+    <style>
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+            animation: fadeIn 0.3s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 0;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            animation: slideDown 0.3s;
+        }
+        
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .modal-header {
+            padding: 1.5rem 2rem;
+            background: linear-gradient(135deg, var(--navy) 0%, #2c4a7c 100%);
+            color: white;
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        
+        .close {
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+            line-height: 1;
+            transition: opacity 0.2s;
+        }
+        
+        .close:hover,
+        .close:focus {
+            opacity: 0.7;
+        }
+        
+        .modal-body {
+            padding: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--navy);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .submit-btn {
+            background: var(--gold);
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background: #c5a572;
+            transform: translateY(-2px);
+        }
+        
+        .submit-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .success-message {
+            display: none;
+            padding: 1rem;
+            background: #d4edda;
+            color: #155724;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+        
+        .error-message {
+            display: none;
+            padding: 1rem;
+            background: #f8d7da;
+            color: #721c24;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -46,136 +200,35 @@
     <section class="content-section">
         <div class="container">
             
-            <!-- Featured/Latest Update -->
-            <article class="blog-post" style="border-left: 4px solid var(--gold); padding-left: 2rem;">
-                <div class="post-date">📍 Most Recent Update - February 15, 2026</div>
-                <h2>Why I'm Sharing This Journey</h2>
-                <p>
-                    When I first thought about documenting my surgery journey online, I hesitated. This is deeply personal—why 
-                    would I share something so vulnerable with the world? But then I remembered all the times I sat in doctor's 
-                    offices wondering if anyone else understood what I was going through.
-                </p>
-                <p>
-                    As a former medic and CVICU nurse, I've cared for countless post-surgical patients. I've monitored their 
-                    vitals, managed their pain, and provided post-op care. But I've never been on the other side of it—until now.
-                </p>
-                <p>
-                    Brain surgery isn't something you face lightly. It's not just a medical procedure; it's a journey that starts 
-                    long before you enter the operating room and continues long after you leave. There's the diagnosis, the 
-                    decision-making process, the insurance battles, the physical preparations, the emotional processing, and the 
-                    constant undercurrent of fear mixed with hope.
-                </p>
-                <p>
-                    I'm sharing this journey because there's a gap—a gap between what healthcare providers understand about the 
-                    clinical aspects of care and what patients actually experience emotionally, spiritually, and practically. I've 
-                    been on both sides now, and I want to help bridge that gap.
-                </p>
-                <p>
-                    If my honesty helps one person facing surgery feel less alone, helps one caregiver understand their patient 
-                    better, or helps one family member know how to support their loved one—then sharing this vulnerability is worth it.
-                </p>
-                <p>
-                    As Romans 8:28 reminds us, "And we know that in all things God works for the good of those who love him, who 
-                    have been called according to his purpose." I believe this journey, difficult as it is, has purpose—and sharing 
-                    it is part of that purpose.
-                </p>
-            </article>
-
+            <!-- Placeholder for blog posts - easy to add new posts here -->
+            <!-- 
+            To add a new blog post, copy and paste this template:
+            
             <article class="blog-post">
-                <div class="post-date">February 14, 2026</div>
-                <h2>The Decision That Changed Everything</h2>
+                <div class="post-date">Month Day, Year</div>
+                <h2>Post Title</h2>
                 <p>
-                    "You need surgery." Four words that completely shift your world. When my neurosurgeon said them, time seemed 
-                    to slow down. I knew this was a possibility—I'd done the research, I understood the progression of Chiari 
-                    malformation—but hearing it out loud made it real.
-                </p>
-                <p>
-                    What struck me most was how different this felt from all the times I'd been part of similar conversations as 
-                    a healthcare provider. When you're delivering the news, you're focused on being clear, compassionate, and 
-                    thorough in explaining the medical rationale. But when you're receiving the news, your mind races in a 
-                    thousand directions: Will I be okay? What are the risks? How long is recovery? What if something goes wrong?
-                </p>
-                <p>
-                    I got a second opinion—something I always encouraged my patients to do, and now I understand why it's so 
-                    important. It wasn't about doubting my doctor; it was about needing to hear it again, to ask the questions I 
-                    forgot to ask the first time, to give myself time to process before making such a monumental decision.
-                </p>
-                <p>
-                    Both neurosurgeons agreed: decompression surgery was necessary. My symptoms had progressed to the point where 
-                    the risks of not having surgery outweighed the risks of having it. That's when I knew—it was time.
+                    Post content goes here...
                 </p>
             </article>
+            
+            -->
 
-            <article class="blog-post">
-                <div class="post-date">February 12, 2026</div>
-                <h2>What No One Tells You About Pre-Surgery Life</h2>
-                <p>
-                    The weeks leading up to surgery have their own unique challenges that I never fully appreciated until now. 
-                    Everyone talks about the surgery itself and the recovery—but the waiting period? That's its own journey.
-                </p>
-                <p>
-                    There are the practical preparations: pre-op appointments, blood work, medical clearances, arranging time off 
-                    work, coordinating help for recovery, organizing your home for post-surgery needs. Each task is a reminder of 
-                    what's coming.
-                </p>
-                <p>
-                    Then there's the insurance maze. As someone who's worked in healthcare, I thought I understood the system. But 
-                    navigating it as a patient—fighting for approval, coordinating benefits, understanding costs—is exhausting in 
-                    its own right.
-                </p>
-                <p>
-                    But perhaps the hardest part is the emotional roller coaster. Some days I feel ready, confident even. Other 
-                    days, the weight of what I'm facing feels overwhelming. And that's okay—both responses are valid and part of 
-                    the process.
-                </p>
-                <p>
-                    I'm learning that vulnerability isn't weakness. Asking for help isn't failure. And being honest about fear 
-                    doesn't mean lacking faith. It means being human.
-                </p>
-            </article>
-
-            <article class="blog-post">
-                <div class="post-date">February 10, 2026</div>
-                <h3>Lessons from Both Sides of the Bed</h3>
-                <p>
-                    Having been both a caregiver and now a patient preparing for major surgery, I'm noticing things I wish I'd 
-                    understood better when I was on the other side:
-                </p>
-                <ul>
-                    <li><strong>The power of presence:</strong> You don't always need to say the right thing. Sometimes just being 
-                    there is enough.</li>
-                    <li><strong>Small kindnesses matter:</strong> A text checking in, an offer to help with something specific, a 
-                    prayer—these aren't small things to someone facing surgery.</li>
-                    <li><strong>Let patients control what they can:</strong> So much is out of our control. When someone asks our 
-                    preference about anything—even something minor—honor that.</li>
-                    <li><strong>Validate the emotional experience:</strong> Fear, anxiety, grief over lost abilities—these aren't 
-                    obstacles to overcome; they're normal responses that need space.</li>
-                    <li><strong>Hope and fear can coexist:</strong> I can be hopeful about surgery outcomes while also being scared. 
-                    Both are true at the same time.</li>
-                </ul>
-                <p>
-                    I'm documenting these insights not to criticize healthcare providers—I know how hard the work is—but to help 
-                    bridge the understanding gap that I now see so clearly from both sides.
-                </p>
-            </article>
-
-            <!-- Placeholder for future posts -->
+            <!-- Coming Soon Box -->
             <div class="coming-soon-box">
-                <h3>📝 More Updates Coming</h3>
+                <h3>More Updates Coming</h3>
                 <p>
                     I'll be posting regular updates as I move through surgery preparation, the procedure itself, and recovery. 
                     I'm sharing the real, unfiltered experience—the hard moments and the hopeful ones.
                 </p>
                 <p><strong>Upcoming topics:</strong></p>
-                <ul>
-                    <li>The night before surgery: what I'm feeling and preparing</li>
-                    <li>Post-op updates: recovery in real-time</li>
-                    <li>What helped (and what didn't) during recovery</li>
-                    <li>Advice for others facing similar surgeries</li>
-                    <li>Long-term recovery: the journey continues</li>
-                </ul>
                 <p>
-                    Want to be notified when I post? <a href="contact.html"><strong>Subscribe for updates</strong></a>.
+                    The night before surgery: what I'm feeling and preparing. Post-op updates: recovery in real-time. 
+                    What helped and what didn't during recovery. Advice for others facing similar surgeries. 
+                    Long-term recovery: the journey continues.
+                </p>
+                <p>
+                    Want to be notified when I post? <a href="#" class="subscribe-link"><strong>Subscribe for updates</strong></a>.
                 </p>
             </div>
 
@@ -185,7 +238,7 @@
     <!-- Prayer Requests Section -->
     <section class="newsletter" style="background: linear-gradient(135deg, var(--navy) 0%, #2c4a7c 100%); color: white;">
         <div class="container">
-            <h2 style="color: white;">🙏 Prayer & Support</h2>
+            <h2 style="color: white;">Prayer & Support</h2>
             <p class="newsletter-description" style="color: rgba(255,255,255,0.9);">
                 If you're comfortable doing so, I welcome your prayers during this journey. I also share specific prayer 
                 requests and ways you can offer support.
@@ -204,7 +257,7 @@
                 feel less alone.
             </p>
             <div style="text-align: center;">
-                <a href="contact.html" class="btn btn-primary">Share Your Story</a>
+                <button class="btn btn-primary" id="shareStoryBtn">Share Your Story</button>
             </div>
         </div>
     </section>
@@ -214,13 +267,67 @@
         <div class="container">
             <h2>Never Miss an Update</h2>
             <p class="newsletter-description">Get surgery updates, patient insights, and community stories delivered to your inbox.</p>
-            <a href="contact.html" class="btn btn-primary email-btn">Subscribe to Updates</a>
+            <button class="btn btn-primary email-btn subscribe-link">Subscribe to Updates</button>
         </div>
     </section>
 
+    <!-- Share Your Story Modal -->
+    <div id="storyModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Share Your Story</h2>
+                <button class="close" data-modal="storyModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="success-message" id="storySuccess">Thank you for sharing your story! Your message has been received.</div>
+                <div class="error-message" id="storyError">There was an error submitting your story. Please try again.</div>
+                <form id="storyForm">
+                    <div class="form-group">
+                        <label for="storyName">Name *</label>
+                        <input type="text" id="storyName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="storyEmail">Email *</label>
+                        <input type="email" id="storyEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="storyMessage">Your Story *</label>
+                        <textarea id="storyMessage" name="story" required placeholder="Share your experience, journey, or how you'd like to support others..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Story</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Subscribe Modal -->
+    <div id="subscribeModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Subscribe for Updates</h2>
+                <button class="close" data-modal="subscribeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="success-message" id="subscribeSuccess">You're subscribed! You'll receive updates as they're posted.</div>
+                <div class="error-message" id="subscribeError">There was an error subscribing. Please try again.</div>
+                <form id="subscribeForm">
+                    <div class="form-group">
+                        <label for="subscribeName">Name *</label>
+                        <input type="text" id="subscribeName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subscribeEmail">Email *</label>
+                        <input type="email" id="subscribeEmail" name="email" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer>
-        <p class="footer-verse">"For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope." — Jeremiah 29:11</p>
+        <p class="footer-verse">"For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope." – Jeremiah 29:11</p>
         <p class="footer-text">© 2026 - Walking by faith, sharing hope, honoring service.</p>
         <div class="footer-links">
             <a href="index.html">Home</a>
@@ -231,14 +338,6 @@
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-        const navMenu = document.querySelector('.nav-menu');
-
-        mobileMenuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-    </script>
+    <script src="blog-scripts.js"></script>
 </body>
 </html>
