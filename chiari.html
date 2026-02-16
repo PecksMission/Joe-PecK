@@ -7,7 +7,507 @@
     <meta name="keywords" content="Chiari malformation symptoms, what is Chiari, Chiari surgery, decompression surgery, brain malformation, neurological condition">
     <title>Understanding Chiari Malformation | Symptoms, Surgery & Patient Experience</title>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --primary-color: #2c5f8d;
+            --secondary-color: #4a8bc2;
+            --accent-color: #e8905e;
+            --text-dark: #2d3748;
+            --text-light: #4a5568;
+            --bg-light: #f7fafc;
+            --bg-white: #ffffff;
+            --border-color: #e2e8f0;
+            --success-bg: #f0fdf4;
+            --success-border: #86efac;
+            --warning-bg: #fffbeb;
+            --warning-border: #fcd34d;
+            --info-bg: #eff6ff;
+            --info-border: #93c5fd;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--bg-white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .content-narrow {
+            max-width: 800px;
+        }
+
+        .content-section {
+            padding: 3rem 0;
+        }
+
+        /* Typography */
+        h2 {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin: 3rem 0 1.5rem;
+        }
+
+        h3 {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin: 2rem 0 1rem;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            color: var(--text-light);
+        }
+
+        strong {
+            color: var(--text-dark);
+        }
+
+        /* Info Boxes */
+        .info-box {
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border-left: 4px solid;
+        }
+
+        .info-box.warning {
+            background: var(--warning-bg);
+            border-color: var(--warning-border);
+        }
+
+        .info-box.success {
+            background: var(--success-bg);
+            border-color: var(--success-border);
+        }
+
+        .info-box.info {
+            background: var(--info-bg);
+            border-color: var(--info-border);
+        }
+
+        .info-box h3 {
+            margin-top: 0;
+            font-size: 1.25rem;
+        }
+
+        .info-box ul {
+            margin-left: 1.5rem;
+        }
+
+        .info-box li {
+            margin-bottom: 0.75rem;
+        }
+
+        /* Symptoms Grid */
+        .symptoms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .symptom-card {
+            background: var(--bg-white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .symptom-card strong {
+            display: block;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Checklist */
+        .checklist {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin: 2rem 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: var(--bg-light);
+            border-radius: 6px;
+        }
+
+        .checklist-item::before {
+            content: '✓';
+            color: #22c55e;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        /* Mission Box */
+        .mission {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .mission-quote {
+            font-size: 1.25rem;
+            font-style: italic;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* CTA Box */
+        .cta-box {
+            background: var(--bg-white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            text-align: center;
+            margin: 3rem 0;
+            border: 2px solid var(--primary-color);
+        }
+
+        .cta-box h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        /* Primary CTA Highlight */
+        .primary-cta-section {
+            background: linear-gradient(135deg, #1e3a5f, var(--primary-color));
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 3rem 0;
+            box-shadow: 0 8px 24px rgba(44, 95, 141, 0.3);
+        }
+
+        .primary-cta-section h2 {
+            color: white;
+            margin-top: 0;
+            font-size: 2rem;
+        }
+
+        .primary-cta-section p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin: 1rem auto 2rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.875rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #d67d4a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(232, 144, 94, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Timeline */
+        .timeline {
+            margin: 2rem 0;
+            padding-left: 2rem;
+            border-left: 3px solid var(--primary-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 1.5rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 0.25rem;
+            width: 1rem;
+            height: 1rem;
+            background: var(--accent-color);
+            border-radius: 50%;
+            border: 3px solid var(--bg-light);
+        }
+
+        /* Hope Moments */
+        .hope-moment {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #22c55e;
+            margin: 2rem 0;
+        }
+
+        .hope-moment::before {
+            content: '💚';
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .footer-verse {
+            font-style: italic;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .footer-text {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--bg-white);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .symptoms-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+        }
+
+        /* Image Styling */
+        .content-image {
+            text-align: center;
+            margin: 2.5rem 0;
+        }
+
+        .content-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .image-caption {
+            font-style: italic;
+            color: #666;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+
+        /* Support for Friends/Family Section */
+        .support-section {
+            background: #fef3c7;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid #fbbf24;
+            margin: 2rem 0;
+        }
+
+        .support-section h3 {
+            margin-top: 0;
+            color: #92400e;
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-T3TPDSC5YQ"></script>
@@ -49,7 +549,7 @@
             <div class="info-box warning">
                 <h3>📍 A Personal Note</h3>
                 <p>
-                    I'm writing this as someone who has Chiari malformation and is preparing for decompression surgery in [YOUR SURGERY DATE]. 
+                    I'm writing this as someone who has Chiari malformation and is preparing for decompression surgery on <strong>March 15, 2026</strong>. 
                     I'm not a doctor, but I've worked in healthcare as a CVICU nurse at Cox South Hospital, and I'm living this experience. 
                     I'm sharing what I've learned both from the medical side and the patient side.
                 </p>
@@ -57,6 +557,14 @@
                     <strong>My mission:</strong> Bridge the gap between healthcare providers and patients—to help providers understand 
                     what patients truly go through and respond with greater empathy and compassion.
                 </p>
+            </div>
+
+            <!-- Primary CTA - What readers should do FIRST -->
+            <div class="primary-cta-section">
+                <h2>Are You Experiencing Unexplained Symptoms?</h2>
+                <p>If you're dealing with chronic headaches, balance issues, or neurological symptoms that doctors haven't been able to explain—start here. This guide will help you understand if Chiari might be the missing piece.</p>
+                <a href="#symptoms" class="btn btn-primary" style="margin-right: 1rem;">See Common Symptoms</a>
+                <a href="#steps" class="btn btn-secondary">Steps to Get Diagnosed</a>
             </div>
 
             <h2>What is Chiari Malformation?</h2>
@@ -72,9 +580,9 @@
                 pressure to build up and creates all kinds of neurological symptoms.
             </p>
 
-            <div style="text-align: center; margin: 2rem 0;">
-                <img src="chiari-comparison-diagram.png" alt="Comparison diagram showing normal brain anatomy versus Chiari malformation, where the cerebellar tonsils extend into the spinal canal" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                <p style="font-style: italic; color: #666; margin-top: 1rem;">Visual comparison: Normal brain anatomy (left) versus Chiari malformation (right), showing how the cerebellar tonsils herniate into the spinal canal</p>
+            <div class="content-image">
+                <img src="chiari-comparison-diagram.png" alt="Comparison diagram showing normal brain anatomy versus Chiari malformation, where the cerebellar tonsils extend into the spinal canal">
+                <p class="image-caption">Visual comparison: Normal brain anatomy (left) versus Chiari malformation (right), showing how the cerebellar tonsils herniate into the spinal canal</p>
             </div>
 
             <h3>How Common Is It?</h3>
@@ -88,6 +596,11 @@
                 There are different types of Chiari malformations, but Type I is the most common and is what I have. 
                 It often goes undiagnosed for years—sometimes decades—until symptoms become severe enough to warrant an MRI.
             </p>
+
+            <div class="hope-moment">
+                <strong>A note of hope:</strong> While living with Chiari is challenging, many people find relief through surgery and go on to live full, active lives. You're not alone in this journey.
+            </div>
+
             <p>
                 <strong>From a clinical perspective:</strong> It's a structural abnormality.<br>
                 <strong>From a patient perspective:</strong> It's life-altering.
@@ -116,12 +629,12 @@
                 </p>
             </div>
 
-            <div style="text-align: center; margin: 2rem 0;">
-                <img src="chiari-mri-scans.png" alt="MRI scans showing normal brain (A) compared to Chiari malformation (B) with cerebellar tonsillar herniation indicated by red arrows" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                <p style="font-style: italic; color: #666; margin-top: 1rem;">MRI comparison: (A) Normal cerebellar position, (B) Chiari malformation with cerebellar tonsils extending below the skull base (indicated by red arrows)</p>
+            <div class="content-image">
+                <img src="chiari-mri-scans.png" alt="MRI scans showing normal brain (A) compared to Chiari malformation (B) with cerebellar tonsillar herniation indicated by red arrows">
+                <p class="image-caption">MRI comparison: (A) Normal cerebellar position, (B) Chiari malformation with cerebellar tonsils extending below the skull base (indicated by red arrows)</p>
             </div>
 
-            <h2>Common Symptoms: What It Actually Feels Like</h2>
+            <h2 id="symptoms">Common Symptoms: What It Actually Feels Like</h2>
             <p>
                 Medical literature lists symptoms, but here's what they actually feel like from someone living with them:
             </p>
@@ -133,32 +646,33 @@
                     sneezing, laughing, or straining. It's the kind of pain that stops you in your tracks. Most mornings I 
                     wake up with a headache because pressure increases overnight. I usually drink caffeine to make them go away.</p>
                 </div>
+
                 <div class="symptom-card">
                     <strong>Neck Pain</strong>
                     <p>Chronic pain and stiffness in the neck and upper back that makes even simple movements uncomfortable. 
                     Sometimes it radiates down your shoulders. Looking up or flexing my neck backward triggers symptoms badly.</p>
                 </div>
+
                 <div class="symptom-card">
                     <strong>Balance Issues</strong>
                     <p>Feeling unsteady, dizzy, or like the floor isn't quite where it should be. Walking becomes something 
                     you have to think about instead of doing automatically. I've stumbled off ladders, had to use IV poles to 
                     keep myself upright at work, and given up playing sports because the hand-eye coordination disappeared.</p>
-                    <p><em>The best way I can describe it is through Pink Floyd's "Comfortably Numb": "There's no pain" (mostly 
-                    accurate), "Things only come through in waves" (like you're not yourself, distant, foggy), "My hands feel 
-                    like two balloons" (tingling, pins and needles). It's a weird floating sensation—like I'm disconnected from 
-                    my feet, hooked to a bunch of balloons.</em></p>
                 </div>
+
                 <div class="symptom-card">
                     <strong>Vision Problems</strong>
                     <p>Blurred vision, double vision, light sensitivity, or seeing spots. Your eyes work fine, but the signals 
                     aren't processing correctly. I once looked at a pillow and asked a coworker, "Is this pillow longer than normal?"</p>
                 </div>
+
                 <div class="symptom-card">
                     <strong>Difficulty Swallowing</strong>
                     <p>The sensation of food getting stuck, frequent gagging, or being afraid to eat certain foods because 
                     swallowing has become complicated. Started for me in late January 2026—feels like a golf ball stuck in my 
                     throat. Dry foods like crackers are particularly difficult; moist foods with sauces are easier.</p>
                 </div>
+
                 <div class="symptom-card">
                     <strong>Numbness and Tingling</strong>
                     <p>Strange sensations in your hands, feet, or other body parts. Sometimes it's subtle, sometimes it's 
@@ -166,13 +680,21 @@
                 </div>
             </div>
 
-            <h3>Additional Symptoms I Experience</h3>
-            <ul>
-                <li>Constant ringing (tinnitus) in my right ear that gets louder when stressed</li>
-                <li>Hearing loss (was told I'd need a hearing aid)</li>
-                <li>Cognitive fog—forgetting words mid-sentence, blanking out, struggling with recall memory</li>
-                <li>Nausea (like motion sickness)</li>
-            </ul>
+            <div class="info-box info">
+                <h3>Additional Symptoms I Experience</h3>
+                <ul>
+                    <li>Constant ringing (tinnitus) in my right ear that gets louder when stressed</li>
+                    <li>Hearing loss (was told I'd need a hearing aid)</li>
+                    <li>Cognitive fog—forgetting words mid-sentence, blanking out, struggling with recall memory</li>
+                    <li>Nausea (like motion sickness)</li>
+                </ul>
+            </div>
+
+            <p style="font-style: italic; color: #666; padding: 1.5rem; background: #f8fafc; border-radius: 6px; margin: 2rem 0;">
+                The best way I can describe it is through Pink Floyd's "Comfortably Numb": "There's no pain" (mostly accurate), 
+                "Things only come through in waves" (like you're not yourself, distant, foggy), "My hands feel like two balloons" 
+                (tingling, pins and needles). It's a weird floating sensation—like I'm disconnected from my feet, hooked to a bunch of balloons.
+            </p>
 
             <h2>When Surgery Becomes Necessary</h2>
             <p>
@@ -187,70 +709,87 @@
                 expand the covering of the brain (the dura) to give everything more room.
             </p>
             <p>
-                My <strong>Cine MRI</strong> (a specialized MRI that shows cerebrospinal fluid flow) confirmed in July 2025 
-                that the Chiari was blocking my spinal fluid flow, which explained why I felt so terrible all the time and 
-                made surgery more urgent.
+                My Cine MRI (a specialized MRI that shows cerebrospinal fluid flow) confirmed in July 2025 that the Chiari was 
+                blocking my spinal fluid flow, which explained why I felt so terrible all the time and made surgery more urgent.
             </p>
             <p>
                 As someone who's worked in healthcare, I understand the procedure clinically. As someone about to have it, 
                 I understand it emotionally, spiritually, and personally. Both perspectives matter.
             </p>
 
-            <div class="info-box success">
-                <h3>Why I Chose Surgery</h3>
-                <p>
-                    As a medic, I think the best thing I can do is push for surgery now while I'm young and don't have a 
-                    family depending on me. The symptoms I have—swallowing issues, hearing loss, severe balance problems—there's 
-                    not really medication that's going to fix these. Physical therapy looks like an option to maintain, not to fix.
-                </p>
-                <p>
-                    <strong>I don't want to participate in pain; I want to fix it. Let's be aggressive. Let's not push this down the road.</strong>
-                </p>
-            </div>
+            <h3>Why I Chose Surgery</h3>
+            <p>
+                As a medic, I think the best thing I can do is push for surgery now while I'm young and don't have a family 
+                depending on me. The symptoms I have—swallowing issues, hearing loss, severe balance problems—there's not really 
+                medication that's going to fix these. Physical therapy looks like an option to maintain, not to fix.
+            </p>
+            <p>
+                <strong>I don't want to participate in pain; I want to fix it.</strong> Let's be aggressive. Let's not push this down the road.
+            </p>
 
-            <div class="info-box success">
+            <div class="checklist">
                 <h3>✓ What to Know About Chiari Surgery</h3>
-                <ul>
-                    <li><strong>It's major surgery:</strong> Recovery takes time and patience.</li>
-                    <li><strong>Success rates are good:</strong> Most people experience significant symptom relief.</li>
-                    <li><strong>It relieves pressure:</strong> Surgery creates more space and helps with symptoms.</li>
-                    <li><strong>Recovery is a journey:</strong> Physical healing takes weeks to months. Give yourself grace.</li>
-                    <li><strong>Each case is unique:</strong> Your experience may differ from others. That's okay.</li>
-                </ul>
+                <div class="checklist-item">
+                    <div>
+                        <strong>It's major surgery</strong><br>
+                        Recovery takes time and patience. Give yourself grace during this process.
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <div>
+                        <strong>Success rates are good</strong><br>
+                        Most people experience significant symptom relief, especially with headaches and pressure.
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <div>
+                        <strong>It relieves pressure</strong><br>
+                        Surgery creates more space and helps restore normal CSF flow.
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <div>
+                        <strong>Recovery is a journey</strong><br>
+                        Physical healing takes weeks to months. Mental and emotional healing takes time too.
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <div>
+                        <strong>Each case is unique</strong><br>
+                        Your experience may differ from others. That's okay. Trust your medical team.
+                    </div>
+                </div>
             </div>
 
             <h2>My Personal Journey with Chiari</h2>
             
-            <h3>Timeline:</h3>
-            <ul>
-                <li><strong>April 2025:</strong> First major symptoms appeared</li>
-                <li><strong>June 2025:</strong> Finally diagnosed with Chiari Type I (1.5 cm herniation)</li>
-                <li><strong>July 2025:</strong> Cine MRI confirmed CSF flow blockage</li>
-                <li><strong>Late January 2026:</strong> Swallowing difficulties began</li>
-                <li><strong>[YOUR SURGERY DATE]:</strong> Scheduled decompression surgery</li>
-            </ul>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong>April 2025:</strong> First major symptoms appeared
+                </div>
+                <div class="timeline-item">
+                    <strong>June 2025:</strong> Finally diagnosed with Chiari Type I (1.5 cm herniation)
+                </div>
+                <div class="timeline-item">
+                    <strong>July 2025:</strong> Cine MRI confirmed CSF flow blockage
+                </div>
+                <div class="timeline-item">
+                    <strong>Late January 2026:</strong> Swallowing difficulties began
+                </div>
+                <div class="timeline-item">
+                    <strong>March 15, 2026:</strong> Scheduled decompression surgery
+                </div>
+            </div>
 
             <p>
                 It took me a long time to get diagnosed. I went through countless appointments, tests, and moments of 
                 wondering if what I was experiencing was "real" or just stress. When I finally got answers in June 2025, 
                 it was both a relief and the beginning of a new, uncertain chapter.
             </p>
-            <p>
-                Living with Chiari has meant adjusting to a "new normal" multiple times—first when symptoms appeared, then 
-                after diagnosis, and now as I prepare for surgery. Each phase has required adaptation, patience, and faith.
-            </p>
 
-            <h3>The Invisible Illness Challenge</h3>
-            <p>
-                One of the hardest parts: <strong>I look fine on the outside.</strong> People see a young, fit guy and think 
-                "there's nothing wrong with him." But inside, my brain is literally being compressed. It's hard to explain 
-                neurological issues to people. I feel like it would be so much easier if I just had my arm blown off or 
-                something visually wrong rather than something you can't see.
-            </p>
-            <p>
-                How do you explain that when you cough, you get a headache? Or that you feel like you're floating, like 
-                you're hooked to a bunch of balloons?
-            </p>
+            <div class="hope-moment">
+                <strong>What keeps me going:</strong> Living with Chiari has meant adjusting to a "new normal" multiple times—first when symptoms appeared, then after diagnosis, and now as I prepare for surgery. Each phase has required adaptation, patience, and faith. But I've learned that resilience isn't about never struggling—it's about continuing forward even when things are hard.
+            </div>
 
             <h3>What I've Learned</h3>
             <p>
@@ -263,14 +802,14 @@
             <div class="mission">
                 <div class="mission-content">
                     <p class="mission-quote">
-                        "My goal is to bridge the gap between healthcare providers and patients—to help providers understand 
-                        what patients truly go through and be more sympathetic and empathetic. Living with Chiari has taught 
-                        me that chronic illness isn't just a medical issue—it's a daily reality that affects every part of life."
+                        "Living with Chiari has taught me that chronic illness isn't just a medical issue—it's a daily reality 
+                        that affects every part of life. My goal is to bridge the gap between healthcare providers and patients, 
+                        helping providers understand what patients truly go through so they can respond with greater empathy and compassion."
                     </p>
                 </div>
             </div>
 
-            <h2>If You're Experiencing Symptoms</h2>
+            <h2 id="steps">If You're Experiencing Symptoms</h2>
             <div class="info-box success">
                 <h3>Steps to Take</h3>
                 <ul>
@@ -289,6 +828,19 @@
                 </ul>
             </div>
 
+            <!-- Support Section for Friends/Family -->
+            <div class="support-section">
+                <h3>💛 For Friends & Family: How to Support Someone with Chiari</h3>
+                <p>If someone you love has Chiari, here's what helps:</p>
+                <ul>
+                    <li><strong>Believe them:</strong> Just because they look fine doesn't mean they feel fine. Invisible illnesses are real.</li>
+                    <li><strong>Be patient:</strong> They may need to cancel plans or rest more than usual. It's not personal.</li>
+                    <li><strong>Ask how to help:</strong> Sometimes it's bringing groceries, sometimes it's just listening.</li>
+                    <li><strong>Educate yourself:</strong> Understanding what they're going through makes a huge difference.</li>
+                    <li><strong>Check in regularly:</strong> A simple "thinking of you" text can mean the world.</li>
+                </ul>
+            </div>
+
             <h2>If You're Facing Surgery</h2>
             <p>
                 If you've been told you need Chiari surgery, I want you to know: it's okay to be scared. It's okay to have 
@@ -299,8 +851,43 @@
                 what this experience is really like. Not to frighten you, but to prepare you. Not to discourage you, but to 
                 let you know you're not alone.
             </p>
-            <div style="text-align: center; margin: 2rem 0;">
+            <div style="text-align: center; margin: 2.5rem 0;">
                 <a href="blog.html" class="btn btn-primary">Follow My Surgery Journey</a>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h2 style="margin-top: 0;">Frequently Asked Questions</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How long does recovery from Chiari surgery take?</div>
+                    <div class="faq-answer">Initial recovery typically takes 4-6 weeks, but full recovery can take 3-6 months or longer. Everyone heals at their own pace. Most people can return to light activities within 6-8 weeks, but complete healing of the surgical site and symptom improvement continues for months.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Will surgery fix all my symptoms?</div>
+                    <div class="faq-answer">Surgery is most effective at relieving headaches, neck pain, and pressure symptoms. Balance issues, numbness, and other neurological symptoms may improve gradually over time, but some symptoms might persist. The goal is to prevent further deterioration and provide significant relief, not necessarily perfection.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What if I have Chiari but no symptoms?</div>
+                    <div class="faq-answer">Many people have asymptomatic Chiari malformations discovered incidentally on MRI. If you have no symptoms, surgery is typically not recommended. Your doctor will likely monitor you with periodic check-ups to ensure the condition isn't progressing.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Can Chiari malformation be genetic?</div>
+                    <div class="faq-answer">While Chiari is usually not inherited, there can be a genetic component in some families. If you have Chiari and are planning a family, discuss this with your doctor and a genetic counselor to understand the risks.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How do I find a doctor who specializes in Chiari?</div>
+                    <div class="faq-answer">Look for neurosurgeons at academic medical centers or large hospital systems who have specific experience with Chiari malformation. The Chiari & Syringomyelia Foundation maintains a list of specialists. Don't hesitate to travel to a center of excellence for your surgery—experience matters.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Can I live a normal life with Chiari?</div>
+                    <div class="faq-answer">Yes, many people with Chiari—especially after successful surgery—live full, active lives. You may need to make some adjustments (avoiding high-impact activities, managing triggers), but Chiari doesn't have to define your entire existence. With proper treatment and self-care, you can thrive.</div>
+                </div>
             </div>
 
             <h2>Why Awareness Matters</h2>
@@ -357,6 +944,20 @@
 
         mobileMenuToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
     </script>
 </body>
