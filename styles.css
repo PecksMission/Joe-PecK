@@ -689,7 +689,7 @@ section {
     border-radius: 8px;
     text-align: center;
     margin: 3rem 0;
-    border: 1px solid var(--border-gray);
+    border: 1px solid var(--border-grey);
 }
 
 .cta-box h3 {
