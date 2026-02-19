@@ -20,25 +20,21 @@
   <meta property="og:url" content="https://pecksmission.com" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Peck's Mission</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <meta name="description" content="A combat medic and CVICU medic documents his Chiari malformation diagnosis and brain surgery in real time. Bridging the gap between clinical care and patient experience.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --black: #0a0a0a; --white: #f5f0e8; --gold: #c9a84c; --gold-light: #e8c97a; --red: #8b2020; --gray: #4a4a4a; --gray-light: #9a9a9a; }
     html { scroll-behavior: smooth; }
-    body { background: var(--black); color: var(--white); font-family: 'Crimson Pro', Georgia, serif; overflow-x: hidden; }
+    body { background: var(--black); color: var(--white); font-family: 'Crimson Pro', Georgia, serif; overflow-x: hidden; font-size: 22px; }
 
     /* NAV */
     nav { position: fixed; top: 0; width: 100%; z-index: 100; padding: 1.2rem 3rem; display: flex; justify-content: space-between; align-items: center; background: rgba(10,10,10,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(201,168,76,0.15); }
-    .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.15em; color: var(--gold); text-decoration: none; }
+    .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 0.15em; color: var(--gold); text-decoration: none; }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-    .nav-links a { color: var(--gray-light); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a { color: var(--gray-light); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
     .nav-links a:hover { color: var(--gold); }
 
     /* HERO */
@@ -46,18 +42,18 @@
     .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 70% 40%, rgba(139,32,32,0.07) 0%, transparent 70%), radial-gradient(ellipse 50% 40% at 20% 80%, rgba(201,168,76,0.04) 0%, transparent 60%); pointer-events: none; }
     .hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
     .hero-text { max-width: 560px; }
-    .hero-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+    .hero-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
     .hero-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3.5rem, 7vw, 6.5rem); line-height: 0.92; letter-spacing: 0.02em; margin-bottom: 2rem; }
     .hero-title span { color: var(--gold); }
-    .hero-sub { font-size: 1.15rem; font-weight: 300; color: #bbb; line-height: 1.75; margin-bottom: 2.5rem; font-style: italic; }
+    .hero-sub { font-size: 1.25rem; font-weight: 300; color: #bbb; line-height: 1.75; margin-bottom: 2.5rem; font-style: italic; }
     .hero-quote { background: rgba(201,168,76,0.05); border-left: 3px solid var(--gold); padding: 1.5rem 2rem; margin-bottom: 2.5rem; }
-    .hero-quote p { font-family: 'Crimson Pro', serif; font-size: 1.1rem; font-style: italic; font-weight: 300; color: var(--white); line-height: 1.6; margin-bottom: 0.5rem; }
-    .hero-quote span { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); }
-    .hero-response { font-size: 1rem; color: var(--gray-light); font-style: italic; margin-bottom: 2.5rem; }
+    .hero-quote p { font-family: 'Crimson Pro', serif; font-size: 1.25rem; font-style: italic; font-weight: 300; color: var(--white); line-height: 1.6; margin-bottom: 0.5rem; }
+    .hero-quote span { font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); }
+    .hero-response { font-size: 1.1rem; color: var(--gray-light); font-style: italic; margin-bottom: 2.5rem; }
     .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn-primary { background: var(--gold); color: var(--black); padding: 0.9rem 2rem; font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; display: inline-block; }
+    .btn-primary { background: var(--gold); color: var(--black); padding: 0.9rem 2rem; font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; display: inline-block; }
     .btn-primary:hover { background: var(--gold-light); }
-    .btn-secondary { border: 1px solid rgba(201,168,76,0.4); color: var(--gold); padding: 0.9rem 2rem; font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; display: inline-block; }
+    .btn-secondary { border: 1px solid rgba(201,168,76,0.4); color: var(--gold); padding: 0.9rem 2rem; font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; display: inline-block; }
     .btn-secondary:hover { border-color: var(--gold); background: rgba(201,168,76,0.05); }
 
     /* PHOTO STACK */
@@ -67,54 +63,54 @@
     .photo-card-1 { width: 240px; height: 320px; top: 0; left: 40px; z-index: 3; }
     .photo-card-2 { width: 200px; height: 280px; top: 60px; left: 200px; z-index: 2; filter: brightness(0.7); }
     .photo-card-3 { width: 180px; height: 240px; top: 120px; left: 340px; z-index: 1; filter: brightness(0.5); }
-    .photo-label { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(10,10,10,0.9); padding: 0.5rem; font-family: 'DM Mono', monospace; font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); text-align: center; }
+    .photo-label { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(10,10,10,0.9); padding: 0.5rem; font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); text-align: center; }
 
     /* COUNTDOWN */
     .countdown-section { background: rgba(201,168,76,0.03); border-top: 1px solid rgba(201,168,76,0.1); border-bottom: 1px solid rgba(201,168,76,0.1); padding: 3rem; }
     .countdown-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem; }
-    .countdown-label { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-light); }
-    .countdown-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.05em; color: var(--white); margin-top: 0.3rem; }
+    .countdown-label { font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-light); }
+    .countdown-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.05em; color: var(--white); margin-top: 0.3rem; }
     .countdown-nums { display: flex; gap: 2rem; flex-wrap: wrap; }
     .cd-unit { text-align: center; }
-    .cd-num { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: var(--gold); line-height: 1; display: block; }
-    .cd-label { font-family: 'DM Mono', monospace; font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-light); }
+    .cd-num { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; color: var(--gold); line-height: 1; display: block; }
+    .cd-label { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-light); }
 
     /* SECTIONS */
     .section { padding: 6rem 3rem; max-width: 1100px; margin: 0 auto; }
-    .section-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .section-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
     .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1; margin-bottom: 1.5rem; }
-    .section-body { font-size: 1.1rem; font-weight: 300; color: #bbb; line-height: 1.85; max-width: 620px; margin-bottom: 2rem; }
+    .section-body { font-size: 1.25rem; font-weight: 300; color: #bbb; line-height: 1.85; max-width: 620px; margin-bottom: 2rem; }
 
     /* MISSION CARDS */
     .mission-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.06); margin-top: 3rem; }
     .mission-card { background: var(--black); padding: 2.5rem; }
     .mission-num { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: rgba(201,168,76,0.2); line-height: 1; margin-bottom: 1rem; }
-    .mission-card h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 0.05em; color: var(--white); margin-bottom: 0.8rem; }
-    .mission-card p { font-size: 0.95rem; font-weight: 300; color: var(--gray-light); line-height: 1.7; }
+    .mission-card h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 0.05em; color: var(--white); margin-bottom: 0.8rem; }
+    .mission-card p { font-size: 1.1rem; font-weight: 300; color: var(--gray-light); line-height: 1.7; }
 
     /* BLOG PREVIEW */
     .posts-preview { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.06); margin-top: 3rem; }
     .post-preview-card { background: var(--black); padding: 3rem; text-decoration: none; color: inherit; transition: background 0.2s; display: block; }
     .post-preview-card:hover { background: rgba(255,255,255,0.02); }
-    .post-tag { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
-    .post-preview-title { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; line-height: 1; margin-bottom: 1rem; color: var(--white); }
-    .post-preview-excerpt { font-size: 0.95rem; font-weight: 300; color: var(--gray-light); line-height: 1.7; }
-    .post-arrow { font-family: 'DM Mono', monospace; font-size: 1.2rem; color: var(--gold); margin-top: 1.5rem; display: block; }
+    .post-tag { font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
+    .post-preview-title { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; line-height: 1; margin-bottom: 1rem; color: var(--white); }
+    .post-preview-excerpt { font-size: 1.1rem; font-weight: 300; color: var(--gray-light); line-height: 1.7; }
+    .post-arrow { font-family: 'DM Mono', monospace; font-size: 1.3rem; color: var(--gold); margin-top: 1.5rem; display: block; }
 
     /* KIPLING TEASER */
     .kipling-teaser { padding: 6rem 3rem; background: rgba(201,168,76,0.02); border-top: 1px solid rgba(201,168,76,0.08); border-bottom: 1px solid rgba(201,168,76,0.08); text-align: center; }
-    .kipling-lines { font-family: 'Crimson Pro', serif; font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-style: italic; font-weight: 300; color: var(--white); line-height: 1.8; max-width: 700px; margin: 0 auto 1.5rem; }
-    .kipling-attr { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; display: block; }
-    .kipling-link { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-light); text-decoration: none; border-bottom: 1px solid rgba(201,168,76,0.3); padding-bottom: 2px; transition: color 0.2s; }
+    .kipling-lines { font-family: 'Crimson Pro', serif; font-size: clamp(1.3rem, 2.5vw, 1.75rem); font-style: italic; font-weight: 300; color: var(--white); line-height: 1.8; max-width: 700px; margin: 0 auto 1.5rem; }
+    .kipling-attr { font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; display: block; }
+    .kipling-link { font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-light); text-decoration: none; border-bottom: 1px solid rgba(201,168,76,0.3); padding-bottom: 2px; transition: color 0.2s; }
     .kipling-link:hover { color: var(--gold); }
 
     /* FOOTER */
     footer { padding: 3rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
-    .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 0.15em; color: var(--gold); margin-bottom: 1rem; }
-    .footer-kipling { font-family: 'Crimson Pro', serif; font-size: 1rem; font-style: italic; color: var(--gray-light); margin-bottom: 0.5rem; }
-    .footer-line { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); }
+    .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; letter-spacing: 0.15em; color: var(--gold); margin-bottom: 1rem; }
+    .footer-kipling { font-family: 'Crimson Pro', serif; font-size: 1.15rem; font-style: italic; color: var(--gray-light); margin-bottom: 0.5rem; }
+    .footer-line { font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); }
     .nav-footer { display: flex; justify-content: center; gap: 2rem; list-style: none; margin-top: 1.5rem; flex-wrap: wrap; }
-    .nav-footer a { color: var(--gray); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-footer a { color: var(--gray); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
     .nav-footer a:hover { color: var(--gold); }
 
     @media (max-width: 900px) {
