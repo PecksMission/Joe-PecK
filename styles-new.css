@@ -21,7 +21,7 @@ body {
   background: var(--black);
   color: var(--white);
   font-family: 'Crimson Pro', Georgia, serif;
-  font-size: 19px;
+  font-size: 20px;
   line-height: 1.8;
   overflow-x: hidden;
 }
@@ -54,7 +54,7 @@ nav {
   color: var(--gray-light);
   text-decoration: none;
   font-family: 'DM Mono', monospace;
-  font-size: 0.75rem;
+  font-size: 0.82rem; /* was 0.75rem */
   letter-spacing: 0.12em;
   text-transform: uppercase;
   transition: color 0.2s;
@@ -83,9 +83,7 @@ footer {
   color: var(--gray-light);
   margin-bottom: 0.5rem;
 }
-.footer-line {
-  font-family: 'DM Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.75rem; /* was 0.65rem */
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--gray);
@@ -106,7 +104,7 @@ footer {
   color: var(--gray);
   text-decoration: none;
   font-family: 'DM Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.75rem; /* was 0.65rem */
   letter-spacing: 0.12em;
   text-transform: uppercase;
   transition: color 0.2s;
@@ -121,7 +119,7 @@ footer {
   color: var(--black);
   padding: 0.9rem 2rem;
   font-family: 'DM Mono', monospace;
-  font-size: 0.75rem;
+  font-size: 0.82rem; /* was 0.75rem */
   letter-spacing: 0.15em;
   text-transform: uppercase;
   text-decoration: none;
@@ -136,7 +134,7 @@ footer {
   color: var(--gold);
   padding: 0.9rem 2rem;
   font-family: 'DM Mono', monospace;
-  font-size: 0.75rem;
+  font-size: 0.82rem; /* was 0.75rem */
   letter-spacing: 0.15em;
   text-transform: uppercase;
   text-decoration: none;
@@ -168,7 +166,7 @@ footer {
 }
 .quote-attr {
   font-family: 'DM Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.75rem; /* was 0.65rem */
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--gold);
@@ -181,7 +179,7 @@ footer {
 }
 .verse-text {
   font-family: 'Crimson Pro', serif;
-  font-size: 1.15rem;
+  font-size: 1.2rem; /* was 1.15rem */
   font-style: italic;
   font-weight: 300;
   color: var(--white);
@@ -190,7 +188,7 @@ footer {
 }
 .verse-ref {
   font-family: 'DM Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.75rem; /* was 0.65rem */
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--gray-light);
@@ -216,7 +214,7 @@ footer {
 }
 .countdown-label {
   font-family: 'DM Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.75rem; /* was 0.65rem */
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gray-light);
@@ -239,7 +237,7 @@ footer {
 }
 .cd-label {
   font-family: 'DM Mono', monospace;
-  font-size: 0.55rem;
+  font-size: 0.65rem; /* was 0.55rem */
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gray-light);
@@ -255,7 +253,7 @@ footer {
 }
 .page-eyebrow {
   font-family: 'DM Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.75rem; /* was 0.65rem */
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--gold);
@@ -269,7 +267,7 @@ footer {
   margin-bottom: 2rem;
 }
 .page-sub {
-  font-size: 1.1rem;
+  font-size: 1.2rem; /* was 1.1rem */
   font-weight: 300;
   font-style: italic;
   color: var(--gray-light);
@@ -286,7 +284,7 @@ footer {
 }
 .post-eyebrow {
   font-family: 'DM Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.75rem; /* was 0.65rem */
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--gold);
@@ -301,7 +299,7 @@ footer {
 }
 .post-meta {
   font-family: 'DM Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.75rem; /* was 0.65rem */
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gray-light);
@@ -314,7 +312,7 @@ footer {
   padding: 4rem 3rem 6rem;
 }
 .post-body p {
-  font-size: 1.15rem;
+  font-size: 1.2rem; /* was 1.15rem */
   font-weight: 300;
   color: #d4cfc7;
   margin-bottom: 1.8rem;
@@ -373,7 +371,7 @@ footer {
   margin-bottom: 0.3rem;
 }
 .author-info p {
-  font-size: 0.9rem;
+  font-size: 1rem; /* was 0.9rem */
   color: var(--gray-light);
   margin: 0;
 }
@@ -420,7 +418,7 @@ footer {
 .hero-text { max-width: 560px; }
 .hero-eyebrow {
   font-family: 'DM Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.75rem; /* was 0.65rem */
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--gold);
@@ -435,7 +433,7 @@ footer {
 }
 .hero-title span { color: var(--gold); }
 .hero-sub {
-  font-size: 1.15rem;
+  font-size: 1.2rem; /* was 1.15rem */
   font-weight: 300;
   color: #bbb;
   line-height: 1.75;
@@ -459,7 +457,7 @@ footer {
 }
 .hero-quote span {
   font-family: 'DM Mono', monospace;
-  font-size: 0.6rem;
+  font-size: 0.7rem; /* was 0.6rem */
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--gold);
@@ -489,15 +487,7 @@ footer {
 .photo-card-1 { width: 240px; height: 320px; top: 0; left: 40px; z-index: 3; }
 .photo-card-2 { width: 200px; height: 280px; top: 60px; left: 200px; z-index: 2; filter: brightness(0.7); }
 .photo-card-3 { width: 180px; height: 240px; top: 120px; left: 340px; z-index: 1; filter: brightness(0.5); }
-.photo-label {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(10,10,10,0.9);
-  padding: 0.5rem;
-  font-family: 'DM Mono', monospace;
-  font-size: 0.55rem;
+  font-size: 0.65rem; /* was 0.55rem */
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--gold);
@@ -514,7 +504,7 @@ footer {
 }
 .section-eyebrow {
   font-family: 'DM Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.75rem; /* was 0.65rem */
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--gold);
@@ -527,7 +517,7 @@ footer {
   margin-bottom: 1.5rem;
 }
 .section-body {
-  font-size: 1.1rem;
+  font-size: 1.15rem; /* was 1.1rem */
   font-weight: 300;
   color: #bbb;
   line-height: 1.85;
@@ -557,7 +547,7 @@ footer {
   margin-bottom: 0.8rem;
 }
 .mission-card p {
-  font-size: 0.95rem;
+  font-size: 1rem; /* was 0.95rem */
   font-weight: 300;
   color: var(--gray-light);
   line-height: 1.7;
@@ -584,7 +574,7 @@ footer {
 .post-preview-card:hover { background: rgba(255,255,255,0.02); }
 .post-tag {
   font-family: 'DM Mono', monospace;
-  font-size: 0.6rem;
+  font-size: 0.7rem; /* was 0.6rem */
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gold);
@@ -598,7 +588,7 @@ footer {
   color: var(--white);
 }
 .post-preview-excerpt {
-  font-size: 0.95rem;
+  font-size: 1rem; /* was 0.95rem */
   font-weight: 300;
   color: var(--gray-light);
   line-height: 1.7;
@@ -639,7 +629,7 @@ footer {
   margin-bottom: 0.8rem;
 }
 .post-excerpt {
-  font-size: 1rem;
+  font-size: 1.05rem; /* was 1rem */
   font-weight: 300;
   color: var(--gray-light);
   line-height: 1.7;
@@ -668,7 +658,7 @@ footer {
 }
 .kipling-attr {
   font-family: 'DM Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.75rem; /* was 0.65rem */
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gold);
@@ -677,7 +667,7 @@ footer {
 }
 .kipling-link {
   font-family: 'DM Mono', monospace;
-  font-size: 0.7rem;
+  font-size: 0.78rem; /* was 0.7rem */
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--gray-light);
@@ -697,7 +687,7 @@ footer {
 }
 .kipling-label {
   font-family: 'DM Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.75rem; /* was 0.65rem */
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--gold);
@@ -705,7 +695,7 @@ footer {
 }
 .kipling-poem {
   font-family: 'Crimson Pro', serif;
-  font-size: 1.05rem;
+  font-size: 1.1rem; /* was 1.05rem */
   font-weight: 300;
   color: #bbb;
   line-height: 2;
@@ -752,9 +742,7 @@ footer {
   object-position: top center;
 }
 .photo-slot-placeholder { text-align: center; padding: 2rem; }
-.photo-slot-placeholder p {
-  font-family: 'DM Mono', monospace;
-  font-size: 0.6rem;
+  font-size: 0.7rem; /* was 0.6rem */
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--gray);
@@ -766,7 +754,7 @@ footer {
   right: 0;
   text-align: center;
   font-family: 'DM Mono', monospace;
-  font-size: 0.6rem;
+  font-size: 0.7rem; /* was 0.6rem */
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gold);
@@ -779,7 +767,7 @@ footer {
   padding: 2rem 3rem 6rem;
 }
 .about-body p {
-  font-size: 1.1rem;
+  font-size: 1.15rem; /* was 1.1rem */
   font-weight: 300;
   color: #ccc;
   margin-bottom: 1.6rem;
@@ -809,7 +797,7 @@ footer {
 }
 .tattoo-sub {
   font-family: 'DM Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.75rem; /* was 0.65rem */
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gray-light);
@@ -841,14 +829,14 @@ footer {
 .audience-card:hover { border-color: rgba(201,168,76,0.25); }
 .audience-tag {
   font-family: 'DM Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.75rem; /* was 0.65rem */
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: 0.8rem;
 }
 .audience-card p {
-  font-size: 1.05rem;
+  font-size: 1.1rem; /* was 1.05rem */
   font-weight: 300;
   color: #ccc;
   line-height: 1.8;
@@ -860,7 +848,7 @@ footer {
 }
 .form-label {
   font-family: 'DM Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.75rem; /* was 0.65rem */
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--gold);
@@ -891,15 +879,7 @@ textarea { min-height: 160px; resize: vertical; }
   padding: 1rem 0;
   width: 100%;
   font-family: 'DM Mono', monospace;
-  font-size: 0.8rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  border: none;
-  cursor: pointer;
-  margin-top: 0.5rem;
-  transition: background 0.2s;
-}
-.btn-submit:hover { background: var(--gold-light); }
+  font-size: 0.88rem; /* was 0.8rem */
 
 /* ============================================
    CHIARI PAGE
@@ -910,7 +890,7 @@ textarea { min-height: 160px; resize: vertical; }
   padding: 4rem 3rem 6rem;
 }
 .chiari-body p {
-  font-size: 1.1rem;
+  font-size: 1.15rem; /* was 1.1rem */
   font-weight: 300;
   color: #ccc;
   margin-bottom: 1.6rem;
@@ -932,7 +912,7 @@ textarea { min-height: 160px; resize: vertical; }
 }
 .diagram-label {
   font-family: 'DM Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.75rem; /* was 0.65rem */
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gold);
@@ -940,7 +920,7 @@ textarea { min-height: 160px; resize: vertical; }
 }
 .diagram-sub {
   font-family: 'DM Mono', monospace;
-  font-size: 0.6rem;
+  font-size: 0.7rem; /* was 0.6rem */
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--gray-light);
@@ -959,7 +939,7 @@ textarea { min-height: 160px; resize: vertical; }
   color: var(--gold);
   margin-bottom: 0.8rem;
 }
-.callout-block p { font-size: 1rem; color: #bbb; margin-bottom: 0; }
+.callout-block p { font-size: 1.05rem; color: #bbb; margin-bottom: 0; } /* was 1rem */
 .closing-callout {
   background: rgba(139,32,32,0.06);
   border: 1px solid rgba(139,32,32,0.15);
@@ -973,7 +953,7 @@ textarea { min-height: 160px; resize: vertical; }
   color: var(--white);
   margin-bottom: 1.2rem;
 }
-.closing-callout p { font-size: 1.05rem; color: #ccc; margin-bottom: 1rem; }
+.closing-callout p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; } /* was 1.05rem */
 
 /* ============================================
    PARALLEL DOCUMENT (why-i-built-this)
@@ -993,7 +973,7 @@ textarea { min-height: 160px; resize: vertical; }
 .parallel-col-header {
   padding: 1rem 1.5rem;
   font-family: 'DM Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.75rem; /* was 0.65rem */
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
@@ -1005,7 +985,7 @@ textarea { min-height: 160px; resize: vertical; }
   border-bottom: 1px solid rgba(255,255,255,0.04);
 }
 .parallel-row:last-child { border-bottom: none; }
-.parallel-cell { padding: 1.5rem; font-size: 0.95rem; font-weight: 300; line-height: 1.7; }
+.parallel-cell { padding: 1.5rem; font-size: 1rem; font-weight: 300; line-height: 1.7; } /* was 0.95rem */
 .parallel-cell.chart { color: var(--gray-light); border-right: 1px solid rgba(255,255,255,0.04); font-style: italic; }
 .parallel-cell.reality { color: #ccc; }
 
