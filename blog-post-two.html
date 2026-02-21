@@ -586,7 +586,7 @@
   function closePopup() {
     const overlay = document.getElementById('popup-overlay');
     overlay.classList.remove('visible');
-    
+    document.body.style.overflow = '';
     // Don't show again this session
     sessionStorage.setItem('popup-dismissed', '1');
   }

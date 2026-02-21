@@ -528,7 +528,7 @@
   function closePopup() {
     const overlay = document.getElementById('popup-overlay');
     overlay.classList.remove('visible');
-    
+    document.body.style.overflow = '';
     sessionStorage.setItem('popup-dismissed', '1');
   }
 
