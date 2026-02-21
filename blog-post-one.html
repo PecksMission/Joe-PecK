@@ -590,5 +590,84 @@
     
   }
 </script>
+<style>
+#tldr-btn{position:fixed;bottom:2rem;right:2rem;z-index:9000;background:#c9a84c;color:#0a0a0a;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;padding:0.65rem 1.2rem;border-radius:2px;box-shadow:0 4px 24px rgba(0,0,0,0.5);transition:background 0.2s,transform 0.15s;line-height:1;}
+#tldr-btn:hover{background:#e8c97a;transform:translateY(-2px);}
+#tldr-overlay{display:none;position:fixed;inset:0;z-index:9500;background:rgba(0,0,0,0.65);backdrop-filter:blur(4px);align-items:flex-end;justify-content:flex-end;padding:2rem;}
+#tldr-overlay.open{display:flex;}
+#tldr-box{background:#111;border:1px solid rgba(201,168,76,0.25);border-radius:4px;max-width:440px;width:100%;box-shadow:0 16px 64px rgba(0,0,0,0.7);overflow:hidden;animation:tldrIn 0.22s cubic-bezier(0.34,1.56,0.64,1);}
+@keyframes tldrIn{from{opacity:0;transform:translateY(20px) scale(0.97);}to{opacity:1;transform:translateY(0) scale(1);}}
+#tldr-head{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem 0.8rem;border-bottom:1px solid rgba(255,255,255,0.06);}
+#tldr-head-left{display:flex;flex-direction:column;gap:0.15rem;}
+#tldr-eyebrow{font-family:'DM Mono',monospace;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:#c9a84c;}
+#tldr-ptitle{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.05em;color:#f5f0e8;line-height:1;}
+#tldr-x{background:none;border:none;cursor:pointer;color:#9a9a9a;font-size:1.1rem;line-height:1;padding:4px;transition:color 0.2s;}
+#tldr-x:hover{color:#c9a84c;}
+#tldr-list{list-style:none;margin:0;padding:0.8rem 1.25rem 1.2rem;display:flex;flex-direction:column;gap:0.65rem;}
+#tldr-list li{display:flex;gap:0.6rem;font-family:'Crimson Pro',Georgia,serif;font-size:1rem;line-height:1.55;color:#c8c2b5;}
+#tldr-list li:before{content:"4";color:#c9a84c;flex-shrink:0;margin-top:0.05em;}
+@media(max-width:480px){#tldr-btn{bottom:1.2rem;right:1.2rem;}#tldr-overlay{padding:0;align-items:flex-end;}#tldr-box{max-width:100%;border-radius:4px 4px 0 0;}}
+</style>
+<div id="tldr-data" data-title="What I Found Out This Week" style="display:none"></div>
+<script>
+(function(){
+  var points = ["I walked into that office thinking I was crazy. I wasn't crazy. My brain has been severely compressed my entire life.", "A world-class neurosurgeon at Vanderbilt confirmed it. The speech therapy, the balance failures, the dexterity — all of it was the Chiari.", "Three times recently I woke up and couldn't walk. Then one morning I couldn't swallow. I went to the ER. Then to Dr. Lee's office. He confirmed everything.", "Last spring I prayed to understand what it felt like to be a patient. Two weeks later, all of this surfaced. I'm not willing to call that a coincidence.", "I've never met the version of me with a brain that has room. Surgery is February 26th. I'm ready to meet him."];
+  var title = "What I Found Out This Week";
+
+  var btn = document.createElement('button');
+  btn.id = 'tldr-btn';
+  btn.textContent = 'TL;DR';
+  document.body.appendChild(btn);
+
+  var overlay = document.createElement('div');
+  overlay.id = 'tldr-overlay';
+
+  var box = document.createElement('div');
+  box.id = 'tldr-box';
+
+  var head = document.createElement('div');
+  head.id = 'tldr-head';
+
+  var headLeft = document.createElement('div');
+  headLeft.id = 'tldr-head-left';
+
+  var eyebrow = document.createElement('span');
+  eyebrow.id = 'tldr-eyebrow';
+  eyebrow.textContent = 'Too Long; Didn’t Read';
+
+  var ptitle = document.createElement('span');
+  ptitle.id = 'tldr-ptitle';
+  ptitle.textContent = title;
+
+  headLeft.appendChild(eyebrow);
+  headLeft.appendChild(ptitle);
+
+  var xBtn = document.createElement('button');
+  xBtn.id = 'tldr-x';
+  xBtn.setAttribute('aria-label','Close');
+  xBtn.textContent = '✕';
+
+  head.appendChild(headLeft);
+  head.appendChild(xBtn);
+
+  var list = document.createElement('ul');
+  list.id = 'tldr-list';
+  points.forEach(function(p){
+    var li = document.createElement('li');
+    li.textContent = p;
+    list.appendChild(li);
+  });
+
+  box.appendChild(head);
+  box.appendChild(list);
+  overlay.appendChild(box);
+  document.body.appendChild(overlay);
+
+  btn.addEventListener('click', function(){ overlay.classList.add('open'); });
+  xBtn.addEventListener('click', function(){ overlay.classList.remove('open'); });
+  overlay.addEventListener('click', function(e){ if(e.target===overlay) overlay.classList.remove('open'); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') overlay.classList.remove('open'); });
+})();
+</script>
 </body>
 </html>
