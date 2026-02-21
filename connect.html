@@ -90,6 +90,18 @@
     .social-btn svg { flex-shrink: 0; }
 
     @media (max-width: 768px) { nav { padding: 1rem 1.5rem; } .nav-links { display: none; } .page-header, .form-section, .audience-grid, .verse-block, .quote-section, .closing-block, .social-section { padding-left: 1.5rem; padding-right: 1.5rem; } .verse-block { margin-left: 1.5rem; margin-right: 1.5rem; } .page-header { padding-top: 7rem; } .social-links { flex-direction: column; align-items: center; } }
+  
+    .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; z-index: 200; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--gold); transition: all 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: 60px; right: 1.5rem; width: 220px; background: rgba(10,10,10,0.97); border: 1px solid rgba(201,168,76,0.2); border-radius: 4px; z-index: 150; flex-direction: column; padding: 1.2rem 1.5rem; gap: 1.2rem; backdrop-filter: blur(8px); }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { color: var(--white); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+    .mobile-menu a:hover { color: var(--gold); }
+    @media (max-width: 768px) { .hamburger { display: flex; } .nav-links { display: none !important; } }
+
   </style>
 </head>
 <body>
@@ -101,7 +113,18 @@
     <li><a href="blog.html">Updates</a></li>
     <li><a href="connect.html">Connect</a></li>
   </ul>
+
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMobile()">Home</a>
+  <a href="about.html" onclick="closeMobile()">My Story</a>
+  <a href="chiari.html" onclick="closeMobile()">What is Chiari</a>
+  <a href="blog.html" onclick="closeMobile()">Updates</a>
+  <a href="follow-along.html" onclick="closeMobile()">Follow Along</a>
+</div>
 
 <div class="page-header">
   <p class="page-eyebrow">Connect</p>
@@ -234,5 +257,20 @@
   }
 </script>
 
+
+<script>
+  var hamburger = document.getElementById('hamburger');
+  var mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    
+  });
+  function closeMobile() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    
+  }
+</script>
 </body>
 </html>
