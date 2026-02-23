@@ -28,7 +28,7 @@
     <loc>https://www.pecksmission.com/blog-post-one.html</loc>
     <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.pecksmission.com/blog-post-two.html</loc>
@@ -47,12 +47,6 @@
     <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.pecksmission.com/connect.html</loc>
-    <lastmod>2026-02-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.pecksmission.com/follow-along.html</loc>
