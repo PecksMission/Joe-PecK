@@ -271,6 +271,19 @@
       .quote-block, .verse-block { padding: 1.5rem; }
     }
 
+    /* POST NAVIGATION */
+    .post-nav { max-width: 720px; margin: 0 auto; padding: 0 3rem; }
+    .post-nav-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.06); margin: 2rem 0 0; }
+    .post-nav-card { background: var(--black); padding: 2rem 2.5rem; text-decoration: none; color: inherit; transition: background 0.2s; display: block; }
+    .post-nav-card:hover { background: rgba(255,255,255,0.02); }
+    .post-nav-card.next { text-align: right; }
+    .post-nav-card.empty { background: rgba(255,255,255,0.01); pointer-events: none; }
+    .post-nav-direction { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gray-light); margin-bottom: 0.5rem; display: block; }
+    .post-nav-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; line-height: 1.1; color: var(--white); display: block; transition: color 0.2s; }
+    .post-nav-card:hover .post-nav-title { color: var(--gold); }
+    .post-nav-date { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); margin-top: 0.4rem; display: block; }
+    @media (max-width: 640px) { .post-nav { padding-left: 1.5rem; padding-right: 1.5rem; } .post-nav-inner { grid-template-columns: 1fr; } .post-nav-card.next { text-align: left; } }
+
     /* FOLLOW ALONG POPUP */
     .popup-overlay {
       position: fixed;
@@ -516,6 +529,17 @@
   </div>
 
 </article>
+
+<div class="post-nav">
+  <div class="post-nav-inner">
+    <a href="blog-post-three.html" class="post-nav-card prev">
+      <span class="post-nav-direction">← Previous</span>
+      <span class="post-nav-title">I Needed You</span>
+      <span class="post-nav-date">February 20, 2026</span>
+    </a>
+    <div class="post-nav-card empty"></div>
+  </div>
+</div>
 
 <!-- COMMENTS -->
 <style>
