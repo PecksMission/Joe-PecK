@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WT1126YN2Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WT1126YN2Q');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surgery Day — Peck's Mission</title>
+  <meta property="og:title" content="Peck's Mission | Surgery Day — February 26, 2026" />
+  <meta name="description" content="Live updates from surgery day. Joe is in surgery at Vanderbilt. His family is with him. We'll update this page throughout the day." />
+  <meta property="og:description" content="Live updates from surgery day. Joe is in surgery at Vanderbilt. His family is with him. We'll update this page throughout the day." />
+  <meta property="og:image" content="https://www.pecksmission.com/og-image.png" />
+  <meta property="og:url" content="https://www.pecksmission.com/surgery-day" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0a0a0a;
+      --white: #f5f0e8;
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --red: #8b2020;
+      --gray: #4a4a4a;
+      --gray-light: #9a9a9a;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--white); font-family: 'Crimson Pro', Georgia, serif; font-size: 22px; line-height: 1.8; overflow-x: hidden; }
+    nav { position: fixed; top: 0; width: 100%; z-index: 100; padding: 1.2rem 3rem; display: flex; justify-content: space-between; align-items: center; background: rgba(10,10,10,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(201,168,76,0.15); }
+    .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.15em; color: var(--gold); text-decoration: none; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { color: var(--gray-light); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+
+    .page-header { padding: 10rem 3rem 4rem; max-width: 820px; margin: 0 auto; }
+    .page-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+    .page-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 7vw, 6rem); line-height: 0.95; letter-spacing: 0.02em; margin-bottom: 2rem; }
+    .page-sub { font-size: 1.15rem; font-weight: 300; font-style: italic; color: var(--gray-light); max-width: 560px; padding-bottom: 3rem; border-bottom: 1px solid rgba(201,168,76,0.15); }
+
+    .status-bar { max-width: 820px; margin: 0 auto; padding: 0 3rem; }
+    .status-card { background: rgba(201,168,76,0.06); border: 1px solid rgba(201,168,76,0.2); padding: 2rem 2.5rem; margin: 3rem 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .status-label { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
+    .status-text { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 0.05em; color: var(--white); line-height: 1; }
+    .status-time { font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-light); text-align: right; }
+
+    .timeline { max-width: 820px; margin: 0 auto; padding: 0 3rem 6rem; }
+    .timeline-label { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; padding-bottom: 0.8rem; border-bottom: 1px solid rgba(201,168,76,0.15); }
+
+    .update-entry { display: grid; grid-template-columns: 80px 1fr; gap: 2rem; padding: 2.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .update-entry:last-child { border-bottom: none; }
+    .update-time { font-family: 'DM Mono', monospace; font-size: 0.78rem; letter-spacing: 0.1em; color: var(--gold); padding-top: 0.3rem; line-height: 1.5; }
+    .update-time .ampm { display: block; color: var(--gray-light); font-size: 0.65rem; letter-spacing: 0.15em; }
+    .update-tag { font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-light); margin-bottom: 0.6rem; }
+    .update-headline { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.03em; color: var(--white); line-height: 1; margin-bottom: 1rem; }
+    .update-body { font-size: 1.05rem; font-weight: 300; color: #d4cfc7; line-height: 1.85; }
+    .update-body p { margin-bottom: 0.8rem; }
+    .update-body p:last-child { margin-bottom: 0; }
+
+    .update-entry.waiting .update-headline { color: var(--gray-light); font-size: 1.3rem; }
+    .update-entry.waiting .update-body { color: var(--gray); }
+    .update-entry.serious .update-time { color: var(--gray-light); }
+
+    .update-photo { width: 100%; max-width: 500px; display: block; margin: 1.2rem 0 0.4rem; border: 1px solid rgba(201,168,76,0.15); }
+    .update-photo-caption { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-light); margin-bottom: 0.8rem; }
+
+    .verse-block { background: rgba(139,32,32,0.08); border-left: 3px solid var(--red); padding: 1.5rem 2rem; margin: 1.5rem 0 0; }
+    .verse-text { font-family: 'Crimson Pro', serif; font-size: 1.1rem; font-style: italic; font-weight: 300; color: var(--white); line-height: 1.6; margin-bottom: 0.5rem; }
+    .verse-ref { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-light); }
+
+    .memorial-block { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); padding: 3rem; margin: 1rem 0; }
+    .memorial-body { font-size: 1.1rem; font-weight: 300; color: #d4cfc7; line-height: 1.9; }
+    .memorial-body p { margin-bottom: 1.2rem; }
+    .memorial-body p:last-child { margin-bottom: 0; }
+
+    .handoff-block { background: rgba(201,168,76,0.04); border: 1px solid rgba(201,168,76,0.15); padding: 3rem; margin: 3rem 0; text-align: center; }
+    .handoff-label { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .handoff-text { font-family: 'Crimson Pro', serif; font-size: 1.2rem; font-style: italic; font-weight: 300; color: var(--white); line-height: 1.7; margin-bottom: 1.5rem; }
+    .btn { background: var(--gold); color: var(--black); padding: 0.9rem 2rem; font-family: 'DM Mono', monospace; font-size: 0.82rem; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; display: inline-block; transition: background 0.2s; }
+    .btn:hover { background: var(--gold-light); }
+
+    footer { padding: 3rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+    .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 0.15em; color: var(--gold); margin-bottom: 1rem; }
+    .footer-kipling { font-family: 'Crimson Pro', serif; font-size: 1.15rem; font-style: italic; color: var(--gray-light); margin-bottom: 0.5rem; }
+    .footer-line { font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); }
+    .nav-footer { display: flex; justify-content: center; gap: 2rem; list-style: none; margin-top: 1.5rem; flex-wrap: wrap; }
+    .nav-footer a { color: var(--gray); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-footer a:hover { color: var(--gold); }
+
+    .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; z-index: 200; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--gold); transition: all 0.3s; }
+    .mobile-menu { display: none; position: fixed; top: 60px; right: 1.5rem; width: 220px; background: rgba(10,10,10,0.97); border: 1px solid rgba(201,168,76,0.2); border-radius: 4px; z-index: 150; flex-direction: column; padding: 1.2rem 1.5rem; gap: 1.2rem; backdrop-filter: blur(8px); }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { color: var(--white); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+    .mobile-menu a:hover { color: var(--gold); }
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .hamburger { display: flex; }
+      .nav-links { display: none !important; }
+      .page-header { padding: 7rem 1.5rem 3rem; }
+      .status-bar, .timeline { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .update-entry { grid-template-columns: 60px 1fr; gap: 1.2rem; }
+      .status-card { flex-direction: column; align-items: flex-start; }
+      .status-time { text-align: left; }
+      .memorial-block { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Peck's Mission</a>
+  <ul class="nav-links">
+    <li><a href="about.html">My Story</a></li>
+    <li><a href="chiari.html">What is Chiari</a></li>
+    <li><a href="blog.html">Updates</a></li>
+    <li><a href="follow-along.html">Follow Along</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMobile()">Home</a>
+  <a href="about.html" onclick="closeMobile()">My Story</a>
+  <a href="chiari.html" onclick="closeMobile()">What is Chiari</a>
+  <a href="blog.html" onclick="closeMobile()">Updates</a>
+  <a href="follow-along.html" onclick="closeMobile()">Follow Along</a>
+</div>
+
+<div class="page-header">
+  <p class="page-eyebrow">February 26, 2026 &nbsp;·&nbsp; Vanderbilt University Medical Center</p>
+  <h1 class="page-title">Surgery Day</h1>
+  <p class="page-sub">Today's the day. His family is with him. We'll update this page throughout the day as we hear anything — refresh for the latest. For anyone going through this with their own person one day: this is what surgery day looks like from the waiting room, step by step.</p>
+</div>
+
+<!-- ================================================================
+     FRIEND — UPDATE THESE TWO LINES EVERY TIME YOU POST AN ENTRY.
+     Status options: Checking In / In Surgery / Surgery Complete /
+     In Recovery / Waking Up / Awake & Stable / Resting /
+     ICU — Monitoring / Critical
+     ================================================================ -->
+<div class="status-bar">
+  <div class="status-card">
+    <div>
+      <p class="status-label">Current Status</p>
+      <p class="status-text">Checking In</p>
+    </div>
+    <p class="status-time">Last updated<br>11:00 AM</p>
+  </div>
+</div>
+<!-- ================================================================ -->
+
+<div class="timeline">
+  <p class="timeline-label">Updates — Newest First</p>
+
+  <!-- ================================================================
+  FRIEND — PASTE NEW ENTRIES RIGHT HERE AT THE TOP EACH TIME.
+
+  TEMPLATE:
+  <div class="update-entry">
+    <div class="update-time">9:30<span class="ampm">AM</span></div>
+    <div class="update-content">
+      <p class="update-tag">Tag</p>
+      <h2 class="update-headline">Headline</h2>
+      <div class="update-body">
+        <p>What his parents told you.</p>
+      </div>
+    </div>
+  </div>
+
+  TO ADD A PHOTO (inside update-body):
+  <img src="filename.jpg" alt="description" class="update-photo">
+  <p class="update-photo-caption">Caption</p>
+  ================================================================ -->
+
+
+  <!-- ============================================================
+  PRE-SURGERY 1 — LEFT THE HOUSE.
+  Post when his parents text you that they're on the way.
+  ============================================================ -->
+  <!--
+  <div class="update-entry">
+    <div class="update-time">10:15<span class="ampm">AM</span></div>
+    <div class="update-content">
+      <p class="update-tag">On the Way</p>
+      <h2 class="update-headline">Left the House.</h2>
+      <div class="update-body">
+        <p>He left the house at 10:15. Surgery is at 1. His family is with him.</p>
+        <p>He's been NPO since midnight — nothing to eat, no clear liquids since 8 AM. That's standard before a general anesthetic. By the time you're leaving the house on surgery day, the waiting has already been going on for hours. The last meal, the last normal morning. You're just moving through the steps now.</p>
+        <p>He's been ready for this for a while. Today he gets to the other side of it.</p>
+      </div>
+    </div>
+  </div>
+  -->
+
+
+  <!-- ============================================================
+  PRE-SURGERY 2 — ARRIVED AT VANDERBILT.
+  Post when they text you they've pulled in.
+  ============================================================ -->
+  <!--
+  <div class="update-entry">
+    <div class="update-time">10:45<span class="ampm">AM</span></div>
+    <div class="update-content">
+      <p class="update-tag">Arrived</p>
+      <h2 class="update-headline">At Vanderbilt.</h2>
+      <div class="update-body">
+        <p>They're there. Pulled in at 10:45 and heading inside to check in. This is the part where the building becomes real. You've been thinking about it for weeks and now you're walking through the door.</p>
+        <p>For anyone reading this on the way to their own surgery day — Vanderbilt's neurosurgery team is world-class. You're in the right place.</p>
+      </div>
+    </div>
+  </div>
+  -->
+
+
+  <!-- ============================================================
+  PRE-SURGERY 3 — CHECKED IN.
+  Post when they've checked in and are getting settled.
+  ============================================================ -->
+  <!--
+  <div class="update-entry">
+    <div class="update-time">11:00<span class="ampm">AM</span></div>
+    <div class="update-content">
+      <p class="update-tag">Checked In</p>
+      <h2 class="update-headline">Checked In. Two Hours Out.</h2>
+      <div class="update-body">
+        <p>Checked in at Vanderbilt. Surgery is at 1. His family is with him — they'll be able to stay with him through pre-op before he goes back.</p>
+        <p>Check-in for a surgery like this involves paperwork, ID verification, a final review of the consent forms. The team confirms everything one more time. It can feel slow when all you want is to get it done. That's normal. The waiting room is designed for this. You just have to be in it.</p>
+      </div>
+    </div>
+  </div>
+  -->
+
+
+  <!-- ============================================================
+  PRE-SURGERY 4 — PRE-OP.
+  Post when he's been taken back for pre-op prep.
+  ============================================================ -->
+  <!--
+  <div class="update-entry">
+    <div class="update-time">[TIME]<span class="ampm">AM</span></div>
+    <div class="update-content">
+      <p class="update-tag">Pre-Op</p>
+      <h2 class="update-headline">In Pre-Op.</h2>
+      <div class="update-body">
+        <p>He's been taken back to pre-op. His family was with him until he went through the doors. Now they wait.</p>
+        <p>Pre-op is where the IV goes in, vitals get checked one more time, the anesthesiologist comes to talk through the plan, and the surgical team does their final briefing. It can take anywhere from 30 minutes to an hour depending on how the schedule runs. The family is in the waiting room. The next update will be when he goes back to the OR.</p>
+      </div>
+    </div>
+  </div>
+  -->
+
+
+  <!-- ============================================================
+  WAITING ROOM UPDATE 1 — "Your family member has been taken back to the OR."
+  Uncomment when you get this call. Fill in the time.
+  ============================================================ -->
+  <!--
+  <div class="update-entry">
+    <div class="update-time">[TIME]<span class="ampm">PM</span></div>
+    <div class="update-content">
+      <p class="update-tag">OR</p>
+      <h2 class="update-headline">He's Back There.</h2>
+      <div class="update-body">
+        <p>He's been taken back to the OR. The waiting room desk called the family to let them know — that's how you hear it at Vanderbilt, a call or an update at the desk. His family is together. It's in the Lord's hands now.</p>
+        <p>For families going through this — once they take your person back, the OR team is doing final prep: positioning, draping, getting the anesthetic going. Surgery won't start the moment they go back. There's still 20–30 minutes of setup. The clock on the actual procedure starts when the surgeon makes the first incision.</p>
+      </div>
+    </div>
+  </div>
+  -->
+
+
+  <!-- ============================================================
+  WAITING ROOM UPDATE 2 — "Surgery has begun."
+  ============================================================ -->
+  <!--
+  <div class="update-entry">
+    <div class="update-time">[TIME]<span class="ampm">PM</span></div>
+    <div class="update-content">
+      <p class="update-tag">In Surgery</p>
+      <h2 class="update-headline">Surgery Has Started.</h2>
+      <div class="update-body">
+        <p>Surgery has begun. The desk confirmed it. His family is in the waiting room. We're praying and holding on.</p>
+        <p>A suboccipital craniectomy with C1 laminectomy and duraplasty — the procedure Joe is having — typically runs three to five hours. The surgeon removes a small section of bone at the base of the skull to create space for the brainstem, removes the C1 arch for additional room, then opens and expands the dura — the covering of the brain — with a patch. It's meticulous work. The timeline is long by design. No news from the desk during surgery is good news.</p>
+      </div>
+    </div>
+  </div>
+  -->
+
+
+  <!-- ============================================================
+  WAITING ROOM UPDATE 3 — "Surgery is still ongoing, everything is going as expected."
+  ============================================================ -->
+  <!--
+  <div class="update-entry waiting">
+    <div class="update-time">[TIME]<span class="ampm">PM</span></div>
+    <div class="update-content">
+      <p class="update-tag">Still In Surgery</p>
+      <h2 class="update-headline">Still In There. Going As Expected.</h2>
+      <div class="update-body">
+        <p>Got a check-in from the team — surgery is still ongoing and everything is going as expected. His family is still in the waiting room. Still here. Still praying.</p>
+        <p>The surgical team at Vanderbilt provides periodic check-in calls to the waiting room during long procedures. Hearing "still ongoing, going as expected" is exactly what you want. It means the surgeon is moving through the steps, nothing unexpected has come up, and the team isn't rushing. We'll update when he's out.</p>
+      </div>
+    </div>
+  </div>
+  -->
+
+
+  <!-- ============================================================
+  WAITING ROOM UPDATE 4 — "Surgery is complete, the surgeon will be out to speak with you shortly."
+  ============================================================ -->
+  <!--
+  <div class="update-entry">
+    <div class="update-time">[TIME]<span class="ampm">PM</span></div>
+    <div class="update-content">
+      <p class="update-tag">Surgery Complete</p>
+      <h2 class="update-headline">He's Out of Surgery.</h2>
+      <div class="update-body">
+        <p>Surgery is done. The desk let the family know — the surgeon will be out to speak with them shortly. We'll post again as soon as that conversation happens.</p>
+        <p>This is the update families wait for all day. When the desk says "surgery is complete and the surgeon will be out to speak with you" — that's the signal that the procedure is finished and the patient is being closed and stabilized. The surgeon comes out to give the family the report in person before the patient moves to recovery. That conversation is next.</p>
+      </div>
+    </div>
+  </div>
+  -->
+
+
+  <!-- ============================================================
+  WAITING ROOM UPDATE 5 — "Your family member is in recovery."
+  ============================================================ -->
+  <!--
+  <div class="update-entry">
+    <div class="update-time">[TIME]<span class="ampm">PM</span></div>
+    <div class="update-content">
+      <p class="update-tag">In Recovery</p>
+      <h2 class="update-headline">He's in Recovery.</h2>
+      <div class="update-body">
+        <p>He's been moved to recovery. His family hasn't been back to see him yet — that comes after he's stable and the team says it's okay. He made it through the surgery. That's what we know right now.</p>
+        <p>The post-anesthesia care unit — recovery — is where the anesthetic wears off under close monitoring. Vitals, neuro checks, pain management. For a brain surgery this size, the team is watching for any early signs of swelling or bleeding. It typically takes one to two hours before family can go back. The patient usually isn't fully conscious yet. That comes in stages.</p>
+      </div>
+    </div>
+  </div>
+  -->
+
+
+  <!-- ============================================================
+  WAITING ROOM UPDATE 6 — "Your family member is being moved to the Neuro ICU."
+  ============================================================ -->
+  <!--
+  <div class="update-entry">
+    <div class="update-time">[TIME]<span class="ampm">PM</span></div>
+    <div class="update-content">
+      <p class="update-tag">Neuro ICU</p>
+      <h2 class="update-headline">Being Moved to the Neuro ICU.</h2>
+      <div class="update-body">
+        <p>He's being moved to the Neuro ICU. His family will be able to go back soon.</p>
+        <p>The Neuro ICU after a suboccipital craniectomy is standard — not a sign that something went wrong. This is the plan. After a surgery this close to the brainstem, the team monitors continuously for the first 24 hours: neuro checks every hour, blood pressure management, pain control, watching for any signs of swelling or CSF leak. Joe worked in a neuro trauma bay. He knew this was where he was going. It's where he belongs right now.</p>
+      </div>
+    </div>
+  </div>
+  -->
+
+
+  <!-- ============================================================
+  WAITING ROOM UPDATE 7 — "Your family member is settled in the Neuro ICU, you can go back soon."
+  ============================================================ -->
+  <!--
+  <div class="update-entry">
+    <div class="update-time">[TIME]<span class="ampm">PM</span></div>
+    <div class="update-content">
+      <p class="update-tag">Neuro ICU — Settled</p>
+      <h2 class="update-headline">Family Is Going Back.</h2>
+      <div class="update-body">
+        <p>He's settled in the Neuro ICU and his family is heading back to see him now. ICU visiting is limited — usually two people at a time, short windows. But they get to see him. We'll post when they do.</p>
+      </div>
+    </div>
+  </div>
+  -->
+
+
+  <!-- ============================================================
+  SURGEON UPDATE A — "Everything went as planned."
+  ============================================================ -->
+  <!--
+  <div class="update-entry">
+    <div class="update-time">[TIME]<span class="ampm">PM</span></div>
+    <div class="update-content">
+      <p class="update-tag">Surgeon's Report</p>
+      <h2 class="update-headline">Everything Went As Planned.</h2>
+      <div class="update-body">
+        <p>The surgeon came out and spoke with the family. Everything went as planned. No surprises. He's stable. His family heard those words and that was enough for right now.</p>
+        <p>"Everything went as planned" from a neurosurgeon means the decompression was achieved, no unexpected bleeding or complications arose, and the patient is stable coming out of anesthetic. For a Chiari surgery, it means the brainstem now has the room it's never had. The work is done. Recovery starts now.</p>
+        <p>He's on the other side of it. February 26th is done.</p>
+      </div>
+    </div>
+  </div>
+  -->
+
+
+  <!-- ============================================================
+  SURGEON UPDATE B — "There were some complications but we were able to manage them."
+  ============================================================ -->
+  <!--
+  <div class="update-entry serious">
+    <div class="update-time">[TIME]<span class="ampm">PM</span></div>
+    <div class="update-content">
+      <p class="update-tag">Surgeon's Report</p>
+      <h2 class="update-headline">There Were Complications. They Managed Them.</h2>
+      <div class="update-body">
+        <p>The surgeon came out and was honest with the family. There were some complications during surgery — but the team was able to manage them. He is stable.</p>
+        <p>[FILL IN any additional details the surgeon shared, if his family wants them posted.]</p>
+        <p>Complications during Chiari decompression surgery can include bleeding, CSF leak, or issues with the dural patch. "We were able to manage them" means the surgical team identified what was happening and addressed it before closing. He's stable. That's the most important word right now. For families hearing this — stable means the crisis was handled. The road ahead may be longer, but he came through the surgery.</p>
+        <p>He knew going in this could go sideways. He planned for it. His family is with him.</p>
+      </div>
+    </div>
+  </div>
+  -->
+
+
+  <!-- ============================================================
+  SURGEON UPDATE C — "The surgery took longer than expected but they are stable."
+  ============================================================ -->
+  <!--
+  <div class="update-entry serious">
+    <div class="update-time">[TIME]<span class="ampm">PM</span></div>
+    <div class="update-content">
+      <p class="update-tag">Surgeon's Report</p>
+      <h2 class="update-headline">Took Longer Than Expected. He's Stable.</h2>
+      <div class="update-body">
+        <p>Surgery took longer than expected. The surgeon came out and let the family know — it went long, but he is stable.</p>
+        <p>[FILL IN any additional details the surgeon shared, if his family wants them posted.]</p>
+        <p>A longer surgery doesn't automatically mean something went wrong. Chiari decompressions can run long when the anatomy is more complex than imaging suggested, when the surgeon needs more time to safely achieve the decompression, or when additional scar tissue is encountered. Stable coming out of a longer surgery is still a good outcome. His family heard that word. We'll update as we know more.</p>
+      </div>
+    </div>
+  </div>
+  -->
+
+
+  <!-- ============================================================
+  SURGEON UPDATE D — "We have some concerns and are monitoring closely."
+  ============================================================ -->
+  <!--
+  <div class="update-entry serious">
+    <div class="update-time">[TIME]<span class="ampm">PM</span></div>
+    <div class="update-content">
+      <p class="update-tag">Monitoring Closely</p>
+      <h2 class="update-headline">The Team Has Some Concerns.</h2>
+      <div class="update-body">
+        <p>The surgeon spoke with the family. Surgery is complete but the team has some concerns and is monitoring him closely. His family is together. They're holding on.</p>
+        <p>[FILL IN any additional details the surgeon shared, if his family wants them posted.]</p>
+        <p>"Monitoring closely" after a brain surgery means the team has identified something they want to watch — swelling, blood pressure, neurological response — and they're not prepared to give a full prognosis yet. It is not the same as a crisis. It means the next several hours matter and the team is on it. For families in this moment: ask questions, take notes, and don't rush anyone to give you answers they don't have yet. Joe wrote about this. He said seek God, take time, ask the right questions. His family is doing exactly that.</p>
+        <div class="verse-block">
+          <p class="verse-text">"My grace is sufficient for you, for my power is made perfect in weakness."</p>
+          <p class="verse-ref">— 2 Corinthians 12:9</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  -->
+
+
+  <!-- ============================================================
+  SURGEON UPDATE E — "We need to take them back to the OR."
+  ============================================================ -->
+  <!--
+  <div class="update-entry serious">
+    <div class="update-time">[TIME]<span class="ampm">PM</span></div>
+    <div class="update-content">
+      <p class="update-tag">Back to the OR</p>
+      <h2 class="update-headline">He's Going Back In.</h2>
+      <div class="update-body">
+        <p>The team needs to take him back to the OR. His family has been told. They're together. They're praying.</p>
+        <p>[FILL IN any additional details the surgeon shared, if his family wants them posted.]</p>
+        <p>A return to the OR after neurosurgery most often means the team has identified bleeding or a CSF pressure issue that needs to be addressed surgically. It is serious. It is also something surgical teams prepare for and are trained to handle. His family is not alone in that waiting room. We'll update when we hear more.</p>
+        <p>Please pray.</p>
+        <div class="verse-block">
+          <p class="verse-text">"Even though I walk through the valley of the shadow of death, I will fear no evil, for you are with me."</p>
+          <p class="verse-ref">— Psalm 23:4</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  -->
+
+
+  <!-- ============================================================
+  SURGEON UPDATE F — "We did everything we could. I'm so sorry."
+
+  This is the last entry. Read it now while you have a clear head.
+  Take whatever time you need before you post it.
+  His family comes first. The page can wait.
+
+  The words below are written in Joe's voice — based on everything
+  he wrote on this site. The theology is his. The framing is his.
+  His family should read it before you post it.
+  ============================================================ -->
+  <!--
+  <div class="update-entry">
+    <div class="update-time">[TIME]<span class="ampm">PM</span></div>
+    <div class="update-content">
+      <p class="update-tag">February 26, 2026</p>
+      <h2 class="update-headline">Joe Passed Away Today.</h2>
+      <div class="memorial-block">
+        <div class="memorial-body">
+          <p>The surgeon came out to speak with the family. They did everything they could.</p>
+          <p>Joe was 25 years old. He was a combat medic. A cardiovascular ICU nurse. A Chiari patient. A man who prayed for empathy and then became the patient he was praying for. He built this site because he believed the gap between provider and patient mattered — and that closing it could change how people are cared for.</p>
+          <p>He walked into this surgery with his eyes open. He wrote his living will. He said death is not defeat. He said to live is Christ, to die is gain. He meant it. He wasn't performing that faith — he lived it.</p>
+          <p>He didn't know what the other side of February 26th looked like. None of us did. Now he does.</p>
+          <p>[FILL IN — his family's words. What do they want people to know? This space is for them.]</p>
+          <p>[OPTIONAL — services, how to honor him, who to reach out to.]</p>
+          <p>This site will stay up. It's a record of who he was and what he was working toward. He didn't waste this. Not a single day of it.</p>
+        </div>
+        <div class="verse-block" style="margin-top:2rem;">
+          <p class="verse-text">"Fixing our eyes on Jesus, the pioneer and perfecter of faith, who for the joy set before him endured the cross, scorning its shame, and sat down at the right hand of the throne of God."</p>
+          <p class="verse-ref">— Hebrews 12:2</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  -->
+
+
+  <!-- ============================================================
+  POST-OP 1 — FAMILY HAS SEEN HIM IN RECOVERY.
+  Post when his parents text you they've been back to see him.
+  ============================================================ -->
+  <!--
+  <div class="update-entry">
+    <div class="update-time">[TIME]<span class="ampm">PM</span></div>
+    <div class="update-content">
+      <p class="update-tag">Recovery</p>
+      <h2 class="update-headline">His Family Has Seen Him.</h2>
+      <div class="update-body">
+        <p>[FILL IN — what did his parents say when they saw him? How does he look? Asleep, breathing on his own, any color in his face? One honest detail here means everything to the people reading.]</p>
+        <p>The first time family sees a patient after brain surgery, they're usually still heavily sedated and not responsive. That's normal. What you're watching for is that he's breathing, his color looks okay, and the monitors are steady. It can be hard to see him like that. It's also the proof that he made it through. Both things are true at once.</p>
+      </div>
+    </div>
+  </div>
+  -->
+
+
+  <!-- ============================================================
+  POST-OP 2 — FIRST SIGNS OF CONSCIOUSNESS.
+  Post when he starts coming around — eyes opening, responding
+  to his name, squeezing a hand. Anything.
+  ============================================================ -->
+  <!--
+  <div class="update-entry">
+    <div class="update-time">[TIME]<span class="ampm">PM</span></div>
+    <div class="update-content">
+      <p class="update-tag">Waking Up</p>
+      <h2 class="update-headline">He's Coming Around.</h2>
+      <div class="update-body">
+        <p>[FILL IN — what are his parents seeing? Eyes fluttering? Responding to his name? Squeezing a hand? Write exactly what they told you. Small things count here.]</p>
+        <p>Emergence from anesthesia after a procedure this long is gradual. The brain wakes up in layers — first reflexive responses, then awareness, then actual consciousness. Hearing his name, feeling a hand, knowing someone is in the room — that all comes before full wakefulness. Every small sign matters. His family is watching for all of it.</p>
+      </div>
+    </div>
+  </div>
+  -->
+
+
+  <!-- ============================================================
+  POST-OP 3 — AWAKE. CONSCIOUS. OKAY.
+  Post when he is clearly awake and communicating.
+  This is the one people have been waiting for all day.
+  ============================================================ -->
+  <!--
+  <div class="update-entry">
+    <div class="update-time">[TIME]<span class="ampm">PM</span></div>
+    <div class="update-content">
+      <p class="update-tag">Awake</p>
+      <h2 class="update-headline">He's Awake.</h2>
+      <div class="update-body">
+        <p>[FILL IN — he's awake. What did he say? What did his face look like? What did his parents say when they saw his eyes open and knew he was in there? This is the moment. Write what actually happened.]</p>
+        <p>For anyone reading this on the other side of their own surgery one day — waking up in the Neuro ICU after a Chiari decompression is disorienting. Pain at the back of the skull, a stiff neck, lights too bright, voices too loud. The anesthetic takes hours to fully clear. But waking up means the brainstem has space now that it's never had. The first hours are hard. The trajectory from here is forward.</p>
+        <p>He said he'd never met the version of himself on the other side of February 26th. He's meeting him now.</p>
+      </div>
+    </div>
+  </div>
+  -->
+
+
+  <!-- ============================================================
+  MORNING OF — JOE WRITES THIS HIMSELF BEFORE HE GOES IN.
+  He will update the blog and this page the morning of surgery.
+  Jonah — your job starts at PRE-SURGERY 1 at 10:15 AM.
+  Do not touch this section. Joe's post will appear here.
+  ============================================================ -->
+
+
+  <!-- ============================================================
+  HANDOFF — Uncomment when Joe is ready to write himself.
+  ============================================================ -->
+  <!--
+  <div class="handoff-block">
+    <p class="handoff-label">He's Back</p>
+    <p class="handoff-text">Joe is ready to write again. Head to the Updates page for his first post from the other side.</p>
+    <a href="blog.html" class="btn">Read His Update</a>
+  </div>
+  -->
+
+
+</div>
+
+<footer>
+  <div class="footer-logo">Peck's Mission</div>
+  <p class="footer-kipling">"And so hold on when there is nothing in you except the Will which says to them: Hold on."</p>
+  <p class="footer-line">— Rudyard Kipling, If</p>
+  <p class="footer-line" style="margin-top:0.8rem;color:#555;">"The ceiling you hit your whole life wasn't your ceiling. It was the condition's ceiling."</p>
+  <ul class="nav-footer">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="chiari.html">Chiari</a></li>
+    <li><a href="blog.html">Updates</a></li>
+    <li><a href="follow-along.html">Follow Along</a></li>
+  </ul>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  function closeMobile() { mobileMenu.classList.remove('open'); }
+  document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) closeMobile();
+  });
+</script>
+
+</body>
+</html>
