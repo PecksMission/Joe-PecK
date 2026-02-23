@@ -633,18 +633,18 @@
 </section>
 
 <script type="module">
-  import {{ initializeApp }} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-  import {{ getFirestore, collection, doc, addDoc, getDoc, setDoc, updateDoc, increment, query, orderBy, getDocs, serverTimestamp }}
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getFirestore, collection, doc, addDoc, getDoc, setDoc, updateDoc, increment, query, orderBy, getDocs, serverTimestamp }
     from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-  const firebaseConfig = {{
+  const firebaseConfig = {
     apiKey: "AIzaSyApK7IJBYNtw0WD74sHFaNKlMPLAqT1xbg",
     authDomain: "joes-mission.firebaseapp.com",
     projectId: "joes-mission",
     storageBucket: "joes-mission.firebasestorage.app",
     messagingSenderId: "81899759818",
     appId: "1:81899759818:web:5a8aaec3afd8c454b46c33"
-  }};
+  };
 
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
@@ -657,65 +657,65 @@
   // ── Top-level name toggle ──────────────────────────────────────
   const toggle = document.getElementById('cm-name-toggle');
   const nameInput = document.getElementById('cm-name');
-  toggle.addEventListener('click', function() {{
+  toggle.addEventListener('click', function() {
     toggle.classList.toggle('open');
     nameInput.classList.toggle('visible');
     if (nameInput.classList.contains('visible')) nameInput.focus();
-  }});
+  });
 
-  function fmt(ts) {{
+  function fmt(ts) {
     const d = ts && ts.toDate ? ts.toDate() : new Date(ts);
-    return d.toLocaleDateString('en-US', {{ month: 'short', day: 'numeric', year: 'numeric' }});
-  }}
+    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  }
 
   // ── Post-level salute ──────────────────────────────────────────
-  async function initPostSalute() {{
+  async function initPostSalute() {
     const btn = document.getElementById('post-salute-btn');
     const countEl = document.getElementById('post-salute-count');
     if (!btn) return;
     const postSaluteRef = doc(db, 'salutes', postKey);
     // Load count
-    try {{
+    try {
       const snap = await getDoc(postSaluteRef);
       const count = snap.exists() ? (snap.data().count || 0) : 0;
       countEl.textContent = count;
-    }} catch(e) {{ console.error(e); }}
+    } catch(e) { console.error(e); }
     // Restore local saluted state
     if (sessionStorage.getItem(saluteStorage)) btn.classList.add('saluted');
-    btn.addEventListener('click', async function() {{
+    btn.addEventListener('click', async function() {
       if (btn.classList.contains('saluted')) return; // one salute per session
       btn.classList.add('saluted');
       sessionStorage.setItem(saluteStorage, '1');
-      try {{
+      try {
         const snap = await getDoc(postSaluteRef);
-        if (snap.exists()) {{
-          await updateDoc(postSaluteRef, {{ count: increment(1) }});
-        }} else {{
-          await setDoc(postSaluteRef, {{ count: 1 }});
-        }}
+        if (snap.exists()) {
+          await updateDoc(postSaluteRef, { count: increment(1) });
+        } else {
+          await setDoc(postSaluteRef, { count: 1 });
+        }
         const newSnap = await getDoc(postSaluteRef);
         countEl.textContent = newSnap.data().count;
-      }} catch(e) {{ console.error(e); }}
-    }});
-  }}
+      } catch(e) { console.error(e); }
+    });
+  }
 
   // ── Build tree from flat list ──────────────────────────────────
-  function buildTree(docs) {{
-    const map = {{}};
+  function buildTree(docs) {
+    const map = {};
     const roots = [];
-    docs.forEach(d => {{ map[d.id] = {{ data: d.data(), id: d.id, children: [] }}; }});
-    docs.forEach(d => {{
+    docs.forEach(d => { map[d.id] = { data: d.data(), id: d.id, children: [] }; });
+    docs.forEach(d => {
       const node = map[d.id];
       const pid = node.data.parentId || null;
-      if (pid && map[pid]) {{ map[pid].children.push(node); }}
-      else {{ roots.push(node); }}
-    }});
+      if (pid && map[pid]) { map[pid].children.push(node); }
+      else { roots.push(node); }
+    });
     return roots;
-  }}
+  }
 
   // ── Build a comment element ────────────────────────────────────
-  function buildEl(node, depth) {{
-    const {{ data: c, id: docId, children }} = node;
+  function buildEl(node, depth) {
+    const { data: c, id: docId, children } = node;
     const item = document.createElement('div');
     item.className = 'comment-item';
 
@@ -756,17 +756,17 @@
     saluteBtn.appendChild(saluteCount);
     const commentSaluteKey = 'saluted:' + postKey + ':' + docId;
     if (sessionStorage.getItem(commentSaluteKey)) saluteBtn.classList.add('saluted');
-    saluteBtn.addEventListener('click', async function() {{
+    saluteBtn.addEventListener('click', async function() {
       if (saluteBtn.classList.contains('saluted')) return;
       saluteBtn.classList.add('saluted');
       sessionStorage.setItem(commentSaluteKey, '1');
       const current = parseInt(saluteCount.textContent) || 0;
       saluteCount.textContent = current + 1;
-      try {{
+      try {
         const ref = doc(db, 'comments', postKey, 'entries', docId);
-        await updateDoc(ref, {{ salutes: increment(1) }});
-      }} catch(e) {{ console.error(e); saluteCount.textContent = current; }}
-    }});
+        await updateDoc(ref, { salutes: increment(1) });
+      } catch(e) { console.error(e); saluteCount.textContent = current; }
+    });
     actions.appendChild(saluteBtn);
 
     // Reply button
@@ -777,7 +777,7 @@
 
     // Expand replies button (only if children exist)
     let expandBtn = null;
-    if (children.length > 0) {{
+    if (children.length > 0) {
       expandBtn = document.createElement('button');
       expandBtn.className = 'expand-replies-btn';
       const caret = document.createElement('span');
@@ -788,7 +788,7 @@
       expandBtn.appendChild(caret);
       expandBtn.appendChild(label);
       actions.appendChild(expandBtn);
-    }}
+    }
 
     item.appendChild(actions);
 
@@ -811,82 +811,82 @@
     item.appendChild(childrenWrap);
 
     // ── Event listeners ──────────────────────────────────────────
-    if (expandBtn) {{
-      expandBtn.addEventListener('click', () => {{
+    if (expandBtn) {
+      expandBtn.addEventListener('click', () => {
         const isOpen = childrenWrap.classList.toggle('open');
         expandBtn.classList.toggle('open', isOpen);
         const label = expandBtn.querySelector('span:last-child');
         label.textContent = (isOpen ? '\u25be ' : '') + children.length + (children.length === 1 ? ' reply' : ' replies');
-      }});
-    }}
+      });
+    }
 
-    replyBtn.addEventListener('click', () => {{
+    replyBtn.addEventListener('click', () => {
       replyForm.classList.toggle('open');
       if (replyForm.classList.contains('open')) replyForm.querySelector('textarea').focus();
-    }});
+    });
 
-    replyForm.querySelector('.reply-cancel').addEventListener('click', () => {{
+    replyForm.querySelector('.reply-cancel').addEventListener('click', () => {
       replyForm.classList.remove('open');
       replyForm.querySelector('textarea').value = '';
       replyForm.querySelector('.reply-name-input').value = '';
-    }});
+    });
 
-    replyForm.querySelector('.reply-submit').addEventListener('click', async function() {{
+    replyForm.querySelector('.reply-submit').addEventListener('click', async function() {
       const text = replyForm.querySelector('textarea').value.trim();
       if (!text) return;
       const name = replyForm.querySelector('.reply-name-input').value.trim();
       this.textContent = 'Posting\u2026';
       this.disabled = true;
-      try {{
-        await addDoc(colRef, {{ name, text, parentId: docId, ts: serverTimestamp() }});
+      try {
+        await addDoc(colRef, { name, text, parentId: docId, ts: serverTimestamp() });
         replyForm.querySelector('textarea').value = '';
         replyForm.querySelector('.reply-name-input').value = '';
         replyForm.classList.remove('open');
         await load();
-      }} catch(e) {{ console.error('Failed to post reply:', e); }}
+      } catch(e) { console.error('Failed to post reply:', e); }
       this.textContent = 'Post reply';
       this.disabled = false;
-    }});
+    });
 
     return item;
-  }}
+  }
 
   // ── Render ─────────────────────────────────────────────────────
-  function render(docs) {{
+  function render(docs) {
     const list = document.getElementById('cm-list');
     list.innerHTML = '';
-    if (!docs || !docs.length) {{
+    if (!docs || !docs.length) {
       list.innerHTML = '<p class="comment-empty">No comments yet. Be the first.</p>';
       return;
-    }}
+    }
     buildTree(docs).forEach(node => list.appendChild(buildEl(node, 0)));
-  }}
+  }
 
-  async function load() {{
-    try {{
+  async function load() {
+    try {
       const q = query(colRef, orderBy('ts', 'asc'));
       const snap = await getDocs(q);
       render(snap.docs);
-    }} catch(e) {{ console.error('Failed to load comments:', e); render([]); }}
-  }}
+    } catch(e) { console.error('Failed to load comments:', e); render([]); }
+  }
 
   // ── Post top-level comment ──────────────────────────────────────
-  document.getElementById('cm-submit').addEventListener('click', async function() {{
+  document.getElementById('cm-submit').addEventListener('click', async function() {
     const text = document.getElementById('cm-text').value.trim();
     if (!text) return;
     const name = nameInput.value.trim();
     const btn = document.getElementById('cm-submit');
     btn.textContent = 'Posting\u2026';
     btn.disabled = true;
-    try {{
-      await addDoc(colRef, {{ name, text, parentId: null, ts: serverTimestamp() }});
+    try {
+      await addDoc(colRef, { name, text, parentId: null, ts: serverTimestamp() });
       document.getElementById('cm-text').value = '';
       nameInput.value = '';
       await load();
-    }} catch(e) {{ console.error('Failed to post comment:', e); }}
+    } catch(e) { console.error('Failed to post comment:', e); }
     btn.textContent = 'Post';
     btn.disabled = false;
-  }});
+  });
 
   load();
   initPostSalute();
