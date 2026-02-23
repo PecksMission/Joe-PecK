@@ -19,6 +19,7 @@
   <meta property="og:url" content="https://www.pecksmission.com/blog" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://www.pecksmission.com/blog.html" />
   <title>Updates — Peck's Mission</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -180,7 +181,7 @@
 
 <script>
   function updateCountdown() {
-    const target = new Date('2026-02-26T13:00:00-06:00');
+    const target = new Date('2026-02-26T13:00:00');
     const now = new Date();
     const diff = target - now;
     if (diff <= 0) { document.getElementById('cd-days').textContent='0'; document.getElementById('cd-hours').textContent='0'; document.getElementById('cd-mins').textContent='0'; document.getElementById('cd-secs').textContent='0'; return; }
@@ -228,7 +229,7 @@
 <div id="tldr-data" data-title="From The Field" style="display:none"></div>
 <script>
 (function(){
-  var points = ["Diagnosis. Community. Preparing for surgery. And why I built this in the first place.", "Surgery is February 26th — suboccipital craniectomy with C1 laminectomy and duraplasty.", "I'm writing all of it in real time. The clinical chart and the honest truth, side by side."];
+  var points = ["Four posts so far. Diagnosis. Community. Preparing for surgery. And why I built this in the first place.", "Surgery is February 26th — suboccipital craniectomy with C1 laminectomy and duraplasty.", "I'm writing all of it in real time. The clinical chart and the honest truth, side by side."];
   var title = "From The Field";
 
   var btn = document.createElement('button');
