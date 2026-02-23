@@ -290,45 +290,60 @@
   <div class="comment-list" id="cm-list"></div>
 </section>
 
-<script>
-(function(){
-  var section = document.getElementById('comments');
-  var postKey = 'comments:' + section.getAttribute('data-post');
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getFirestore, collection, addDoc, query, orderBy, getDocs, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-  var toggle = document.getElementById('cm-name-toggle');
-  var nameInput = document.getElementById('cm-name');
-  toggle.addEventListener('click', function(){
+  const firebaseConfig = {
+    apiKey: "AIzaSyApK7IJBYNtw0WD74sHFaNKlMPLAqT1xbg",
+    authDomain: "joes-mission.firebaseapp.com",
+    projectId: "joes-mission",
+    storageBucket: "joes-mission.firebasestorage.app",
+    messagingSenderId: "81899759818",
+    appId: "1:81899759818:web:5a8aaec3afd8c454b46c33"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  const section = document.getElementById('comments');
+  const postKey = section.getAttribute('data-post');
+  const colRef = collection(db, 'comments', postKey, 'entries');
+
+  const toggle = document.getElementById('cm-name-toggle');
+  const nameInput = document.getElementById('cm-name');
+  toggle.addEventListener('click', function() {
     toggle.classList.toggle('open');
     nameInput.classList.toggle('visible');
-    if(nameInput.classList.contains('visible')) nameInput.focus();
+    if (nameInput.classList.contains('visible')) nameInput.focus();
   });
 
-  function fmt(ts){
-    var d = new Date(ts);
-    return d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+  function fmt(ts) {
+    const d = ts && ts.toDate ? ts.toDate() : new Date(ts);
+    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
   }
 
-  function render(comments){
-    var list = document.getElementById('cm-list');
+  function render(comments) {
+    const list = document.getElementById('cm-list');
     list.innerHTML = '';
-    if(!comments || !comments.length){
+    if (!comments || !comments.length) {
       list.innerHTML = '<p class="comment-empty">No comments yet. Be the first.</p>';
       return;
     }
-    comments.forEach(function(c){
-      var item = document.createElement('div');
+    comments.forEach(function(c) {
+      const item = document.createElement('div');
       item.className = 'comment-item';
-      var header = document.createElement('div');
+      const header = document.createElement('div');
       header.className = 'comment-item-header';
-      var nameEl = document.createElement('span');
+      const nameEl = document.createElement('span');
       nameEl.className = 'comment-item-name';
       nameEl.textContent = c.name || 'Anonymous';
-      var dateEl = document.createElement('span');
+      const dateEl = document.createElement('span');
       dateEl.className = 'comment-item-date';
       dateEl.textContent = fmt(c.ts);
       header.appendChild(nameEl);
       header.appendChild(dateEl);
-      var textEl = document.createElement('p');
+      const textEl = document.createElement('p');
       textEl.className = 'comment-item-text';
       textEl.textContent = c.text;
       item.appendChild(header);
@@ -337,40 +352,38 @@
     });
   }
 
-  async function load(){
-    try{
-      var res = await window.storage.get(postKey, true);
-      render(res ? JSON.parse(res.value) : []);
-    } catch(e){ render([]); }
+  async function load() {
+    try {
+      const q = query(colRef, orderBy('ts', 'asc'));
+      const snap = await getDocs(q);
+      const comments = snap.docs.map(d => d.data());
+      render(comments);
+    } catch(e) {
+      console.error('Failed to load comments:', e);
+      render([]);
+    }
   }
 
-  document.getElementById('cm-submit').addEventListener('click', async function(){
-    var text = document.getElementById('cm-text').value.trim();
-    if(!text) return;
-    var name = nameInput.value.trim();
-    var btn = document.getElementById('cm-submit');
+  document.getElementById('cm-submit').addEventListener('click', async function() {
+    const text = document.getElementById('cm-text').value.trim();
+    if (!text) return;
+    const name = nameInput.value.trim();
+    const btn = document.getElementById('cm-submit');
     btn.textContent = 'Posting…';
     btn.disabled = true;
-    try{
-      var existing = [];
-      try{
-        var res = await window.storage.get(postKey, true);
-        if(res) existing = JSON.parse(res.value);
-      } catch(e){}
-      existing.push({name: name, text: text, ts: Date.now()});
-      await window.storage.set(postKey, JSON.stringify(existing), true);
+    try {
+      await addDoc(colRef, { name: name, text: text, ts: serverTimestamp() });
       document.getElementById('cm-text').value = '';
       nameInput.value = '';
-      render(existing);
-    } catch(e){
-      console.error(e);
+      await load();
+    } catch(e) {
+      console.error('Failed to post comment:', e);
     }
     btn.textContent = 'Post';
     btn.disabled = false;
   });
 
   load();
-})();
 </script>
 
 
