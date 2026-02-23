@@ -502,27 +502,59 @@
   .comment-item-header{display:flex;align-items:baseline;gap:0.75rem;margin-bottom:0.3rem;}
   .comment-item-name{font-family:'DM Mono',monospace;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);}
   .comment-item-date{font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--gray-light);}
-  .comment-item-text{font-family:'Crimson Pro',serif;font-size:1rem;font-weight:300;color:#c8c2b5;line-height:1.7;margin:0 0 0.5rem;}
+  .comment-item-text{font-family:'Crimson Pro',serif;font-size:1rem;font-weight:300;color:#c8c2b5;line-height:1.7;margin:0 0 0.6rem;}
   .comment-empty{font-family:'Crimson Pro',serif;font-size:0.95rem;font-style:italic;color:var(--gray-light);}
+  /* Action bar: salute + reply + expand */
+  .comment-actions{display:flex;align-items:center;gap:1.1rem;margin-top:0.1rem;}
+  /* Salute button */
+  .salute-btn{background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:0.35rem;padding:0;line-height:1;}
+  .salute-btn .salute-emoji{font-size:1rem;filter:grayscale(1) brightness(2) opacity(0.3);transition:filter 0.2s,transform 0.15s;display:inline-block;}
+  .salute-btn:hover .salute-emoji{filter:grayscale(1) brightness(6) opacity(0.7);transform:scale(1.15);}
+  .salute-btn.saluted .salute-emoji{filter:grayscale(1) brightness(10) opacity(1);transform:scale(1.2);}
+  .salute-count{font-family:'DM Mono',monospace;font-size:0.7rem;color:rgba(255,255,255,0.2);transition:color 0.2s;}
+  .salute-btn.saluted .salute-count{color:rgba(255,255,255,0.75);}
   /* Reply button */
   .comment-reply-btn{background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray-light);padding:0;transition:color 0.2s;}
   .comment-reply-btn:hover{color:var(--gold);}
-  /* Inline reply form */
+  /* Expand replies button */
+  .expand-replies-btn{background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray-light);padding:0;transition:color 0.2s;display:flex;align-items:center;gap:0.3rem;}
+  .expand-replies-btn:hover{color:var(--gold);}
+  .expand-replies-btn .expand-caret{display:inline-block;transition:transform 0.2s;font-style:normal;font-size:0.6rem;}
+  .expand-replies-btn.open .expand-caret{transform:rotate(90deg);}
+  /* Reply form */
   .reply-form{display:none;flex-direction:column;gap:0.5rem;margin-top:0.75rem;}
   .reply-form.open{display:flex;}
   .reply-form .comment-textarea{min-height:60px;font-size:0.95rem;}
-  .reply-name-row{display:flex;align-items:center;gap:0.6rem;}
-  .reply-name-input{background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.18);border-radius:2px;color:var(--white);font-family:'Crimson Pro',serif;font-size:0.9rem;padding:0.4rem 0.75rem;outline:none;flex:1;transition:border-color 0.2s;}
+  .reply-name-row{display:flex;align-items:center;gap:0.6rem;flex-wrap:wrap;}
+  .reply-name-input{background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.18);border-radius:2px;color:var(--white);font-family:'Crimson Pro',serif;font-size:0.9rem;padding:0.4rem 0.75rem;outline:none;flex:1;min-width:120px;transition:border-color 0.2s;}
   .reply-name-input:focus{border-color:rgba(201,168,76,0.5);}
   .reply-name-input::placeholder{color:var(--gray-light);}
   .reply-submit{background:transparent;border:1px solid rgba(201,168,76,0.35);color:var(--gold);font-family:'DM Mono',monospace;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;padding:0.4rem 1rem;cursor:pointer;border-radius:2px;transition:background 0.2s,color 0.2s;}
   .reply-submit:hover{background:var(--gold);color:var(--black);}
   .reply-cancel{background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray-light);padding:0;transition:color 0.2s;}
   .reply-cancel:hover{color:var(--white);}
-  /* Replies list */
-  .replies-list{margin-top:0.9rem;display:flex;flex-direction:column;gap:0.9rem;padding-left:1rem;border-left:1px solid rgba(201,168,76,0.1);}
-  .reply-item .comment-item-name{color:rgba(201,168,76,0.75);}
-  @media(max-width:640px){.comments-wrap{padding:0 1.5rem 4rem;}.comment-name-input.visible{max-width:180px;}}
+  /* Thread children — hidden by default */
+  .comment-children{margin-top:0.9rem;display:none;flex-direction:column;gap:0.9rem;padding-left:1.1rem;border-left:1px solid rgba(201,168,76,0.1);}
+  .comment-children.open{display:flex;}
+  /* Post-level salute */
+  .post-salute-wrap{display:flex;justify-content:center;margin:2rem 0 0.5rem;}
+  .post-salute-btn{background:none;border:1px solid rgba(255,255,255,0.08);border-radius:4px;cursor:pointer;display:flex;align-items:center;gap:0.5rem;padding:0.55rem 1.2rem;transition:border-color 0.2s;}
+  .post-salute-btn:hover{border-color:rgba(255,255,255,0.25);}
+  .post-salute-btn.saluted{border-color:rgba(255,255,255,0.45);}
+  .post-salute-btn .salute-emoji{font-size:1.2rem;filter:grayscale(1) brightness(2) opacity(0.25);transition:filter 0.2s,transform 0.15s;display:inline-block;}
+  .post-salute-btn:hover .salute-emoji{filter:grayscale(1) brightness(6) opacity(0.65);transform:scale(1.1);}
+  .post-salute-btn.saluted .salute-emoji{filter:grayscale(1) brightness(10) opacity(1);}
+  .post-salute-label{font-family:'DM Mono',monospace;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.2);transition:color 0.2s;}
+  .post-salute-btn:hover .post-salute-label{color:rgba(255,255,255,0.5);}
+  .post-salute-btn.saluted .post-salute-label{color:rgba(255,255,255,0.8);}
+  .post-salute-count{font-family:'DM Mono',monospace;font-size:0.72rem;color:rgba(255,255,255,0.2);transition:color 0.2s;}
+  .post-salute-btn:hover .post-salute-count{color:rgba(255,255,255,0.5);}
+  .post-salute-btn.saluted .post-salute-count{color:rgba(255,255,255,0.8);}
+  @media(max-width:640px){
+    .comments-wrap{padding:0 1.5rem 4rem;}
+    .comment-name-input.visible{max-width:180px;}
+    .comment-children{padding-left:0.6rem;}
+  }
 </style>
 
 <section class="comments-wrap" id="comments" data-post="post-one">
@@ -539,20 +571,28 @@
     <button class="comment-submit" id="cm-submit" type="button">Post</button>
   </div>
   <div class="comment-list" id="cm-list"></div>
+  <div class="post-salute-wrap">
+    <button class="post-salute-btn" id="post-salute-btn" type="button">
+      <span class="salute-emoji">🫡</span>
+      <span class="post-salute-label">Salute</span>
+      <span class="post-salute-count" id="post-salute-count">0</span>
+    </button>
+  </div>
 </section>
 
 <script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-  import { getFirestore, collection, addDoc, query, orderBy, getDocs, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+  import {{ initializeApp }} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import {{ getFirestore, collection, doc, addDoc, getDoc, setDoc, updateDoc, increment, query, orderBy, getDocs, serverTimestamp }}
+    from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-  const firebaseConfig = {
+  const firebaseConfig = {{
     apiKey: "AIzaSyApK7IJBYNtw0WD74sHFaNKlMPLAqT1xbg",
     authDomain: "joes-mission.firebaseapp.com",
     projectId: "joes-mission",
     storageBucket: "joes-mission.firebasestorage.app",
     messagingSenderId: "81899759818",
     appId: "1:81899759818:web:5a8aaec3afd8c454b46c33"
-  };
+  }};
 
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
@@ -560,41 +600,86 @@
   const section = document.getElementById('comments');
   const postKey = section.getAttribute('data-post');
   const colRef = collection(db, 'comments', postKey, 'entries');
+  const saluteStorage = 'saluted:' + postKey;
 
   // ── Top-level name toggle ──────────────────────────────────────
   const toggle = document.getElementById('cm-name-toggle');
   const nameInput = document.getElementById('cm-name');
-  toggle.addEventListener('click', function() {
+  toggle.addEventListener('click', function() {{
     toggle.classList.toggle('open');
     nameInput.classList.toggle('visible');
     if (nameInput.classList.contains('visible')) nameInput.focus();
-  });
+  }});
 
-  function fmt(ts) {
+  function fmt(ts) {{
     const d = ts && ts.toDate ? ts.toDate() : new Date(ts);
-    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-  }
+    return d.toLocaleDateString('en-US', {{ month: 'short', day: 'numeric', year: 'numeric' }});
+  }}
 
-  // ── Build a single comment element (top-level or reply) ────────
-  function buildCommentEl(c, docId, isReply) {
+  // ── Post-level salute ──────────────────────────────────────────
+  async function initPostSalute() {{
+    const btn = document.getElementById('post-salute-btn');
+    const countEl = document.getElementById('post-salute-count');
+    if (!btn) return;
+    const postSaluteRef = doc(db, 'salutes', postKey);
+    // Load count
+    try {{
+      const snap = await getDoc(postSaluteRef);
+      const count = snap.exists() ? (snap.data().count || 0) : 0;
+      countEl.textContent = count;
+    }} catch(e) {{ console.error(e); }}
+    // Restore local saluted state
+    if (sessionStorage.getItem(saluteStorage)) btn.classList.add('saluted');
+    btn.addEventListener('click', async function() {{
+      if (btn.classList.contains('saluted')) return; // one salute per session
+      btn.classList.add('saluted');
+      sessionStorage.setItem(saluteStorage, '1');
+      try {{
+        const snap = await getDoc(postSaluteRef);
+        if (snap.exists()) {{
+          await updateDoc(postSaluteRef, {{ count: increment(1) }});
+        }} else {{
+          await setDoc(postSaluteRef, {{ count: 1 }});
+        }}
+        const newSnap = await getDoc(postSaluteRef);
+        countEl.textContent = newSnap.data().count;
+      }} catch(e) {{ console.error(e); }}
+    }});
+  }}
+
+  // ── Build tree from flat list ──────────────────────────────────
+  function buildTree(docs) {{
+    const map = {{}};
+    const roots = [];
+    docs.forEach(d => {{ map[d.id] = {{ data: d.data(), id: d.id, children: [] }}; }});
+    docs.forEach(d => {{
+      const node = map[d.id];
+      const pid = node.data.parentId || null;
+      if (pid && map[pid]) {{ map[pid].children.push(node); }}
+      else {{ roots.push(node); }}
+    }});
+    return roots;
+  }}
+
+  // ── Build a comment element ────────────────────────────────────
+  function buildEl(node, depth) {{
+    const {{ data: c, id: docId, children }} = node;
     const item = document.createElement('div');
-    item.className = isReply ? 'comment-item reply-item' : 'comment-item';
-    item.dataset.id = docId;
+    item.className = 'comment-item';
 
+    // Header
     const header = document.createElement('div');
     header.className = 'comment-item-header';
-
     const nameEl = document.createElement('span');
     nameEl.className = 'comment-item-name';
     nameEl.textContent = c.name || 'Anonymous';
-
     const dateEl = document.createElement('span');
     dateEl.className = 'comment-item-date';
     dateEl.textContent = fmt(c.ts);
-
     header.appendChild(nameEl);
     header.appendChild(dateEl);
 
+    // Text
     const textEl = document.createElement('p');
     textEl.className = 'comment-item-text';
     textEl.textContent = c.text;
@@ -602,138 +687,157 @@
     item.appendChild(header);
     item.appendChild(textEl);
 
-    if (!isReply) {
-      // Reply button
-      const replyBtn = document.createElement('button');
-      replyBtn.className = 'comment-reply-btn';
-      replyBtn.textContent = '↩ Reply';
-      item.appendChild(replyBtn);
+    // ── Action bar ───────────────────────────────────────────────
+    const actions = document.createElement('div');
+    actions.className = 'comment-actions';
 
-      // Inline reply form
-      const replyForm = document.createElement('div');
-      replyForm.className = 'reply-form';
-      replyForm.innerHTML = `
-        <textarea class="comment-textarea" placeholder="Write a reply…" rows="2"></textarea>
-        <div class="reply-name-row">
-          <input class="reply-name-input" type="text" placeholder="Your name (optional)" autocomplete="off" />
-          <button class="reply-submit" type="button">Post reply</button>
-          <button class="reply-cancel" type="button">Cancel</button>
-        </div>
-      `;
-      item.appendChild(replyForm);
+    // Salute button (per comment)
+    const saluteBtn = document.createElement('button');
+    saluteBtn.className = 'salute-btn';
+    const saluteEmoji = document.createElement('span');
+    saluteEmoji.className = 'salute-emoji';
+    saluteEmoji.textContent = '\uD83E\uDDE1'; // 🫡
+    const saluteCount = document.createElement('span');
+    saluteCount.className = 'salute-count';
+    saluteCount.textContent = c.salutes || 0;
+    saluteBtn.appendChild(saluteEmoji);
+    saluteBtn.appendChild(saluteCount);
+    const commentSaluteKey = 'saluted:' + postKey + ':' + docId;
+    if (sessionStorage.getItem(commentSaluteKey)) saluteBtn.classList.add('saluted');
+    saluteBtn.addEventListener('click', async function() {{
+      if (saluteBtn.classList.contains('saluted')) return;
+      saluteBtn.classList.add('saluted');
+      sessionStorage.setItem(commentSaluteKey, '1');
+      const current = parseInt(saluteCount.textContent) || 0;
+      saluteCount.textContent = current + 1;
+      try {{
+        const ref = doc(db, 'comments', postKey, 'entries', docId);
+        await updateDoc(ref, {{ salutes: increment(1) }});
+      }} catch(e) {{ console.error(e); saluteCount.textContent = current; }}
+    }});
+    actions.appendChild(saluteBtn);
 
-      // Replies container
-      const repliesList = document.createElement('div');
-      repliesList.className = 'replies-list';
-      repliesList.style.display = 'none';
-      item.appendChild(repliesList);
+    // Reply button
+    const replyBtn = document.createElement('button');
+    replyBtn.className = 'comment-reply-btn';
+    replyBtn.textContent = '\u21a9 Reply';
+    actions.appendChild(replyBtn);
 
-      // Toggle reply form
-      replyBtn.addEventListener('click', () => {
-        replyForm.classList.toggle('open');
-        if (replyForm.classList.contains('open')) replyForm.querySelector('textarea').focus();
-      });
+    // Expand replies button (only if children exist)
+    let expandBtn = null;
+    if (children.length > 0) {{
+      expandBtn = document.createElement('button');
+      expandBtn.className = 'expand-replies-btn';
+      const caret = document.createElement('span');
+      caret.className = 'expand-caret';
+      caret.textContent = '\u25b6';
+      const label = document.createElement('span');
+      label.textContent = children.length + (children.length === 1 ? ' reply' : ' replies');
+      expandBtn.appendChild(caret);
+      expandBtn.appendChild(label);
+      actions.appendChild(expandBtn);
+    }}
 
-      replyForm.querySelector('.reply-cancel').addEventListener('click', () => {
-        replyForm.classList.remove('open');
+    item.appendChild(actions);
+
+    // Reply form
+    const replyForm = document.createElement('div');
+    replyForm.className = 'reply-form';
+    replyForm.innerHTML =
+      '<textarea class="comment-textarea" placeholder="Write a reply\u2026" rows="2"></textarea>' +
+      '<div class="reply-name-row">' +
+        '<input class="reply-name-input" type="text" placeholder="Your name (optional)" autocomplete="off" />' +
+        '<button class="reply-submit" type="button">Post reply</button>' +
+        '<button class="reply-cancel" type="button">Cancel</button>' +
+      '</div>';
+    item.appendChild(replyForm);
+
+    // Children (hidden by default)
+    const childrenWrap = document.createElement('div');
+    childrenWrap.className = 'comment-children';
+    children.forEach(child => childrenWrap.appendChild(buildEl(child, depth + 1)));
+    item.appendChild(childrenWrap);
+
+    // ── Event listeners ──────────────────────────────────────────
+    if (expandBtn) {{
+      expandBtn.addEventListener('click', () => {{
+        const isOpen = childrenWrap.classList.toggle('open');
+        expandBtn.classList.toggle('open', isOpen);
+        const label = expandBtn.querySelector('span:last-child');
+        label.textContent = (isOpen ? '\u25be ' : '') + children.length + (children.length === 1 ? ' reply' : ' replies');
+      }});
+    }}
+
+    replyBtn.addEventListener('click', () => {{
+      replyForm.classList.toggle('open');
+      if (replyForm.classList.contains('open')) replyForm.querySelector('textarea').focus();
+    }});
+
+    replyForm.querySelector('.reply-cancel').addEventListener('click', () => {{
+      replyForm.classList.remove('open');
+      replyForm.querySelector('textarea').value = '';
+      replyForm.querySelector('.reply-name-input').value = '';
+    }});
+
+    replyForm.querySelector('.reply-submit').addEventListener('click', async function() {{
+      const text = replyForm.querySelector('textarea').value.trim();
+      if (!text) return;
+      const name = replyForm.querySelector('.reply-name-input').value.trim();
+      this.textContent = 'Posting\u2026';
+      this.disabled = true;
+      try {{
+        await addDoc(colRef, {{ name, text, parentId: docId, ts: serverTimestamp() }});
         replyForm.querySelector('textarea').value = '';
         replyForm.querySelector('.reply-name-input').value = '';
-      });
-
-      // Submit reply
-      replyForm.querySelector('.reply-submit').addEventListener('click', async function() {
-        const text = replyForm.querySelector('textarea').value.trim();
-        if (!text) return;
-        const name = replyForm.querySelector('.reply-name-input').value.trim();
-        this.textContent = 'Posting…';
-        this.disabled = true;
-        try {
-          const repliesRef = collection(db, 'comments', postKey, 'entries', docId, 'replies');
-          await addDoc(repliesRef, { name, text, ts: serverTimestamp() });
-          replyForm.querySelector('textarea').value = '';
-          replyForm.querySelector('.reply-name-input').value = '';
-          replyForm.classList.remove('open');
-          await loadReplies(docId, repliesList);
-        } catch(e) {
-          console.error('Failed to post reply:', e);
-        }
-        this.textContent = 'Post reply';
-        this.disabled = false;
-      });
-
-      // Load existing replies
-      loadReplies(docId, repliesList);
-    }
+        replyForm.classList.remove('open');
+        await load();
+      }} catch(e) {{ console.error('Failed to post reply:', e); }}
+      this.textContent = 'Post reply';
+      this.disabled = false;
+    }});
 
     return item;
-  }
+  }}
 
-  // ── Load replies for a comment ─────────────────────────────────
-  async function loadReplies(docId, repliesList) {
-    try {
-      const repliesRef = collection(db, 'comments', postKey, 'entries', docId, 'replies');
-      const q = query(repliesRef, orderBy('ts', 'asc'));
-      const snap = await getDocs(q);
-      repliesList.innerHTML = '';
-      if (snap.docs.length > 0) {
-        repliesList.style.display = 'flex';
-        snap.docs.forEach(d => {
-          repliesList.appendChild(buildCommentEl(d.data(), d.id, true));
-        });
-      } else {
-        repliesList.style.display = 'none';
-      }
-    } catch(e) {
-      console.error('Failed to load replies:', e);
-    }
-  }
-
-  // ── Render all top-level comments ──────────────────────────────
-  function render(docs) {
+  // ── Render ─────────────────────────────────────────────────────
+  function render(docs) {{
     const list = document.getElementById('cm-list');
     list.innerHTML = '';
-    if (!docs || !docs.length) {
+    if (!docs || !docs.length) {{
       list.innerHTML = '<p class="comment-empty">No comments yet. Be the first.</p>';
       return;
-    }
-    docs.forEach(d => {
-      list.appendChild(buildCommentEl(d.data(), d.id, false));
-    });
-  }
+    }}
+    buildTree(docs).forEach(node => list.appendChild(buildEl(node, 0)));
+  }}
 
-  // ── Load top-level comments ─────────────────────────────────────
-  async function load() {
-    try {
+  async function load() {{
+    try {{
       const q = query(colRef, orderBy('ts', 'asc'));
       const snap = await getDocs(q);
       render(snap.docs);
-    } catch(e) {
-      console.error('Failed to load comments:', e);
-      render([]);
-    }
-  }
+    }} catch(e) {{ console.error('Failed to load comments:', e); render([]); }}
+  }}
 
   // ── Post top-level comment ──────────────────────────────────────
-  document.getElementById('cm-submit').addEventListener('click', async function() {
+  document.getElementById('cm-submit').addEventListener('click', async function() {{
     const text = document.getElementById('cm-text').value.trim();
     if (!text) return;
     const name = nameInput.value.trim();
     const btn = document.getElementById('cm-submit');
-    btn.textContent = 'Posting…';
+    btn.textContent = 'Posting\u2026';
     btn.disabled = true;
-    try {
-      await addDoc(colRef, { name, text, ts: serverTimestamp() });
+    try {{
+      await addDoc(colRef, {{ name, text, parentId: null, ts: serverTimestamp() }});
       document.getElementById('cm-text').value = '';
       nameInput.value = '';
       await load();
-    } catch(e) {
-      console.error('Failed to post comment:', e);
-    }
+    }} catch(e) {{ console.error('Failed to post comment:', e); }}
     btn.textContent = 'Post';
     btn.disabled = false;
-  });
+  }});
 
   load();
+  initPostSalute();
 </script>
 
 
