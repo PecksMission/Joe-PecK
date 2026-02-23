@@ -285,7 +285,17 @@
     const target = new Date('2026-02-26T13:00:00');
     const now = new Date();
     const diff = target - now;
-    if (diff <= 0) { ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => document.getElementById(id).textContent = '00'); return; }
+    if (diff <= 0) {
+      document.querySelector('.countdown-section').innerHTML = `
+        <div class="countdown-inner" style="justify-content:center;text-align:center;">
+          <div>
+            <p class="countdown-label">February 26, 2026</p>
+            <p class="countdown-title" style="font-size:2.2rem;">Surgery Is Today</p>
+            <a href="surgery-day.html" style="display:inline-block;margin-top:1.5rem;background:var(--gold);color:var(--black);font-family:'DM Mono',monospace;font-size:0.82rem;letter-spacing:0.2em;text-transform:uppercase;padding:1rem 2.5rem;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='#e8c97a'" onmouseout="this.style.background='#c9a84c'">Follow Along Live \u2192</a>
+          </div>
+        </div>`;
+      return;
+    }
     document.getElementById('cd-days').textContent = String(Math.floor(diff/86400000)).padStart(2,'0');
     document.getElementById('cd-hours').textContent = String(Math.floor((diff%86400000)/3600000)).padStart(2,'0');
     document.getElementById('cd-mins').textContent = String(Math.floor((diff%3600000)/60000)).padStart(2,'0');
