@@ -12,8 +12,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Surgery Day — Peck's Mission</title>
   <meta property="og:title" content="Peck's Mission | Surgery Day — February 26, 2026" />
-  <meta name="description" content="Live updates from surgery day. Joe is in surgery at Vanderbilt. His family is with him. We'll update this page throughout the day." />
-  <meta property="og:description" content="Live updates from surgery day. Joe is in surgery at Vanderbilt. His family is with him. We'll update this page throughout the day." />
+  <meta name="description" content="Live updates from surgery day. Joe is at Vanderbilt. His family is with him. We'll update this page throughout the day." />
+  <meta property="og:description" content="Live updates from surgery day. Joe is at Vanderbilt. His family is with him. We'll update this page throughout the day." />
   <meta property="og:image" content="https://www.pecksmission.com/og-image.png" />
   <meta property="og:url" content="https://www.pecksmission.com/surgery-day" />
   <meta property="og:type" content="website" />
@@ -32,62 +32,177 @@
       --red: #8b2020;
       --gray: #4a4a4a;
       --gray-light: #9a9a9a;
+      --clinical: #5b8fa8;
+      --faith: #a05c5c;
+      --family: #c9a84c;
     }
+
     html { scroll-behavior: smooth; }
     body { background: var(--black); color: var(--white); font-family: 'Crimson Pro', Georgia, serif; font-size: 22px; line-height: 1.8; overflow-x: hidden; }
-    nav { position: fixed; top: 0; width: 100%; z-index: 100; padding: 1.2rem 3rem; display: flex; justify-content: space-between; align-items: center; background: rgba(10,10,10,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(201,168,76,0.15); }
+
+    /* ── NAV ── */
+    nav { position: fixed; top: 0; width: 100%; z-index: 100; padding: 1.2rem 3rem; display: flex; justify-content: space-between; align-items: center; background: rgba(10,10,10,0.94); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(201,168,76,0.15); }
     .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.15em; color: var(--gold); text-decoration: none; }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-    .nav-links a { color: var(--gray-light); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a { color: var(--gray-light); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
     .nav-links a:hover { color: var(--gold); }
 
-    .page-header { padding: 10rem 3rem 4rem; max-width: 820px; margin: 0 auto; }
-    .page-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
-    .page-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 7vw, 6rem); line-height: 0.95; letter-spacing: 0.02em; margin-bottom: 2rem; }
-    .page-sub { font-size: 1.15rem; font-weight: 300; font-style: italic; color: var(--gray-light); max-width: 560px; padding-bottom: 3rem; border-bottom: 1px solid rgba(201,168,76,0.15); }
+    /* ── PAGE HEADER ── */
+    .page-header { padding: 10rem 3rem 5rem; max-width: 820px; margin: 0 auto; position: relative; }
+    .page-header::before { content: ''; position: fixed; inset: 0; background: radial-gradient(ellipse 70% 50% at 80% 20%, rgba(139,32,32,0.08) 0%, transparent 70%); pointer-events: none; z-index: -1; }
+    .post-meta { font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-light); padding-bottom: 3rem; border-bottom: 1px solid rgba(201,168,76,0.15); }
+    .page-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.82rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.4rem; }
+    .page-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 8vw, 6.5rem); line-height: 0.92; letter-spacing: 0.02em; margin-bottom: 1.8rem; }
+    .page-sub { font-size: 1.1rem; font-weight: 300; font-style: italic; color: var(--gray-light); max-width: 540px; margin-bottom: 2.5rem; }
 
-    .status-bar { max-width: 820px; margin: 0 auto; padding: 0 3rem; }
-    .status-card { background: rgba(201,168,76,0.06); border: 1px solid rgba(201,168,76,0.2); padding: 2rem 2.5rem; margin: 3rem 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-    .status-label { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
-    .status-text { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 0.05em; color: var(--white); line-height: 1; }
-    .status-time { font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-light); text-align: right; }
+    /* legend */
+    .leg-legend { display: flex; gap: 2rem; flex-wrap: wrap; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.06); }
+    .legend-item { display: flex; align-items: center; gap: 0.55rem; }
+    .legend-pip { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .legend-text { font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gray-light); }
 
-    .timeline { max-width: 820px; margin: 0 auto; padding: 0 3rem 6rem; }
-    .timeline-label { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; padding-bottom: 0.8rem; border-bottom: 1px solid rgba(201,168,76,0.15); }
+    /* ── PROGRESS BOARD ── */
+    .progress-wrap { max-width: 820px; margin: 0 auto; padding: 0 3rem 4rem; }
+    .progress-board { border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.012); }
+    .progress-board-header { padding: 1.1rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+    .progress-board-title { font-family: 'DM Mono', monospace; font-size: 0.67rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gray-light); }
+    .progress-board-updated { font-family: 'DM Mono', monospace; font-size: 0.63rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray); }
+    .progress-stages { display: grid; grid-template-columns: repeat(6, 1fr); }
+    .stage { padding: 1.3rem 1.1rem; border-right: 1px solid rgba(255,255,255,0.05); }
+    .stage:last-child { border-right: none; }
+    .stage-dot { width: 6px; height: 6px; border-radius: 50%; background: #222; margin-bottom: 0.7rem; }
+    .stage-name { font-family: 'Bebas Neue', sans-serif; font-size: 0.92rem; color: #2e2e2e; line-height: 1.1; margin-bottom: 0.3rem; letter-spacing: 0.03em; }
+    .stage-time { font-family: 'DM Mono', monospace; font-size: 0.57rem; letter-spacing: 0.1em; color: #272727; text-transform: uppercase; }
+    .stage-note { font-family: 'DM Mono', monospace; font-size: 0.55rem; letter-spacing: 0.06em; color: #252525; margin-top: 0.22rem; line-height: 1.4; }
+    .stage.done .stage-dot { background: var(--clinical); opacity: 0.45; }
+    .stage.done .stage-name { color: rgba(91,143,168,0.45); }
+    .stage.done .stage-time { color: rgba(91,143,168,0.3); }
+    .stage.done .stage-note { color: rgba(91,143,168,0.28); }
+    .stage.active { border-bottom: 2px solid var(--clinical); background: rgba(91,143,168,0.05); animation: borderflash 2s ease-in-out infinite; }
+    @keyframes borderflash {
+      0%, 100% { border-bottom-color: var(--clinical); }
+      50% { border-bottom-color: transparent; }
+    }
+    .stage.active .stage-dot { background: var(--clinical); box-shadow: 0 0 10px rgba(91,143,168,0.65); width: 8px; height: 8px; animation: stagepulse 2s ease-in-out infinite; }
+    .stage.active .stage-name { color: var(--white); font-size: 1rem; }
+    .stage.active .stage-time { color: var(--clinical); }
+    .stage.active .stage-note { color: rgba(91,143,168,0.65); }
+    @keyframes stagepulse { 0%,100%{box-shadow:0 0 6px rgba(91,143,168,0.5)} 50%{box-shadow:0 0 16px rgba(91,143,168,1)} }
 
-    .update-entry { display: grid; grid-template-columns: 80px 1fr; gap: 2rem; padding: 2.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
-    .update-entry:last-child { border-bottom: none; }
-    .update-time { font-family: 'DM Mono', monospace; font-size: 0.78rem; letter-spacing: 0.1em; color: var(--gold); padding-top: 0.3rem; line-height: 1.5; }
-    .update-time .ampm { display: block; color: var(--gray-light); font-size: 0.65rem; letter-spacing: 0.15em; }
-    .update-tag { font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-light); margin-bottom: 0.6rem; }
-    .update-headline { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.03em; color: var(--white); line-height: 1; margin-bottom: 1rem; }
-    .update-body { font-size: 1.05rem; font-weight: 300; color: #d4cfc7; line-height: 1.85; }
-    .update-body p { margin-bottom: 0.8rem; }
-    .update-body p:last-child { margin-bottom: 0; }
+    /* past-projected: time has passed, no real update came. slightly visible. */
+    .tl-entry.past-projected .tl-time { color: #2a2a2a; }
+    .tl-entry.past-projected .tl-dot { background: #252525; border: 1px solid #303030; }
+    .tl-entry.past-projected .tl-line { background: rgba(255,255,255,0.04); }
+    .tl-entry.past-projected .tl-pip { background: #2e2e2e; }
+    .tl-entry.past-projected .tl-tag { color: #303030; }
+    .tl-entry.past-projected .tl-headline { color: #2e2e2e; }
+    .tl-entry.past-projected .tl-body { color: #272727; }
 
-    .update-entry.waiting .update-headline { color: var(--gray-light); font-size: 1.3rem; }
-    .update-entry.waiting .update-body { color: var(--gray); }
-    .update-entry.serious .update-time { color: var(--gray-light); }
+    /* ── FULL-DAY TIMELINE ── */
+    .timeline-wrap { max-width: 820px; margin: 0 auto; padding: 0 3rem 7rem; }
+    .timeline-section-label { font-family: 'DM Mono', monospace; font-size: 0.67rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gray-light); margin-bottom: 2.2rem; padding-bottom: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
 
-    .update-photo { width: 100%; max-width: 500px; display: block; margin: 1.2rem 0 0.4rem; border: 1px solid rgba(201,168,76,0.15); }
-    .update-photo-caption { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-light); margin-bottom: 0.8rem; }
+    /* every entry */
+    .tl-entry { display: grid; grid-template-columns: 80px 16px 1fr; gap: 0 1.6rem; padding: 2.2rem 0; border-bottom: 1px solid rgba(255,255,255,0.04); position: relative; }
+    .tl-entry:last-child { border-bottom: none; }
 
-    .verse-block { background: rgba(139,32,32,0.08); border-left: 3px solid var(--red); padding: 1.5rem 2rem; margin: 1.5rem 0 0; }
-    .verse-text { font-family: 'Crimson Pro', serif; font-size: 1.1rem; font-style: italic; font-weight: 300; color: var(--white); line-height: 1.6; margin-bottom: 0.5rem; }
-    .verse-ref { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-light); }
+    /* time column */
+    .tl-time { font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.08em; padding-top: 0.2rem; line-height: 1.5; text-align: right; }
+    .tl-time .ampm { display: block; font-size: 0.58rem; letter-spacing: 0.14em; margin-top: 0.08rem; }
 
-    .memorial-block { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); padding: 3rem; margin: 1rem 0; }
-    .memorial-body { font-size: 1.1rem; font-weight: 300; color: #d4cfc7; line-height: 1.9; }
-    .memorial-body p { margin-bottom: 1.2rem; }
+    /* spine column */
+    .tl-spine { display: flex; flex-direction: column; align-items: center; padding-top: 0.28rem; }
+    .tl-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .tl-line { width: 1px; flex: 1; margin-top: 6px; }
+
+    /* content column */
+    .tl-content {}
+    .tl-meta { display: flex; align-items: center; gap: 0.55rem; margin-bottom: 0.45rem; }
+    .tl-pip { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+    .tl-tag { font-family: 'DM Mono', monospace; font-size: 0.63rem; letter-spacing: 0.18em; text-transform: uppercase; }
+    .tl-headline { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 0.03em; line-height: 1; margin-bottom: 0.85rem; color: var(--white); }
+    .tl-body { font-size: 0.97rem; font-weight: 300; line-height: 1.85; }
+    .tl-body p { margin-bottom: 0.75rem; }
+    .tl-body p:last-child { margin-bottom: 0; }
+    .tl-body ul { margin: 0; padding: 0; list-style: none; }
+    .tl-body ul li { padding-left: 1.2rem; position: relative; margin-bottom: 0.65rem; line-height: 1.75; }
+    .tl-body ul li:last-child { margin-bottom: 0; }
+    .tl-body ul li::before { content: '—'; position: absolute; left: 0; color: var(--clinical); font-size: 0.85em; top: 0.1em; }
+    .tl-entry.faith-entry .tl-body ul li::before { color: var(--faith); }
+    .tl-entry.family-entry .tl-body ul li::before { color: var(--family); }
+    .tl-entry.active-now .tl-body ul li::before { color: var(--clinical); }
+
+    /* ── CONFIRMED entries (real updates) ── */
+    .tl-entry.confirmed .tl-time { color: var(--clinical); }
+    .tl-entry.confirmed .tl-time .ampm { color: rgba(91,143,168,0.5); }
+    .tl-entry.confirmed.faith-entry .tl-time { color: var(--faith); }
+    .tl-entry.confirmed.faith-entry .tl-time .ampm { color: rgba(160,92,92,0.5); }
+    .tl-entry.confirmed.family-entry .tl-time { color: var(--family); }
+    .tl-entry.confirmed.family-entry .tl-time .ampm { color: rgba(201,168,76,0.5); }
+
+    .tl-entry.confirmed .tl-dot { background: var(--clinical); }
+    .tl-entry.confirmed.faith-entry .tl-dot { background: var(--faith); }
+    .tl-entry.confirmed.family-entry .tl-dot { background: var(--family); }
+
+    .tl-entry.confirmed .tl-line { background: rgba(91,143,168,0.15); }
+    .tl-entry.confirmed.faith-entry .tl-line { background: rgba(160,92,92,0.12); }
+    .tl-entry.confirmed.family-entry .tl-line { background: rgba(201,168,76,0.1); }
+
+    .tl-entry.confirmed .tl-pip { background: var(--clinical); }
+    .tl-entry.confirmed.faith-entry .tl-pip { background: var(--faith); }
+    .tl-entry.confirmed.family-entry .tl-pip { background: var(--family); }
+
+    .tl-entry.confirmed .tl-tag { color: var(--clinical); }
+    .tl-entry.confirmed.faith-entry .tl-tag { color: var(--faith); }
+    .tl-entry.confirmed.family-entry .tl-tag { color: var(--family); }
+
+    .tl-entry.confirmed .tl-body { color: #d0cbc3; }
+    .tl-entry.confirmed.faith-entry .tl-body { color: #d4cfc7; font-style: italic; }
+
+    /* active — currently happening */
+    .tl-entry.active-now .tl-dot { background: var(--clinical); box-shadow: 0 0 10px rgba(91,143,168,0.7); animation: stagepulse 2s ease-in-out infinite; }
+    .tl-entry.active-now .tl-line { background: rgba(91,143,168,0.2); }
+    .tl-entry.active-now .tl-time { color: var(--clinical); }
+    .tl-entry.active-now .tl-time .ampm { color: rgba(91,143,168,0.55); }
+    .tl-entry.active-now .tl-pip { background: var(--clinical); }
+    .tl-entry.active-now .tl-tag { color: var(--clinical); }
+    .tl-entry.active-now .tl-headline { color: var(--white); }
+    .tl-entry.active-now .tl-body { color: #d0cbc3; }
+
+    /* ── PROJECTED entries (not yet confirmed, shown grayed) ── */
+    .tl-entry.projected .tl-time { color: #2c2c2c; }
+    .tl-entry.projected .tl-dot { background: #1e1e1e; border: 1px solid #2a2a2a; }
+    .tl-entry.projected .tl-line { background: rgba(255,255,255,0.03); }
+    .tl-entry.projected .tl-pip { background: #2a2a2a; }
+    .tl-entry.projected .tl-tag { color: #333; }
+    .tl-entry.projected .tl-headline { color: #383838; }
+    .tl-entry.projected .tl-body { color: #2e2e2e; }
+    .tl-entry.projected .tl-body p::before { content: none; }
+
+    /* verse block */
+    .verse-block { background: rgba(139,32,32,0.07); border-left: 2px solid var(--faith); padding: 1.3rem 1.7rem; margin: 1.3rem 0 0; }
+    .verse-text { font-family: 'Crimson Pro', serif; font-size: 1.02rem; font-style: italic; font-weight: 300; color: var(--white); line-height: 1.65; margin-bottom: 0.4rem; }
+    .verse-ref { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faith); }
+
+    /* photo */
+    .update-photo { width: 100%; max-width: 480px; display: block; margin: 1.1rem 0 0.35rem; border: 1px solid rgba(255,255,255,0.06); }
+    .update-photo-caption { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--gray-light); margin-bottom: 0.8rem; }
+
+    /* memorial */
+    .memorial-block { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.07); padding: 2.8rem; margin: 0.8rem 0; }
+    .memorial-body { font-size: 1rem; font-weight: 300; color: #d4cfc7; line-height: 1.9; }
+    .memorial-body p { margin-bottom: 1rem; }
     .memorial-body p:last-child { margin-bottom: 0; }
 
-    .handoff-block { background: rgba(201,168,76,0.04); border: 1px solid rgba(201,168,76,0.15); padding: 3rem; margin: 3rem 0; text-align: center; }
-    .handoff-label { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
-    .handoff-text { font-family: 'Crimson Pro', serif; font-size: 1.2rem; font-style: italic; font-weight: 300; color: var(--white); line-height: 1.7; margin-bottom: 1.5rem; }
-    .btn { background: var(--gold); color: var(--black); padding: 0.9rem 2rem; font-family: 'DM Mono', monospace; font-size: 0.82rem; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; display: inline-block; transition: background 0.2s; }
+    /* handoff */
+    .handoff-block { background: rgba(201,168,76,0.04); border: 1px solid rgba(201,168,76,0.14); padding: 3rem; margin: 3rem 0; text-align: center; }
+    .handoff-label { font-family: 'DM Mono', monospace; font-size: 0.67rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .handoff-text { font-family: 'Crimson Pro', serif; font-size: 1.1rem; font-style: italic; font-weight: 300; color: var(--white); line-height: 1.7; margin-bottom: 1.4rem; }
+    .btn { background: var(--gold); color: var(--black); padding: 0.85rem 1.9rem; font-family: 'DM Mono', monospace; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; display: inline-block; transition: background 0.2s; }
     .btn:hover { background: var(--gold-light); }
 
-    footer { padding: 3rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+    /* ── FOOTER ── */
+    footer { padding: 3rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.04); }
     .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 0.15em; color: var(--gold); margin-bottom: 1rem; }
     .footer-kipling { font-family: 'Crimson Pro', serif; font-size: 1.15rem; font-style: italic; color: var(--gray-light); margin-bottom: 0.5rem; }
     .footer-line { font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); }
@@ -95,33 +210,132 @@
     .nav-footer a { color: var(--gray); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
     .nav-footer a:hover { color: var(--gold); }
 
+    /* ── MOBILE NAV ── */
     .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; z-index: 200; }
     .hamburger span { display: block; width: 24px; height: 2px; background: var(--gold); transition: all 0.3s; }
-    .mobile-menu { display: none; position: fixed; top: 60px; right: 1.5rem; width: 220px; background: rgba(10,10,10,0.97); border: 1px solid rgba(201,168,76,0.2); border-radius: 4px; z-index: 150; flex-direction: column; padding: 1.2rem 1.5rem; gap: 1.2rem; backdrop-filter: blur(8px); }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: 60px; right: 1.5rem; width: 220px; background: rgba(10,10,10,0.97); border: 1px solid rgba(201,168,76,0.18); border-radius: 3px; z-index: 150; flex-direction: column; padding: 1.2rem 1.5rem; gap: 1.2rem; backdrop-filter: blur(10px); }
     .mobile-menu.open { display: flex; }
-    .mobile-menu a { color: var(--white); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+    .mobile-menu a { color: var(--white); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
     .mobile-menu a:hover { color: var(--gold); }
+
+    /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
       .hamburger { display: flex; }
       .nav-links { display: none !important; }
-      .page-header { padding: 7rem 1.5rem 3rem; }
-      .status-bar, .timeline { padding-left: 1.5rem; padding-right: 1.5rem; }
-      .update-entry { grid-template-columns: 60px 1fr; gap: 1.2rem; }
-      .status-card { flex-direction: column; align-items: flex-start; }
-      .status-time { text-align: left; }
+      .page-header, .progress-wrap, .timeline-wrap { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .page-header { padding-top: 7rem; }
+      .progress-stages { grid-template-columns: repeat(3, 1fr); }
+      .stage:nth-child(3) { border-right: none; }
+      .stage:nth-child(1),.stage:nth-child(2),.stage:nth-child(3) { border-bottom: 1px solid rgba(255,255,255,0.05); }
+      .tl-entry { grid-template-columns: 52px 14px 1fr; gap: 0 1rem; }
       .memorial-block { padding: 1.5rem; }
     }
+    @media (max-width: 480px) {
+      .progress-stages { grid-template-columns: repeat(2, 1fr); }
+      .stage:nth-child(2n) { border-right: none; }
+      .stage:nth-child(3) { border-right: 1px solid rgba(255,255,255,0.05); }
+      .stage:nth-child(5),.stage:nth-child(6) { border-bottom: none; }
+      .leg-legend { gap: 1.1rem; }
+      .tl-entry { grid-template-columns: 46px 12px 1fr; gap: 0 0.8rem; }
+    }
+
+    /* ── POST NAV ── */
+    .post-nav { max-width: 820px; margin: 0 auto; padding: 0 3rem; }
+    .post-nav-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.06); margin: 2rem 0 0; }
+    .post-nav-card { background: var(--black); padding: 2rem 2.5rem; text-decoration: none; color: inherit; transition: background 0.2s; display: block; }
+    .post-nav-card:hover { background: rgba(255,255,255,0.02); }
+    .post-nav-card.next { text-align: right; }
+    .post-nav-card.empty { background: rgba(255,255,255,0.01); pointer-events: none; }
+    .post-nav-direction { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gray-light); margin-bottom: 0.5rem; display: block; }
+    .post-nav-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; line-height: 1.1; color: var(--white); display: block; transition: color 0.2s; }
+    .post-nav-card:hover .post-nav-title { color: var(--gold); }
+    .post-nav-date { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); margin-top: 0.4rem; display: block; }
+
+    /* ── POPUP ── */
+    .popup-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.75); backdrop-filter: blur(4px); z-index: 999; display: flex; align-items: center; justify-content: center; padding: 1.5rem; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
+    .popup-overlay.visible { opacity: 1; pointer-events: all; }
+    .popup-box { background: #111; border: 1px solid rgba(201,168,76,0.25); max-width: 500px; width: 100%; padding: 3rem 2.5rem 2.5rem; position: relative; transform: translateY(20px); transition: transform 0.4s ease; }
+    .popup-overlay.visible .popup-box { transform: translateY(0); }
+    .popup-close { position: absolute; top: 1rem; right: 1.2rem; background: none; border: none; color: var(--gray-light); font-size: 1.4rem; cursor: pointer; line-height: 1; padding: 0.2rem 0.4rem; transition: color 0.2s; }
+    .popup-close:hover { color: var(--gold); }
+    .popup-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
+    .popup-title { font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; line-height: 1; letter-spacing: 0.03em; color: var(--white); margin-bottom: 0.8rem; }
+    .popup-sub { font-family: 'Crimson Pro', serif; font-size: 1.05rem; font-style: italic; font-weight: 300; color: var(--gray-light); line-height: 1.6; margin-bottom: 1.8rem; }
+    .popup-form-group { margin-bottom: 0.8rem; }
+    .popup-input { width: 100%; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); color: var(--white); padding: 0.85rem 1rem; font-family: 'Crimson Pro', serif; font-size: 1rem; outline: none; transition: border-color 0.2s; -webkit-appearance: none; }
+    .popup-input:focus { border-color: rgba(201,168,76,0.5); }
+    .popup-input::placeholder { color: var(--gray); font-style: italic; }
+    .popup-btn { background: var(--gold); color: var(--black); padding: 0.95rem 0; width: 100%; font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; border: none; cursor: pointer; margin-top: 0.4rem; transition: background 0.2s; }
+    .popup-btn:hover { background: var(--gold-light); }
+    .popup-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+    .popup-skip { display: block; text-align: center; margin-top: 1.2rem; font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); cursor: pointer; background: none; border: none; transition: color 0.2s; }
+    .popup-skip:hover { color: var(--gray-light); }
+    .popup-success { display: none; text-align: center; padding: 1rem 0; }
+    .popup-success-msg { font-family: 'Crimson Pro', serif; font-size: 1.3rem; font-style: italic; color: var(--gold-light); margin-bottom: 0.4rem; }
+    .popup-success-sub { font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-light); }
+
+    /* ── SALUTE ── */
+    .salute-wrap { max-width: 820px; margin: 0 auto; padding: 3rem 3rem 0; border-top: 1px solid rgba(255,255,255,0.05); }
+    .salute-label { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gray-light); margin-bottom: 1.2rem; }
+    .salute-row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .salute-btn { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); color: var(--gray-light); font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.1em; padding: 0.55rem 1rem; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 0.5rem; border-radius: 2px; }
+    .salute-btn:hover { border-color: rgba(201,168,76,0.35); color: var(--gold); background: rgba(201,168,76,0.04); }
+    .salute-btn.active { border-color: rgba(201,168,76,0.5); color: var(--gold); background: rgba(201,168,76,0.08); }
+    .salute-count { font-size: 0.78rem; color: var(--gold); }
+
+    /* ── COMMENTS ── */
+    .comments-wrap { max-width: 820px; margin: 0 auto; padding: 3rem 3rem 5rem; }
+    .comments-label { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gray-light); margin-bottom: 2rem; padding-bottom: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .comment-form { margin-bottom: 3rem; }
+    .comment-textarea { width: 100%; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); color: var(--white); padding: 1rem 1.2rem; font-family: 'Crimson Pro', serif; font-size: 1rem; line-height: 1.6; outline: none; resize: vertical; min-height: 80px; transition: border-color 0.2s; -webkit-appearance: none; border-radius: 0; }
+    .comment-textarea:focus { border-color: rgba(201,168,76,0.4); }
+    .comment-textarea::placeholder { color: rgba(255,255,255,0.18); font-style: italic; }
+    .comment-form-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 0.6rem; gap: 0.75rem; flex-wrap: wrap; }
+    .comment-name-input { background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.15); color: var(--white); font-family: 'Crimson Pro', serif; font-size: 0.95rem; padding: 0.5rem 0.9rem; outline: none; max-width: 0; overflow: hidden; transition: max-width 0.35s ease, border-color 0.2s, padding 0.2s; border-radius: 0; }
+    .comment-name-input.visible { max-width: 220px; }
+    .comment-name-input:focus { border-color: rgba(201,168,76,0.45); }
+    .comment-name-input::placeholder { color: rgba(255,255,255,0.25); }
+    #cm-submit { background: var(--gold); color: var(--black); border: none; padding: 0.6rem 1.5rem; font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
+    #cm-submit:hover { background: var(--gold-light); }
+    #cm-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+    .comment-list { display: flex; flex-direction: column; gap: 2rem; }
+    .comment-item { padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .comment-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .comment-header { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+    .comment-author { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+    .comment-date { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray); }
+    .comment-text { font-size: 0.98rem; font-weight: 300; color: #c8c2b5; line-height: 1.7; }
+    .comment-reply-btn { background: none; border: none; cursor: pointer; font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.22); padding: 0.3rem 0; margin-top: 0.4rem; transition: color 0.2s; display: block; }
+    .comment-reply-btn:hover { color: var(--gold); }
+    .reply-form { display: none; flex-direction: column; gap: 0.5rem; margin-top: 0.8rem; padding-left: 1rem; border-left: 1px solid rgba(201,168,76,0.15); }
+    .reply-form.open { display: flex; }
+    .reply-form .comment-textarea { min-height: 56px; font-size: 0.93rem; }
+    .reply-name-row { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+    .reply-name-input { background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.15); color: var(--white); font-family: 'Crimson Pro', serif; font-size: 0.9rem; padding: 0.4rem 0.75rem; outline: none; flex: 1; min-width: 120px; transition: border-color 0.2s; }
+    .reply-name-input:focus { border-color: rgba(201,168,76,0.45); }
+    .reply-name-input::placeholder { color: rgba(255,255,255,0.2); }
+    .reply-submit { background: transparent; border: 1px solid rgba(201,168,76,0.3); color: var(--gold); font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.38rem 0.9rem; cursor: pointer; transition: background 0.2s, color 0.2s; }
+    .reply-submit:hover { background: var(--gold); color: var(--black); }
+    .reply-cancel { background: none; border: none; cursor: pointer; font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.22); padding: 0; transition: color 0.2s; }
+    .reply-cancel:hover { color: rgba(255,255,255,0.55); }
+    .comment-children { margin-top: 1.1rem; display: none; flex-direction: column; gap: 1.2rem; padding-left: 1rem; border-left: 1px solid rgba(255,255,255,0.05); }
+    .comment-children.open { display: flex; }
+    @media(max-width:640px) { .comments-wrap { padding: 2rem 1.4rem 4rem; } .comment-name-input.visible { max-width: 180px; } .comment-children { padding-left: 0.65rem; } .salute-wrap { padding: 2rem 1.5rem 0; } }
   </style>
 </head>
 <body>
 
+<!-- ── NAV ── -->
 <nav>
   <a href="index.html" class="nav-logo">Peck's Mission</a>
   <ul class="nav-links">
     <li><a href="about.html">My Story</a></li>
     <li><a href="chiari.html">What is Chiari</a></li>
-    <li><a href="blog.html">Updates</a></li>
+    <li><a href="blog.html">From The Field</a></li>
     <li><a href="follow-along.html">Follow Along</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -132,329 +346,439 @@
   <a href="index.html" onclick="closeMobile()">Home</a>
   <a href="about.html" onclick="closeMobile()">My Story</a>
   <a href="chiari.html" onclick="closeMobile()">What is Chiari</a>
-  <a href="blog.html" onclick="closeMobile()">Updates</a>
+  <a href="blog.html" onclick="closeMobile()">From The Field</a>
   <a href="follow-along.html" onclick="closeMobile()">Follow Along</a>
 </div>
 
+<!-- ── PAGE HEADER ── -->
 <div class="page-header">
-  <p class="page-eyebrow">February 26, 2026 &nbsp;·&nbsp; Vanderbilt University Medical Center</p>
-  <h1 class="page-title">Surgery Day</h1>
-  <p class="page-sub">Today's the day. His family is with him. We'll update this page throughout the day as we hear anything — refresh for the latest. For anyone going through this with their own person one day: this is what surgery day looks like from the waiting room, step by step.</p>
+  <p class="page-eyebrow">Surgery Day &nbsp;·&nbsp; February 26, 2026</p>
+  <h1 class="page-title">February 26th.</h1>
+  <p class="page-sub">Today's the day. Surgery is at 1 PM. He's at Vanderbilt. Grayed entries are what's most likely happening based on the schedule. Lit entries are confirmed. Refresh for the latest.</p>
+  <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
+    <div>
+      <p class="post-meta">Vanderbilt University Medical Center &nbsp;·&nbsp; Dr. Lee &nbsp;·&nbsp; Chiari Decompression</p>
+      <p style="font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-top: 0.5rem;">Live · Updating All Day</p>
+    </div>
+    <a href="follow-along.html#reach-out" style="background: var(--gold); color: var(--black); padding: 1rem 2.5rem; font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; display: inline-block; transition: background 0.2s;"
+      onmouseover="this.style.background='#e8c97a'" onmouseout="this.style.background='#c9a84c'">
+      Follow Along
+    </a>
+  </div>
+  <div class="leg-legend">
+    <div class="legend-item">
+      <span class="legend-pip" style="background:var(--clinical)"></span>
+      <span class="legend-text">Clinical</span>
+    </div>
+    <div class="legend-item">
+      <span class="legend-pip" style="background:var(--faith)"></span>
+      <span class="legend-text">Faith</span>
+    </div>
+    <div class="legend-item">
+      <span class="legend-pip" style="background:var(--family)"></span>
+      <span class="legend-text">Family</span>
+    </div>
+  </div>
 </div>
+
 
 <!-- ================================================================
-     FRIEND — UPDATE THESE TWO LINES EVERY TIME YOU POST AN ENTRY.
-     Status options: Checking In / In Surgery / Surgery Complete /
-     In Recovery / Waking Up / Awake & Stable / Resting /
-     ICU — Monitoring / Critical
+     PROGRESS BOARD
+     ================================================================
+     TO UPDATE:
+       · Past stages:    class="stage done"
+       · Current stage:  class="stage active"
+       · Future stages:  class="stage"
+       · Fill in .stage-time and .stage-note as each stage passes
+       · Update "Last updated" in .progress-board-updated
      ================================================================ -->
-<div class="status-bar">
-  <div class="status-card">
-    <div>
-      <p class="status-label">Current Status</p>
-      <p class="status-text">Checking In</p>
+<div class="progress-wrap">
+  <div class="progress-board">
+    <div class="progress-board-header">
+      <span class="progress-board-title">Where He Is Right Now</span>
+      <span class="progress-board-updated">Last updated · 10:20 AM</span>
     </div>
-    <p class="status-time">Last updated<br>10:20 AM</p>
+    <div class="progress-stages">
+      <div class="stage done">
+        <div class="stage-dot"></div>
+        <p class="stage-name">On the Way</p>
+        <p class="stage-time">10:20 AM</p>
+        <p class="stage-note">Left the house.</p>
+      </div>
+      <div class="stage active">
+        <div class="stage-dot"></div>
+        <p class="stage-name">Checked In</p>
+        <p class="stage-time">—</p>
+        <p class="stage-note">At Vanderbilt.</p>
+      </div>
+      <div class="stage">
+        <div class="stage-dot"></div>
+        <p class="stage-name">Pre-Op</p>
+        <p class="stage-time">—</p>
+        <p class="stage-note">Last time with family.</p>
+      </div>
+      <div class="stage">
+        <div class="stage-dot"></div>
+        <p class="stage-name">In Surgery</p>
+        <p class="stage-time">~1:00 PM</p>
+        <p class="stage-note">OR. Dr. Lee.</p>
+      </div>
+      <div class="stage">
+        <div class="stage-dot"></div>
+        <p class="stage-name">Recovery</p>
+        <p class="stage-time">—</p>
+        <p class="stage-note">Neuro ICU.</p>
+      </div>
+      <div class="stage">
+        <div class="stage-dot"></div>
+        <p class="stage-name">Awake</p>
+        <p class="stage-time">—</p>
+        <p class="stage-note">On the other side.</p>
+      </div>
+    </div>
   </div>
 </div>
-<!-- ================================================================ -->
 
-<div class="timeline">
-  <p class="timeline-label">Updates — Newest First</p>
 
-  <!-- ================================================================
-  FRIEND — PASTE NEW ENTRIES RIGHT HERE AT THE TOP EACH TIME.
+<!-- ================================================================
+     FULL-DAY TIMELINE
+     ================================================================
+     HOW THIS WORKS:
+     The entire day is already written out below — every stage,
+     projected from start to finish based on the surgical schedule.
 
-  TEMPLATE:
-  <div class="update-entry">
-    <div class="update-time">9:30<span class="ampm">AM</span></div>
-    <div class="update-content">
-      <p class="update-tag">Tag</p>
-      <h2 class="update-headline">Headline</h2>
-      <div class="update-body">
-        <p>What his parents told you.</p>
+     Entries have one of three states:
+
+       confirmed   — Real update. Something actually happened.
+                     Fill in the real time, real details.
+                     Add faith-entry or family-entry class if needed.
+
+       active-now  — The current moment. What's happening right now.
+                     Only one entry should be active-now at a time.
+                     Move it as the day progresses.
+
+       projected   — Not confirmed yet. Grayed out. People can see
+                     what's most likely happening even when you haven't
+                     posted. Do not touch these until they become real.
+                     When they do, change class to "confirmed" and
+                     fill in the actual time and real details.
+
+     LEG CLASSES (add to .tl-entry alongside state class):
+       faith-entry   — Joe's writing / faith content
+       family-entry  — From his parents in the waiting room
+
+     TEMPLATE for a new confirmed entry:
+     ──────────────────────────────────────────────────────────────
+     <div class="tl-entry confirmed [faith-entry|family-entry]">
+       <div class="tl-time">10:20<span class="ampm">AM</span></div>
+       <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+       <div class="tl-content">
+         <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+         <h2 class="tl-headline">Headline.</h2>
+         <div class="tl-body">
+        <ul>
+          <li>Body text.</li>
+        </ul>
+      </div>
+       </div>
+     </div>
+     ──────────────────────────────────────────────────────────────
+
+     TO ADD A VERSE inside any tl-body:
+     <div class="verse-block">
+       <p class="verse-text">"Verse."</p>
+       <p class="verse-ref">— Reference</p>
+     </div>
+
+     TO ADD A PHOTO inside any tl-body:
+     <img src="filename.jpg" alt="" class="update-photo">
+     <p class="update-photo-caption">Caption</p>
+
+     ================================================================ -->
+
+<div class="timeline-wrap">
+  <p class="timeline-section-label">February 26, 2026 — The Full Day</p>
+
+
+  <!-- ════════════════════════════════════════════════
+       MORNING — LEFT THE HOUSE
+       ════════════════════════════════════════════════ -->
+  <div class="tl-entry confirmed">
+    <div class="tl-time">10:20<span class="ampm">AM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">Left the House.</h2>
+      <div class="tl-body">
+        <ul>
+          <li>He left the house at 10:20. Surgery is at 1 PM. His family is with him.</li>
+          <li>He's been NPO since midnight — nothing to eat. Clear liquids were allowed up to 9 AM, four hours before the knife. That window is closed now. By the time you're leaving for the hospital on surgery day, the waiting has already been going on for hours. The last meal, the last normal morning. You're just moving through the steps now.</li>
+          <li>He washed his hair with baby shampoo last night. That's what they asked. Small, specific instructions have a way of making the night before feel manageable — something to do besides think.</li>
+          <li>He's been ready for this for a while. Today he gets to the other side of it.</li>
+        </ul>
       </div>
     </div>
   </div>
 
-  TO ADD A PHOTO (inside update-body):
-  <img src="filename.jpg" alt="description" class="update-photo">
-  <p class="update-photo-caption">Caption</p>
-  ================================================================ -->
 
-
-  <!-- ============================================================
-  PRE-SURGERY 1 — LEFT THE HOUSE.
-  Post when his parents text you that they're on the way.
-  ============================================================ -->
-  <div class="update-entry">
-    <div class="update-time">10:20<span class="ampm">AM</span></div>
-    <div class="update-content">
-      <p class="update-tag">On the Way</p>
-      <h2 class="update-headline">Left the House.</h2>
-      <div class="update-body">
-        <p>He left the house at 10:20. Surgery is at 1. His family is with him.</p>
-        <p>He's been NPO since midnight — nothing to eat, no clear liquids since 8 AM. That's standard before a general anesthetic. By the time you're leaving the house on surgery day, the waiting has already been going on for hours. The last meal, the last normal morning. You're just moving through the steps now.</p>
-        <p>He's been ready for this for a while. Today he gets to the other side of it.</p>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- ============================================================
-  PRE-SURGERY 2 — ARRIVED AT VANDERBILT.
-  Post when they text you they've pulled in.
-  ============================================================ -->
+  <!-- ════════════════════════════════════════════════
+       JOE — MORNING OF / WHAT THE DOCTOR SAID
+       Joe posts this himself before he goes through the
+       doors. Change to confirmed + faith-entry when he does.
+       ════════════════════════════════════════════════ -->
   <!--
-  <div class="update-entry">
-    <div class="update-time">10:45<span class="ampm">AM</span></div>
-    <div class="update-content">
-      <p class="update-tag">Arrived</p>
-      <h2 class="update-headline">At Vanderbilt.</h2>
-      <div class="update-body">
-        <p>They're there. Pulled in at 10:45 and heading inside to check in. This is the part where the building becomes real. You've been thinking about it for weeks and now you're walking through the door.</p>
-        <p>For anyone reading this on the way to their own surgery day — Vanderbilt's neurosurgery team is world-class. You're in the right place.</p>
+  <div class="tl-entry confirmed faith-entry">
+    <div class="tl-time">[TIME]<span class="ampm">AM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Faith</span></div>
+      <h2 class="tl-headline">[JOE WRITES THIS.]</h2>
+      <div class="tl-body">
+        <ul>
+          <li>[His words. What the doctor said when he came in. What he's carrying through those doors.]</li>
+        </ul>
       </div>
     </div>
   </div>
   -->
 
 
-  <!-- ============================================================
-  PRE-SURGERY 3 — CHECKED IN.
-  Post when they've checked in and are getting settled.
-  ============================================================ -->
-  <!--
-  <div class="update-entry">
-    <div class="update-time">11:00<span class="ampm">AM</span></div>
-    <div class="update-content">
-      <p class="update-tag">Checked In</p>
-      <h2 class="update-headline">Checked In. Two Hours Out.</h2>
-      <div class="update-body">
-        <p>Checked in at Vanderbilt. Surgery is at 1. His family is with him — they'll be able to stay with him through pre-op before he goes back.</p>
-        <p>Check-in for a surgery like this involves paperwork, ID verification, a final review of the consent forms. The team confirms everything one more time. It can feel slow when all you want is to get it done. That's normal. The waiting room is designed for this. You just have to be in it.</p>
+  <!-- ════════════════════════════════════════════════
+       ARRIVED AT VANDERBILT — projected until confirmed
+       ════════════════════════════════════════════════ -->
+  <div class="tl-entry projected" data-time="10:45">
+    <div class="tl-time">~10:45<span class="ampm">AM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">Arriving at Vanderbilt.</h2>
+      <div class="tl-body">
+        <ul>
+          <li>Pulling in to the main hospital. There's construction right now — valet is available out front, free of charge. Look for the people in bright red shirts outside the main entrance. They'll take the car.</li>
+          <li>From there: main hospital, second floor, surgery check-in. Bring the ID. They're expecting him.</li>
+          <li>This is the moment the building stops being abstract. He's been thinking about this address for months. Now he's in the parking lot.</li>
+        </ul>
       </div>
     </div>
   </div>
-  -->
 
 
-  <!-- ============================================================
-  PRE-SURGERY 4 — PRE-OP.
-  Post when he's been taken back for pre-op prep.
-  ============================================================ -->
-  <!--
-  <div class="update-entry">
-    <div class="update-time">[TIME]<span class="ampm">AM</span></div>
-    <div class="update-content">
-      <p class="update-tag">Pre-Op</p>
-      <h2 class="update-headline">In Pre-Op.</h2>
-      <div class="update-body">
-        <p>He's been taken back to pre-op. His family was with him until he went through the doors. Now they wait.</p>
-        <p>Pre-op is where the IV goes in, vitals get checked one more time, the anesthesiologist comes to talk through the plan, and the surgical team does their final briefing. It can take anywhere from 30 minutes to an hour depending on how the schedule runs. The family is in the waiting room. The next update will be when he goes back to the OR.</p>
+  <!-- ════════════════════════════════════════════════
+       CHECKED IN — projected until confirmed
+       ════════════════════════════════════════════════ -->
+  <div class="tl-entry projected" data-time="11:00">
+    <div class="tl-time">~11:00<span class="ampm">AM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">Checked In. Two Hours Out.</h2>
+      <div class="tl-body">
+        <ul>
+          <li>Checked in at Vanderbilt — main hospital, second floor, surgery check-in. The team confirms everything one last time: ID, consent, allergies, the procedure being performed, the site. This is intentional redundancy. Neurosurgery teams don't skip steps.</li>
+          <li>Surgery is at 1 PM. He's two hours early, which is exactly where they asked him to be. His family is with him. They'll stay through pre-op — up until he goes through the OR doors. That window feels short. It also matters more than almost anything else today.</li>
+        </ul>
       </div>
     </div>
   </div>
-  -->
 
 
-  <!-- ============================================================
-  WAITING ROOM UPDATE 1 — "Your family member has been taken back to the OR."
-  Uncomment when you get this call. Fill in the time.
-  ============================================================ -->
-  <!--
-  <div class="update-entry">
-    <div class="update-time">[TIME]<span class="ampm">PM</span></div>
-    <div class="update-content">
-      <p class="update-tag">OR</p>
-      <h2 class="update-headline">He's Back There.</h2>
-      <div class="update-body">
-        <p>He's been taken back to the OR. The waiting room desk called the family to let them know — that's how you hear it at Vanderbilt, a call or an update at the desk. His family is together. It's in the Lord's hands now.</p>
-        <p>For families going through this — once they take your person back, the OR team is doing final prep: positioning, draping, getting the anesthetic going. Surgery won't start the moment they go back. There's still 20–30 minutes of setup. The clock on the actual procedure starts when the surgeon makes the first incision.</p>
+  <!-- ════════════════════════════════════════════════
+       PRE-OP — projected until confirmed
+       ════════════════════════════════════════════════ -->
+  <div class="tl-entry projected" data-time="11:30">
+    <div class="tl-time">~11:30<span class="ampm">AM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">In Pre-Op.</h2>
+      <div class="tl-body">
+        <ul>
+          <li>He's in pre-op. IV is in. Vitals are being monitored. The IVAC anesthesia team has already been in contact — they sent a nutrition bundle ahead of surgery, supplements and shakes taken exactly as prescribed. Now the anesthesiologist comes by in person: what agents they'll use, what his airway looks like, how they'll manage a six-hour emergence. The surgical team does their final briefing. Everyone in that room knows the procedure, the patient, the plan.</li>
+          <li>His family is still with him. This is the last stretch of time they get together before the doors. Pre-op runs 30–60 minutes depending on the OR schedule. When they call him back, his family walks with him as far as the doors and stops there. He goes through. They go to the waiting room. That's how it works.</li>
+        </ul>
       </div>
     </div>
   </div>
-  -->
 
 
-  <!-- ============================================================
-  WAITING ROOM UPDATE 2 — "Surgery has begun."
-  ============================================================ -->
-  <!--
-  <div class="update-entry">
-    <div class="update-time">[TIME]<span class="ampm">PM</span></div>
-    <div class="update-content">
-      <p class="update-tag">In Surgery</p>
-      <h2 class="update-headline">Surgery Has Started.</h2>
-      <div class="update-body">
-        <p>Surgery has begun. The desk confirmed it. His family is in the waiting room. We're praying and holding on.</p>
-        <p>A suboccipital craniectomy with C1 laminectomy and duraplasty — the procedure Joe is having — typically runs three to five hours. The surgeon removes a small section of bone at the base of the skull to create space for the brainstem, removes the C1 arch for additional room, then opens and expands the dura — the covering of the brain — with a patch. It's meticulous work. The timeline is long by design. No news from the desk during surgery is good news.</p>
+  <!-- ════════════════════════════════════════════════
+       INTO THE OR — projected until confirmed
+       ════════════════════════════════════════════════ -->
+  <div class="tl-entry projected" data-time="12:30">
+    <div class="tl-time">~12:30<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">Taken Back to the OR.</h2>
+      <div class="tl-body">
+        <ul>
+          <li>He's through the doors. His family said goodbye in pre-op — that's the last they'll see him until recovery. They're in the surgical waiting room now. Vanderbilt's OR navigation system will push text updates at key milestones: when he's positioned, when the procedure is formally underway, when the team is closing.</li>
+          <li>In the OR, the first hour belongs entirely to setup. He's placed prone — face down — and secured in a Mayfield head-holding device: a three-pronged clamp that pins directly to the skull to keep his cervical spine immobile for the duration. The head position has to be exact. A millimeter of unintended movement during a posterior fossa procedure is not acceptable. Once positioned, neuromonitoring leads are placed — electrodes that will track brainstem and spinal cord function in real time throughout the case, alerting the team instantly if anything changes neurologically. Only after all of that is confirmed does the anesthesiologist hand over to Dr. Lee.</li>
+          <li>The incision will be made at the midline of the back of the skull, running down toward the neck. Six hours starts now.</li>
+          <li>His family is in the waiting room. That room was built for exactly this. You just have to be in it.</li>
+        </ul>
       </div>
     </div>
   </div>
-  -->
 
 
-  <!-- ============================================================
-  WAITING ROOM UPDATE 3 — "Surgery is still ongoing, everything is going as expected."
-  ============================================================ -->
-  <!--
-  <div class="update-entry waiting">
-    <div class="update-time">[TIME]<span class="ampm">PM</span></div>
-    <div class="update-content">
-      <p class="update-tag">Still In Surgery</p>
-      <h2 class="update-headline">Still In There. Going As Expected.</h2>
-      <div class="update-body">
-        <p>Got a check-in from the team — surgery is still ongoing and everything is going as expected. His family is still in the waiting room. Still here. Still praying.</p>
-        <p>The surgical team at Vanderbilt provides periodic check-in calls to the waiting room during long procedures. Hearing "still ongoing, going as expected" is exactly what you want. It means the surgeon is moving through the steps, nothing unexpected has come up, and the team isn't rushing. We'll update when he's out.</p>
+  <!-- ════════════════════════════════════════════════
+       SURGERY UNDERWAY — projected
+       ════════════════════════════════════════════════ -->
+  <div class="tl-entry projected" data-time="13:00">
+    <div class="tl-time">~1:00<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">The Opening. Bone Work Begins.</h2>
+      <div class="tl-body">
+        <ul>
+          <li>The incision is made and Dr. Lee works through the layers — skin, subcutaneous tissue, the dense musculature of the posterior neck. The muscles are retracted to expose the base of the skull and the top of the cervical spine. This part takes roughly 45 minutes. It is deliberate. There is no hurrying tissue dissection when you are this close to the brainstem.</li>
+          <li>Then the craniectomy: a small window of bone is removed from the occiput — the lower rear of the skull — to physically enlarge the foramen magnum. Back to the analogy: the drain. It's been too narrow his entire life. Every headache at the base of the skull, every symptom that got worse when he bore down or coughed, every ceiling he hit — that drain was the reason. Today they widen it.</li>
+          <li>The C1 laminectomy follows immediately: the posterior arch of the first cervical vertebra is removed, extending that decompression downward into the spinal canal. This is not a separate procedure — it's the continuation of the same goal. More room. The cerebellar tonsils that have been sitting where they don't belong now have somewhere to go.</li>
+          <li>Bone work total: approximately 45 minutes. No news from the OR is not bad news. Silence is the job.</li>
+        </ul>
       </div>
     </div>
   </div>
-  -->
 
 
-  <!-- ============================================================
-  WAITING ROOM UPDATE 4 — "Surgery is complete, the surgeon will be out to speak with you shortly."
-  ============================================================ -->
-  <!--
-  <div class="update-entry">
-    <div class="update-time">[TIME]<span class="ampm">PM</span></div>
-    <div class="update-content">
-      <p class="update-tag">Surgery Complete</p>
-      <h2 class="update-headline">He's Out of Surgery.</h2>
-      <div class="update-body">
-        <p>Surgery is done. The desk let the family know — the surgeon will be out to speak with them shortly. We'll post again as soon as that conversation happens.</p>
-        <p>This is the update families wait for all day. When the desk says "surgery is complete and the surgeon will be out to speak with you" — that's the signal that the procedure is finished and the patient is being closed and stabilized. The surgeon comes out to give the family the report in person before the patient moves to recovery. That conversation is next.</p>
+  <!-- ════════════════════════════════════════════════
+       MID-SURGERY FAMILY — optional, projected
+       ════════════════════════════════════════════════ -->
+  <!-- ════════════════════════════════════════════════
+       THE DURAPLASTY — the slow part. projected.
+       ════════════════════════════════════════════════ -->
+  <div class="tl-entry projected" data-time="14:00">
+    <div class="tl-time">~2:00<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">The Duraplasty. The Slow Part.</h2>
+      <div class="tl-body">
+        <ul>
+          <li>This is where the six hours comes from.</li>
+          <li>The dura is the tough, fibrous outermost layer surrounding the brain and spinal cord — the last barrier between the surgical field and the central nervous system. Dr. Lee opens it carefully and inspects the space beneath. He can now see the cerebellar tonsils directly. Depending on what he finds, he may cauterize them to reduce their volume, or he may determine the bone decompression alone has created enough room. That call is made in the moment, based on what the anatomy looks like with the obstruction removed.</li>
+          <li>Then the patch. A graft — either donor tissue or a synthetic dural substitute — is sutured into the opening to expand the dural sac, creating a larger reservoir for cerebrospinal fluid. The stitches are placed with microsurgical precision under magnification. Every stitch must be watertight. A CSF leak after this procedure is the complication you most want to avoid — it means going back in. Dr. Lee does not rush this step. This phase runs one to two hours on its own.</li>
+          <li>The sink analogy again: the drain is wider now. The duraplasty is rebuilding the basin around it so the fluid has somewhere to go. Both things have to happen for this to work.</li>
+          <li>His family has been waiting for roughly two hours. The waiting room gets quieter as the hours add up. That's the job right now.</li>
+        </ul>
       </div>
     </div>
   </div>
-  -->
 
 
-  <!-- ============================================================
-  WAITING ROOM UPDATE 5 — "Your family member is in recovery."
-  ============================================================ -->
-  <!--
-  <div class="update-entry">
-    <div class="update-time">[TIME]<span class="ampm">PM</span></div>
-    <div class="update-content">
-      <p class="update-tag">In Recovery</p>
-      <h2 class="update-headline">He's in Recovery.</h2>
-      <div class="update-body">
-        <p>He's been moved to recovery. His family hasn't been back to see him yet — that comes after he's stable and the team says it's okay. He made it through the surgery. That's what we know right now.</p>
-        <p>The post-anesthesia care unit — recovery — is where the anesthetic wears off under close monitoring. Vitals, neuro checks, pain management. For a brain surgery this size, the team is watching for any early signs of swelling or bleeding. It typically takes one to two hours before family can go back. The patient usually isn't fully conscious yet. That comes in stages.</p>
+  <!-- ════════════════════════════════════════════════
+       MID-SURGERY FAMILY — optional, projected
+       ════════════════════════════════════════════════ -->
+  <div class="tl-entry projected" data-time="15:30">
+    <div class="tl-time">~3:30<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Family</span></div>
+      <h2 class="tl-headline">Still Waiting.</h2>
+      <div class="tl-body">
+        <ul>
+          <li>His family is three hours into the wait. At this point the waiting has moved past anticipation into something else — a kind of sustained endurance that doesn't have a good name. They know there's still time on the clock. They're in it.</li>
+          <li>If his family has something to share from the waiting room, it will appear here. If this entry stays grayed, it means the waiting is quiet. That's okay too.</li>
+        </ul>
       </div>
     </div>
   </div>
-  -->
 
 
-  <!-- ============================================================
-  WAITING ROOM UPDATE 6 — "Your family member is being moved to the Neuro ICU."
-  ============================================================ -->
-  <!--
-  <div class="update-entry">
-    <div class="update-time">[TIME]<span class="ampm">PM</span></div>
-    <div class="update-content">
-      <p class="update-tag">Neuro ICU</p>
-      <h2 class="update-headline">Being Moved to the Neuro ICU.</h2>
-      <div class="update-body">
-        <p>He's being moved to the Neuro ICU. His family will be able to go back soon.</p>
-        <p>The Neuro ICU after a suboccipital craniectomy is standard — not a sign that something went wrong. This is the plan. After a surgery this close to the brainstem, the team monitors continuously for the first 24 hours: neuro checks every hour, blood pressure management, pain control, watching for any signs of swelling or CSF leak. Joe worked in a neuro trauma bay. He knew this was where he was going. It's where he belongs right now.</p>
+  <!-- ════════════════════════════════════════════════
+       CLOSING — projected
+       ════════════════════════════════════════════════ -->
+  <div class="tl-entry projected" data-time="17:30">
+    <div class="tl-time">~5:30<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">Closing.</h2>
+      <div class="tl-body">
+        <ul>
+          <li>The duraplasty is complete. The patch is secured and tested. Dr. Lee closes in layers — the deep cervical musculature is reapproximated over the surgical site, then subcutaneous tissue, then skin. The wound is dressed. This takes 30–45 minutes.</li>
+          <li>Simultaneously, anesthesia begins tapering the agents that have kept him under for the last several hours. Emergence is not flipping a switch. It's a controlled ascent — monitored every step. The neuromonitoring team is watching for any signal changes as consciousness returns.</li>
+          <li>The surgical navigation system sends his family a message when he's closing. That's usually the first signal they get that things went as expected. His family has been waiting for roughly five hours. They're watching their phone.</li>
+        </ul>
       </div>
     </div>
   </div>
-  -->
 
 
-  <!-- ============================================================
-  WAITING ROOM UPDATE 7 — "Your family member is settled in the Neuro ICU, you can go back soon."
-  ============================================================ -->
-  <!--
-  <div class="update-entry">
-    <div class="update-time">[TIME]<span class="ampm">PM</span></div>
-    <div class="update-content">
-      <p class="update-tag">Neuro ICU — Settled</p>
-      <h2 class="update-headline">Family Is Going Back.</h2>
-      <div class="update-body">
-        <p>He's settled in the Neuro ICU and his family is heading back to see him now. ICU visiting is limited — usually two people at a time, short windows. But they get to see him. We'll post when they do.</p>
+  <!-- ════════════════════════════════════════════════
+       SURGEON'S REPORT — projected until confirmed
+       Uncomment A, B, C, D, or E depending on what happens.
+       Only one should be active at a time.
+       ════════════════════════════════════════════════ -->
+
+  <!-- A — EVERYTHING WENT AS PLANNED -->
+  <div class="tl-entry projected" data-time="18:30">
+    <div class="tl-time">~6:30<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">The Surgeon Comes Out.</h2>
+      <div class="tl-body">
+        <ul>
+          <li>When the procedure is complete, Dr. Lee will come to the waiting room personally. That's how it works. The surgeon comes out himself.</li>
+          <li>Six hours of waiting ends in a two-minute conversation in a hallway. His family will hear words like "decompression looks good," "no intraoperative complications," "he's stable." What those words mean: the foramen magnum is wider. The dura is patched. The tonsils have room. The brainstem is no longer compressed. The cerebrospinal fluid that has been restricted for 25 years can now move.</li>
+          <li>We'll post what he says the moment his family hears it. This entry goes live then.</li>
+        </ul>
       </div>
     </div>
   </div>
-  -->
 
-
-  <!-- ============================================================
-  SURGEON UPDATE A — "Everything went as planned."
-  ============================================================ -->
   <!--
-  <div class="update-entry">
-    <div class="update-time">[TIME]<span class="ampm">PM</span></div>
-    <div class="update-content">
-      <p class="update-tag">Surgeon's Report</p>
-      <h2 class="update-headline">Everything Went As Planned.</h2>
-      <div class="update-body">
-        <p>The surgeon came out and spoke with the family. Everything went as planned. No surprises. He's stable. His family heard those words and that was enough for right now.</p>
-        <p>"Everything went as planned" from a neurosurgeon means the decompression was achieved, no unexpected bleeding or complications arose, and the patient is stable coming out of anesthetic. For a Chiari surgery, it means the brainstem now has the room it's never had. The work is done. Recovery starts now.</p>
-        <p>He's on the other side of it. February 26th is done.</p>
+  SURGEON UPDATE B — COMPLICATIONS, MANAGED
+  Replace the entry above with this if complications occurred but resolved.
+  <div class="tl-entry confirmed">
+    <div class="tl-time">[TIME]<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">There Were Complications. They Managed Them.</h2>
+      <div class="tl-body">
+        <ul>
+          <li>The surgeon came out and was honest with the family. There were complications during surgery — but the team was able to manage them. He is stable.</li>
+          <li>[FILL IN any details the surgeon shared that his family wants posted.]</li>
+          <li>Complications during a Chiari decompression can include bleeding, CSF leak, or difficulty with the dural graft. "Managed" means the team identified what was happening and addressed it before closing. He's stable. That's the most important word. For families hearing this — stable means the crisis was handled. The road ahead may be longer. He came through the surgery.</li>
+        </ul>
       </div>
     </div>
   </div>
-  -->
 
-
-  <!-- ============================================================
-  SURGEON UPDATE B — "There were some complications but we were able to manage them."
-  ============================================================ -->
-  <!--
-  <div class="update-entry serious">
-    <div class="update-time">[TIME]<span class="ampm">PM</span></div>
-    <div class="update-content">
-      <p class="update-tag">Surgeon's Report</p>
-      <h2 class="update-headline">There Were Complications. They Managed Them.</h2>
-      <div class="update-body">
-        <p>The surgeon came out and was honest with the family. There were some complications during surgery — but the team was able to manage them. He is stable.</p>
-        <p>[FILL IN any additional details the surgeon shared, if his family wants them posted.]</p>
-        <p>Complications during Chiari decompression surgery can include bleeding, CSF leak, or issues with the dural patch. "We were able to manage them" means the surgical team identified what was happening and addressed it before closing. He's stable. That's the most important word right now. For families hearing this — stable means the crisis was handled. The road ahead may be longer, but he came through the surgery.</p>
-        <p>He knew going in this could go sideways. He planned for it. His family is with him.</p>
+  SURGEON UPDATE C — TOOK LONGER, STILL STABLE
+  <div class="tl-entry confirmed">
+    <div class="tl-time">[TIME]<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">Took Longer Than Expected. He's Stable.</h2>
+      <div class="tl-body">
+        <ul>
+          <li>Surgery ran long. The surgeon let the family know — it took more time than anticipated, but he is stable.</li>
+          <li>[FILL IN any details the surgeon shared that his family wants posted.]</li>
+          <li>A longer procedure doesn't automatically mean something went wrong. Chiari decompressions run long when the anatomy is more complex than imaging suggested, when additional scar tissue is encountered, or when the surgeon needs extra time to achieve a safe decompression. Stable is still a good outcome. We'll update as we know more.</li>
+        </ul>
       </div>
     </div>
   </div>
-  -->
 
-
-  <!-- ============================================================
-  SURGEON UPDATE C — "The surgery took longer than expected but they are stable."
-  ============================================================ -->
-  <!--
-  <div class="update-entry serious">
-    <div class="update-time">[TIME]<span class="ampm">PM</span></div>
-    <div class="update-content">
-      <p class="update-tag">Surgeon's Report</p>
-      <h2 class="update-headline">Took Longer Than Expected. He's Stable.</h2>
-      <div class="update-body">
-        <p>Surgery took longer than expected. The surgeon came out and let the family know — it went long, but he is stable.</p>
-        <p>[FILL IN any additional details the surgeon shared, if his family wants them posted.]</p>
-        <p>A longer surgery doesn't automatically mean something went wrong. Chiari decompressions can run long when the anatomy is more complex than imaging suggested, when the surgeon needs more time to safely achieve the decompression, or when additional scar tissue is encountered. Stable coming out of a longer surgery is still a good outcome. His family heard that word. We'll update as we know more.</p>
-      </div>
-    </div>
-  </div>
-  -->
-
-
-  <!-- ============================================================
-  SURGEON UPDATE D — "We have some concerns and are monitoring closely."
-  ============================================================ -->
-  <!--
-  <div class="update-entry serious">
-    <div class="update-time">[TIME]<span class="ampm">PM</span></div>
-    <div class="update-content">
-      <p class="update-tag">Monitoring Closely</p>
-      <h2 class="update-headline">The Team Has Some Concerns.</h2>
-      <div class="update-body">
-        <p>The surgeon spoke with the family. Surgery is complete but the team has some concerns and is monitoring him closely. His family is together. They're holding on.</p>
-        <p>[FILL IN any additional details the surgeon shared, if his family wants them posted.]</p>
-        <p>"Monitoring closely" after a brain surgery means the team has identified something they want to watch — swelling, blood pressure, neurological response — and they're not prepared to give a full prognosis yet. It is not the same as a crisis. It means the next several hours matter and the team is on it. For families in this moment: ask questions, take notes, and don't rush anyone to give you answers they don't have yet. Joe wrote about this. He said seek God, take time, ask the right questions. His family is doing exactly that.</p>
+  SURGEON UPDATE D — MONITORING CLOSELY
+  <div class="tl-entry confirmed">
+    <div class="tl-time">[TIME]<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">The Team Has Some Concerns.</h2>
+      <div class="tl-body">
+        <ul>
+          <li>Surgery is complete. The team has some concerns and is monitoring him closely. His family is together.</li>
+          <li>[FILL IN any details the surgeon shared that his family wants posted.]</li>
+          <li>"Monitoring closely" after brain surgery means the team has flagged something — swelling, pressure, neurological response — and they're not ready to give a full prognosis yet. It is not the same as a crisis. The next several hours matter and the team is on it. Seek God. Take time. Ask the right questions.</li>
+        </ul>
         <div class="verse-block">
           <p class="verse-text">"My grace is sufficient for you, for my power is made perfect in weakness."</p>
           <p class="verse-ref">— 2 Corinthians 12:9</p>
@@ -462,23 +786,21 @@
       </div>
     </div>
   </div>
-  -->
 
-
-  <!-- ============================================================
-  SURGEON UPDATE E — "We need to take them back to the OR."
-  ============================================================ -->
-  <!--
-  <div class="update-entry serious">
-    <div class="update-time">[TIME]<span class="ampm">PM</span></div>
-    <div class="update-content">
-      <p class="update-tag">Back to the OR</p>
-      <h2 class="update-headline">He's Going Back In.</h2>
-      <div class="update-body">
-        <p>The team needs to take him back to the OR. His family has been told. They're together. They're praying.</p>
-        <p>[FILL IN any additional details the surgeon shared, if his family wants them posted.]</p>
-        <p>A return to the OR after neurosurgery most often means the team has identified bleeding or a CSF pressure issue that needs to be addressed surgically. It is serious. It is also something surgical teams prepare for and are trained to handle. His family is not alone in that waiting room. We'll update when we hear more.</p>
-        <p>Please pray.</p>
+  SURGEON UPDATE E — GOING BACK TO THE OR
+  <div class="tl-entry confirmed">
+    <div class="tl-time">[TIME]<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">He's Going Back In.</h2>
+      <div class="tl-body">
+        <ul>
+          <li>The team needs to take him back to the OR. His family has been told. They're together. They're praying.</li>
+          <li>[FILL IN any details the surgeon shared that his family wants posted.]</li>
+          <li>A return to the OR after neurosurgery most often means the team has identified bleeding or a CSF pressure issue that needs to be addressed surgically. It is serious. It is also something surgical teams prepare for and are trained to handle. His family is not alone in that waiting room.</li>
+          <li>Please pray.</li>
+        </ul>
         <div class="verse-block">
           <p class="verse-text">"Even though I walk through the valley of the shadow of death, I will fear no evil, for you are with me."</p>
           <p class="verse-ref">— Psalm 23:4</p>
@@ -489,114 +811,89 @@
   -->
 
 
-  <!-- ============================================================
-  SURGEON UPDATE F — "We did everything we could. I'm so sorry."
-
-  This is the last entry. Read it now while you have a clear head.
-  Take whatever time you need before you post it.
-  His family comes first. The page can wait.
-
-  The words below are written in Joe's voice — based on everything
-  he wrote on this site. The theology is his. The framing is his.
-  His family should read it before you post it.
-  ============================================================ -->
-  <!--
-  <div class="update-entry">
-    <div class="update-time">[TIME]<span class="ampm">PM</span></div>
-    <div class="update-content">
-      <p class="update-tag">February 26, 2026</p>
-      <h2 class="update-headline">Joe Passed Away Today.</h2>
-      <div class="memorial-block">
-        <div class="memorial-body">
-          <p>The surgeon came out to speak with the family. They did everything they could.</p>
-          <p>Joe was 25 years old. He was a combat medic. A cardiovascular ICU nurse. A Chiari patient. A man who prayed for empathy and then became the patient he was praying for. He built this site because he believed the gap between provider and patient mattered — and that closing it could change how people are cared for.</p>
-          <p>He walked into this surgery with his eyes open. He wrote his living will. He said death is not defeat. He said to live is Christ, to die is gain. He meant it. He wasn't performing that faith — he lived it.</p>
-          <p>He didn't know what the other side of February 26th looked like. None of us did. Now he does.</p>
-          <p>[FILL IN — his family's words. What do they want people to know? This space is for them.]</p>
-          <p>[OPTIONAL — services, how to honor him, who to reach out to.]</p>
-          <p>This site will stay up. It's a record of who he was and what he was working toward. He didn't waste this. Not a single day of it.</p>
-        </div>
-        <div class="verse-block" style="margin-top:2rem;">
-          <p class="verse-text">"Fixing our eyes on Jesus, the pioneer and perfecter of faith, who for the joy set before him endured the cross, scorning its shame, and sat down at the right hand of the throne of God."</p>
-          <p class="verse-ref">— Hebrews 12:2</p>
-        </div>
+  <!-- ════════════════════════════════════════════════
+       NEURO ICU — projected
+       ════════════════════════════════════════════════ -->
+  <div class="tl-entry projected" data-time="21:00">
+    <div class="tl-time">~9:00<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">Moved to the Neuro ICU.</h2>
+      <div class="tl-body">
+        <ul>
+          <li>After surgery he goes directly to the Neuro ICU — not a standard recovery room. That's routine for intracranial procedures, not a sign of anything wrong. The Neuro ICU team monitors neurological function continuously, manages post-op pain, and watches for any changes in the first critical hours. He'll have a urinary catheter in place when he wakes up — standard for a procedure this long. It comes out once he's up and walking.</li>
+          <li>Visiting hours are 9 to 9. One adult can stay overnight. His family will be allowed back in limited windows — the first time they see him, he'll likely still be heavily sedated, not responsive. That's normal. It can be hard to see. It's also the proof he made it through. Both things are true at once.</li>
+          <li>If all goes well, he transfers out of the Neuro ICU after the first night and moves to a standard medical surgical floor for a few more days — pain management, monitoring, getting him on his feet before he goes home.</li>
+        </ul>
       </div>
     </div>
   </div>
-  -->
 
 
-  <!-- ============================================================
-  POST-OP 1 — FAMILY HAS SEEN HIM IN RECOVERY.
-  Post when his parents text you they've been back to see him.
-  ============================================================ -->
-  <!--
-  <div class="update-entry">
-    <div class="update-time">[TIME]<span class="ampm">PM</span></div>
-    <div class="update-content">
-      <p class="update-tag">Recovery</p>
-      <h2 class="update-headline">His Family Has Seen Him.</h2>
-      <div class="update-body">
-        <p>[FILL IN — what did his parents say when they saw him? How does he look? Asleep, breathing on his own, any color in his face? One honest detail here means everything to the people reading.]</p>
-        <p>The first time family sees a patient after brain surgery, they're usually still heavily sedated and not responsive. That's normal. What you're watching for is that he's breathing, his color looks okay, and the monitors are steady. It can be hard to see him like that. It's also the proof that he made it through. Both things are true at once.</p>
+  <!-- ════════════════════════════════════════════════
+       FAMILY SEES HIM — projected until confirmed
+       ════════════════════════════════════════════════ -->
+  <div class="tl-entry projected" data-time="19:30">
+    <div class="tl-time">~7:30<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Family</span></div>
+      <h2 class="tl-headline">His Family Has Seen Him.</h2>
+      <div class="tl-body">
+        <ul>
+          <li>His family is going back to see him. If they want to share something from that room — what he looks like, what they're feeling, a detail they want people to have — it will appear here when this entry goes live.</li>
+          <li>If this stays grayed, it means they needed that moment for themselves. That's theirs. They don't owe anyone a report from it.</li>
+        </ul>
       </div>
     </div>
   </div>
-  -->
 
 
-  <!-- ============================================================
-  POST-OP 2 — FIRST SIGNS OF CONSCIOUSNESS.
-  Post when he starts coming around — eyes opening, responding
-  to his name, squeezing a hand. Anything.
-  ============================================================ -->
-  <!--
-  <div class="update-entry">
-    <div class="update-time">[TIME]<span class="ampm">PM</span></div>
-    <div class="update-content">
-      <p class="update-tag">Waking Up</p>
-      <h2 class="update-headline">He's Coming Around.</h2>
-      <div class="update-body">
-        <p>[FILL IN — what are his parents seeing? Eyes fluttering? Responding to his name? Squeezing a hand? Write exactly what they told you. Small things count here.]</p>
-        <p>Emergence from anesthesia after a procedure this long is gradual. The brain wakes up in layers — first reflexive responses, then awareness, then actual consciousness. Hearing his name, feeling a hand, knowing someone is in the room — that all comes before full wakefulness. Every small sign matters. His family is watching for all of it.</p>
+  <!-- ════════════════════════════════════════════════
+       COMING AROUND — projected
+       ════════════════════════════════════════════════ -->
+  <div class="tl-entry projected" data-time="20:00">
+    <div class="tl-time">~8:00<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">Coming Around.</h2>
+      <div class="tl-body">
+        <ul>
+          <li>Emergence from six hours of general anesthesia is not quick. The brain doesn't come back online all at once — it surfaces in layers. Protective reflexes return first. Then response to voice. Then partial awareness. Full consciousness comes last, and it can take hours after a procedure this long.</li>
+          <li>The first things he'll feel: a dull, heavy pain at the base of his skull where the bone was removed. Stiffness through the neck — the musculature was retracted and sutured back. Sensitivity to light and sound. Nausea from the anesthetic agents. All of it expected. All of it manageable. The Neuro ICU team has seen this presentation a hundred times. Pain management is already running — oxycodone and Tylenol, the two they sent him home with instructions for. The team stays ahead of the pain. That's the job in those first hours.</li>
+          <li>His family is watching for the small things — eyes moving behind closed lids, a response to a hand squeeze, recognition of a voice. Those come before words. Every small sign is the right direction.</li>
+        </ul>
       </div>
     </div>
   </div>
-  -->
 
 
-  <!-- ============================================================
-  POST-OP 3 — AWAKE. CONSCIOUS. OKAY.
-  Post when he is clearly awake and communicating.
-  This is the one people have been waiting for all day.
-  ============================================================ -->
-  <!--
-  <div class="update-entry">
-    <div class="update-time">[TIME]<span class="ampm">PM</span></div>
-    <div class="update-content">
-      <p class="update-tag">Awake</p>
-      <h2 class="update-headline">He's Awake.</h2>
-      <div class="update-body">
-        <p>[FILL IN — he's awake. What did he say? What did his face look like? What did his parents say when they saw his eyes open and knew he was in there? This is the moment. Write what actually happened.]</p>
-        <p>For anyone reading this on the other side of their own surgery one day — waking up in the Neuro ICU after a Chiari decompression is disorienting. Pain at the back of the skull, a stiff neck, lights too bright, voices too loud. The anesthetic takes hours to fully clear. But waking up means the brainstem has space now that it's never had. The first hours are hard. The trajectory from here is forward.</p>
-        <p>He said he'd never met the version of himself on the other side of February 26th. He's meeting him now.</p>
+  <!-- ════════════════════════════════════════════════
+       AWAKE — projected until confirmed
+       THIS IS THE ONE PEOPLE HAVE BEEN WAITING FOR.
+       ════════════════════════════════════════════════ -->
+  <div class="tl-entry projected" data-time="19:00">
+    <div class="tl-time">~7:00<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">He's Awake.</h2>
+      <div class="tl-body">
+        <ul>
+          <li>When this entry goes live, he's awake. What he said first. What his face looked like. What his family saw when his eyes opened. This entry will be filled in with what actually happened — not what we projected.</li>
+          <li>For anyone reading this on the other side of their own surgery one day: waking up in the Neuro ICU after a Chiari decompression is disorienting. Six hours of anesthesia, bone removed, a membrane opened and patched. There are sutures at the back of the skull that won't come out for two weeks. There's a catheter that comes out when he walks. There's a medical surgical floor stay ahead, then a drive home to St. Louis, then recovery at his parents' house. The first hours are hard. The trajectory from here is forward.</li>
+          <li>He said he'd never met the version of himself on the other side of February 26th. He's meeting him now.</li>
+        </ul>
       </div>
     </div>
   </div>
-  -->
 
 
-  <!-- ============================================================
-  MORNING OF — JOE WRITES THIS HIMSELF BEFORE HE GOES IN.
-  He will update the blog and this page the morning of surgery.
-  Jonah — your job starts at PRE-SURGERY 1 at 10:15 AM.
-  Do not touch this section. Joe's post will appear here.
-  ============================================================ -->
-
-
-  <!-- ============================================================
-  HANDOFF — Uncomment when Joe is ready to write himself.
-  ============================================================ -->
+  <!-- ════════════════════════════════════════════════
+       HANDOFF — uncomment when Joe is ready to write
+       ════════════════════════════════════════════════ -->
   <!--
   <div class="handoff-block">
     <p class="handoff-label">He's Back</p>
@@ -606,30 +903,435 @@
   -->
 
 
+  <!-- ════════════════════════════════════════════════
+       LAST ENTRY.
+       Read this now, while you have a clear head.
+       Take whatever time you need before posting it.
+       His family comes first. The page can wait.
+       His family should read it before you post it.
+       ════════════════════════════════════════════════ -->
+  <!--
+  <div class="tl-entry confirmed faith-entry">
+    <div class="tl-time">[TIME]<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">February 26, 2026</span></div>
+      <h2 class="tl-headline">Joe Passed Away Today.</h2>
+      <div class="memorial-block">
+        <div class="memorial-body">
+          <p>The surgeon came out to speak with the family. They did everything they could.</p>
+          <p>Joe was 25 years old. He was a combat medic. He worked in a cardiovascular ICU. He was a Chiari patient. A man who prayed for empathy and then became the patient he was praying for. He built this site because he believed the gap between provider and patient mattered — and that closing it could change how people are cared for.</p>
+          <p>He walked into this surgery with his eyes open. He wrote his living will. He said death is not defeat. He said to live is Christ, to die is gain. He meant it. He wasn't performing that faith — he lived it.</p>
+          <p>He didn't know what the other side of February 26th looked like. None of us did. Now he does.</p>
+          <p>[FILL IN — his family's words. What do they want people to know? This space is for them.]</p>
+          <p>[OPTIONAL — services, how to honor him, who to reach out to.]</p>
+          <p>This site will stay up. It's a record of who he was and what he was working toward. He didn't waste this. Not a single day of it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  -->
+
+
+</div><!-- end timeline-wrap -->
+
+
+
+<div class="salute-wrap" id="salute-section">
+  <p class="salute-label">Leave a salute</p>
+  <div class="salute-row" id="salute-row"></div>
 </div>
+
+<div class="comments-wrap">
+  <p class="comments-label">Comments</p>
+  <div class="comment-form">
+    <textarea class="comment-textarea" id="cm-text" placeholder="Leave a word for Joe, his family, or anyone reading this on the way to their own surgery day…"></textarea>
+    <div class="comment-form-footer">
+      <input class="comment-name-input" id="cm-name" type="text" placeholder="Your name (optional)" />
+      <button id="cm-submit">Post</button>
+    </div>
+  </div>
+  <div class="comment-list" id="cm-list"></div>
+</div>
+
+<div class="post-nav">
+  <div class="post-nav-inner">
+    <a href="blog-post-memento-mori.html" class="post-nav-card prev">
+      <span class="post-nav-direction">← Previous</span>
+      <span class="post-nav-title">Memento Mori: What Makes Life Worth Living</span>
+      <span class="post-nav-date">February 24, 2026</span>
+    </a>
+    <div class="post-nav-card next empty">
+      <span class="post-nav-direction">Next →</span>
+      <span class="post-nav-title" style="color:var(--gray);">Coming Soon</span>
+      <span class="post-nav-date">From the other side</span>
+    </div>
+  </div>
+</div>
+
 
 <footer>
   <div class="footer-logo">Peck's Mission</div>
   <p class="footer-kipling">"And so hold on when there is nothing in you except the Will which says to them: Hold on."</p>
   <p class="footer-line">— Rudyard Kipling, If</p>
-  <p class="footer-line" style="margin-top:0.8rem;color:#555;">"The ceiling you hit your whole life wasn't your ceiling. It was the condition's ceiling."</p>
+  <p class="footer-line" style="margin-top:0.8rem;color:#2e2e2e;">"The ceiling you hit your whole life wasn't your ceiling. It was the condition's ceiling."</p>
+  <p class="footer-line" style="margin-top:1.8rem;color:#2a2a2a;">This page kept by Jonah Sapp</p>
   <ul class="nav-footer">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="chiari.html">Chiari</a></li>
-    <li><a href="blog.html">Updates</a></li>
+    <li><a href="blog.html">From The Field</a></li>
     <li><a href="follow-along.html">Follow Along</a></li>
   </ul>
 </footer>
 
 <script>
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-  function closeMobile() { mobileMenu.classList.remove('open'); }
-  document.addEventListener('click', (e) => {
+  // ── MOBILE NAV ──
+  var hamburger = document.getElementById('hamburger');
+  var mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  function closeMobile() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  }
+  document.addEventListener('click', function(e) {
     if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) closeMobile();
   });
+
+  // ── AUTO-TOGGLE: drives projected entries off the clock ──
+  // Only fires on Feb 26 2026 (Central Time).
+  // Confirmed entries are never touched — only projected ones.
+  // The entry whose data-time has just passed becomes active-now.
+  // All prior projected entries become visually past (past-projected).
+  // All future projected entries stay grayed.
+
+  function autoToggle() {
+    const SURGERY_DATE = '2026-02-26';
+    const TZ = 'America/Chicago';
+
+    // Get current time in Central
+    const now = new Date();
+    const formatter = new Intl.DateTimeFormat('en-CA', {
+      timeZone: TZ,
+      year: 'numeric', month: '2-digit', day: '2-digit',
+      hour: '2-digit', minute: '2-digit', hour12: false
+    });
+    const parts = formatter.formatToParts(now);
+    const get = type => parts.find(p => p.type === type).value;
+    const todayDate = `${get('year')}-${get('month')}-${get('day')}`;
+    const currentMinutes = parseInt(get('hour')) * 60 + parseInt(get('minute'));
+
+    // Only auto-toggle on surgery day
+    if (todayDate !== SURGERY_DATE) return;
+
+    const entries = document.querySelectorAll('.tl-entry[data-time]');
+    let activeSet = false;
+
+    // Walk entries in reverse to find the most recent past one
+    // Build array of [entry, entryMinutes]
+    const timed = Array.from(entries).map(el => {
+      const [h, m] = el.dataset.time.split(':').map(Number);
+      return { el, minutes: h * 60 + m };
+    });
+
+    // Sort by time ascending
+    timed.sort((a, b) => a.minutes - b.minutes);
+
+    timed.forEach(({ el, minutes }, i) => {
+      // Never touch confirmed entries
+      if (el.classList.contains('confirmed')) return;
+
+      if (minutes <= currentMinutes) {
+        // This time has passed
+        if (i === timed.filter(t => t.minutes <= currentMinutes).length - 1) {
+          // Most recent past entry = active-now
+          if (!activeSet) {
+            el.classList.remove('projected', 'past-projected');
+            el.classList.add('active-now');
+            activeSet = true;
+          }
+        } else {
+          // Earlier past entries = past-projected (slightly visible, not lit)
+          el.classList.remove('projected', 'active-now');
+          el.classList.add('past-projected');
+        }
+      } else {
+        // Future entries stay projected
+        el.classList.remove('active-now', 'past-projected');
+        el.classList.add('projected');
+      }
+    });
+
+    // Update progress board active stage to match
+    updateProgressBoard(currentMinutes);
+  }
+
+  function updateProgressBoard(currentMinutes) {
+    // Stage thresholds in minutes from midnight (Central)
+    const stages = [
+      { threshold: 0,    name: 'On the Way'  },
+      { threshold: 645,  name: 'Checked In'  }, // 10:45
+      { threshold: 690,  name: 'Pre-Op'      }, // 11:30
+      { threshold: 750,  name: 'In Surgery'  }, // 12:30
+      { threshold: 1110, name: 'Recovery'    }, // 18:30 (surgeon out = into recovery)
+      { threshold: 1230, name: 'Awake'        }, // 20:30
+    ];
+
+    const stageEls = document.querySelectorAll('.progress-stages .stage');
+    if (stageEls.length !== stages.length) return;
+
+    // Don't override manually confirmed stages (those with non-empty stage-time showing real time)
+    // We check: if the stage-time text contains ~ it hasn't been manually set
+    // If it has a real time (no ~) we assume it was manually confirmed and leave it
+    let activeIdx = 0;
+    for (let i = 0; i < stages.length; i++) {
+      if (currentMinutes >= stages[i].threshold) activeIdx = i;
+    }
+
+    stageEls.forEach((el, i) => {
+      // Only update stages that haven't been manually confirmed
+      // A manually confirmed stage has no '—' in its stage-time
+      const timeEl = el.querySelector('.stage-time');
+      const isManuallySet = timeEl && !timeEl.textContent.includes('—') && !timeEl.textContent.includes('~');
+      if (isManuallySet) return;
+
+      el.classList.remove('done', 'active');
+      if (i < activeIdx) el.classList.add('done');
+      else if (i === activeIdx) el.classList.add('active');
+    });
+
+    // Update "last updated" timestamp
+    const updatedEl = document.querySelector('.progress-board-updated');
+    if (updatedEl && !updatedEl.dataset.manual) {
+      const now = new Date();
+      const t = now.toLocaleTimeString('en-US', {
+        timeZone: 'America/Chicago',
+        hour: 'numeric', minute: '2-digit', hour12: true
+      });
+      updatedEl.textContent = `Auto-updated · ${t}`;
+    }
+  }
+
+  // Run on load, then every 60 seconds
+  autoToggle();
+  setInterval(autoToggle, 60000);
+</script>
+
+<div class="popup-overlay" id="popup-overlay" role="dialog" aria-modal="true" aria-label="Follow Along">
+  <div class="popup-box">
+    <button class="popup-close" id="popup-close" aria-label="Close">&times;</button>
+    <p class="popup-eyebrow">Surgery is February 26th</p>
+    <h2 class="popup-title">Follow Along</h2>
+    <p class="popup-sub">He's in surgery right now. Get updates straight to your inbox as they come in.</p>
+    <div id="popup-form">
+      <div class="popup-form-group">
+        <input class="popup-input" type="text" id="popup-name" placeholder="Your name" />
+      </div>
+      <div class="popup-form-group">
+        <input class="popup-input" type="email" id="popup-email" placeholder="Your email" />
+      </div>
+      <button class="popup-btn" id="popup-submit-btn" onclick="submitPopup()">I'm In</button>
+      <button class="popup-skip" id="popup-skip">Maybe later</button>
+    </div>
+    <div class="popup-success" id="popup-success">
+      <p class="popup-success-msg">You're in. Thank you.</p>
+      <p class="popup-success-sub">We'll see you on the other side.</p>
+    </div>
+  </div>
+</div>
+
+
+<style>
+#tldr-btn{position:fixed;bottom:2rem;right:2rem;z-index:9000;background:#c9a84c;color:#0a0a0a;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;padding:0.65rem 1.2rem;border-radius:2px;box-shadow:0 4px 24px rgba(0,0,0,0.5);transition:background 0.2s,transform 0.15s;line-height:1;}
+#tldr-btn:hover{background:#e8c97a;transform:translateY(-2px);}
+#tldr-overlay{display:none;position:fixed;inset:0;z-index:9500;background:rgba(0,0,0,0.65);backdrop-filter:blur(4px);align-items:flex-end;justify-content:flex-end;padding:2rem;}
+#tldr-overlay.open{display:flex;}
+#tldr-box{background:#111;border:1px solid rgba(201,168,76,0.25);border-radius:4px;max-width:440px;width:100%;box-shadow:0 16px 64px rgba(0,0,0,0.7);overflow:hidden;animation:tldrIn 0.22s cubic-bezier(0.34,1.56,0.64,1);}
+@keyframes tldrIn{from{opacity:0;transform:translateY(20px) scale(0.97);}to{opacity:1;transform:translateY(0) scale(1);}}
+#tldr-head{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem 0.8rem;border-bottom:1px solid rgba(255,255,255,0.06);}
+#tldr-head-left{display:flex;flex-direction:column;gap:0.15rem;}
+#tldr-eyebrow{font-family:'DM Mono',monospace;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:#c9a84c;}
+#tldr-ptitle{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.05em;color:#f5f0e8;line-height:1;}
+#tldr-x{background:none;border:none;cursor:pointer;color:#9a9a9a;font-size:1.1rem;line-height:1;padding:4px;transition:color 0.2s;}
+#tldr-x:hover{color:#c9a84c;}
+#tldr-list{list-style:none;margin:0;padding:0.8rem 1.25rem 1.2rem;display:flex;flex-direction:column;gap:0.65rem;}
+#tldr-list li{display:flex;gap:0.6rem;font-family:'Crimson Pro',Georgia,serif;font-size:1rem;line-height:1.55;color:#c8c2b5;}
+#tldr-list li:before{content:"→";color:#c9a84c;flex-shrink:0;margin-top:0.05em;}
+@media(max-width:480px){#tldr-btn{bottom:1.2rem;right:1.2rem;}#tldr-overlay{padding:0;align-items:flex-end;}#tldr-box{max-width:100%;border-radius:4px 4px 0 0;}}
+</style>
+
+<script>
+(function(){
+  var points = [
+    "Suboccipital craniectomy, C1 laminectomy, duraplasty. Three procedures, one surgery, six hours. Dr. Lee at Vanderbilt.",
+    "The drain has been too narrow his entire life. Every ceiling he hit, every symptom that got worse when he bore down — that was the condition's ceiling, not his. Today they widen it.",
+    "The duraplasty is the slow part. One to two hours of microsurgical stitches, watertight, no shortcuts. That's where the six hours comes from.",
+    "His family is in the waiting room. Grayed entries are what's most likely happening right now based on the clock. Lit entries are confirmed.",
+    "He said he'd never met the version of himself on the other side of February 26th. Refresh this page to find out."
+  ];
+  var title = "Surgery Day — February 26, 2026";
+  var btn = document.createElement('button');
+  btn.id = 'tldr-btn'; btn.textContent = 'TL;DR';
+  document.body.appendChild(btn);
+  var overlay = document.createElement('div'); overlay.id = 'tldr-overlay';
+  var box = document.createElement('div'); box.id = 'tldr-box';
+  var head = document.createElement('div'); head.id = 'tldr-head';
+  var headLeft = document.createElement('div'); headLeft.id = 'tldr-head-left';
+  var eyebrow = document.createElement('span'); eyebrow.id = 'tldr-eyebrow'; eyebrow.textContent = 'Too Long; Didn’t Read';
+  var ptitle = document.createElement('span'); ptitle.id = 'tldr-ptitle'; ptitle.textContent = title;
+  headLeft.appendChild(eyebrow); headLeft.appendChild(ptitle);
+  var xBtn = document.createElement('button'); xBtn.id = 'tldr-x'; xBtn.setAttribute('aria-label','Close'); xBtn.textContent = '✕';
+  head.appendChild(headLeft); head.appendChild(xBtn);
+  var list = document.createElement('ul'); list.id = 'tldr-list';
+  points.forEach(function(p){ var li = document.createElement('li'); li.textContent = p; list.appendChild(li); });
+  box.appendChild(head); box.appendChild(list);
+  overlay.appendChild(box); document.body.appendChild(overlay);
+  btn.addEventListener('click', function(){ overlay.classList.add('open'); });
+  xBtn.addEventListener('click', function(){ overlay.classList.remove('open'); });
+  overlay.addEventListener('click', function(e){ if(e.target===overlay) overlay.classList.remove('open'); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') overlay.classList.remove('open'); });
+})();
+</script>
+
+<script>
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyaDNsViYx1XxdNgWhF_JViMJQ42qcGNS38ReZ6Lb0q8T16szKpikQD49hXs_B3Y7zo/exec';
+  function showPopup() {
+    document.getElementById('popup-overlay').classList.add('visible');
+    document.body.style.overflow = 'hidden';
+  }
+  function closePopup() {
+    document.getElementById('popup-overlay').classList.remove('visible');
+    document.body.style.overflow = '';
+    localStorage.setItem('popup-dismissed', '1');
+  }
+  if (!localStorage.getItem('popup-dismissed')) { setTimeout(showPopup, 60000); }
+  document.getElementById('popup-close').addEventListener('click', closePopup);
+  document.getElementById('popup-skip').addEventListener('click', closePopup);
+  document.getElementById('popup-overlay').addEventListener('click', function(e) { if (e.target === this) closePopup(); });
+  function submitPopup() {
+    var btn = document.getElementById('popup-submit-btn');
+    var name = document.getElementById('popup-name').value.trim();
+    var email = document.getElementById('popup-email').value.trim();
+    if (!name || !email) { alert('Please enter your name and email.'); return; }
+    btn.textContent = 'Sending...'; btn.disabled = true;
+    fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name, email, message: 'Signed up via popup on surgery-day' }) })
+    .then(function() {
+      document.getElementById('popup-form').style.display = 'none';
+      document.getElementById('popup-success').style.display = 'block';
+      localStorage.setItem('popup-dismissed', '1');
+      setTimeout(closePopup, 3000);
+    })
+    .catch(function() { btn.textContent = "I'm In"; btn.disabled = false; alert('Something went wrong. Please try again.'); });
+  }
+</script>
+
+<script type="module">
+  import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+  import { getFirestore, collection, addDoc, getDocs, query, orderBy, serverTimestamp, where } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
+
+  const app = initializeApp({ apiKey:"AIzaSyExample",authDomain:"pecksmission.firebaseapp.com",projectId:"pecksmission" });
+  const db = getFirestore(app);
+  const PAGE_ID = 'surgery-day';
+  const colRef = collection(db, 'comments');
+
+  // ── SALUTE ──
+  const SALUTES = [
+    { emoji: '🙏', label: 'Praying' },
+    { emoji: '✊', label: 'With You' },
+    { emoji: '❤️', label: 'Love' },
+    { emoji: '💪', label: 'Strong' },
+  ];
+  const saluteCol = collection(db, 'salutes');
+
+  async function initSalute() {
+    const row = document.getElementById('salute-row');
+    if (!row) return;
+    const snap = await getDocs(query(saluteCol, where('page','==',PAGE_ID)));
+    const counts = {};
+    SALUTES.forEach(s => counts[s.label] = 0);
+    snap.forEach(d => { if (counts[d.data().type] !== undefined) counts[d.data().type]++; });
+    const userKey = 'salute-' + PAGE_ID;
+    const userSalute = localStorage.getItem(userKey);
+    row.innerHTML = '';
+    SALUTES.forEach(function(s) {
+      var btn = document.createElement('button');
+      btn.className = 'salute-btn' + (userSalute === s.label ? ' active' : '');
+      btn.innerHTML = s.emoji + ' <span class="salute-count">' + counts[s.label] + '</span> <span style="opacity:0.6">' + s.label + '</span>';
+      btn.addEventListener('click', async function() {
+        if (userSalute) return;
+        await addDoc(saluteCol, { page: PAGE_ID, type: s.label, ts: serverTimestamp() });
+        localStorage.setItem(userKey, s.label);
+        initSalute();
+      });
+      row.appendChild(btn);
+    });
+  }
+  initSalute();
+
+  // ── COMMENTS ──
+  const nameInput = document.getElementById('cm-name');
+  const textInput = document.getElementById('cm-text');
+
+  textInput.addEventListener('focus', function() { nameInput.classList.add('visible'); });
+
+  function renderComment(data, id, children) {
+    var div = document.createElement('div');
+    div.className = 'comment-item';
+    var ts = data.ts ? new Date(data.ts.seconds * 1000).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}) : '';
+    div.innerHTML = '<div class="comment-header"><span class="comment-author">' + (data.name||'Anonymous') + '</span><span class="comment-date">' + ts + '</span></div><p class="comment-text">' + data.text.replace(/</g,'&lt;') + '</p><button class="comment-reply-btn">Reply</button><div class="reply-form" id="rf-'+id+'"><textarea class="comment-textarea" placeholder="Reply..."></textarea><div class="reply-name-row"><input class="reply-name-input" type="text" placeholder="Your name (optional)" /><button class="reply-submit">Reply</button><button class="reply-cancel">Cancel</button></div></div>';
+    if (children && children.length) {
+      var childDiv = document.createElement('div');
+      childDiv.className = 'comment-children open';
+      children.forEach(function(c) { childDiv.appendChild(renderComment(c.data, c.id, [])); });
+      div.appendChild(childDiv);
+    }
+    div.querySelector('.comment-reply-btn').addEventListener('click', function() { div.querySelector('.reply-form').classList.toggle('open'); });
+    div.querySelector('.reply-cancel').addEventListener('click', function() { div.querySelector('.reply-form').classList.remove('open'); });
+    div.querySelector('.reply-submit').addEventListener('click', async function() {
+      var text = div.querySelector('.comment-textarea').value.trim();
+      var name = div.querySelector('.reply-name-input').value.trim();
+      if (!text) return;
+      await addDoc(colRef, { page: PAGE_ID, name, text, parentId: id, ts: serverTimestamp() });
+      div.querySelector('.reply-form').classList.remove('open');
+      load();
+    });
+    return div;
+  }
+
+  async function load() {
+    try {
+      var snap = await getDocs(query(colRef, where('page','==',PAGE_ID), orderBy('ts','asc')));
+      var docs = [];
+      snap.forEach(d => docs.push({ id: d.id, data: d.data() }));
+      var parents = docs.filter(d => !d.data.parentId);
+      var children = docs.filter(d => d.data.parentId);
+      var list = document.getElementById('cm-list');
+      list.innerHTML = '';
+      parents.forEach(function(p) {
+        var kids = children.filter(c => c.data.parentId === p.id);
+        list.appendChild(renderComment(p.data, p.id, kids));
+      });
+    } catch(e) { console.error(e); }
+  }
+
+  document.getElementById('cm-submit').addEventListener('click', async function() {
+    var text = textInput.value.trim();
+    if (!text) return;
+    var name = nameInput.value.trim();
+    var btn = document.getElementById('cm-submit');
+    btn.textContent = 'Posting…'; btn.disabled = true;
+    try {
+      await addDoc(colRef, { page: PAGE_ID, name, text, parentId: null, ts: serverTimestamp() });
+      textInput.value = ''; nameInput.value = '';
+      await load();
+    } catch(e) { console.error(e); }
+    btn.textContent = 'Post'; btn.disabled = false;
+  });
+
+  load();
 </script>
 
 </body>
