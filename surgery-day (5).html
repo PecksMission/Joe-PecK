@@ -1,0 +1,1807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WT1126YN2Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WT1126YN2Q');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surgery Day — Peck's Mission</title>
+  <meta property="og:title" content="Peck's Mission | Surgery Day — February 26, 2026" />
+  <meta name="description" content="Live updates from surgery day. Joe is at Vanderbilt. His family is with him. We'll update this page throughout the day." />
+  <meta property="og:description" content="Live updates from surgery day. Joe is at Vanderbilt. His family is with him. We'll update this page throughout the day." />
+  <meta property="og:image" content="https://www.pecksmission.com/og-image.png" />
+  <meta property="og:url" content="https://www.pecksmission.com/surgery-day" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0a0a0a;
+      --white: #f5f0e8;
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --red: #8b2020;
+      --gray: #4a4a4a;
+      --gray-light: #9a9a9a;
+      --clinical: #5b8fa8;
+      --faith: #a05c5c;
+      --family: #c9a84c;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--white); font-family: 'Crimson Pro', Georgia, serif; font-size: 20px; line-height: 1.8; overflow-x: hidden; }
+
+    /* ── NAV ── */
+    nav { position: fixed; top: 0; width: 100%; z-index: 100; padding: 1.2rem 3rem; display: flex; justify-content: space-between; align-items: center; background: rgba(10,10,10,0.94); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(201,168,76,0.15); }
+    .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.15em; color: var(--gold); text-decoration: none; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { color: var(--gray-light); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* ── PAGE HEADER ── */
+    .page-header { padding: 9rem 3rem 4rem; max-width: 820px; margin: 0 auto; }
+    .page-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.82rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
+    .page-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 8vw, 6rem); line-height: 0.92; letter-spacing: 0.02em; margin-bottom: 1.4rem; }
+    .page-sub { font-size: 1rem; font-weight: 300; font-style: italic; color: var(--gray-light); max-width: 520px; margin-bottom: 2rem; line-height: 1.7; }
+    .page-meta-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(201,168,76,0.12); margin-bottom: 2rem; }
+    .post-meta { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray-light); }
+    .live-badge { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 0.5rem; }
+    .live-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); animation: livepulse 2s ease-in-out infinite; }
+    @keyframes livepulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    .btn { background: var(--gold); color: var(--black); padding: 0.85rem 1.9rem; font-family: 'DM Mono', monospace; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; display: inline-block; transition: background 0.2s; }
+    .btn:hover { background: var(--gold-light); }
+
+    /* legend */
+    .leg-legend { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .legend-item { display: flex; align-items: center; gap: 0.55rem; }
+    .legend-pip { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .legend-text { font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gray-light); }
+
+    /* ── PROGRESS BOARD ── */
+    .progress-wrap { max-width: 820px; margin: 0 auto; padding: 0 3rem 4rem; }
+    .progress-board { border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.012); }
+    .progress-board-header { padding: 1.1rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+    .progress-board-title { font-family: 'DM Mono', monospace; font-size: 0.67rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gray-light); }
+    .progress-board-updated { font-family: 'DM Mono', monospace; font-size: 0.63rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray); }
+    .progress-stages { display: grid; grid-template-columns: repeat(6, 1fr); }
+    .stage { padding: 1.3rem 1.1rem; border-right: 1px solid rgba(255,255,255,0.05); }
+    .stage:last-child { border-right: none; }
+    .stage-dot { width: 6px; height: 6px; border-radius: 50%; background: #222; margin-bottom: 0.7rem; }
+    .stage-name { font-family: 'Bebas Neue', sans-serif; font-size: 0.92rem; color: #2e2e2e; line-height: 1.1; margin-bottom: 0.3rem; letter-spacing: 0.03em; }
+    .stage-time { font-family: 'DM Mono', monospace; font-size: 0.57rem; letter-spacing: 0.1em; color: #272727; text-transform: uppercase; }
+    .stage-note { font-family: 'DM Mono', monospace; font-size: 0.55rem; letter-spacing: 0.06em; color: #252525; margin-top: 0.22rem; line-height: 1.4; }
+    .stage.done .stage-dot { background: var(--clinical); opacity: 0.45; }
+    .stage.done .stage-name { color: rgba(91,143,168,0.45); }
+    .stage.done .stage-time { color: rgba(91,143,168,0.3); }
+    .stage.done .stage-note { color: rgba(91,143,168,0.28); }
+    .stage.active { border-bottom: 2px solid var(--clinical); background: rgba(91,143,168,0.05); animation: borderflash 2s ease-in-out infinite; }
+    @keyframes borderflash { 0%,100%{border-bottom-color:var(--clinical)} 50%{border-bottom-color:transparent} }
+    .stage.active .stage-dot { background: var(--clinical); box-shadow: 0 0 10px rgba(91,143,168,0.65); width: 8px; height: 8px; animation: stagepulse 2s ease-in-out infinite; }
+    .stage.active .stage-name { color: var(--white); font-size: 1rem; }
+    .stage.active .stage-time { color: var(--clinical); }
+    .stage.active .stage-note { color: rgba(91,143,168,0.65); }
+    @keyframes stagepulse { 0%,100%{box-shadow:0 0 6px rgba(91,143,168,0.5)} 50%{box-shadow:0 0 16px rgba(91,143,168,1)} }
+
+    /* ── TIMELINE ── */
+    .timeline-wrap { max-width: 820px; margin: 0 auto; padding: 0 3rem 7rem; }
+    .timeline-section-label { font-family: 'DM Mono', monospace; font-size: 0.67rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gray-light); margin-bottom: 2.2rem; padding-bottom: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
+
+    .tl-entry { display: grid; grid-template-columns: 80px 16px 1fr; gap: 0 1.6rem; padding: 2rem 0; border-bottom: 1px solid rgba(255,255,255,0.04); position: relative; }
+    .tl-entry:last-child { border-bottom: none; }
+    .tl-time { font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.08em; padding-top: 0.2rem; line-height: 1.5; text-align: right; }
+    .tl-time .ampm { display: block; font-size: 0.58rem; letter-spacing: 0.14em; margin-top: 0.08rem; }
+    .tl-spine { display: flex; flex-direction: column; align-items: center; padding-top: 0.28rem; }
+    .tl-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .tl-line { width: 1px; flex: 1; margin-top: 6px; }
+    .tl-meta { display: flex; align-items: center; gap: 0.55rem; margin-bottom: 0.4rem; }
+    .tl-pip { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+    .tl-tag { font-family: 'DM Mono', monospace; font-size: 0.63rem; letter-spacing: 0.18em; text-transform: uppercase; }
+    .tl-headline { font-family: 'Bebas Neue', sans-serif; font-size: 1.45rem; letter-spacing: 0.03em; line-height: 1; margin-bottom: 0.7rem; color: var(--white); }
+    .tl-body { font-size: 0.95rem; font-weight: 300; line-height: 1.85; color: #d0cbc3; }
+    .tl-body p { margin-bottom: 0.65rem; }
+    .tl-body p:last-child { margin-bottom: 0; }
+
+    /* ── VERSE BLOCK ── */
+    .verse-block { background: rgba(139,32,32,0.07); border-left: 2px solid var(--faith); padding: 1.1rem 1.5rem; margin: 1rem 0 0; }
+    .verse-text { font-family: 'Crimson Pro', serif; font-size: 1rem; font-style: italic; font-weight: 300; color: var(--white); line-height: 1.65; margin-bottom: 0.35rem; }
+    .verse-ref { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faith); }
+
+    /* ── PHOTO ── */
+    .update-photo { width: 100%; max-width: 480px; display: block; margin: 1rem 0 0.3rem; border: 1px solid rgba(255,255,255,0.06); }
+    .update-photo-caption { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--gray-light); margin-bottom: 0.6rem; }
+
+    /* ── ENTRY STATE: PROJECTED ── */
+    .tl-entry.projected .tl-time { color: #2c2c2c; }
+    .tl-entry.projected .tl-dot { background: #1e1e1e; border: 1px solid #2a2a2a; }
+    .tl-entry.projected .tl-line { background: rgba(255,255,255,0.03); }
+    .tl-entry.projected .tl-pip { background: #2a2a2a; }
+    .tl-entry.projected .tl-tag { color: #333; }
+    .tl-entry.projected .tl-headline { color: #383838; }
+    .tl-entry.projected .tl-body { color: #2a2a2a; }
+    .tl-entry.projected .verse-block { display: none; }
+
+    /* ── ENTRY STATE: PAST-PROJECTED ── */
+    .tl-entry.past-projected .tl-time { color: #252525; }
+    .tl-entry.past-projected .tl-dot { background: #222; border: 1px solid #2a2a2a; }
+    .tl-entry.past-projected .tl-line { background: rgba(255,255,255,0.03); }
+    .tl-entry.past-projected .tl-pip { background: #252525; }
+    .tl-entry.past-projected .tl-tag { color: #2e2e2e; }
+    .tl-entry.past-projected .tl-headline { color: #2a2a2a; }
+    .tl-entry.past-projected .tl-body { color: #222; }
+    .tl-entry.past-projected .verse-block { display: none; }
+
+    /* ── ENTRY STATE: CONFIRMED ── */
+    .tl-entry.confirmed .tl-time { color: var(--clinical); }
+    .tl-entry.confirmed .tl-time .ampm { color: rgba(91,143,168,0.5); }
+    .tl-entry.confirmed .tl-dot { background: var(--clinical); }
+    .tl-entry.confirmed .tl-line { background: rgba(91,143,168,0.15); }
+    .tl-entry.confirmed .tl-pip { background: var(--clinical); }
+    .tl-entry.confirmed .tl-tag { color: var(--clinical); }
+
+    .tl-entry.confirmed.faith-entry .tl-time { color: var(--faith); }
+    .tl-entry.confirmed.faith-entry .tl-time .ampm { color: rgba(160,92,92,0.5); }
+    .tl-entry.confirmed.faith-entry .tl-dot { background: var(--faith); }
+    .tl-entry.confirmed.faith-entry .tl-line { background: rgba(160,92,92,0.12); }
+    .tl-entry.confirmed.faith-entry .tl-pip { background: var(--faith); }
+    .tl-entry.confirmed.faith-entry .tl-tag { color: var(--faith); }
+    .tl-entry.confirmed.faith-entry .tl-body { font-style: italic; }
+
+    .tl-entry.confirmed.family-entry .tl-time { color: var(--family); }
+    .tl-entry.confirmed.family-entry .tl-time .ampm { color: rgba(201,168,76,0.5); }
+    .tl-entry.confirmed.family-entry .tl-dot { background: var(--family); }
+    .tl-entry.confirmed.family-entry .tl-line { background: rgba(201,168,76,0.1); }
+    .tl-entry.confirmed.family-entry .tl-pip { background: var(--family); }
+    .tl-entry.confirmed.family-entry .tl-tag { color: var(--family); }
+
+    /* ── ENTRY STATE: ACTIVE-NOW ── */
+    .tl-entry.active-now .tl-dot { background: var(--clinical); box-shadow: 0 0 10px rgba(91,143,168,0.7); animation: stagepulse 2s ease-in-out infinite; }
+    .tl-entry.active-now .tl-line { background: rgba(91,143,168,0.2); }
+    .tl-entry.active-now .tl-time { color: var(--clinical); }
+    .tl-entry.active-now .tl-time .ampm { color: rgba(91,143,168,0.55); }
+    .tl-entry.active-now .tl-pip { background: var(--clinical); }
+    .tl-entry.active-now .tl-tag { color: var(--clinical); }
+    .tl-entry.active-now .tl-headline { color: var(--white); }
+    .tl-entry.active-now .tl-body { color: #d0cbc3; }
+
+    /* ── TIMELINE ENTRY EXPAND ── */
+    .tl-entry[data-tip] { cursor: pointer; transition: background 0.2s; }
+    .tl-entry[data-tip]:hover { background: rgba(255,255,255,0.015); }
+    .tl-entry[data-tip].expanded { background: rgba(255,255,255,0.02); }
+
+    .tl-info-hint { display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.15); font-family: 'DM Mono', monospace; font-size: 0.55rem; color: var(--gray-light); margin-left: 0.55rem; vertical-align: middle; transition: all 0.2s; flex-shrink: 0; position: relative; top: -1px; user-select: none; }
+    .tl-entry[data-tip]:hover .tl-info-hint { border-color: rgba(255,255,255,0.35); color: var(--white); }
+    .tl-entry.confirmed .tl-info-hint { border-color: rgba(91,143,168,0.35); color: var(--clinical); }
+    .tl-entry.confirmed.faith-entry .tl-info-hint { border-color: rgba(160,92,92,0.35); color: var(--faith); }
+    .tl-entry.confirmed.family-entry .tl-info-hint { border-color: rgba(201,168,76,0.35); color: var(--family); }
+    .tl-entry.expanded .tl-info-hint { transform: rotate(45deg); }
+
+    /* the expand panel lives in the 3rd grid column (content col), spanning below everything */
+    .tl-expand-panel { grid-column: 3; max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.3s ease, padding 0.25s ease; opacity: 0; padding: 0; border-top: 0px solid transparent; }
+    .tl-entry.expanded .tl-expand-panel { max-height: 1200px; opacity: 1; padding: 1rem 0 0.5rem; border-top: 1px solid rgba(255,255,255,0.06); margin-top: 0.8rem; }
+
+    /* ── INLINE DIAGRAM PANELS ── */
+    .tl-diagram { max-width: 820px; margin: 0 auto; padding: 0 3rem; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.3s ease; }
+    .tl-diagram.open { max-height: 900px; opacity: 1; }
+    .tl-diagram-inner { border-top: 1px solid rgba(255,255,255,0.04); padding: 1.8rem 0 2.4rem; }
+    .tl-diagram-label { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--clinical); margin-bottom: 0.4rem; }
+    .tl-diagram-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 0.03em; color: var(--white); margin-bottom: 0.4rem; line-height: 1.1; }
+    .tl-diagram-desc { font-family: 'Crimson Pro', serif; font-size: 0.9rem; font-weight: 300; font-style: italic; color: var(--gray-light); line-height: 1.65; margin-bottom: 1.4rem; max-width: 580px; }
+    .tl-diagram svg { width: 100%; display: block; }
+    .tl-diagram-caption { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); margin-top: 0.9rem; line-height: 1.65; }
+    .tl-diagram-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.05); margin-bottom: 1px; }
+    .tl-diagram-col { background: var(--black); padding: 1.4rem; }
+    @media (max-width: 768px) {
+      .tl-diagram { padding: 0 1.5rem; }
+      .tl-diagram-grid { grid-template-columns: 1fr; }
+    }
+
+    .tl-expand-label { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 0.6rem; }
+    .tl-entry.confirmed .tl-expand-label { color: var(--clinical); }
+    .tl-entry.confirmed.faith-entry .tl-expand-label { color: var(--faith); }
+    .tl-entry.confirmed.family-entry .tl-expand-label { color: var(--family); }
+    .tl-entry.projected .tl-expand-label,
+    .tl-entry.active-now .tl-expand-label { color: rgba(91,143,168,0.7); }
+
+    .tl-expand-text { font-family: 'Crimson Pro', serif; font-size: 0.93rem; font-weight: 300; line-height: 1.8; color: #b8b2a8; }
+    .tl-expand-text p { margin-bottom: 0.6rem; }
+    .tl-expand-text p:last-child { margin-bottom: 0; }
+
+    /* ── MEMORIAL BLOCK ── */
+    .memorial-block { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.07); padding: 2.5rem; margin: 0.8rem 0; }
+    .memorial-body { font-size: 0.98rem; font-weight: 300; color: #d4cfc7; line-height: 1.9; }
+    .memorial-body p { margin-bottom: 1rem; }
+    .memorial-body p:last-child { margin-bottom: 0; }
+
+    /* ── HANDOFF ── */
+    .handoff-block { background: rgba(201,168,76,0.04); border: 1px solid rgba(201,168,76,0.14); padding: 2.5rem; margin: 3rem 0; text-align: center; }
+    .handoff-label { font-family: 'DM Mono', monospace; font-size: 0.67rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
+    .handoff-text { font-family: 'Crimson Pro', serif; font-size: 1.05rem; font-style: italic; font-weight: 300; color: var(--white); line-height: 1.7; margin-bottom: 1.2rem; }
+
+    /* ── POST NAV ── */
+    .post-nav { max-width: 820px; margin: 0 auto; padding: 0 3rem; }
+    .post-nav-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.06); margin: 2rem 0 0; }
+    .post-nav-card { background: var(--black); padding: 2rem 2.5rem; text-decoration: none; color: inherit; transition: background 0.2s; display: block; }
+    .post-nav-card:hover { background: rgba(255,255,255,0.02); }
+    .post-nav-card.next { text-align: right; }
+    .post-nav-card.empty { background: rgba(255,255,255,0.01); pointer-events: none; }
+    .post-nav-direction { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gray-light); margin-bottom: 0.5rem; display: block; }
+    .post-nav-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; line-height: 1.1; color: var(--white); display: block; transition: color 0.2s; }
+    .post-nav-card:hover .post-nav-title { color: var(--gold); }
+    .post-nav-date { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); margin-top: 0.4rem; display: block; }
+
+    /* ── SALUTE ── */
+    .salute-wrap { max-width: 820px; margin: 0 auto; padding: 3rem 3rem 0; border-top: 1px solid rgba(255,255,255,0.05); }
+    .salute-label { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gray-light); margin-bottom: 1.2rem; }
+    .salute-row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .salute-btn { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); color: var(--gray-light); font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.1em; padding: 0.55rem 1rem; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 0.5rem; border-radius: 2px; }
+    .salute-btn:hover { border-color: rgba(201,168,76,0.35); color: var(--gold); background: rgba(201,168,76,0.04); }
+    .salute-btn.active { border-color: rgba(201,168,76,0.5); color: var(--gold); background: rgba(201,168,76,0.08); }
+    .salute-count { font-size: 0.78rem; color: var(--gold); }
+
+    /* ── COMMENTS ── */
+    .comments-wrap { max-width: 820px; margin: 0 auto; padding: 3rem 3rem 5rem; }
+    .comments-label { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gray-light); margin-bottom: 2rem; padding-bottom: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .comment-form { margin-bottom: 3rem; }
+    .comment-textarea { width: 100%; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); color: var(--white); padding: 1rem 1.2rem; font-family: 'Crimson Pro', serif; font-size: 1rem; line-height: 1.6; outline: none; resize: vertical; min-height: 80px; transition: border-color 0.2s; -webkit-appearance: none; border-radius: 0; }
+    .comment-textarea:focus { border-color: rgba(201,168,76,0.4); }
+    .comment-textarea::placeholder { color: rgba(255,255,255,0.18); font-style: italic; }
+    .comment-form-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 0.6rem; gap: 0.75rem; flex-wrap: wrap; }
+    .comment-name-input { background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.15); color: var(--white); font-family: 'Crimson Pro', serif; font-size: 0.95rem; padding: 0.5rem 0.9rem; outline: none; max-width: 0; overflow: hidden; transition: max-width 0.35s ease, border-color 0.2s, padding 0.2s; border-radius: 0; }
+    .comment-name-input.visible { max-width: 220px; }
+    .comment-name-input:focus { border-color: rgba(201,168,76,0.45); }
+    .comment-name-input::placeholder { color: rgba(255,255,255,0.25); }
+    #cm-submit { background: var(--gold); color: var(--black); border: none; padding: 0.6rem 1.5rem; font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
+    #cm-submit:hover { background: var(--gold-light); }
+    #cm-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+    .comment-list { display: flex; flex-direction: column; gap: 2rem; }
+    .comment-item { padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .comment-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .comment-header { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+    .comment-author { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+    .comment-date { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray); }
+    .comment-text { font-size: 0.98rem; font-weight: 300; color: #c8c2b5; line-height: 1.7; }
+    .comment-reply-btn { background: none; border: none; cursor: pointer; font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.22); padding: 0.3rem 0; margin-top: 0.4rem; transition: color 0.2s; display: block; }
+    .comment-reply-btn:hover { color: var(--gold); }
+    .reply-form { display: none; flex-direction: column; gap: 0.5rem; margin-top: 0.8rem; padding-left: 1rem; border-left: 1px solid rgba(201,168,76,0.15); }
+    .reply-form.open { display: flex; }
+    .reply-form .comment-textarea { min-height: 56px; font-size: 0.93rem; }
+    .reply-name-row { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+    .reply-name-input { background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.15); color: var(--white); font-family: 'Crimson Pro', serif; font-size: 0.9rem; padding: 0.4rem 0.75rem; outline: none; flex: 1; min-width: 120px; transition: border-color 0.2s; }
+    .reply-name-input:focus { border-color: rgba(201,168,76,0.45); }
+    .reply-name-input::placeholder { color: rgba(255,255,255,0.2); }
+    .reply-submit { background: transparent; border: 1px solid rgba(201,168,76,0.3); color: var(--gold); font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.38rem 0.9rem; cursor: pointer; transition: background 0.2s, color 0.2s; }
+    .reply-submit:hover { background: var(--gold); color: var(--black); }
+    .reply-cancel { background: none; border: none; cursor: pointer; font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.22); padding: 0; transition: color 0.2s; }
+    .reply-cancel:hover { color: rgba(255,255,255,0.55); }
+    .comment-children { margin-top: 1.1rem; display: none; flex-direction: column; gap: 1.2rem; padding-left: 1rem; border-left: 1px solid rgba(255,255,255,0.05); }
+    .comment-children.open { display: flex; }
+
+    /* ── POPUP ── */
+    .popup-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.75); backdrop-filter: blur(4px); z-index: 999; display: flex; align-items: center; justify-content: center; padding: 1.5rem; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
+    .popup-overlay.visible { opacity: 1; pointer-events: all; }
+    .popup-box { background: #111; border: 1px solid rgba(201,168,76,0.25); max-width: 500px; width: 100%; padding: 3rem 2.5rem 2.5rem; position: relative; transform: translateY(20px); transition: transform 0.4s ease; }
+    .popup-overlay.visible .popup-box { transform: translateY(0); }
+    .popup-close { position: absolute; top: 1rem; right: 1.2rem; background: none; border: none; color: var(--gray-light); font-size: 1.4rem; cursor: pointer; line-height: 1; padding: 0.2rem 0.4rem; transition: color 0.2s; }
+    .popup-close:hover { color: var(--gold); }
+    .popup-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
+    .popup-title { font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; line-height: 1; letter-spacing: 0.03em; color: var(--white); margin-bottom: 0.8rem; }
+    .popup-sub { font-family: 'Crimson Pro', serif; font-size: 1.05rem; font-style: italic; font-weight: 300; color: var(--gray-light); line-height: 1.6; margin-bottom: 1.8rem; }
+    .popup-form-group { margin-bottom: 0.8rem; }
+    .popup-input { width: 100%; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); color: var(--white); padding: 0.85rem 1rem; font-family: 'Crimson Pro', serif; font-size: 1rem; outline: none; transition: border-color 0.2s; -webkit-appearance: none; }
+    .popup-input:focus { border-color: rgba(201,168,76,0.5); }
+    .popup-input::placeholder { color: var(--gray); font-style: italic; }
+    .popup-btn { background: var(--gold); color: var(--black); padding: 0.95rem 0; width: 100%; font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; border: none; cursor: pointer; margin-top: 0.4rem; transition: background 0.2s; }
+    .popup-btn:hover { background: var(--gold-light); }
+    .popup-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+    .popup-skip { display: block; text-align: center; margin-top: 1.2rem; font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); cursor: pointer; background: none; border: none; transition: color 0.2s; }
+    .popup-skip:hover { color: var(--gray-light); }
+    .popup-success { display: none; text-align: center; padding: 1rem 0; }
+    .popup-success-msg { font-family: 'Crimson Pro', serif; font-size: 1.3rem; font-style: italic; color: var(--gold-light); margin-bottom: 0.4rem; }
+    .popup-success-sub { font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-light); }
+
+    /* ── FOOTER ── */
+    footer { padding: 3rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.04); }
+    .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 0.15em; color: var(--gold); margin-bottom: 1rem; }
+    .footer-kipling { font-family: 'Crimson Pro', serif; font-size: 1.1rem; font-style: italic; color: var(--gray-light); margin-bottom: 0.5rem; }
+    .footer-line { font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); }
+    .nav-footer { display: flex; justify-content: center; gap: 2rem; list-style: none; margin-top: 1.5rem; flex-wrap: wrap; }
+    .nav-footer a { color: var(--gray); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-footer a:hover { color: var(--gold); }
+
+    /* ── MOBILE NAV ── */
+    .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; z-index: 200; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--gold); transition: all 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: 60px; right: 1.5rem; width: 220px; background: rgba(10,10,10,0.97); border: 1px solid rgba(201,168,76,0.18); border-radius: 3px; z-index: 150; flex-direction: column; padding: 1.2rem 1.5rem; gap: 1.2rem; backdrop-filter: blur(10px); }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { color: var(--white); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+    .mobile-menu a:hover { color: var(--gold); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .hamburger { display: flex; }
+      .nav-links { display: none !important; }
+      .page-header, .progress-wrap, .timeline-wrap { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .page-header { padding-top: 7rem; }
+      .progress-stages { grid-template-columns: repeat(3, 1fr); }
+      .stage:nth-child(3) { border-right: none; }
+      .stage:nth-child(1),.stage:nth-child(2),.stage:nth-child(3) { border-bottom: 1px solid rgba(255,255,255,0.05); }
+      .tl-entry { grid-template-columns: 52px 14px 1fr; gap: 0 1rem; }
+      .post-nav { padding: 0 1.5rem; }
+    }
+    @media (max-width: 480px) {
+      .progress-stages { grid-template-columns: repeat(2, 1fr); }
+      .stage:nth-child(2n) { border-right: none; }
+      .stage:nth-child(3) { border-right: 1px solid rgba(255,255,255,0.05); }
+      .leg-legend { gap: 1.1rem; }
+      .tl-entry { grid-template-columns: 46px 12px 1fr; gap: 0 0.8rem; }
+      .post-nav-inner { grid-template-columns: 1fr; }
+    }
+    /* ── LAST UPDATE BAR ── */
+    .last-update-bar { position: sticky; top: 61px; z-index: 90; background: rgba(10,10,10,0.97); border-bottom: 1px solid rgba(201,168,76,0.12); backdrop-filter: blur(10px); padding: 0.7rem 3rem; overflow: hidden; }
+    .last-update-inner { max-width: 820px; margin: 0 auto; display: flex; align-items: center; gap: 0.75rem; min-width: 0; }
+    .last-update-label { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gray); white-space: nowrap; flex-shrink: 0; }
+    .last-update-time { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; color: var(--gold); white-space: nowrap; flex-shrink: 0; }
+    .last-update-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+    .last-update-headline { font-family: 'Bebas Neue', sans-serif; font-size: 0.95rem; letter-spacing: 0.05em; color: var(--white); white-space: nowrap; flex-shrink: 0; }
+    .last-update-sep { color: var(--gray); font-size: 0.8rem; flex-shrink: 0; }
+    .last-update-body { font-family: 'Crimson Pro', serif; font-size: 0.88rem; font-weight: 300; color: var(--gray-light); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+    @media (max-width: 768px) {
+      .last-update-bar { padding: 0.65rem 1.5rem; top: 58px; }
+      .last-update-sep, .last-update-body { display: none; }
+    }
+
+    /* ── STAGE TOOLTIPS ── */
+    .stage { position: relative; cursor: pointer; }
+    .stage-tooltip { display: none; position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%); width: 200px; background: #1a1a1a; border: 1px solid rgba(201,168,76,0.2); padding: 0.75rem 0.9rem; font-family: 'Crimson Pro', serif; font-size: 0.82rem; font-weight: 300; line-height: 1.6; color: #c8c2b5; z-index: 200; pointer-events: none; }
+    .stage-tooltip::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 5px solid transparent; border-top-color: rgba(201,168,76,0.2); }
+    .stage:hover .stage-tooltip,
+    .stage.tip-open .stage-tooltip { display: block; }
+    /* keep tooltips inside viewport on edges */
+    .stage:first-child .stage-tooltip { left: 0; transform: none; }
+    .stage:first-child .stage-tooltip::after { left: 20%; }
+    .stage:last-child .stage-tooltip { left: auto; right: 0; transform: none; }
+    .stage:last-child .stage-tooltip::after { left: auto; right: 20%; transform: none; }
+
+    /* ── PREP TIMELINE ── */
+    .prep-wrap { max-width: 820px; margin: 0 auto; padding: 0 3rem 4rem; }
+    .prep-board { border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.012); }
+    .prep-board-header { padding: 1.1rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; }
+    .prep-board-title { font-family: 'DM Mono', monospace; font-size: 0.67rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gray-light); }
+    .prep-board-sub { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray); }
+
+    .prep-item { border-bottom: 1px solid rgba(255,255,255,0.05); cursor: pointer; transition: background 0.2s; }
+    .prep-item:last-child { border-bottom: none; }
+    .prep-item:hover { background: rgba(255,255,255,0.015); }
+    .prep-item.open { background: rgba(255,255,255,0.02); }
+
+    .prep-row { display: grid; grid-template-columns: 90px 1fr 24px; align-items: center; gap: 0 1.2rem; padding: 1rem 1.5rem; }
+    .prep-time-col { text-align: right; }
+    .prep-time { font-family: 'DM Mono', monospace; font-size: 0.82rem; letter-spacing: 0.06em; color: var(--clinical); display: block; line-height: 1.2; }
+    .prep-time-sub { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(91,143,168,0.45); display: block; }
+    .prep-title-col { }
+    .prep-title { font-family: 'Crimson Pro', serif; font-size: 1rem; font-weight: 400; color: var(--white); line-height: 1.4; }
+    .prep-arrow { font-family: 'DM Mono', monospace; font-size: 1rem; color: var(--gray); transition: transform 0.25s, color 0.2s; display: flex; align-items: center; justify-content: center; }
+    .prep-item.open .prep-arrow { transform: rotate(90deg); color: var(--clinical); }
+
+    .prep-detail { display: none; padding: 0 1.5rem 1.2rem 7rem; font-size: 0.9rem; font-weight: 300; line-height: 1.85; color: rgba(208,203,195,0.75); }
+    .prep-detail.open { display: block; }
+    .prep-detail p { margin-bottom: 0.6rem; }
+    .prep-detail p:last-child { margin-bottom: 0; }
+
+    /* NPO row gets a slightly different treatment */
+    .prep-item.npo-row .prep-time { color: var(--gold); }
+    .prep-item.npo-row .prep-time-sub { color: rgba(201,168,76,0.45); }
+    .prep-item.npo-row.open .prep-arrow { color: var(--gold); }
+    .prep-item.dry-npo .prep-time { color: var(--faith); }
+    .prep-item.dry-npo .prep-time-sub { color: rgba(160,92,92,0.45); }
+    .prep-item.dry-npo.open .prep-arrow { color: var(--faith); }
+
+    @media (max-width: 768px) {
+      .prep-wrap { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .prep-row { grid-template-columns: 70px 1fr 20px; padding: 0.9rem 1.2rem; gap: 0 1rem; }
+      .prep-detail { padding-left: 5rem; }
+    }
+    @media (max-width: 480px) {
+      .prep-row { grid-template-columns: 56px 1fr 18px; gap: 0 0.75rem; }
+      .prep-detail { padding-left: 0; padding-top: 0; }
+    }
+
+    @media(max-width:640px) {
+      .comments-wrap { padding: 2rem 1.4rem 4rem; }
+      .comment-name-input.visible { max-width: 180px; }
+      .comment-children { padding-left: 0.65rem; }
+      .salute-wrap { padding: 2rem 1.5rem 0; }
+    }
+
+    /* ── SURGERY VISUALS ── */
+    .visuals-wrap { max-width: 820px; margin: 0 auto; padding: 0 3rem 4rem; }
+    .visuals-header { font-family: 'DM Mono', monospace; font-size: 0.67rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gray-light); margin-bottom: 2rem; padding-bottom: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .visuals-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.06); margin-bottom: 1px; }
+    .visual-card { background: var(--black); padding: 2rem 1.8rem 1.8rem; }
+    .visual-card.full { grid-column: 1 / -1; }
+    .visual-card-label { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--clinical); margin-bottom: 0.6rem; }
+    .visual-card-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 0.03em; color: var(--white); margin-bottom: 0.5rem; line-height: 1.1; }
+    .visual-card-desc { font-family: 'Crimson Pro', serif; font-size: 0.88rem; font-weight: 300; font-style: italic; color: var(--gray-light); line-height: 1.65; margin-bottom: 1.4rem; }
+    .visual-card svg { width: 100%; display: block; }
+    .visual-caption { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); margin-top: 0.9rem; line-height: 1.6; }
+    @media (max-width: 640px) {
+      .visuals-wrap { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .visuals-grid { grid-template-columns: 1fr; }
+      .visual-card.full { grid-column: 1; }
+    }
+
+    /* ── TL;DR BUTTON ── */
+    #tldr-btn{position:fixed;bottom:2rem;right:2rem;z-index:9000;background:#c9a84c;color:#0a0a0a;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;padding:0.65rem 1.2rem;border-radius:2px;box-shadow:0 4px 24px rgba(0,0,0,0.5);transition:background 0.2s,transform 0.15s;line-height:1;}
+    #tldr-btn:hover{background:#e8c97a;transform:translateY(-2px);}
+    #tldr-overlay{display:none;position:fixed;inset:0;z-index:9500;background:rgba(0,0,0,0.65);backdrop-filter:blur(4px);align-items:flex-end;justify-content:flex-end;padding:2rem;}
+    #tldr-overlay.open{display:flex;}
+    #tldr-box{background:#111;border:1px solid rgba(201,168,76,0.25);border-radius:4px;max-width:440px;width:100%;box-shadow:0 16px 64px rgba(0,0,0,0.7);overflow:hidden;animation:tldrIn 0.22s cubic-bezier(0.34,1.56,0.64,1);}
+    @keyframes tldrIn{from{opacity:0;transform:translateY(20px) scale(0.97);}to{opacity:1;transform:translateY(0) scale(1);}}
+    #tldr-head{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem 0.8rem;border-bottom:1px solid rgba(255,255,255,0.06);}
+    #tldr-head-left{display:flex;flex-direction:column;gap:0.15rem;}
+    #tldr-eyebrow{font-family:'DM Mono',monospace;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:#c9a84c;}
+    #tldr-ptitle{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.05em;color:#f5f0e8;line-height:1;}
+    #tldr-x{background:none;border:none;cursor:pointer;color:#9a9a9a;font-size:1.1rem;line-height:1;padding:4px;transition:color 0.2s;}
+    #tldr-x:hover{color:#c9a84c;}
+    #tldr-list{list-style:none;margin:0;padding:0.8rem 1.25rem 1.2rem;display:flex;flex-direction:column;gap:0.65rem;}
+    #tldr-list li{display:flex;gap:0.6rem;font-family:'Crimson Pro',Georgia,serif;font-size:1rem;line-height:1.55;color:#c8c2b5;}
+    #tldr-list li:before{content:"→";color:#c9a84c;flex-shrink:0;margin-top:0.05em;}
+    @media(max-width:480px){#tldr-btn{bottom:1.2rem;right:1.2rem;}#tldr-overlay{padding:0;align-items:flex-end;}#tldr-box{max-width:100%;border-radius:4px 4px 0 0;}}
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Peck's Mission</a>
+  <ul class="nav-links">
+    <li><a href="about.html">My Story</a></li>
+    <li><a href="chiari.html">What is Chiari</a></li>
+    <li><a href="blog.html">From The Field</a></li>
+    <li><a href="follow-along.html">Follow Along</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMobile()">Home</a>
+  <a href="about.html" onclick="closeMobile()">My Story</a>
+  <a href="chiari.html" onclick="closeMobile()">What is Chiari</a>
+  <a href="blog.html" onclick="closeMobile()">From The Field</a>
+  <a href="follow-along.html" onclick="closeMobile()">Follow Along</a>
+</div>
+
+<!-- LAST UPDATE BAR -->
+<div class="last-update-bar" id="last-update-bar">
+  <div class="last-update-inner">
+    <span class="last-update-label">Last Update</span>
+    <span class="last-update-time" id="lu-time">10:20 AM</span>
+    <div class="last-update-dot" style="background:var(--clinical)"></div>
+    <span class="last-update-headline" id="lu-headline">Left the House.</span>
+    <span class="last-update-sep">—</span>
+    <span class="last-update-body" id="lu-body">He left at 10:20. Surgery is at 1 PM. His family is with him.</span>
+  </div>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <p class="page-eyebrow">Surgery Day &nbsp;·&nbsp; February 26, 2026</p>
+  <h1 class="page-title">February 26th.</h1>
+  <p class="page-sub">He's at Vanderbilt. Surgery starts at 1 PM. This page tracks the whole day — grayed entries are what's expected to happen, lit entries are confirmed real updates. Refresh as the day moves. Jonah's keeping it.</p>
+
+  <div class="page-meta-row">
+    <div>
+      <p class="post-meta">By Sapp &nbsp;·&nbsp; Systems Administrator &nbsp;·&nbsp; MSP Technician &nbsp;·&nbsp; Cybersecurity</p>
+      <p class="post-meta" style="margin-top:0.3rem;opacity:0.55;">Vanderbilt University Medical Center &nbsp;·&nbsp; Chiari Decompression</p>
+      <p class="live-badge" style="margin-top:0.5rem;"><span class="live-dot"></span> Live · Updating All Day · Kept by Sapp</p>
+    </div>
+    <a href="follow-along.html#reach-out" class="btn">Follow Along</a>
+  </div>
+
+  <div class="leg-legend">
+    <div class="legend-item"><span class="legend-pip" style="background:var(--clinical)"></span><span class="legend-text">Clinical</span></div>
+    <div class="legend-item"><span class="legend-pip" style="background:var(--faith)"></span><span class="legend-text">Faith</span></div>
+    <div class="legend-item"><span class="legend-pip" style="background:var(--family)"></span><span class="legend-text">Family</span></div>
+  </div>
+</div>
+
+
+<!-- ================================================================
+     PREP TIMELINE
+     ================================================================ -->
+<div class="prep-wrap">
+  <div class="prep-board">
+    <div class="prep-board-header">
+      <span class="prep-board-title">Before You Walk In</span>
+      <span class="prep-board-sub">Tap any row to expand</span>
+    </div>
+
+    <div class="prep-item" onclick="togglePrep(this)">
+      <div class="prep-row">
+        <div class="prep-time-col">
+          <span class="prep-time">7 Days</span>
+          <span class="prep-time-sub">Before</span>
+        </div>
+        <div class="prep-title-col">
+          <span class="prep-title">Stop ibuprofen, vitamins & aspirin.</span>
+        </div>
+        <span class="prep-arrow">›</span>
+      </div>
+      <div class="prep-detail">
+        <p>No Advil, Motrin, ibuprofen, or aspirin — seven days before and seven days after. Same rule applies to OTC vitamin supplements. IVAC will likely send their own nutrition bundle with specific shakes and vitamins. Those are fine. Everything else stops.</p>
+        <p>On any prescription meds? IVAC will walk you through what to keep taking and what to hold. Don't guess — just ask them directly.</p>
+      </div>
+    </div>
+
+    <div class="prep-item" onclick="togglePrep(this)">
+      <div class="prep-row">
+        <div class="prep-time-col">
+          <span class="prep-time">Night</span>
+          <span class="prep-time-sub">Before</span>
+        </div>
+        <div class="prep-title-col">
+          <span class="prep-title">Wash hair with baby shampoo.</span>
+        </div>
+        <span class="prep-arrow">›</span>
+      </div>
+      <div class="prep-detail">
+        <p>Vanderbilt asked for baby shampoo specifically. The incision is at the base of the skull — scalp prep matters. It's also one of those small tasks that makes the night before feel like something you can actually do. Something concrete when your brain wants to spiral.</p>
+        <p>If IVAC sent nutrition shakes, tonight's the night. Take everything exactly as prescribed. Then get some sleep.</p>
+      </div>
+    </div>
+
+    <div class="prep-item npo-row" onclick="togglePrep(this)">
+      <div class="prep-row">
+        <div class="prep-time-col">
+          <span class="prep-time">12:00</span>
+          <span class="prep-time-sub">Midnight</span>
+        </div>
+        <div class="prep-title-col">
+          <span class="prep-title">NPO. Nothing to eat after midnight.</span>
+        </div>
+        <span class="prep-arrow">›</span>
+      </div>
+      <div class="prep-detail">
+        <p>NPO — <em>nil per os</em>, nothing by mouth. No food after midnight, full stop. This isn't arbitrary. Food in your stomach during anesthesia induction is a serious aspiration risk. The surgical team checks this at check-in, so don't test it.</p>
+        <p>Clear liquids are still on until 9 AM — that's water, black coffee, apple juice. No pulp, no dairy, nothing opaque. After 9, that window closes too. Then it's just the drive.</p>
+      </div>
+    </div>
+
+    <div class="prep-item dry-npo" onclick="togglePrep(this)">
+      <div class="prep-row">
+        <div class="prep-time-col">
+          <span class="prep-time">9:00</span>
+          <span class="prep-time-sub">AM</span>
+        </div>
+        <div class="prep-title-col">
+          <span class="prep-title">Dry NPO. No more clear liquids.</span>
+        </div>
+        <span class="prep-arrow">›</span>
+      </div>
+      <div class="prep-detail">
+        <p>Clear liquid window closes at 9 AM — four hours before the 1 PM start. Nothing after this. Not even water.</p>
+        <p>This is when the waiting actually kicks in. Everything before this had tasks. Now it's just time. He's been building to this day for months. Now it's just the drive to Vanderbilt.</p>
+      </div>
+    </div>
+
+    <div class="prep-item" onclick="togglePrep(this)">
+      <div class="prep-row">
+        <div class="prep-time-col">
+          <span class="prep-time">11:00</span>
+          <span class="prep-time-sub">AM</span>
+        </div>
+        <div class="prep-title-col">
+          <span class="prep-title">Arrive at Vanderbilt. Main hospital, 2nd floor.</span>
+        </div>
+        <span class="prep-arrow">›</span>
+      </div>
+      <div class="prep-detail">
+        <p>Two hours early — exactly where the team wants him. Main hospital, second floor, surgery check-in. Bring photo ID. They're expecting him.</p>
+        <p>Heads up: there's active construction out front right now. Free valet is right outside the main entrance — look for the people in bright red shirts. They take the car. From there it's a straight shot to check-in.</p>
+      </div>
+    </div>
+
+    <div class="prep-item" onclick="togglePrep(this)">
+      <div class="prep-row">
+        <div class="prep-time-col">
+          <span class="prep-time">1:00</span>
+          <span class="prep-time-sub">PM</span>
+        </div>
+        <div class="prep-title-col">
+          <span class="prep-title">Surgery begins. 4–6 hours.</span>
+        </div>
+        <span class="prep-arrow">›</span>
+      </div>
+      <div class="prep-detail">
+        <p>1 PM start, barring any schedule changes — they'll reach out if anything shifts. The procedure is a suboccipital craniectomy, C1 laminectomy, and duraplasty. Three steps, four to six hours. The timeline below walks through every stage as it happens.</p>
+        <p>Sutures go in at the incision and come out at the two-week follow-up. He's recovering at his parents' house in St. Louis — the surgical team can fax suture removal orders to a local provider there so he doesn't have to make the trip back.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ================================================================
+     PROGRESS BOARD
+     ================================================================
+     TO UPDATE:
+       · Past stages:    class="stage done"
+       · Current stage:  class="stage active"
+       · Future stages:  class="stage"
+     ================================================================ -->
+<div class="progress-wrap">
+  <div class="progress-board">
+    <div class="progress-board-header">
+      <span class="progress-board-title">Where He Is Right Now</span>
+      <span class="progress-board-updated">Last updated · 10:20 AM</span>
+    </div>
+    <div class="progress-stages">
+      <div class="stage done" data-tip="Left at 10:20 AM. NPO since midnight, clear liquids cut off at 9. Every box checked. Now it's just forward.">
+        <div class="stage-dot"></div>
+        <p class="stage-name">On the Way</p>
+        <p class="stage-time">10:20 AM</p>
+        <p class="stage-note">Left the house.</p>
+        <div class="stage-tooltip"></div>
+      </div>
+      <div class="stage active" data-tip="Vanderbilt main hospital, 2nd floor check-in. ID verified. Family's with him. Two hours until they call him back.">
+        <div class="stage-dot"></div>
+        <p class="stage-name">Checked In</p>
+        <p class="stage-time">—</p>
+        <p class="stage-note">At Vanderbilt.</p>
+        <div class="stage-tooltip"></div>
+      </div>
+      <div class="stage" data-tip="IV in, vitals running. Anesthesia team comes by in person. Family stays with him right up to the OR doors — this is their last stretch together.">
+        <div class="stage-dot"></div>
+        <p class="stage-name">Pre-Op</p>
+        <p class="stage-time">—</p>
+        <p class="stage-note">Last time with family.</p>
+        <div class="stage-tooltip"></div>
+      </div>
+      <div class="stage" data-tip="He's through the doors. Family's in the waiting room. The procedure runs 4–6 hours — craniectomy, C1 laminectomy, duraplasty. Vanderbilt texts the family at key milestones.">
+        <div class="stage-dot"></div>
+        <p class="stage-name">In Surgery</p>
+        <p class="stage-time">~1:00 PM</p>
+        <p class="stage-note">OR. Six hours.</p>
+        <div class="stage-tooltip"></div>
+      </div>
+      <div class="stage" data-tip="Straight to the Neuro ICU after surgery — that's standard for any intracranial procedure, not a red flag. Monitored through the night. Family gets limited windows to visit.">
+        <div class="stage-dot"></div>
+        <p class="stage-name">Recovery</p>
+        <p class="stage-time">—</p>
+        <p class="stage-note">Neuro ICU.</p>
+        <div class="stage-tooltip"></div>
+      </div>
+      <div class="stage" data-tip="Coming out of six hours under isn't a switch — it's a slow climb back. Eyes first, then voice, then recognition. His family will be there for all of it. This is the update everyone's waiting for.">
+        <div class="stage-dot"></div>
+        <p class="stage-name">Awake</p>
+        <p class="stage-time">—</p>
+        <p class="stage-note">On the other side.</p>
+        <div class="stage-tooltip"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ================================================================
+     FULL-DAY TIMELINE
+     ================================================================
+     ENTRY STATES:
+       confirmed        — Real update. Change class, fill in time + copy.
+       active-now       — Current moment. Only ONE at a time.
+       projected        — Not confirmed. Grayed. Don't touch until real.
+       past-projected   — Set automatically by the clock script.
+
+     ADD faith-entry OR family-entry alongside the state class for color.
+
+     TEMPLATE:
+     ──────────────────────────────────────────────────────────────
+     <div class="tl-entry confirmed [faith-entry|family-entry]">
+       <div class="tl-time">10:20<span class="ampm">AM</span></div>
+       <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+       <div class="tl-content">
+         <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+         <h2 class="tl-headline">Headline.</h2>
+         <div class="tl-body">
+           <p>Short human update. 2–3 sentences max.</p>
+           [verse-block if this is a major moment]
+         </div>
+       </div>
+     </div>
+
+     TO ADD CLINICAL DETAIL (expandable):
+      TO ADD A VERSE:
+     <div class="verse-block">
+       <p class="verse-text">"Verse."</p>
+       <p class="verse-ref">— Reference</p>
+     </div>
+     ──────────────────────────────────────────────────────────────
+     ================================================================ -->
+
+<div class="timeline-wrap">
+  <p class="timeline-section-label">February 26, 2026 — The Full Day</p>
+
+
+  <!-- LEFT THE HOUSE -->
+  <div class="tl-entry confirmed" data-tip-label="Clinical" data-tip="NPO since midnight — nothing to eat. Clear liquids cut off at 9 AM, four hours before surgery. The baby shampoo last night, the nutrition shakes from IVAC, the pre-op labs — every box checked before he walked out the door. By the time you're in the car on surgery day, the waiting has already been going on for hours. The drive is just the last piece.">
+    <div class="tl-time">10:20<span class="ampm">AM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">Left the House.<span class="tl-info-hint">i</span></h2>
+      <div class="tl-body">
+        <p>Out the door at 10:20. Surgery is at 1 PM. His family's with him. He hasn't eaten since midnight. Everything's in motion now — just moving through the steps.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- WHAT TO EXPECT — FAMILY COMMUNICATION -->
+  <div class="tl-entry confirmed family-entry" data-tip-label="For Family" data-tip="Here's how Vanderbilt keeps the family in the loop. Before surgery: you get a waiting area and a callback number. There's an electronic board that shows anonymized OR status. During surgery: a nurse or OR liaison calls at key milestones — when he's positioned and surgery has started, when the main work is done, when the team is closing. For a 4–6 hour procedure, expect at least one or two calls. After surgery: Dr. Lee comes out personally once the case is done and he's stable. Then it's recovery, then Neuro ICU — family gets notified at each handoff. One practical thing: confirm the callback number with the pre-op nurse before he goes through the doors.">
+    <div class="tl-time">For<span class="ampm">Family</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Family</span></div>
+      <h2 class="tl-headline">What the Waiting Room Looks Like Today.<span class="tl-info-hint">i</span></h2>
+      <div class="tl-body">
+        <p><!-- His family's words go here. Paste exactly what they send. --></p>
+      </div>
+      </div>
+  </div>
+
+
+  <!-- JOE WRITES THIS — uncomment when ready -->
+  <!--
+  <div class="tl-entry confirmed faith-entry">
+    <div class="tl-time">[TIME]<span class="ampm">AM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Faith</span></div>
+      <h2 class="tl-headline">[JOE WRITES THIS.]</h2>
+      <div class="tl-body">
+        <p>[His words. What he's carrying through those doors.]</p>
+      </div>
+    </div>
+  </div>
+  -->
+
+
+  <!-- MORNING OF — JOE'S THOUGHTS -->
+  <!-- Jonah: change class from "projected" to "confirmed faith-entry" when Joe sends something.
+       Fill in the real time. Paste his words exactly into the tl-body paragraph. -->
+  <div class="tl-entry projected" data-time="9:00">
+    <div class="tl-time">Morning<span class="ampm">Of</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">From Joe</span></div>
+      <h2 class="tl-headline">His Thoughts This Morning.</h2>
+      <div class="tl-body">
+        <p><!-- Joe's words go here. Paste exactly what he sends. --></p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ARRIVING AT VANDERBILT -->
+  <div class="tl-entry projected" data-time="10:45" data-tip-label="Logistics" data-tip="Construction out front right now — free valet is the move. Look for the bright red shirts outside the main entrance. They take the car. Main hospital, second floor, surgery check-in. Bring ID. The team is expecting him. There's something that happens when the address you've been staring at for months stops being an address and starts being a place you're actually standing in.">
+    <div class="tl-time">~10:45<span class="ampm">AM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">Arriving at Vanderbilt.<span class="tl-info-hint">i</span></h2>
+      <div class="tl-body">
+        <p>He's at Vanderbilt. Family's with him. Two hours until they call him back.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- CHECKED IN -->
+  <div class="tl-entry projected" data-time="11:00" data-tip-label="Clinical" data-tip="Check-in is intentional redundancy — ID, consent, allergies, the exact procedure, the surgical site. Neurosurgery teams verify everything twice. Not because anyone doubts the prep. Because precision requires it. Family's still with him here. They stay through pre-op, right up to the OR doors. That window is shorter than it feels.">
+    <div class="tl-time">~11:00<span class="ampm">AM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">Checked In. Two Hours Out.<span class="tl-info-hint">i</span></h2>
+      <div class="tl-body">
+        <p>Checked in. Family's still with him — they stay right up until the OR doors.</p>
+      </div>
+      </div>
+  </div>
+
+
+  <!-- PRE-OP -->
+  <div class="tl-entry projected" data-time="11:30" data-tip-label="Clinical" data-tip="IV in, vitals running. IVAC — Vanderbilt's anesthesia team — comes by in person to go over the agents they'll use, his airway, how they'll bring him back up after six hours under. The surgical team does their final briefing. Pre-op runs 30–60 minutes. When they call him back, his family walks as far as the OR doors. Then he goes through. They head to the waiting room. That's the handoff.">
+    <div class="tl-time">~11:30<span class="ampm">AM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">In Pre-Op.<span class="tl-info-hint">i</span></h2>
+      <div class="tl-body">
+        <p>He's in pre-op. Family's still there. When they call him back, they walk him as far as they can. Then he goes through alone.</p>
+      </div>
+      </div>
+  </div>
+
+
+  <!-- INTO THE OR -->
+  <div class="tl-entry projected" data-time="12:30" data-tip-label="Clinical" data-diagram="diag-herniation" data-tip="The first hour in the OR is setup — not surgery. He's placed face-down and locked into a Mayfield clamp, a three-point device that pins directly to the skull to hold position throughout. Neuromonitoring electrodes go on to track brainstem and spinal cord function in real time. Surgery doesn't start the second the doors close. Getting the conditions right takes time. Tap to see the diagram — what's actually being fixed in there.">
+    <div class="tl-time">~12:30<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">Taken Back to the OR.<span class="tl-info-hint">i</span></h2>
+      <div class="tl-body">
+        <p>He's through the doors. Family's in the waiting room. Vanderbilt texts them at key points — they'll hear something before this page does.</p>
+        <div class="verse-block">
+          <p class="verse-text">"Be strong and courageous. Do not be frightened and do not be dismayed, for the Lord your God is with you wherever you go."</p>
+          <p class="verse-ref">— Joshua 1:9</p>
+        </div>
+      </div>
+      </div>
+  </div>
+
+
+  <!-- DIAGRAM 1: What Chiari Is — appears when OR entry is expanded -->
+  <div class="tl-diagram" id="diag-herniation">
+    <div class="tl-diagram-inner">
+      <p class="tl-diagram-label">The Diagnosis — What's Being Fixed</p>
+      <p class="tl-diagram-title">15mm. That's What This Is.</p>
+      <p class="tl-diagram-desc">The cerebellar tonsils have slipped 15mm below the skull into the spinal canal. Normal is 0–5mm. His brainstem has been compressed at that bottleneck his entire life — the swallowing issues, the balance problems, the coordination stuff, the headaches when he coughed. Every single one traces back to this point. Dr. Lee is fixing it right now.</p>
+      <svg viewBox="0 0 560 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- LEFT: labeled anatomy -->
+        <!-- Skull -->
+        <path d="M60 175 C55 120 72 65 140 48 C208 65 225 120 220 175 L216 210 C211 224 196 234 180 237 L162 241 L162 270 L118 270 L118 241 L100 237 C84 234 69 224 64 210 Z" stroke="rgba(245,240,232,0.18)" stroke-width="1.5" fill="rgba(245,240,232,0.03)"/>
+        <!-- Brain mass -->
+        <ellipse cx="140" cy="138" rx="58" ry="66" fill="rgba(245,240,232,0.05)" stroke="rgba(245,240,232,0.15)" stroke-width="1"/>
+        <!-- Cerebellum -->
+        <ellipse cx="140" cy="210" rx="30" ry="20" fill="rgba(139,32,32,0.15)" stroke="rgba(160,92,92,0.5)" stroke-width="1.5"/>
+        <text x="140" y="213" text-anchor="middle" font-family="DM Mono, monospace" font-size="5.5" fill="rgba(160,92,92,0.7)" letter-spacing="0.04em">CEREBELLUM</text>
+        <!-- Skull base line -->
+        <line x1="100" y1="237" x2="180" y2="237" stroke="rgba(245,240,232,0.2)" stroke-width="1" stroke-dasharray="4,3"/>
+        <text x="85" y="234" text-anchor="end" font-family="DM Mono, monospace" font-size="4.5" fill="rgba(245,240,232,0.35)">SKULL BASE</text>
+        <!-- Foramen magnum -->
+        <rect x="122" y="237" width="36" height="12" fill="rgba(10,10,10,1)" stroke="rgba(245,240,232,0.2)" stroke-width="1"/>
+        <text x="140" y="245" text-anchor="middle" font-family="DM Mono, monospace" font-size="4" fill="rgba(245,240,232,0.4)" letter-spacing="0.04em">FORAMEN MAGNUM</text>
+        <!-- Spine -->
+        <rect x="129" y="249" width="22" height="40" rx="2" fill="rgba(245,240,232,0.03)" stroke="rgba(245,240,232,0.1)" stroke-width="1"/>
+        <line x1="129" y1="263" x2="151" y2="263" stroke="rgba(245,240,232,0.07)" stroke-width="1"/>
+        <line x1="129" y1="277" x2="151" y2="277" stroke="rgba(245,240,232,0.07)" stroke-width="1"/>
+        <!-- Herniation — the tonsils pushed down -->
+        <path d="M126 226 C123 234 121 244 123 254 C125 262 132 267 140 268 C148 267 155 262 157 254 C159 244 157 234 154 226" fill="rgba(139,32,32,0.35)" stroke="rgba(160,92,92,0.9)" stroke-width="1.5"/>
+        <!-- Measurement line -->
+        <line x1="162" y1="237" x2="162" y2="268" stroke="rgba(201,168,76,0.8)" stroke-width="1" stroke-dasharray="2,2"/>
+        <line x1="158" y1="237" x2="166" y2="237" stroke="rgba(201,168,76,0.8)" stroke-width="1"/>
+        <line x1="158" y1="268" x2="166" y2="268" stroke="rgba(201,168,76,0.8)" stroke-width="1"/>
+        <text x="170" y="255" font-family="DM Mono, monospace" font-size="9" fill="rgba(201,168,76,0.95)" letter-spacing="0.04em">15mm</text>
+        <text x="170" y="265" font-family="DM Mono, monospace" font-size="4.5" fill="rgba(201,168,76,0.55)" letter-spacing="0.06em">NORMAL: 0–5MM</text>
+        <!-- Herniation label -->
+        <line x1="105" y1="254" x2="122" y2="250" stroke="rgba(160,92,92,0.5)" stroke-width="0.75"/>
+        <text x="58" y="256" font-family="DM Mono, monospace" font-size="5" fill="rgba(160,92,92,0.8)" letter-spacing="0.04em">HERNIATED</text>
+        <text x="62" y="263" font-family="DM Mono, monospace" font-size="5" fill="rgba(160,92,92,0.8)" letter-spacing="0.04em">TONSILS</text>
+        <!-- Brainstem compression zone -->
+        <rect x="133" y="244" width="14" height="16" rx="1" fill="rgba(91,143,168,0.1)" stroke="rgba(91,143,168,0.45)" stroke-width="1" stroke-dasharray="2,1.5"/>
+        <text x="198" y="252" font-family="DM Mono, monospace" font-size="4.5" fill="rgba(91,143,168,0.6)" letter-spacing="0.04em">BRAINSTEM</text>
+        <text x="198" y="259" font-family="DM Mono, monospace" font-size="4.5" fill="rgba(91,143,168,0.6)" letter-spacing="0.04em">COMPRESSED</text>
+        <line x1="197" y1="252" x2="148" y2="252" stroke="rgba(91,143,168,0.3)" stroke-width="0.75"/>
+
+        <!-- DIVIDER -->
+        <line x1="285" y1="30" x2="285" y2="290" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+
+        <!-- RIGHT: symptom map -->
+        <text x="420" y="52" text-anchor="middle" font-family="DM Mono, monospace" font-size="6.5" fill="rgba(245,240,232,0.4)" letter-spacing="0.22em">WHAT THIS CAUSED</text>
+        <!-- Symptom blocks -->
+        <rect x="305" y="65" width="230" height="34" fill="rgba(160,92,92,0.06)" stroke="rgba(160,92,92,0.2)" stroke-width="1"/>
+        <text x="320" y="81" font-family="DM Mono, monospace" font-size="6" fill="rgba(160,92,92,0.75)" letter-spacing="0.1em">SWALLOWING DIFFICULTIES</text>
+        <text x="320" y="91" font-family="Crimson Pro, serif" font-size="8" font-style="italic" fill="rgba(245,240,232,0.3)">Brainstem compression affects CN IX &amp; X</text>
+
+        <rect x="305" y="107" width="230" height="34" fill="rgba(160,92,92,0.06)" stroke="rgba(160,92,92,0.2)" stroke-width="1"/>
+        <text x="320" y="123" font-family="DM Mono, monospace" font-size="6" fill="rgba(160,92,92,0.75)" letter-spacing="0.1em">BALANCE + COORDINATION</text>
+        <text x="320" y="133" font-family="Crimson Pro, serif" font-size="8" font-style="italic" fill="rgba(245,240,232,0.3)">Cerebellar compression disrupts proprioception</text>
+
+        <rect x="305" y="149" width="230" height="34" fill="rgba(160,92,92,0.06)" stroke="rgba(160,92,92,0.2)" stroke-width="1"/>
+        <text x="320" y="165" font-family="DM Mono, monospace" font-size="6" fill="rgba(160,92,92,0.75)" letter-spacing="0.1em">COUGH HEADACHES</text>
+        <text x="320" y="175" font-family="Crimson Pro, serif" font-size="8" font-style="italic" fill="rgba(245,240,232,0.3)">CSF pressure spikes with Valsalva maneuver</text>
+
+        <rect x="305" y="191" width="230" height="34" fill="rgba(160,92,92,0.06)" stroke="rgba(160,92,92,0.2)" stroke-width="1"/>
+        <text x="320" y="207" font-family="DM Mono, monospace" font-size="6" fill="rgba(160,92,92,0.75)" letter-spacing="0.1em">FATIGUE + BRAIN FOG</text>
+        <text x="320" y="217" font-family="Crimson Pro, serif" font-size="8" font-style="italic" fill="rgba(245,240,232,0.3)">Impaired CSF circulation reduces clearance</text>
+
+        <rect x="305" y="233" width="230" height="34" fill="rgba(160,92,92,0.06)" stroke="rgba(160,92,92,0.2)" stroke-width="1"/>
+        <text x="320" y="249" font-family="DM Mono, monospace" font-size="6" fill="rgba(160,92,92,0.75)" letter-spacing="0.1em">DEXTERITY ISSUES</text>
+        <text x="320" y="259" font-family="Crimson Pro, serif" font-size="8" font-style="italic" fill="rgba(245,240,232,0.3)">Fine motor tracts pass through compression zone</text>
+
+        <text x="420" y="285" text-anchor="middle" font-family="Crimson Pro, serif" font-size="10" font-style="italic" fill="rgba(245,240,232,0.18)">He thought these were personal failures. They were fluid mechanics.</text>
+      </svg>
+      <p class="tl-diagram-caption">Sagittal cross-section · 15mm confirmed on MRI · Normal range is 0–5mm · Every symptom on the right traced to this single point · That bottleneck is being opened right now</p>
+    </div>
+  </div>
+
+
+  <!-- FAMILY — THE DOORS CLOSE -->
+  <!-- Jonah: change class from "projected" to "confirmed family-entry" when his parents send something.
+       Fill in the real time. Paste their words exactly into the tl-body paragraph.
+       Delete the placeholder comment line below. That's all. -->
+  <div class="tl-entry projected" data-time="12:30">
+    <div class="tl-time">~12:30<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Family</span></div>
+      <h2 class="tl-headline">The Doors Close.</h2>
+      <div class="tl-body">
+        <p><!-- His family's words go here. Paste exactly what they send. --></p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- SURGERY UNDERWAY — BONE WORK -->
+  <div class="tl-entry projected" data-time="13:00" data-tip-label="Clinical" data-diagram="diag-procedure" data-tip="Bone work first. A section of the lower skull gets removed to widen the foramen magnum — the passage the brainstem runs through that's been too narrow since he was born. Then the top arch of the first cervical vertebra comes off, extending that decompression downward. Every symptom that got worse when he coughed or bore down — that passage was the reason. Tap to see exactly what that looks like.">
+    <div class="tl-time">~1:00<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">Surgery Is Underway.<span class="tl-info-hint">i</span></h2>
+      <div class="tl-body">
+        <p>They're in. Family's been waiting less than an hour. No news right now is not bad news — silence means the team is working.</p>
+      </div>
+      </div>
+  </div>
+
+
+  <!-- DIAGRAM 2: The Three-Step Procedure -->
+  <div class="tl-diagram" id="diag-procedure">
+    <div class="tl-diagram-inner">
+      <p class="tl-diagram-label">What Dr. Lee Is Doing Right Now</p>
+      <p class="tl-diagram-title">Three Steps. One Goal. Six Hours.</p>
+      <p class="tl-diagram-desc">It's not complicated — it's just precise. Remove the bone that's in the way. Extend the decompression down through C1. Then patch open the dura so the fluid can actually move. Each step builds on the last. The goal the whole time is simple: more room.</p>
+      <div class="tl-diagram-grid">
+        <!-- Step 1 -->
+        <div class="tl-diagram-col">
+          <p style="font-family:'DM Mono',monospace;font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--clinical);margin-bottom:0.4rem;">Step 01</p>
+          <p style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:var(--white);margin-bottom:0.35rem;letter-spacing:0.03em;">Suboccipital Craniectomy</p>
+          <p style="font-family:'Crimson Pro',serif;font-size:0.82rem;font-weight:300;font-style:italic;color:var(--gray-light);line-height:1.65;margin-bottom:1rem;">A section of the lower skull is removed to widen the passage. The bone at the back of the head — the occiput — has been narrowing his brainstem's exit his entire life.</p>
+          <svg viewBox="0 0 220 130" fill="none">
+            <path d="M30 120 C28 88 40 52 110 38 C180 52 192 88 190 120" stroke="rgba(245,240,232,0.18)" stroke-width="1.5" fill="rgba(245,240,232,0.03)"/>
+            <path d="M75 118 C72 98 82 80 110 75 C138 80 148 98 145 118" fill="rgba(245,240,232,0.03)" stroke="rgba(245,240,232,0.1)" stroke-width="1"/>
+            <!-- Bone section being removed -->
+            <path d="M88 120 C86 108 92 100 110 98 C128 100 134 108 132 120" fill="rgba(201,168,76,0.18)" stroke="rgba(201,168,76,0.75)" stroke-width="1.5" stroke-dasharray="3,2"/>
+            <text x="110" y="112" text-anchor="middle" font-family="DM Mono, monospace" font-size="5" fill="rgba(201,168,76,0.9)" letter-spacing="0.05em">REMOVED</text>
+            <!-- Arrows indicating widening -->
+            <line x1="72" y1="110" x2="86" y2="110" stroke="rgba(91,143,168,0.6)" stroke-width="1.5"/>
+            <line x1="72" y1="110" x2="76" y2="106" stroke="rgba(91,143,168,0.6)" stroke-width="1.5"/>
+            <line x1="72" y1="110" x2="76" y2="114" stroke="rgba(91,143,168,0.6)" stroke-width="1.5"/>
+            <line x1="148" y1="110" x2="134" y2="110" stroke="rgba(91,143,168,0.6)" stroke-width="1.5"/>
+            <line x1="148" y1="110" x2="144" y2="106" stroke="rgba(91,143,168,0.6)" stroke-width="1.5"/>
+            <line x1="148" y1="110" x2="144" y2="114" stroke="rgba(91,143,168,0.6)" stroke-width="1.5"/>
+            <text x="110" y="128" text-anchor="middle" font-family="DM Mono, monospace" font-size="4.5" fill="rgba(91,143,168,0.55)" letter-spacing="0.06em">FORAMEN WIDENED</text>
+          </svg>
+        </div>
+        <!-- Step 2 -->
+        <div class="tl-diagram-col">
+          <p style="font-family:'DM Mono',monospace;font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--clinical);margin-bottom:0.4rem;">Step 02</p>
+          <p style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:var(--white);margin-bottom:0.35rem;letter-spacing:0.03em;">C1 Laminectomy</p>
+          <p style="font-family:'Crimson Pro',serif;font-size:0.82rem;font-weight:300;font-style:italic;color:var(--gray-light);line-height:1.65;margin-bottom:1rem;">The posterior arch of the first cervical vertebra is removed. This extends the decompression downward — the spinal canal is now fully open at the junction where the brainstem meets the cord.</p>
+          <svg viewBox="0 0 220 130" fill="none">
+            <!-- C1 ring top view -->
+            <ellipse cx="110" cy="72" rx="68" ry="38" stroke="rgba(245,240,232,0.2)" stroke-width="1.5" fill="rgba(245,240,232,0.03)"/>
+            <!-- Canal -->
+            <ellipse cx="110" cy="72" rx="28" ry="18" stroke="rgba(245,240,232,0.25)" stroke-width="1" fill="rgba(10,10,10,0.9)"/>
+            <!-- Posterior arch removed -->
+            <path d="M84 60 C90 46 110 42 130 46 C136 49 140 56 140 60" stroke="rgba(201,168,76,0.75)" stroke-width="2" stroke-dasharray="3,2" fill="none"/>
+            <text x="110" y="54" text-anchor="middle" font-family="DM Mono, monospace" font-size="5" fill="rgba(201,168,76,0.85)" letter-spacing="0.05em">ARCH REMOVED</text>
+            <!-- Spinal cord in canal -->
+            <ellipse cx="110" cy="72" rx="12" ry="9" fill="rgba(91,143,168,0.15)" stroke="rgba(91,143,168,0.5)" stroke-width="1"/>
+            <text x="110" y="75" text-anchor="middle" font-family="DM Mono, monospace" font-size="4" fill="rgba(91,143,168,0.7)" letter-spacing="0.04em">CORD</text>
+            <text x="110" y="108" text-anchor="middle" font-family="DM Mono, monospace" font-size="4.5" fill="rgba(245,240,232,0.3)" letter-spacing="0.06em">C1 — TOP VIEW</text>
+          </svg>
+        </div>
+        <!-- Step 3 spans full width -->
+        <div class="tl-diagram-col" style="grid-column:1/-1;border-top:1px solid rgba(255,255,255,0.05);">
+          <p style="font-family:'DM Mono',monospace;font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--faith);margin-bottom:0.4rem;">Step 03 — The Long One</p>
+          <p style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:var(--white);margin-bottom:0.35rem;letter-spacing:0.03em;">Duraplasty</p>
+          <p style="font-family:'Crimson Pro',serif;font-size:0.82rem;font-weight:300;font-style:italic;color:var(--gray-light);line-height:1.65;margin-bottom:1rem;">The dura mater — the tough outer membrane encasing the brain and spinal cord — is carefully opened. A patch graft is sutured in under magnification, expanding the space and allowing CSF to flow freely. Every stitch must be watertight. This phase alone runs 1–2 hours. This is where the six hours comes from.</p>
+          <svg viewBox="0 0 560 110" fill="none">
+            <!-- Before side -->
+            <text x="140" y="18" text-anchor="middle" font-family="DM Mono, monospace" font-size="6" fill="rgba(160,92,92,0.7)" letter-spacing="0.2em">BEFORE PATCH</text>
+            <rect x="106" y="28" width="68" height="68" rx="34" stroke="rgba(245,240,232,0.18)" stroke-width="1.5" fill="rgba(245,240,232,0.03)"/>
+            <rect x="116" y="38" width="48" height="48" rx="24" stroke="rgba(245,240,232,0.12)" stroke-width="1" fill="rgba(10,10,10,0.95)"/>
+            <ellipse cx="140" cy="62" rx="28" ry="14" fill="rgba(139,32,32,0.2)" stroke="rgba(160,92,92,0.55)" stroke-width="1.5"/>
+            <text x="140" y="65" text-anchor="middle" font-family="DM Mono, monospace" font-size="4.5" fill="rgba(160,92,92,0.8)" letter-spacing="0.04em">COMPRESSED</text>
+            <text x="72" y="62" text-anchor="end" font-family="DM Mono, monospace" font-size="4.5" fill="rgba(245,240,232,0.3)" letter-spacing="0.04em">DURA</text>
+            <line x1="74" y1="60" x2="106" y2="55" stroke="rgba(245,240,232,0.2)" stroke-width="0.75"/>
+
+            <!-- Arrow -->
+            <line x1="280" y1="62" x2="310" y2="62" stroke="rgba(201,168,76,0.6)" stroke-width="1.5"/>
+            <line x1="306" y1="57" x2="312" y2="62" stroke="rgba(201,168,76,0.6)" stroke-width="1.5"/>
+            <line x1="306" y1="67" x2="312" y2="62" stroke="rgba(201,168,76,0.6)" stroke-width="1.5"/>
+            <text x="295" y="57" text-anchor="middle" font-family="DM Mono, monospace" font-size="4.5" fill="rgba(201,168,76,0.6)" letter-spacing="0.06em">PATCH</text>
+
+            <!-- After side -->
+            <text x="420" y="18" text-anchor="middle" font-family="DM Mono, monospace" font-size="6" fill="rgba(91,143,168,0.7)" letter-spacing="0.2em">AFTER PATCH</text>
+            <rect x="386" y="28" width="68" height="68" rx="34" stroke="rgba(91,143,168,0.3)" stroke-width="1.5" fill="rgba(91,143,168,0.04)"/>
+            <!-- Patch graft section -->
+            <path d="M396 50 C400 33 440 33 444 50" stroke="rgba(160,92,92,0.7)" stroke-width="2" fill="rgba(139,32,32,0.2)"/>
+            <!-- Suture marks on patch -->
+            <line x1="402" y1="50" x2="400" y2="43" stroke="rgba(160,92,92,0.6)" stroke-width="1"/>
+            <line x1="410" y1="46" x2="409" y2="39" stroke="rgba(160,92,92,0.6)" stroke-width="1"/>
+            <line x1="420" y1="44" x2="420" y2="37" stroke="rgba(160,92,92,0.6)" stroke-width="1"/>
+            <line x1="430" y1="46" x2="431" y2="39" stroke="rgba(160,92,92,0.6)" stroke-width="1"/>
+            <line x1="438" y1="50" x2="440" y2="43" stroke="rgba(160,92,92,0.6)" stroke-width="1"/>
+            <!-- Space opened -->
+            <rect x="396" y="50" width="48" height="38" rx="3" fill="rgba(91,143,168,0.08)" stroke="rgba(91,143,168,0.25)" stroke-width="1" stroke-dasharray="2,2"/>
+            <text x="420" y="72" text-anchor="middle" font-family="DM Mono, monospace" font-size="4.5" fill="rgba(91,143,168,0.7)" letter-spacing="0.06em">CSF FLOWS</text>
+            <text x="420" y="79" text-anchor="middle" font-family="DM Mono, monospace" font-size="4.5" fill="rgba(91,143,168,0.7)" letter-spacing="0.06em">FREELY</text>
+            <text x="490" y="38" font-family="DM Mono, monospace" font-size="4.5" fill="rgba(160,92,92,0.65)" letter-spacing="0.04em">PATCH</text>
+            <text x="490" y="45" font-family="DM Mono, monospace" font-size="4.5" fill="rgba(160,92,92,0.65)" letter-spacing="0.04em">GRAFT</text>
+            <line x1="489" y1="40" x2="446" y2="44" stroke="rgba(160,92,92,0.3)" stroke-width="0.75"/>
+          </svg>
+          <p style="font-family:'DM Mono',monospace;font-size:0.56rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gray);margin-top:0.75rem;line-height:1.65;">Each suture placed under magnification · Must be watertight · CSF leak is the complication most avoided · When closing begins, his family gets a text</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- THE DURAPLASTY -->
+  <div class="tl-entry projected" data-time="14:00" data-tip-label="Clinical" data-tip="This is where the six hours comes from. The dura — the tough outer membrane around the brain and spinal cord — gets carefully opened. A graft is sutured in to expand the space and give CSF room to flow. Every stitch is placed under magnification and has to be watertight. A CSF leak after duraplasty is the complication you most want to avoid. This phase alone runs 1–2 hours. Patience is what this moment calls for.">
+    <div class="tl-time">~2:00<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">Deep In. The Slow Part.<span class="tl-info-hint">i</span></h2>
+      <div class="tl-body">
+        <p>Two hours in. This is the slow middle of the day. Family's in the waiting room. No updates yet is completely normal — the hardest part of this surgery takes time. That's not a bad sign. That's just how it works.</p>
+      </div>
+      </div>
+  </div>
+
+
+  <!-- FAMILY — STILL WAITING -->
+  <div class="tl-entry projected" data-time="15:30" data-tip-label="For Family" data-tip="Three hours into the wait and it's moved past anticipation into something harder to name. The OR board will update. The calls will come. Until then, the family is doing the hardest thing of the day — which is not being in the room. If they share something from that waiting room, it goes here as a confirmed entry.">
+    <div class="tl-time">~3:30<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Family</span></div>
+      <h2 class="tl-headline">Still Waiting.<span class="tl-info-hint">i</span></h2>
+      <div class="tl-body">
+        <p>Three hours in. Family's holding on. If they've got something to share, it'll appear here.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- CLOSING -->
+  <div class="tl-entry projected" data-time="17:30" data-tip-label="Clinical" data-diagram="diag-csf" data-tip="Patch secured and tested. Team closes in layers — deep muscle first, then subcutaneous tissue, then skin. Takes 30–45 minutes. At the same time, anesthesia starts tapering the agents that have kept him under. Coming up from six hours of general anesthesia isn't a switch — it's a careful, monitored climb. The family gets a text when closing starts. That's usually the first signal that things went as planned. Tap to see what the surgery actually changed.">
+    <div class="tl-time">~5:30<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">Closing.<span class="tl-info-hint">i</span></h2>
+      <div class="tl-body">
+        <p>Team is closing. Family gets a text when this happens — that's usually the first word that things went as planned. Five hours of waiting. They're watching their phones.</p>
+      </div>
+      </div>
+  </div>
+
+
+  <!-- DIAGRAM 3: CSF Before & After — appears when Closing entry expands -->
+  <div class="tl-diagram" id="diag-csf">
+    <div class="tl-diagram-inner">
+      <p class="tl-diagram-label">What the Surgery Just Accomplished</p>
+      <p class="tl-diagram-title">Before & After — The Fluid That Was Blocked.</p>
+      <p class="tl-diagram-desc">CSF — cerebrospinal fluid — circulates in a continuous loop around your brain and spinal cord. His herniation has been damming that flow since birth. Every symptom, every limitation, every moment he thought was a personal failing — it was fluid mechanics. The surgery reopened the drain. The nervous system does the rest over time.</p>
+      <svg viewBox="0 0 620 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- BEFORE -->
+        <text x="155" y="24" text-anchor="middle" font-family="DM Mono, monospace" font-size="7" fill="rgba(160,92,92,0.85)" letter-spacing="0.22em">BEFORE</text>
+        <!-- Skull -->
+        <ellipse cx="155" cy="90" rx="58" ry="62" fill="rgba(245,240,232,0.04)" stroke="rgba(245,240,232,0.14)" stroke-width="1"/>
+        <!-- Foramen narrow -->
+        <rect x="140" y="146" width="30" height="12" fill="rgba(10,10,10,1)" stroke="rgba(245,240,232,0.18)" stroke-width="1"/>
+        <!-- Spine -->
+        <rect x="144" y="158" width="22" height="68" rx="2" fill="rgba(245,240,232,0.03)" stroke="rgba(245,240,232,0.1)" stroke-width="1"/>
+        <line x1="144" y1="174" x2="166" y2="174" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+        <line x1="144" y1="190" x2="166" y2="190" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+        <line x1="144" y1="206" x2="166" y2="206" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+        <!-- Herniation block -->
+        <ellipse cx="155" cy="155" rx="16" ry="11" fill="rgba(139,32,32,0.45)" stroke="rgba(160,92,92,0.9)" stroke-width="1.5"/>
+        <text x="155" y="158" text-anchor="middle" font-family="DM Mono, monospace" font-size="5" fill="rgba(255,200,200,0.95)" letter-spacing="0.04em">BLOCKED</text>
+        <!-- CSF arrows broken/dashed -->
+        <path d="M118 112 C108 128 108 140 114 147" stroke="rgba(91,143,168,0.3)" stroke-width="1.5" stroke-dasharray="3,3" fill="none"/>
+        <path d="M192 112 C202 128 202 140 196 147" stroke="rgba(91,143,168,0.3)" stroke-width="1.5" stroke-dasharray="3,3" fill="none"/>
+        <!-- X at blockage -->
+        <line x1="148" y1="169" x2="152" y2="173" stroke="rgba(160,92,92,0.8)" stroke-width="1.5"/>
+        <line x1="152" y1="169" x2="148" y2="173" stroke="rgba(160,92,92,0.8)" stroke-width="1.5"/>
+        <line x1="157" y1="169" x2="161" y2="173" stroke="rgba(160,92,92,0.8)" stroke-width="1.5"/>
+        <line x1="161" y1="169" x2="157" y2="173" stroke="rgba(160,92,92,0.8)" stroke-width="1.5"/>
+        <!-- Pressure in brain -->
+        <text x="155" y="82" text-anchor="middle" font-family="DM Mono, monospace" font-size="5" fill="rgba(160,92,92,0.6)" letter-spacing="0.06em">PRESSURE</text>
+        <!-- Symptom list -->
+        <text x="40" y="185" font-family="DM Mono, monospace" font-size="5" fill="rgba(160,92,92,0.55)" letter-spacing="0.06em">→ SWALLOWING</text>
+        <text x="40" y="196" font-family="DM Mono, monospace" font-size="5" fill="rgba(160,92,92,0.55)" letter-spacing="0.06em">→ BALANCE</text>
+        <text x="40" y="207" font-family="DM Mono, monospace" font-size="5" fill="rgba(160,92,92,0.55)" letter-spacing="0.06em">→ COORDINATION</text>
+        <text x="40" y="218" font-family="DM Mono, monospace" font-size="5" fill="rgba(160,92,92,0.55)" letter-spacing="0.06em">→ HEADACHES</text>
+        <text x="40" y="229" font-family="DM Mono, monospace" font-size="5" fill="rgba(160,92,92,0.55)" letter-spacing="0.06em">→ BRAIN FOG</text>
+
+        <!-- DIVIDER -->
+        <line x1="310" y1="18" x2="310" y2="235" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+        <text x="310" y="130" text-anchor="middle" font-family="Bebas Neue, sans-serif" font-size="13" fill="rgba(201,168,76,0.35)" letter-spacing="0.12em" transform="rotate(-90 310 130)">FEB 26 · DR LEE</text>
+
+        <!-- AFTER -->
+        <text x="465" y="24" text-anchor="middle" font-family="DM Mono, monospace" font-size="7" fill="rgba(91,143,168,0.85)" letter-spacing="0.22em">AFTER</text>
+        <!-- Skull -->
+        <ellipse cx="465" cy="90" rx="58" ry="62" fill="rgba(245,240,232,0.04)" stroke="rgba(245,240,232,0.14)" stroke-width="1"/>
+        <!-- Foramen — wider now -->
+        <rect x="449" y="146" width="32" height="12" fill="rgba(10,10,10,1)" stroke="rgba(91,143,168,0.25)" stroke-width="1"/>
+        <!-- Spine wider -->
+        <rect x="451" y="158" width="28" height="68" rx="2" fill="rgba(91,143,168,0.05)" stroke="rgba(91,143,168,0.15)" stroke-width="1"/>
+        <line x1="451" y1="174" x2="479" y2="174" stroke="rgba(91,143,168,0.08)" stroke-width="1"/>
+        <line x1="451" y1="190" x2="479" y2="190" stroke="rgba(91,143,168,0.08)" stroke-width="1"/>
+        <line x1="451" y1="206" x2="479" y2="206" stroke="rgba(91,143,168,0.08)" stroke-width="1"/>
+        <!-- Patch -->
+        <rect x="453" y="147" width="24" height="8" rx="1" fill="rgba(139,32,32,0.2)" stroke="rgba(160,92,92,0.5)" stroke-width="1"/>
+        <text x="465" y="154" text-anchor="middle" font-family="DM Mono, monospace" font-size="3.8" fill="rgba(160,92,92,0.7)" letter-spacing="0.04em">PATCH</text>
+        <!-- CSF flowing — solid lines -->
+        <path d="M428 112 C418 130 420 146 428 158 C434 168 444 173 453 175" stroke="rgba(91,143,168,0.75)" stroke-width="2" fill="none"/>
+        <path d="M502 112 C512 130 510 146 502 158 C496 168 486 173 479 175" stroke="rgba(91,143,168,0.75)" stroke-width="2" fill="none"/>
+        <!-- Flow continuing down spine -->
+        <path d="M455 175 C453 190 453 205 455 218" stroke="rgba(91,143,168,0.5)" stroke-width="1.5" fill="none"/>
+        <path d="M475" y1="175" C477 190 477 205 475 218" stroke="rgba(91,143,168,0.5)" stroke-width="1.5" fill="none"/>
+        <path d="M475 175 C477 190 477 205 475 218" stroke="rgba(91,143,168,0.5)" stroke-width="1.5" fill="none"/>
+        <!-- Flow label -->
+        <text x="465" y="82" text-anchor="middle" font-family="DM Mono, monospace" font-size="5" fill="rgba(91,143,168,0.65)" letter-spacing="0.06em">FLOW</text>
+        <text x="465" y="90" text-anchor="middle" font-family="DM Mono, monospace" font-size="5" fill="rgba(91,143,168,0.65)" letter-spacing="0.06em">RESTORED</text>
+        <!-- Recovery list -->
+        <text x="346" y="185" font-family="DM Mono, monospace" font-size="5" fill="rgba(91,143,168,0.55)" letter-spacing="0.06em">→ SWALLOWING IMPROVES</text>
+        <text x="346" y="196" font-family="DM Mono, monospace" font-size="5" fill="rgba(91,143,168,0.55)" letter-spacing="0.06em">→ BALANCE RETURNS</text>
+        <text x="346" y="207" font-family="DM Mono, monospace" font-size="5" fill="rgba(91,143,168,0.55)" letter-spacing="0.06em">→ COORDINATION REBUILDS</text>
+        <text x="346" y="218" font-family="DM Mono, monospace" font-size="5" fill="rgba(91,143,168,0.55)" letter-spacing="0.06em">→ PRESSURE RELIEVES</text>
+        <text x="346" y="229" font-family="DM Mono, monospace" font-size="5" fill="rgba(91,143,168,0.55)" letter-spacing="0.06em">→ FOG LIFTS OVER MONTHS</text>
+      </svg>
+      <p class="tl-diagram-caption">Flow restored today · Nervous system adapts over weeks and months · Most patients see real improvement within 3–6 months · He's going to be different on the other side of this</p>
+    </div>
+  </div>
+
+
+  <!-- SURGEON COMES OUT -->
+  <!-- A — EVERYTHING WENT AS PLANNED (default) -->
+  <div class="tl-entry projected" data-time="18:30" data-tip-label="Clinical" data-tip="The surgeon comes out personally when the case is done. Six hours of waiting ends in a two-minute conversation in a hallway. Words to listen for: 'decompression looks good,' 'no intraoperative complications,' 'he's stable.' What those words actually mean: the foramen magnum is wider, the dura is patched, the brainstem is no longer compressed, and the CSF that's been stuck for years can finally move.">
+    <div class="tl-time">~6:30<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">The Surgeon Comes Out.<span class="tl-info-hint">i</span></h2>
+      <div class="tl-body">
+        <p>Dr. Lee comes to the waiting room personally when it's done. Six hours ends in a few minutes in a hallway. We post what he says the moment his family hears it.</p>
+        <div class="verse-block">
+          <p class="verse-text">"I can do all things through him who strengthens me."</p>
+          <p class="verse-ref">— Philippians 4:13</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT THE DOCTOR SAID -->
+  <!-- Jonah: change class from "projected" to "confirmed" when you hear from the family.
+       Fill in the real time. Paste exactly what Dr. Lee told them. -->
+  <div class="tl-entry projected" data-time="18:45">
+    <div class="tl-time">~6:45<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Doctor's Report</span></div>
+      <h2 class="tl-headline">What Dr. Lee Said.</h2>
+      <div class="tl-body">
+        <p><!-- What the surgeon told his family goes here. Paste exactly what they send. --></p>
+      </div>
+    </div>
+  </div>
+
+
+  <!--
+  SURGEON UPDATE B — COMPLICATIONS, MANAGED
+  <div class="tl-entry confirmed">
+    <div class="tl-time">[TIME]<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">There Were Complications. The Team Handled It.</h2>
+      <div class="tl-body">
+        <p>The team was straight with the family. There were complications — but they managed them. He is stable.</p>
+        <p>[FILL IN details the family wants posted.]</p>
+      </div>
+    </div>
+  </div>
+
+  SURGEON UPDATE C — TOOK LONGER, STILL STABLE
+  <div class="tl-entry confirmed">
+    <div class="tl-time">[TIME]<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">Ran Long. He's Stable.</h2>
+      <div class="tl-body">
+        <p>Surgery ran longer than expected. That doesn't automatically mean something went wrong — Chiari decompressions go long when the anatomy is more complex than the imaging suggested. He is stable.</p>
+        <p>[FILL IN details the family wants posted.]</p>
+      </div>
+    </div>
+  </div>
+
+  SURGEON UPDATE D — MONITORING CLOSELY
+  <div class="tl-entry confirmed">
+    <div class="tl-time">[TIME]<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">Surgery Is Done. The Team Is Watching Closely.</h2>
+      <div class="tl-body">
+        <p>Surgery is complete. There are some concerns and the team is monitoring him closely. His family is together.</p>
+        <p>[FILL IN details the family wants posted.]</p>
+        <div class="verse-block">
+          <p class="verse-text">"My grace is sufficient for you, for my power is made perfect in weakness."</p>
+          <p class="verse-ref">— 2 Corinthians 12:9</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  SURGEON UPDATE E — GOING BACK TO THE OR
+  <div class="tl-entry confirmed">
+    <div class="tl-time">[TIME]<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">He's Going Back In.</h2>
+      <div class="tl-body">
+        <p>The team needs to take him back to the OR. His family knows. They're together. Please pray.</p>
+        <p>[FILL IN details the family wants posted.]</p>
+        <div class="verse-block">
+          <p class="verse-text">"Even though I walk through the valley of the shadow of death, I will fear no evil, for you are with me."</p>
+          <p class="verse-ref">— Psalm 23:4</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  -->
+
+
+  <!-- FAMILY SEES HIM -->
+  <div class="tl-entry projected" data-time="19:30" data-tip-label="For Family" data-tip="First time his family sees him after surgery — he'll likely still be sedated. Not responsive yet, possibly still on oxygen. That's normal coming out of six hours under. It can be hard to see. It's also the proof he made it through. If his family wants to share something from that room, it goes here as a confirmed entry. If this stays grayed, that moment is theirs.">
+    <div class="tl-time">~7:30<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Family</span></div>
+      <h2 class="tl-headline">His Family Has Seen Him.<span class="tl-info-hint">i</span></h2>
+      <div class="tl-body">
+        <p>Family's going back to see him. If they want to share something from that room, it'll show up here. If this stays grayed, that moment was theirs to keep.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- AWAKE -->
+  <div class="tl-entry projected" data-time="19:00" data-tip-label="Clinical" data-tip="Coming out of six hours of general anesthesia isn't quick. Protective reflexes come back first. Then response to voice. Then partial awareness. Full consciousness can take a few hours. The first things he'll feel: dull heavy pain at the base of the skull, neck stiffness, light and sound sensitivity, nausea. All expected. His family watches for the small signs — movement behind closed eyes, a hand squeeze, recognizing a voice they know.">
+    <div class="tl-time">~7:00<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">He's Awake.<span class="tl-info-hint">i</span></h2>
+      <div class="tl-body">
+        <p>He's on the other side. We'll fill this in with what actually happened — what he said, what his family saw.</p>
+        <p>He said he'd never met the version of himself that came out the other side of February 26th. He's meeting him now.</p>
+        <div class="verse-block">
+          <p class="verse-text">"For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future."</p>
+          <p class="verse-ref">— Jeremiah 29:11</p>
+        </div>
+      </div>
+      </div>
+  </div>
+
+
+  <!-- NEURO ICU -->
+  <div class="tl-entry projected" data-time="21:00" data-tip-label="Clinical" data-tip="Neuro ICU after brain surgery is standard — not a red flag. Continuous neurological monitoring, post-op pain management, close watch through the first night. Visiting hours run 9 AM to 9 PM; one adult can stay overnight with him. After the first night, he moves to a standard med-surg floor for a few more days, then back to his parents' house in St. Louis to recover.">
+    <div class="tl-time">~9:00<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">Settled in the Neuro ICU.<span class="tl-info-hint">i</span></h2>
+      <div class="tl-body">
+        <p>He's in the Neuro ICU. This is where he was always going after this — not a sign anything went wrong, just where they keep close watch the first night. His family can be with him.</p>
+      </div>
+      </div>
+  </div>
+
+
+  <!-- HANDOFF — uncomment when Joe is ready to write -->
+  <!--
+  <div class="handoff-block">
+    <p class="handoff-label">He's Back</p>
+    <p class="handoff-text">Joe is ready to write again. Head to the Updates page for his first post from the other side.</p>
+    <a href="blog.html" class="btn">Read His Update</a>
+  </div>
+  -->
+
+
+  <!-- LAST ENTRY — read carefully before posting.
+       His family comes first. The page can wait.
+       His family should read this before you post it. -->
+  <!--
+  <div class="tl-entry confirmed faith-entry">
+    <div class="tl-time">[TIME]<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">February 26, 2026</span></div>
+      <h2 class="tl-headline">Joe Passed Away Today.</h2>
+      <div class="memorial-block">
+        <div class="memorial-body">
+          <p>The surgical team did everything they could.</p>
+          <p>Joe was 25 years old. He was a combat medic. He worked in a cardiovascular ICU. He was a Chiari patient who built this site because he believed the gap between provider and patient mattered — and that closing it could change how people are cared for.</p>
+          <p>He walked into this surgery with his eyes open. He wrote his living will. He said death is not defeat. He said to live is Christ, to die is gain. He meant it.</p>
+          <p>He didn't know what the other side of February 26th looked like. None of us did. Now he does.</p>
+          <p>[FILL IN — his family's words. What do they want people to know?]</p>
+          <p>[OPTIONAL — services, how to honor him, who to reach out to.]</p>
+          <p>This site will stay up. It's a record of who he was and what he was working toward. He didn't waste a single day of it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  -->
+
+
+  <!-- NIGHT OF — JOE'S FIRST WORDS -->
+  <!-- Jonah: change class from "projected" to "confirmed faith-entry" when Joe is ready to say something.
+       Fill in the real time. Paste his words exactly. This is the last entry on the page. -->
+  <div class="tl-entry projected" data-time="22:00">
+    <div class="tl-time">Night<span class="ampm">Of</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">From Joe</span></div>
+      <h2 class="tl-headline">From the Other Side.</h2>
+      <div class="tl-body">
+        <p><!-- Joe's first words from the other side go here. Paste exactly what he sends when he's ready. --></p>
+      </div>
+    </div>
+  </div>
+
+
+</div><!-- end timeline-wrap -->
+
+
+<div class="salute-wrap" id="salute-section">
+  <p class="salute-label">Leave a salute</p>
+  <div class="salute-row" id="salute-row"></div>
+</div>
+
+<div class="comments-wrap">
+  <p class="comments-label">Comments</p>
+  <div class="comment-form">
+    <textarea class="comment-textarea" id="cm-text" placeholder="Leave a word for Joe, his family, or anyone reading this on the way to their own surgery day…"></textarea>
+    <div class="comment-form-footer">
+      <input class="comment-name-input" id="cm-name" type="text" placeholder="Your name (optional)" />
+      <button id="cm-submit">Post</button>
+    </div>
+  </div>
+  <div class="comment-list" id="cm-list"></div>
+</div>
+
+<div class="post-nav">
+  <div class="post-nav-inner">
+    <a href="blog-post-memento-mori.html" class="post-nav-card prev">
+      <span class="post-nav-direction">← Previous</span>
+      <span class="post-nav-title">Memento Mori: What Makes Life Worth Living</span>
+      <span class="post-nav-date">February 24, 2026</span>
+    </a>
+    <div class="post-nav-card next empty">
+      <span class="post-nav-direction">Next →</span>
+      <span class="post-nav-title" style="color:var(--gray);">Coming Soon</span>
+      <span class="post-nav-date">From the other side</span>
+    </div>
+  </div>
+</div>
+
+
+<footer>
+  <div class="footer-logo">Peck's Mission</div>
+  <p class="footer-kipling">"And so hold on when there is nothing in you except the Will which says to them: Hold on."</p>
+  <p class="footer-line">— Rudyard Kipling, If</p>
+  <p class="footer-line" style="margin-top:0.8rem;color:#2e2e2e;">"The ceiling you hit your whole life wasn't your ceiling. It was the condition's ceiling."</p>
+  <p class="footer-line" style="margin-top:1.8rem;color:#2a2a2a;">This page kept by Jonah Sapp</p>
+  <ul class="nav-footer">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="chiari.html">Chiari</a></li>
+    <li><a href="blog.html">From The Field</a></li>
+    <li><a href="follow-along.html">Follow Along</a></li>
+  </ul>
+</footer>
+
+<!-- POPUP -->
+<div class="popup-overlay" id="popup-overlay" role="dialog" aria-modal="true" aria-label="Follow Along">
+  <div class="popup-box">
+    <button class="popup-close" id="popup-close" aria-label="Close">&times;</button>
+    <p class="popup-eyebrow">Surgery is February 26th</p>
+    <h2 class="popup-title">Follow Along</h2>
+    <p class="popup-sub">He's in surgery right now. Get updates straight to your inbox as they come in.</p>
+    <div id="popup-form">
+      <div class="popup-form-group">
+        <input class="popup-input" type="text" id="popup-name" placeholder="Your name" />
+      </div>
+      <div class="popup-form-group">
+        <input class="popup-input" type="email" id="popup-email" placeholder="Your email" />
+      </div>
+      <button class="popup-btn" id="popup-submit-btn" onclick="submitPopup()">I'm In</button>
+      <button class="popup-skip" id="popup-skip">Maybe later</button>
+    </div>
+    <div class="popup-success" id="popup-success">
+      <p class="popup-success-msg">You're in. Thank you.</p>
+      <p class="popup-success-sub">We'll see you on the other side.</p>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  // ── STAGE TOOLTIPS ──
+  document.querySelectorAll('.stage[data-tip]').forEach(function(stage) {
+    var tip = stage.querySelector('.stage-tooltip');
+    if (tip) tip.textContent = stage.dataset.tip;
+    // also toggle on click for touch devices
+    stage.addEventListener('click', function(e) {
+      var isOpen = stage.classList.contains('tip-open');
+      document.querySelectorAll('.stage.tip-open').forEach(s => s.classList.remove('tip-open'));
+      if (!isOpen) stage.classList.add('tip-open');
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.stage')) {
+      document.querySelectorAll('.stage.tip-open').forEach(s => s.classList.remove('tip-open'));
+    }
+  });
+
+  // ── LAST UPDATE BAR — pulls from the most recent confirmed tl-entry ──
+  function refreshLastUpdate() {
+    var entries = document.querySelectorAll('.tl-entry.confirmed, .tl-entry.active-now');
+    if (!entries.length) return;
+    var last = entries[entries.length - 1];
+    var timeEl = last.querySelector('.tl-time');
+    var headEl = last.querySelector('.tl-headline');
+    var bodyEl = last.querySelector('.tl-body p, .tl-body li');
+    var pipEl  = last.querySelector('.tl-dot');
+    if (timeEl) {
+      var ampm = timeEl.querySelector('.ampm');
+      var t = timeEl.childNodes[0].textContent.trim();
+      if (ampm) t += ' ' + ampm.textContent.trim();
+      var luTime = document.getElementById('lu-time');
+      if (luTime) luTime.textContent = t;
+    }
+    if (headEl) {
+      var luHead = document.getElementById('lu-headline');
+      if (luHead) luHead.textContent = headEl.textContent.trim();
+    }
+    if (bodyEl) {
+      var luBody = document.getElementById('lu-body');
+      if (luBody) luBody.textContent = bodyEl.textContent.trim();
+    }
+    // match dot color to entry type
+    var dot = document.querySelector('.last-update-dot');
+    if (dot) {
+      if (last.classList.contains('faith-entry')) dot.style.background = 'var(--faith)';
+      else if (last.classList.contains('family-entry')) dot.style.background = 'var(--family)';
+      else dot.style.background = 'var(--clinical)';
+    }
+  }
+  refreshLastUpdate();
+
+  // ── MOBILE NAV ──
+  var hamburger = document.getElementById('hamburger');
+  var mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  function closeMobile() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  }
+  document.addEventListener('click', function(e) {
+    if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) closeMobile();
+  });
+
+  // ── PREP TIMELINE EXPAND ──
+  function togglePrep(item) {
+    var detail = item.querySelector('.prep-detail');
+    item.classList.toggle('open');
+    detail.classList.toggle('open');
+  }
+  // ── AUTO-TOGGLE: drives projected entries off the clock ──
+  function autoToggle() {
+    const SURGERY_DATE = '2026-02-26';
+    const TZ = 'America/Chicago';
+    const now = new Date();
+    const formatter = new Intl.DateTimeFormat('en-CA', {
+      timeZone: TZ,
+      year: 'numeric', month: '2-digit', day: '2-digit',
+      hour: '2-digit', minute: '2-digit', hour12: false
+    });
+    const parts = formatter.formatToParts(now);
+    const get = type => parts.find(p => p.type === type).value;
+    const todayDate = `${get('year')}-${get('month')}-${get('day')}`;
+    const currentMinutes = parseInt(get('hour')) * 60 + parseInt(get('minute'));
+    if (todayDate !== SURGERY_DATE) return;
+    const entries = document.querySelectorAll('.tl-entry[data-time]');
+    const timed = Array.from(entries).map(el => {
+      const [h, m] = el.dataset.time.split(':').map(Number);
+      return { el, minutes: h * 60 + m };
+    });
+    timed.sort((a, b) => a.minutes - b.minutes);
+    const pastEntries = timed.filter(t => !t.el.classList.contains('confirmed') && t.minutes <= currentMinutes);
+    timed.forEach(({ el, minutes }) => {
+      if (el.classList.contains('confirmed')) return;
+      if (minutes <= currentMinutes) {
+        const isLast = pastEntries.length > 0 && pastEntries[pastEntries.length - 1].el === el;
+        el.classList.remove('projected', 'past-projected', 'active-now');
+        el.classList.add(isLast ? 'active-now' : 'past-projected');
+      } else {
+        el.classList.remove('active-now', 'past-projected');
+        el.classList.add('projected');
+      }
+    });
+    updateProgressBoard(currentMinutes);
+  }
+
+  function updateProgressBoard(currentMinutes) {
+    const stages = [
+      { threshold: 0    },
+      { threshold: 645  },
+      { threshold: 690  },
+      { threshold: 750  },
+      { threshold: 1110 },
+      { threshold: 1230 },
+    ];
+    const stageEls = document.querySelectorAll('.progress-stages .stage');
+    if (stageEls.length !== stages.length) return;
+    let activeIdx = 0;
+    for (let i = 0; i < stages.length; i++) {
+      if (currentMinutes >= stages[i].threshold) activeIdx = i;
+    }
+    stageEls.forEach((el, i) => {
+      const timeEl = el.querySelector('.stage-time');
+      const isManuallySet = timeEl && !timeEl.textContent.includes('—') && !timeEl.textContent.includes('~');
+      if (isManuallySet) return;
+      el.classList.remove('done', 'active');
+      if (i < activeIdx) el.classList.add('done');
+      else if (i === activeIdx) el.classList.add('active');
+    });
+    const updatedEl = document.querySelector('.progress-board-updated');
+    if (updatedEl && !updatedEl.dataset.manual) {
+      const t = now.toLocaleTimeString('en-US', { timeZone: 'America/Chicago', hour: 'numeric', minute: '2-digit', hour12: true });
+      updatedEl.textContent = `Auto-updated · ${t}`;
+    }
+  }
+
+  autoToggle();
+  setInterval(autoToggle, 60000);
+
+  // ── POPUP ──
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyaDNsViYx1XxdNgWhF_JViMJQ42qcGNS38ReZ6Lb0q8T16szKpikQD49hXs_B3Y7zo/exec';
+  function showPopup() {
+    document.getElementById('popup-overlay').classList.add('visible');
+    document.body.style.overflow = 'hidden';
+  }
+  function closePopup() {
+    document.getElementById('popup-overlay').classList.remove('visible');
+    document.body.style.overflow = '';
+    localStorage.setItem('popup-dismissed', '1');
+  }
+  if (!localStorage.getItem('popup-dismissed')) { setTimeout(showPopup, 60000); }
+  document.getElementById('popup-close').addEventListener('click', closePopup);
+  document.getElementById('popup-skip').addEventListener('click', closePopup);
+  document.getElementById('popup-overlay').addEventListener('click', function(e) { if (e.target === this) closePopup(); });
+  function submitPopup() {
+    var btn = document.getElementById('popup-submit-btn');
+    var name = document.getElementById('popup-name').value.trim();
+    var email = document.getElementById('popup-email').value.trim();
+    if (!name || !email) { alert('Please enter your name and email.'); return; }
+    btn.textContent = 'Sending...'; btn.disabled = true;
+    fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name, email, message: 'Signed up via popup on surgery-day' }) })
+    .then(function() {
+      document.getElementById('popup-form').style.display = 'none';
+      document.getElementById('popup-success').style.display = 'block';
+      localStorage.setItem('popup-dismissed', '1');
+      setTimeout(closePopup, 3000);
+    })
+    .catch(function() { btn.textContent = "I'm In"; btn.disabled = false; alert('Something went wrong. Please try again.'); });
+  }
+
+  // ── TL;DR ──
+  (function(){
+    var points = [
+      "Three things happen today: bone is removed to widen the passage at the base of the skull, the top of the first vertebra is removed, and the membrane around the brain is patched to create more space. Six hours total.",
+      "His entire life, the passage the brainstem runs through has been too narrow. Every ceiling he hit was the condition's ceiling, not his. Today they widen it.",
+      "Grayed entries are what's most likely happening right now based on the clock. Lit entries are confirmed. Refresh for updates.",
+      "His family is in the surgical waiting room. They'll get text notifications from the OR at key milestones.",
+      "He said he'd never met the version of himself on the other side of February 26th. Refresh this page to find out."
+    ];
+    var title = "Surgery Day — February 26, 2026";
+    var btn = document.createElement('button');
+    btn.id = 'tldr-btn'; btn.textContent = 'TL;DR';
+    document.body.appendChild(btn);
+    var overlay = document.createElement('div'); overlay.id = 'tldr-overlay';
+    var box = document.createElement('div'); box.id = 'tldr-box';
+    var head = document.createElement('div'); head.id = 'tldr-head';
+    var headLeft = document.createElement('div'); headLeft.id = 'tldr-head-left';
+    var eyebrow = document.createElement('span'); eyebrow.id = 'tldr-eyebrow'; eyebrow.textContent = 'Too Long; Didn\'t Read';
+    var ptitle = document.createElement('span'); ptitle.id = 'tldr-ptitle'; ptitle.textContent = title;
+    headLeft.appendChild(eyebrow); headLeft.appendChild(ptitle);
+    var xBtn = document.createElement('button'); xBtn.id = 'tldr-x'; xBtn.setAttribute('aria-label','Close'); xBtn.textContent = '✕';
+    head.appendChild(headLeft); head.appendChild(xBtn);
+    var list = document.createElement('ul'); list.id = 'tldr-list';
+    points.forEach(function(p){ var li = document.createElement('li'); li.textContent = p; list.appendChild(li); });
+    box.appendChild(head); box.appendChild(list);
+    overlay.appendChild(box); document.body.appendChild(overlay);
+    btn.addEventListener('click', function(){ overlay.classList.add('open'); });
+    xBtn.addEventListener('click', function(){ overlay.classList.remove('open'); });
+    overlay.addEventListener('click', function(e){ if(e.target===overlay) overlay.classList.remove('open'); });
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape') overlay.classList.remove('open'); });
+  })();
+</script>
+
+<script type="module">
+  import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+  import { getFirestore, collection, addDoc, getDocs, query, orderBy, serverTimestamp, where } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
+
+  const app = initializeApp({ apiKey:"AIzaSyApK7IJBYNtw0WD74sHFaNKlMPLAqT1xbg",authDomain:"joes-mission.firebaseapp.com",projectId:"joes-mission",storageBucket:"joes-mission.firebasestorage.app",messagingSenderId:"81899759818",appId:"1:81899759818:web:5a8aaec3afd8c454b46c33" });
+  const db = getFirestore(app);
+  const PAGE_ID = 'surgery-day';
+  const colRef = collection(db, 'comments');
+
+  // ── SALUTE ──
+  const SALUTES = [
+    { emoji: '🙏', label: 'Praying' },
+    { emoji: '✊', label: 'With You' },
+    { emoji: '❤️', label: 'Love' },
+    { emoji: '💪', label: 'Strong' },
+  ];
+  const saluteCol = collection(db, 'salutes');
+
+  async function initSalute() {
+    const row = document.getElementById('salute-row');
+    if (!row) return;
+    const snap = await getDocs(query(saluteCol, where('page','==',PAGE_ID)));
+    const counts = {};
+    SALUTES.forEach(s => counts[s.label] = 0);
+    snap.forEach(d => { if (counts[d.data().type] !== undefined) counts[d.data().type]++; });
+    const userKey = 'salute-' + PAGE_ID;
+    const userSalute = localStorage.getItem(userKey);
+    row.innerHTML = '';
+    SALUTES.forEach(function(s) {
+      var btn = document.createElement('button');
+      btn.className = 'salute-btn' + (userSalute === s.label ? ' active' : '');
+      btn.innerHTML = s.emoji + ' <span class="salute-count">' + counts[s.label] + '</span> <span style="opacity:0.6">' + s.label + '</span>';
+      btn.addEventListener('click', async function() {
+        if (userSalute) return;
+        await addDoc(saluteCol, { page: PAGE_ID, type: s.label, ts: serverTimestamp() });
+        localStorage.setItem(userKey, s.label);
+        initSalute();
+      });
+      row.appendChild(btn);
+    });
+  }
+  initSalute();
+
+  // ── COMMENTS ──
+  const nameInput = document.getElementById('cm-name');
+  const textInput = document.getElementById('cm-text');
+  textInput.addEventListener('focus', function() { nameInput.classList.add('visible'); });
+
+  function renderComment(data, id, children) {
+    var div = document.createElement('div');
+    div.className = 'comment-item';
+    var ts = data.ts ? new Date(data.ts.seconds * 1000).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}) : '';
+    div.innerHTML = '<div class="comment-header"><span class="comment-author">' + (data.name||'Anonymous') + '</span><span class="comment-date">' + ts + '</span></div><p class="comment-text">' + data.text.replace(/</g,'&lt;') + '</p><button class="comment-reply-btn">Reply</button><div class="reply-form" id="rf-'+id+'"><textarea class="comment-textarea" placeholder="Reply..."></textarea><div class="reply-name-row"><input class="reply-name-input" type="text" placeholder="Your name (optional)" /><button class="reply-submit">Reply</button><button class="reply-cancel">Cancel</button></div></div>';
+    if (children && children.length) {
+      var childDiv = document.createElement('div');
+      childDiv.className = 'comment-children open';
+      children.forEach(function(c) { childDiv.appendChild(renderComment(c.data, c.id, [])); });
+      div.appendChild(childDiv);
+    }
+    div.querySelector('.comment-reply-btn').addEventListener('click', function() { div.querySelector('.reply-form').classList.toggle('open'); });
+    div.querySelector('.reply-cancel').addEventListener('click', function() { div.querySelector('.reply-form').classList.remove('open'); });
+    div.querySelector('.reply-submit').addEventListener('click', async function() {
+      var text = div.querySelector('.comment-textarea').value.trim();
+      var name = div.querySelector('.reply-name-input').value.trim();
+      if (!text) return;
+      await addDoc(colRef, { page: PAGE_ID, name, text, parentId: id, ts: serverTimestamp() });
+      div.querySelector('.reply-form').classList.remove('open');
+      load();
+    });
+    return div;
+  }
+
+  async function load() {
+    try {
+      var snap = await getDocs(query(colRef, where('page','==',PAGE_ID), orderBy('ts','asc')));
+      var docs = [];
+      snap.forEach(d => docs.push({ id: d.id, data: d.data() }));
+      var parents = docs.filter(d => !d.data.parentId);
+      var children = docs.filter(d => d.data.parentId);
+      var list = document.getElementById('cm-list');
+      list.innerHTML = '';
+      parents.forEach(function(p) {
+        var kids = children.filter(c => c.data.parentId === p.id);
+        list.appendChild(renderComment(p.data, p.id, kids));
+      });
+    } catch(e) { console.error(e); }
+  }
+
+  document.getElementById('cm-submit').addEventListener('click', async function() {
+    var text = textInput.value.trim();
+    if (!text) return;
+    var name = nameInput.value.trim();
+    var btn = document.getElementById('cm-submit');
+    btn.textContent = 'Posting…'; btn.disabled = true;
+    try {
+      await addDoc(colRef, { page: PAGE_ID, name, text, parentId: null, ts: serverTimestamp() });
+      textInput.value = ''; nameInput.value = '';
+      await load();
+    } catch(e) { console.error(e); }
+    btn.textContent = 'Post'; btn.disabled = false;
+  });
+
+  load();
+</script>
+
+<!-- GLOBAL TIMELINE TOOLTIP -->
+<script>
+  // ── TIMELINE INLINE EXPAND ──
+  // Reads data-tip and data-tip-label from each .tl-entry,
+  // injects an expand panel as a grid child, wires click toggle.
+  // Also wires data-diagram attribute to open a paired .tl-diagram panel.
+  document.querySelectorAll('.tl-entry[data-tip]').forEach(function(entry) {
+    // Build the panel
+    var panel = document.createElement('div');
+    panel.className = 'tl-expand-panel';
+
+    var label = document.createElement('div');
+    label.className = 'tl-expand-label';
+    label.textContent = entry.dataset.tipLabel || 'More Detail';
+
+    var text = document.createElement('div');
+    text.className = 'tl-expand-text';
+    text.innerHTML = '<p>' + entry.dataset.tip + '</p>';
+
+    panel.appendChild(label);
+    panel.appendChild(text);
+    entry.appendChild(panel);
+
+    // Click anywhere on the entry to toggle
+    entry.addEventListener('click', function(e) {
+      // Don't intercept clicks on links, buttons, or existing expand controls
+      if (e.target.closest('a, button, .verse-block')) return;
+      entry.classList.toggle('expanded');
+      // If this entry has a paired diagram, toggle it too
+      var diagId = entry.dataset.diagram;
+      if (diagId) {
+        var diag = document.getElementById(diagId);
+        if (diag) diag.classList.toggle('open');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
