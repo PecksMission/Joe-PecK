@@ -287,13 +287,11 @@
 <script>
   function updateCountdown() {
     const target = new Date('2026-02-26T19:00:00Z'); // 1:00 PM CST = 19:00 UTC
+    const switchTime = new Date('2026-02-26T16:00:00Z'); // 10:00 AM CST = 16:00 UTC
     const now = new Date();
     const diff = target - now;
-    if (diff <= 0) {
-      const postSurgery = new Date('2026-02-26T16:00:00Z'); // 10:00 AM CST = 16:00 UTC
-      const isSurgeryDay = now <= postSurgery;
-      if (isSurgeryDay) {
-        document.querySelector('.countdown-section').innerHTML = `
+    if (now >= switchTime) {
+      document.querySelector('.countdown-section').innerHTML = `
           <div class="countdown-inner" style="justify-content:center;text-align:center;">
             <div>
               <p class="countdown-label">February 26, 2026</p>
@@ -301,16 +299,6 @@
               <a href="surgery-day.html" style="display:inline-block;margin-top:1.5rem;background:var(--gold);color:var(--black);font-family:'DM Mono',monospace;font-size:0.82rem;letter-spacing:0.2em;text-transform:uppercase;padding:1rem 2.5rem;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='#e8c97a'" onmouseout="this.style.background='#c9a84c'">Follow Along Live \u2192</a>
             </div>
           </div>`;
-      } else {
-        document.querySelector('.countdown-section').innerHTML = `
-          <div class="countdown-inner" style="justify-content:center;text-align:center;">
-            <div>
-              <p class="countdown-label">February 26, 2026</p>
-              <p class="countdown-title" style="font-size:2.2rem;">Surgery Complete — In Recovery</p>
-              <a href="surgery-day.html" style="display:inline-block;margin-top:1.5rem;background:var(--gold);color:var(--black);font-family:'DM Mono',monospace;font-size:0.82rem;letter-spacing:0.2em;text-transform:uppercase;padding:1rem 2.5rem;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='#e8c97a'" onmouseout="this.style.background='#c9a84c'">Read Surgery Day Updates \u2192</a>
-            </div>
-          </div>`;
-      }
       return;
     }
     document.getElementById('cd-days').textContent = String(Math.floor(diff/86400000)).padStart(2,'0');
