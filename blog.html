@@ -205,10 +205,10 @@
     if (now >= switchTime) {
       const strip = document.querySelector('.countdown-strip');
       if (strip) {
-        strip.innerHTML = `<div style="width:100%;max-width:820px;margin:0 auto;padding:0 3rem;"><p style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--white);margin:0 0 0.5rem;letter-spacing:0.02em;">Surgery Is Today</p><a href="surgery-day.html" style="font-family:'DM Mono',monospace;font-size:0.8rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.4);padding-bottom:2px;">Read: Surgery Day →</a></div>`;
+        strip.innerHTML = `<div style="width:100%;max-width:820px;margin:0 auto;padding:0 3rem;"><p style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--white);margin:0 0 0.5rem;letter-spacing:0.02em;">Joe Made It Through Surgery. He's In Recovery.</p><a href="surgery-day.html" style="font-family:'DM Mono',monospace;font-size:0.8rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.4);padding-bottom:2px;">Read: Surgery Day →</a></div>`;
       }
       const excerpt = document.getElementById('surgery-excerpt');
-      if (excerpt) excerpt.textContent = 'Joe is in surgery today at Vanderbilt. His family is with him. We\'re documenting the day in real time.';
+      if (excerpt) excerpt.textContent = 'Joe made it through surgery. He\'s in recovery now at Vanderbilt and we\'re tracking updates live as they come in.';
       return;
     }
     const diff = target - now;
