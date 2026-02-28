@@ -354,6 +354,7 @@
       .stage:nth-child(1),.stage:nth-child(2),.stage:nth-child(3) { border-bottom: 1px solid rgba(255,255,255,0.05); }
       .tl-entry { grid-template-columns: 52px 14px 1fr; gap: 0 1rem; }
       .post-nav { padding: 0 1.5rem; }
+      .media-pair { grid-template-columns: 1fr !important; }
     }
     @media (max-width: 480px) {
       .progress-stages { grid-template-columns: repeat(2, 1fr); }
@@ -602,6 +603,15 @@
       <div class="tl-body">
         <p>PT and OT came back on Day 2 and got Joe out of bed — walked the floor, then put him in a chair for a bit. First time on his feet since surgery.</p>
         <p>Discharge planning is underway. Primary plan is returning to his mom and dad's house. A short-term rehab stay will depend on what therapy recommends.</p>
+        <div class="media-pair" style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin-top:1rem; align-items:start;">
+          <video controls playsinline preload="metadata" style="width:100%; border-radius:4px; border:1px solid rgba(255,255,255,0.06);">
+            <source src="post-surgery-walk.mov" type="video/quicktime">
+            <source src="post-surgery-walk.mov" type="video/mp4">
+          </video>
+          <div style="overflow:hidden; border-radius:4px; border:1px solid rgba(255,255,255,0.06); aspect-ratio:9/16;">
+            <img src="joe-standing.jpg" alt="Joe standing for the first time after surgery" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+        </div>
       </div>
     </div>
   </div>
