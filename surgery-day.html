@@ -2073,67 +2073,74 @@
   setInterval(autoToggle, 60000);
 
   // ── POPUP ──
-  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyaDNsViYx1XxdNgWhF_JViMJQ42qcGNS38ReZ6Lb0q8T16szKpikQD49hXs_B3Y7zo/exec';
+  const MC_URL = 'https://pecksmission.us12.list-manage.com/subscribe/post-json?u=38b7b40454f02dd45881e3ea5&id=f14e958df1';
+
   function showPopup() {
-    document.getElementById('popup-overlay').classList.add('visible');
+    const overlay = document.getElementById('popup-overlay');
+    overlay.classList.add('visible');
     document.body.style.overflow = 'hidden';
   }
+
   function closePopup() {
-    document.getElementById('popup-overlay').classList.remove('visible');
+    const overlay = document.getElementById('popup-overlay');
+    overlay.classList.remove('visible');
     document.body.style.overflow = '';
     localStorage.setItem('popup-dismissed', '1');
   }
-  if (!localStorage.getItem('popup-dismissed')) { setTimeout(showPopup, 60000); }
-  document.getElementById('popup-close').addEventListener('click', closePopup);
-  document.getElementById('popup-skip').addEventListener('click', closePopup);
-  document.getElementById('popup-overlay').addEventListener('click', function(e) { if (e.target === this) closePopup(); });
-  function submitPopup() {
-    var btn = document.getElementById('popup-submit-btn');
-    var name = document.getElementById('popup-name').value.trim();
-    var email = document.getElementById('popup-email').value.trim();
-    if (!name || !email) { alert('Please enter your name and email.'); return; }
-    btn.textContent = 'Sending...'; btn.disabled = true;
-    fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name, email, message: 'Signed up via popup on surgery-day' }) })
-    .then(function() {
-      document.getElementById('popup-form').style.display = 'none';
-      document.getElementById('popup-success').style.display = 'block';
-      localStorage.setItem('popup-dismissed', '1');
-      setTimeout(closePopup, 3000);
-    })
-    .catch(function() { btn.textContent = "I'm In"; btn.disabled = false; alert('Something went wrong. Please try again.'); });
+
+  if (!localStorage.getItem('popup-dismissed')) {
+    setTimeout(showPopup, 60000);
   }
 
-  // ── TL;DR ──
-  (function(){
-    var points = [
-      "Surgery was February 26. Suboccipital craniectomy with C1 laminectomy and duraplasty at Vanderbilt. Six hours total.",
-      "Day 2: Joe transferred from Neuro ICU to the Neuro Step-Down Unit. Eating full meals. Passing all neurological assessments. Moving forward.",
-      "A friend from church visited. Mom stayed with him overnight and walked back from the hotel. Dad gave him a new nickname: Zipper Head.",
-      "Lit entries are confirmed real-time updates. Scroll to the bottom for the latest.",
-      "He said he'd never met the version of himself on the other side of February 26th. He's meeting him now."
-    ];
-    var title = "Surgery Day & Recovery — Peck's Mission";
-    var btn = document.createElement('button');
-    btn.id = 'tldr-btn'; btn.textContent = 'TL;DR';
-    document.body.appendChild(btn);
-    var overlay = document.createElement('div'); overlay.id = 'tldr-overlay';
-    var box = document.createElement('div'); box.id = 'tldr-box';
-    var head = document.createElement('div'); head.id = 'tldr-head';
-    var headLeft = document.createElement('div'); headLeft.id = 'tldr-head-left';
-    var eyebrow = document.createElement('span'); eyebrow.id = 'tldr-eyebrow'; eyebrow.textContent = 'Too Long; Didn\'t Read';
-    var ptitle = document.createElement('span'); ptitle.id = 'tldr-ptitle'; ptitle.textContent = title;
-    headLeft.appendChild(eyebrow); headLeft.appendChild(ptitle);
-    var xBtn = document.createElement('button'); xBtn.id = 'tldr-x'; xBtn.setAttribute('aria-label','Close'); xBtn.textContent = '✕';
-    head.appendChild(headLeft); head.appendChild(xBtn);
-    var list = document.createElement('ul'); list.id = 'tldr-list';
-    points.forEach(function(p){ var li = document.createElement('li'); li.textContent = p; list.appendChild(li); });
-    box.appendChild(head); box.appendChild(list);
-    overlay.appendChild(box); document.body.appendChild(overlay);
-    btn.addEventListener('click', function(){ overlay.classList.add('open'); });
-    xBtn.addEventListener('click', function(){ overlay.classList.remove('open'); });
-    overlay.addEventListener('click', function(e){ if(e.target===overlay) overlay.classList.remove('open'); });
-    document.addEventListener('keydown', function(e){ if(e.key==='Escape') overlay.classList.remove('open'); });
-  })();
+  document.getElementById('popup-close').addEventListener('click', closePopup);
+  document.getElementById('popup-skip').addEventListener('click', closePopup);
+  document.getElementById('popup-overlay').addEventListener('click', function(e) {
+    if (e.target === this) closePopup();
+  });
+
+  function submitPopup() {
+    const btn = document.getElementById('popup-submit-btn');
+    const name = document.getElementById('popup-name').value.trim();
+    const email = document.getElementById('popup-email').value.trim();
+
+    if (!name || !email) {
+      alert('Please enter your name and email.');
+      return;
+    }
+
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    const callbackName = 'mc_cb_' + Date.now();
+    const script = document.createElement('script');
+
+    window[callbackName] = function(data) {
+      delete window[callbackName];
+      if (script.parentNode) document.body.removeChild(script);
+      if (data.result === 'success') {
+        document.getElementById('popup-form').style.display = 'none';
+        document.getElementById('popup-success').style.display = 'block';
+        localStorage.setItem('popup-dismissed', '1');
+        setTimeout(closePopup, 3000);
+      } else {
+        btn.textContent = "I'm In";
+        btn.disabled = false;
+        const msg = (data.msg || '').replace(/<[^>]+>/g, '');
+        alert(msg || 'Something went wrong. Please try again.');
+      }
+    };
+
+    const params = new URLSearchParams({ EMAIL: email, FNAME: name, c: callbackName });
+    script.src = MC_URL + '&' + params.toString();
+    script.onerror = function() {
+      delete window[callbackName];
+      if (script.parentNode) document.body.removeChild(script);
+      btn.textContent = "I'm In";
+      btn.disabled = false;
+      alert('Something went wrong. Please try again.');
+    };
+    document.body.appendChild(script);
+  }
 </script>
 
 <script type="module">
