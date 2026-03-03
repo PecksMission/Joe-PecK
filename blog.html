@@ -127,6 +127,15 @@
 
 <div class="posts-grid">
 
+  <a href="blog-post-six.html" class="post-card">
+    <div>
+      <p class="post-tag">March 3, 2026 &nbsp;·&nbsp; Recovery &nbsp;·&nbsp; 5 min read</p>
+      <h2 class="post-card-title">It's Still Me</h2>
+      <p class="post-excerpt">Three days out of brain surgery. Tremors. A walker. My mom cutting up my food. And I'm going to run a marathon. Here's what it actually looks like from the other side.</p>
+    </div>
+    <span class="post-arrow">→</span>
+  </a>
+
   <a href="surgery-day.html" class="post-card">
     <div>
       <p class="post-tag">February 26, 2026 &nbsp;·&nbsp; Surgery &nbsp;·&nbsp; Live Updates</p>
@@ -168,15 +177,6 @@
       <p class="post-tag">February 19, 2026 &nbsp;·&nbsp; Diagnosis &nbsp;·&nbsp; 5 min read</p>
       <h2 class="post-card-title">What I Found Out This Week</h2>
       <p class="post-excerpt">On Tuesday, I walked into a neurosurgeon's office with a cowboy's gait, thinking it was high noon and feeling ready for a duel. I didn't know exactly why I felt like that. I just knew something was different.</p>
-    </div>
-    <span class="post-arrow">→</span>
-  </a>
-
-  <a href="blog-post-one.html" class="post-card">
-    <div>
-      <p class="post-tag">February 18, 2026 &nbsp;·&nbsp; Mission &nbsp;·&nbsp; 4 min read</p>
-      <h2 class="post-card-title">Why I Built This</h2>
-      <p class="post-excerpt">I was a good medic. I got awards for exceptional patient care. But I had never been a patient. And I didn't know how wide that gap was until I ended up on the other side of it.</p>
     </div>
     <span class="post-arrow">→</span>
   </a>
@@ -256,7 +256,7 @@
 <div id="tldr-data" data-title="From The Field" style="display:none"></div>
 <script>
 (function(){
-  var points = ["Four posts so far. Diagnosis. Community. Preparing for surgery. And why I built this in the first place.", "Surgery is February 26th — suboccipital craniectomy with C1 laminectomy and duraplasty.", "I'm writing all of it in real time. The clinical chart and the honest truth, side by side."];
+  var points = ["Six posts so far. Diagnosis. Community. Preparing for surgery. Surgery day. And writing from the recovery bed three days out.", "Surgery was February 26th — suboccipital craniectomy with C1 laminectomy and duraplasty.", "I'm writing all of it in real time. The clinical chart and the honest truth, side by side."];
   var title = "From The Field";
 
   var btn = document.createElement('button');
@@ -278,7 +278,7 @@
 
   var eyebrow = document.createElement('span');
   eyebrow.id = 'tldr-eyebrow';
-  eyebrow.textContent = 'Too Long; Didn’t Read';
+  eyebrow.textContent = 'Too Long; Didn\u2019t Read';
 
   var ptitle = document.createElement('span');
   ptitle.id = 'tldr-ptitle';
@@ -290,7 +290,7 @@
   var xBtn = document.createElement('button');
   xBtn.id = 'tldr-x';
   xBtn.setAttribute('aria-label','Close');
-  xBtn.textContent = '✕';
+  xBtn.textContent = '\u2715';
 
   head.appendChild(headLeft);
   head.appendChild(xBtn);
