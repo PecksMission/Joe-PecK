@@ -7,7 +7,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-WT1126YN2Q');
 </script>
   <meta charset="UTF-8">
@@ -34,14 +33,12 @@
     html { scroll-behavior: smooth; }
     body { background: var(--black); color: var(--white); font-family: 'Crimson Pro', Georgia, serif; overflow-x: hidden; font-size: 22px; }
 
-    /* NAV */
     nav { position: fixed; top: 0; width: 100%; z-index: 100; padding: 1.2rem 3rem; display: flex; justify-content: space-between; align-items: center; background: rgba(10,10,10,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(201,168,76,0.15); }
     .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 0.15em; color: var(--gold); text-decoration: none; }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
     .nav-links a { color: var(--gray-light); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
     .nav-links a:hover { color: var(--gold); }
 
-    /* HERO */
     .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 8rem 3rem 5rem; position: relative; overflow: hidden; }
     .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 70% 40%, rgba(139,32,32,0.07) 0%, transparent 70%), radial-gradient(ellipse 50% 40% at 20% 80%, rgba(201,168,76,0.04) 0%, transparent 60%); pointer-events: none; }
     .hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
@@ -60,7 +57,6 @@
     .btn-secondary { border: 1px solid rgba(201,168,76,0.4); color: var(--gold); padding: 0.9rem 2rem; font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; display: inline-block; }
     .btn-secondary:hover { border-color: var(--gold); background: rgba(201,168,76,0.05); }
 
-    /* PHOTO STACK */
     .hero-photos { position: relative; height: 520px; }
     .photo-card { position: absolute; overflow: hidden; border: 1px solid rgba(201,168,76,0.15); }
     .photo-card img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
@@ -69,7 +65,6 @@
     .photo-card-3 { width: 180px; height: 240px; top: 120px; left: 340px; z-index: 1; filter: brightness(0.5); }
     .photo-label { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(10,10,10,0.9); padding: 0.5rem; font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); text-align: center; }
 
-    /* COUNTDOWN */
     .countdown-section { background: rgba(201,168,76,0.03); border-top: 1px solid rgba(201,168,76,0.1); border-bottom: 1px solid rgba(201,168,76,0.1); padding: 3rem; }
     .countdown-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem; }
     .countdown-label { font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-light); }
@@ -79,20 +74,17 @@
     .cd-num { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; color: var(--gold); line-height: 1; display: block; }
     .cd-label { font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-light); }
 
-    /* SECTIONS */
     .section { padding: 6rem 3rem; max-width: 1100px; margin: 0 auto; }
     .section-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
     .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1; margin-bottom: 1.5rem; }
     .section-body { font-size: 1.25rem; font-weight: 300; color: #bbb; line-height: 1.85; max-width: 620px; margin-bottom: 2rem; }
 
-    /* MISSION CARDS */
     .mission-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.06); margin-top: 3rem; }
     .mission-card { background: var(--black); padding: 2.5rem; }
     .mission-num { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: rgba(201,168,76,0.2); line-height: 1; margin-bottom: 1rem; }
     .mission-card h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 0.05em; color: var(--white); margin-bottom: 0.8rem; }
     .mission-card p { font-size: 1.15rem; font-weight: 300; color: var(--gray-light); line-height: 1.7; }
 
-    /* BLOG PREVIEW */
     .posts-preview { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.06); margin-top: 3rem; }
     .post-preview-card { background: var(--black); padding: 3rem; text-decoration: none; color: inherit; transition: background 0.2s; display: block; }
     .post-preview-card:hover { background: rgba(255,255,255,0.02); }
@@ -101,14 +93,12 @@
     .post-preview-excerpt { font-size: 1.15rem; font-weight: 300; color: var(--gray-light); line-height: 1.7; }
     .post-arrow { font-family: 'DM Mono', monospace; font-size: 1.3rem; color: var(--gold); margin-top: 1.5rem; display: block; }
 
-    /* KIPLING TEASER */
     .kipling-teaser { padding: 6rem 3rem; background: rgba(201,168,76,0.02); border-top: 1px solid rgba(201,168,76,0.08); border-bottom: 1px solid rgba(201,168,76,0.08); text-align: center; }
     .kipling-lines { font-family: 'Crimson Pro', serif; font-size: clamp(1.4rem, 2.5vw, 1.85rem); font-style: italic; font-weight: 300; color: var(--white); line-height: 1.8; max-width: 700px; margin: 0 auto 1.5rem; }
     .kipling-attr { font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; display: block; }
     .kipling-link { font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-light); text-decoration: none; border-bottom: 1px solid rgba(201,168,76,0.3); padding-bottom: 2px; transition: color 0.2s; }
     .kipling-link:hover { color: var(--gold); }
 
-    /* FOOTER */
     footer { padding: 3rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
     .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; letter-spacing: 0.15em; color: var(--gold); margin-bottom: 1rem; }
     .footer-kipling { font-family: 'Crimson Pro', serif; font-size: 1.15rem; font-style: italic; color: var(--gray-light); margin-bottom: 0.5rem; }
@@ -132,7 +122,7 @@
       .countdown-inner { flex-direction: column; align-items: flex-start; }
       .kipling-teaser { padding: 4rem 1.5rem; }
     }
-  
+
     .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; z-index: 200; }
     .hamburger span { display: block; width: 24px; height: 2px; background: var(--gold); transition: all 0.3s; }
     .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -143,7 +133,6 @@
     .mobile-menu a { color: var(--white); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
     .mobile-menu a:hover { color: var(--gold); }
     @media (max-width: 768px) { .hamburger { display: flex; } .nav-links { display: none !important; } }
-
   </style>
 </head>
 <body>
@@ -156,7 +145,6 @@
     <li><a href="blog.html">From The Field</a></li>
     <li><a href="follow-along.html">Follow Along</a></li>
   </ul>
-
   <button class="hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
@@ -188,15 +176,15 @@
     </div>
     <div class="hero-photos">
       <div class="photo-card photo-card-1">
-        <img src="Cointoss.webp" alt="Cointoss.webp">      
+        <img src="Cointoss.webp" alt="Cointoss.webp">
         <div class="photo-label">2009</div>
       </div>
       <div class="photo-card photo-card-2">
-        <img src="Army-Jet.webp" alt="Army-Jet.webp">        
+        <img src="Army-Jet.webp" alt="Army-Jet.webp">
         <div class="photo-label">2020</div>
       </div>
       <div class="photo-card photo-card-3">
-        <img src="IMG_0615.webp" alt="Joe, 2025">        
+        <img src="IMG_0615.webp" alt="Joe, 2025">
         <div class="photo-label">2025</div>
       </div>
     </div>
@@ -243,14 +231,14 @@
   </div>
 </div>
 
-<!-- POSTS PREVIEW -->
+<!-- POSTS PREVIEW — updated to lead with "It's Still Me" -->
 <div style="padding: 0 3rem; max-width: 1100px; margin: 0 auto;">
   <p class="section-eyebrow">From The Field</p>
   <div class="posts-preview">
-    <a href="blog-post-five.html" class="post-preview-card">
-      <p class="post-tag">February 24, 2026 · Faith</p>
-      <h3 class="post-preview-title">Memento Mori: What Makes Life Worth Living</h3>
-      <p class="post-preview-excerpt">I sent my living will off into the abyss a few days ago. And I realized — that document isn't about how I want to end things. It's about how I want to live.</p>
+    <a href="blog-post-six.html" class="post-preview-card">
+      <p class="post-tag">March 3, 2026 · Recovery</p>
+      <h3 class="post-preview-title">It's Still Me</h3>
+      <p class="post-preview-excerpt">Three days out of brain surgery. Tremors. A walker. My mom cutting up my food. And I'm going to run a marathon. Here's what it actually looks like from the other side.</p>
       <span class="post-arrow">→</span>
     </a>
     <a href="surgery-day.html" class="post-preview-card">
@@ -286,19 +274,19 @@
 
 <script>
   function updateCountdown() {
-    const target = new Date('2026-02-26T19:00:00Z'); // 1:00 PM CST = 19:00 UTC
-    const switchTime = new Date('2026-02-26T16:00:00Z'); // 10:00 AM CST = 16:00 UTC
+    const target = new Date('2026-02-26T19:00:00Z');
+    const switchTime = new Date('2026-02-26T16:00:00Z');
     const now = new Date();
     const diff = target - now;
     if (now >= switchTime) {
       document.querySelector('.countdown-section').innerHTML = `
-          <div class="countdown-inner" style="justify-content:center;text-align:center;">
-            <div>
-              <p class="countdown-label">February 28, 2026 · Surgery Complete</p>
-              <p class="countdown-title" style="font-size:2.2rem;">He Made It Through. Recovery Is Underway.</p>
-              <a href="surgery-day.html" style="display:inline-block;margin-top:1.5rem;background:var(--gold);color:var(--black);font-family:'DM Mono',monospace;font-size:0.82rem;letter-spacing:0.2em;text-transform:uppercase;padding:1rem 2.5rem;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='#e8c97a'" onmouseout="this.style.background='#c9a84c'">See The Latest Updates \u2192</a>
-            </div>
-          </div>`;
+        <div class="countdown-inner" style="justify-content:center;text-align:center;">
+          <div>
+            <p class="countdown-label">February 26, 2026 · Surgery Complete</p>
+            <p class="countdown-title" style="font-size:2.2rem;">He Made It Through. Recovery Is Underway.</p>
+            <a href="blog-post-six.html" style="display:inline-block;margin-top:1.5rem;background:var(--gold);color:var(--black);font-family:'DM Mono',monospace;font-size:0.82rem;letter-spacing:0.2em;text-transform:uppercase;padding:1rem 2.5rem;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='#e8c97a'" onmouseout="this.style.background='#c9a84c'">Read: It's Still Me →</a>
+          </div>
+        </div>`;
       return;
     }
     document.getElementById('cd-days').textContent = String(Math.floor(diff/86400000)).padStart(2,'0');
@@ -310,21 +298,19 @@
   setInterval(updateCountdown, 1000);
 </script>
 
-
 <script>
   var hamburger = document.getElementById('hamburger');
   var mobileMenu = document.getElementById('mobileMenu');
   hamburger.addEventListener('click', function() {
     hamburger.classList.toggle('open');
     mobileMenu.classList.toggle('open');
-    
   });
   function closeMobile() {
     hamburger.classList.remove('open');
     mobileMenu.classList.remove('open');
-    
   }
 </script>
+
 <style>
 #tldr-btn{position:fixed;bottom:2rem;right:2rem;z-index:9000;background:#c9a84c;color:#0a0a0a;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;padding:0.65rem 1.2rem;border-radius:2px;box-shadow:0 4px 24px rgba(0,0,0,0.5);transition:background 0.2s,transform 0.15s;line-height:1;}
 #tldr-btn:hover{background:#e8c97a;transform:translateY(-2px);}
@@ -346,58 +332,21 @@
 <div id="tldr-data" data-title="Home" style="display:none"></div>
 <script>
 (function(){
-  var points = ["I'm 25. Combat medic. ICU. And I just found out my brain has been compressed my entire life without anyone catching it.", "I've been living with Chiari malformation since birth — brain tissue herniated into my spinal canal, pressing on my brainstem.", "Everything I've ever had to fight for — speech, balance, dexterity — now has an explanation.", "Surgery is February 26th. I'm documenting all of it. The chart and the truth, side by side.", "I don't want to waste this. So I built this."];
+  var points = ["I'm 25. Combat medic. ICU. And I just found out my brain has been compressed my entire life without anyone catching it.", "I've been living with Chiari malformation since birth — brain tissue herniated into my spinal canal, pressing on my brainstem.", "Surgery was February 26th. I made it through. Three days post-op and writing from the hospital bed.", "Everything I've ever had to fight for — speech, balance, dexterity — now has an explanation.", "I don't want to waste this. So I built this."];
   var title = "Home";
-
-  var btn = document.createElement('button');
-  btn.id = 'tldr-btn';
-  btn.textContent = 'TL;DR';
-  document.body.appendChild(btn);
-
-  var overlay = document.createElement('div');
-  overlay.id = 'tldr-overlay';
-
-  var box = document.createElement('div');
-  box.id = 'tldr-box';
-
-  var head = document.createElement('div');
-  head.id = 'tldr-head';
-
-  var headLeft = document.createElement('div');
-  headLeft.id = 'tldr-head-left';
-
-  var eyebrow = document.createElement('span');
-  eyebrow.id = 'tldr-eyebrow';
-  eyebrow.textContent = 'Too Long; Didn’t Read';
-
-  var ptitle = document.createElement('span');
-  ptitle.id = 'tldr-ptitle';
-  ptitle.textContent = title;
-
-  headLeft.appendChild(eyebrow);
-  headLeft.appendChild(ptitle);
-
-  var xBtn = document.createElement('button');
-  xBtn.id = 'tldr-x';
-  xBtn.setAttribute('aria-label','Close');
-  xBtn.textContent = '✕';
-
-  head.appendChild(headLeft);
-  head.appendChild(xBtn);
-
-  var list = document.createElement('ul');
-  list.id = 'tldr-list';
-  points.forEach(function(p){
-    var li = document.createElement('li');
-    li.textContent = p;
-    list.appendChild(li);
-  });
-
-  box.appendChild(head);
-  box.appendChild(list);
-  overlay.appendChild(box);
-  document.body.appendChild(overlay);
-
+  var btn = document.createElement('button'); btn.id = 'tldr-btn'; btn.textContent = 'TL;DR'; document.body.appendChild(btn);
+  var overlay = document.createElement('div'); overlay.id = 'tldr-overlay';
+  var box = document.createElement('div'); box.id = 'tldr-box';
+  var head = document.createElement('div'); head.id = 'tldr-head';
+  var headLeft = document.createElement('div'); headLeft.id = 'tldr-head-left';
+  var eyebrow = document.createElement('span'); eyebrow.id = 'tldr-eyebrow'; eyebrow.textContent = 'Too Long; Didn\u2019t Read';
+  var ptitle = document.createElement('span'); ptitle.id = 'tldr-ptitle'; ptitle.textContent = title;
+  headLeft.appendChild(eyebrow); headLeft.appendChild(ptitle);
+  var xBtn = document.createElement('button'); xBtn.id = 'tldr-x'; xBtn.setAttribute('aria-label','Close'); xBtn.textContent = '\u2715';
+  head.appendChild(headLeft); head.appendChild(xBtn);
+  var list = document.createElement('ul'); list.id = 'tldr-list';
+  points.forEach(function(p){ var li = document.createElement('li'); li.textContent = p; list.appendChild(li); });
+  box.appendChild(head); box.appendChild(list); overlay.appendChild(box); document.body.appendChild(overlay);
   btn.addEventListener('click', function(){ overlay.classList.add('open'); });
   xBtn.addEventListener('click', function(){ overlay.classList.remove('open'); });
   overlay.addEventListener('click', function(e){ if(e.target===overlay) overlay.classList.remove('open'); });
