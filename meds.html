@@ -4,108 +4,109 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Recovery Med Planner</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Recovery Meds</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0e1117;
-    --surface: #161b27;
-    --surface2: #1e2534;
+    --bg: #0c0f18;
+    --surface: #131720;
+    --surface2: #1a2030;
     --border: rgba(255,255,255,0.07);
-    --text: #e8eaf0;
-    --text-muted: #7a8296;
-    --text-dim: #4a5168;
+    --text: #e4e8f0;
+    --muted: #6b7590;
+    --dim: #3a4058;
     --accent: #c8a96e;
-    --accent-soft: rgba(200,169,110,0.12);
     --red: #e05c5c;
-    --red-soft: rgba(224,92,92,0.1);
-    --green: #5cb88a;
-    --green-soft: rgba(92,184,138,0.12);
+    --green: #4caf82;
     --blue: #5b9cf6;
-    --blue-soft: rgba(91,156,246,0.1);
+    --yellow: #e8c44a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
   }
 
-- { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-background: var(–bg);
-color: var(–text);
-font-family: ‘DM Sans’, sans-serif;
-min-height: 100vh;
-font-size: 15px;
-line-height: 1.6;
-}
-
-/* HEADER */
-.header {
+/* CLOCK HERO */
+.clock-hero {
 background: var(–surface);
 border-bottom: 1px solid var(–border);
-padding: 28px 24px 0;
-position: sticky;
-top: 0;
-z-index: 100;
+padding: 32px 24px 28px;
+text-align: center;
+position: relative;
+overflow: hidden;
 }
-.header-inner {
-max-width: 860px;
-margin: 0 auto;
+.clock-hero::before {
+content: ‘’;
+position: absolute;
+top: -60px; left: 50%;
+transform: translateX(-50%);
+width: 300px; height: 300px;
+background: radial-gradient(circle, rgba(200,169,110,0.08) 0%, transparent 70%);
+pointer-events: none;
 }
-.header-top {
-display: flex;
-align-items: flex-start;
-justify-content: space-between;
-gap: 16px;
-margin-bottom: 20px;
-}
-.header-label {
+.clock-label {
 font-family: ‘DM Mono’, monospace;
 font-size: 10px;
-letter-spacing: 0.18em;
-color: var(–accent);
+letter-spacing: 0.2em;
+color: var(–muted);
 text-transform: uppercase;
+margin-bottom: 8px;
+}
+.clock-time {
+font-family: ‘DM Mono’, monospace;
+font-size: clamp(52px, 12vw, 80px);
+font-weight: 600;
+color: var(–text);
+letter-spacing: -0.02em;
+line-height: 1;
 margin-bottom: 6px;
 }
-.header-title {
-font-family: ‘DM Serif Display’, serif;
-font-size: 26px;
-color: var(–text);
-line-height: 1.2;
-}
-.header-sub {
-font-size: 12px;
-color: var(–text-muted);
-margin-top: 5px;
-font-family: ‘DM Mono’, monospace;
-}
-.day-badge {
-background: var(–accent-soft);
-border: 1px solid rgba(200,169,110,0.25);
-border-radius: 8px;
-padding: 10px 16px;
-text-align: right;
-flex-shrink: 0;
-}
-.day-badge-num {
-font-family: ‘DM Serif Display’, serif;
-font-size: 28px;
+.clock-time .ampm {
+font-size: 0.35em;
 color: var(–accent);
-line-height: 1;
-}
-.day-badge-label {
-font-size: 10px;
-color: var(–text-muted);
-font-family: ‘DM Mono’, monospace;
+vertical-align: super;
+margin-left: 6px;
+font-weight: 400;
 letter-spacing: 0.1em;
 }
-.nav-tabs {
-display: flex;
-gap: 0;
-margin-top: 4px;
+.clock-date {
+font-family: ‘DM Mono’, monospace;
+font-size: 13px;
+color: var(–muted);
+margin-bottom: 16px;
 }
-.nav-tab {
-padding: 10px 20px;
+.day-chip {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+background: rgba(200,169,110,0.1);
+border: 1px solid rgba(200,169,110,0.2);
+border-radius: 20px;
+padding: 6px 18px;
+font-family: ‘DM Mono’, monospace;
+font-size: 12px;
+color: var(–accent);
+}
+
+/* TABS */
+.tabs {
+display: flex;
+background: var(–surface);
+border-bottom: 1px solid var(–border);
+overflow-x: auto;
+-webkit-overflow-scrolling: touch;
+}
+.tab {
+flex: 1;
+min-width: 90px;
+padding: 14px 8px;
+text-align: center;
 font-size: 13px;
 font-weight: 500;
-color: var(–text-muted);
+color: var(–muted);
 cursor: pointer;
 border: none;
 background: none;
@@ -114,400 +115,287 @@ transition: all 0.2s;
 font-family: ‘DM Sans’, sans-serif;
 white-space: nowrap;
 }
-.nav-tab:hover { color: var(–text); }
-.nav-tab.active {
-color: var(–accent);
-border-bottom-color: var(–accent);
-}
+.tab:hover { color: var(–text); }
+.tab.active { color: var(–accent); border-bottom-color: var(–accent); }
 
 /* CONTENT */
-.content {
-max-width: 860px;
-margin: 0 auto;
-padding: 28px 24px;
+.content { max-width: 680px; margin: 0 auto; padding: 24px 16px 40px; }
+
+/* NOW SECTION */
+.section-label {
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+letter-spacing: 0.18em;
+color: var(–muted);
+text-transform: uppercase;
+margin-bottom: 12px;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+.section-label::after {
+content: ‘’;
+flex: 1;
+height: 1px;
+background: var(–border);
+}
+.pulse {
+display: inline-block;
+width: 7px; height: 7px;
+background: var(–green);
+border-radius: 50%;
+animation: pulse 2s infinite;
+flex-shrink: 0;
+}
+@keyframes pulse {
+0%,100% { opacity: 1; transform: scale(1); }
+50% { opacity: 0.4; transform: scale(0.8); }
 }
 
-/* MED CARD */
-.med-card {
+/* MED ITEM */
+.med-item {
 background: var(–surface);
 border: 1px solid var(–border);
 border-radius: 12px;
-overflow: hidden;
-margin-bottom: 10px;
+padding: 14px 16px;
+margin-bottom: 8px;
+display: flex;
+align-items: flex-start;
+gap: 14px;
 transition: border-color 0.2s;
 }
-.med-card:hover { border-color: rgba(255,255,255,0.13); }
-.med-card-inner {
-display: flex;
-}
-.med-accent-bar {
-width: 4px;
-flex-shrink: 0;
-}
-.med-body {
-padding: 16px 18px;
-flex: 1;
-min-width: 0;
-}
-.med-header {
-display: flex;
-justify-content: space-between;
-align-items: flex-start;
-gap: 12px;
-margin-bottom: 10px;
-}
-.med-name {
-font-family: ‘DM Serif Display’, serif;
-font-size: 16px;
-color: var(–text);
-line-height: 1.3;
-}
-.med-generic {
-font-family: ‘DM Mono’, monospace;
-font-size: 10px;
-color: var(–text-dim);
-margin-top: 2px;
-letter-spacing: 0.05em;
-}
-.med-dates {
-font-family: ‘DM Mono’, monospace;
-font-size: 11px;
-color: var(–text-muted);
-text-align: right;
-flex-shrink: 0;
-white-space: nowrap;
-}
-.prn-badge {
-display: inline-block;
-background: rgba(200,169,110,0.15);
-border: 1px solid rgba(200,169,110,0.3);
-color: var(–accent);
-font-size: 10px;
-font-weight: 600;
-letter-spacing: 0.12em;
-padding: 2px 8px;
-border-radius: 4px;
-font-family: ‘DM Mono’, monospace;
-margin-top: 4px;
-}
-.schedule-row {
-display: flex;
-align-items: baseline;
-gap: 10px;
-margin-bottom: 5px;
-font-size: 13px;
-}
-.schedule-dot {
-width: 5px;
-height: 5px;
+.med-item.due-now { border-color: rgba(76,175,130,0.3); background: rgba(76,175,130,0.04); }
+.med-item.due-soon { border-color: rgba(232,196,74,0.25); background: rgba(232,196,74,0.03); }
+.med-item.taken { opacity: 0.45; }
+.med-item.taken .med-name { text-decoration: line-through; }
+
+.med-dot {
+width: 10px; height: 10px;
 border-radius: 50%;
 flex-shrink: 0;
-margin-top: 6px;
+margin-top: 5px;
 }
-.schedule-label { color: var(–text); font-weight: 500; }
-.schedule-times { color: var(–text-muted); font-family: ‘DM Mono’, monospace; font-size: 11px; }
-.schedule-daterange { color: var(–text-dim); font-family: ‘DM Mono’, monospace; font-size: 11px; }
-.warning-box {
-margin-top: 10px;
-background: var(–red-soft);
-border: 1px solid rgba(224,92,92,0.2);
-border-radius: 8px;
-padding: 9px 12px;
-font-size: 12px;
-color: #e88;
-display: flex;
-gap: 8px;
-align-items: flex-start;
-}
-
-/* DAY VIEW */
-.day-picker-wrap {
-background: var(–surface);
-border: 1px solid var(–border);
-border-radius: 12px;
-padding: 18px;
-margin-bottom: 20px;
-}
-.day-picker-label {
-font-family: ‘DM Mono’, monospace;
-font-size: 10px;
-letter-spacing: 0.15em;
-color: var(–text-dim);
-text-transform: uppercase;
-margin-bottom: 12px;
-}
-.day-grid {
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
-gap: 6px;
-}
-.day-btn {
-aspect-ratio: 1;
-border-radius: 8px;
-border: 1px solid var(–border);
-background: transparent;
-color: var(–text-muted);
-font-family: ‘DM Mono’, monospace;
-font-size: 13px;
-cursor: pointer;
-transition: all 0.15s;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-gap: 1px;
-}
-.day-btn:hover { background: var(–surface2); color: var(–text); border-color: rgba(255,255,255,0.15); }
-.day-btn.active { background: var(–accent); color: #0e1117; border-color: var(–accent); font-weight: 700; }
-.day-btn .day-month { font-size: 9px; opacity: 0.7; }
-.day-btn.active .day-month { opacity: 0.8; }
-.day-heading {
-margin-top: 14px;
-font-family: ‘DM Serif Display’, serif;
-font-size: 20px;
+.med-info { flex: 1; min-width: 0; }
+.med-name {
+font-weight: 600;
+font-size: 15px;
 color: var(–text);
+margin-bottom: 2px;
 }
-.day-heading span {
-font-family: ‘DM Mono’, monospace;
+.med-dose {
 font-size: 13px;
-color: var(–text-muted);
-font-weight: 400;
-margin-left: 10px;
+color: var(–muted);
+margin-bottom: 4px;
 }
-
-.dose-time-btn {
+.med-time-tag {
 display: inline-flex;
 align-items: center;
+gap: 5px;
+font-family: ‘DM Mono’, monospace;
+font-size: 11px;
+padding: 3px 10px;
+border-radius: 12px;
+font-weight: 500;
+}
+.tag-now { background: rgba(76,175,130,0.15); color: var(–green); }
+.tag-soon { background: rgba(232,196,74,0.15); color: var(–yellow); }
+.tag-later { background: var(–surface2); color: var(–muted); }
+.tag-taken { background: var(–surface2); color: var(–dim); }
+
+.check-btn {
+width: 34px; height: 34px;
+border-radius: 50%;
+border: 2px solid var(–border);
+background: transparent;
+cursor: pointer;
+display: flex; align-items: center; justify-content: center;
+transition: all 0.2s;
+flex-shrink: 0;
+font-size: 16px;
+color: var(–dim);
+}
+.check-btn:hover { border-color: var(–green); color: var(–green); }
+.check-btn.checked { background: var(–green); border-color: var(–green); color: white; }
+.med-item.taken .check-btn { background: var(–surface2); border-color: var(–dim); color: var(–dim); }
+
+.prn-note {
+font-size: 11px;
+font-family: ‘DM Mono’, monospace;
+color: var(–accent);
+background: rgba(200,169,110,0.08);
+border-radius: 4px;
+padding: 2px 7px;
+margin-top: 4px;
+display: inline-block;
+}
+
+.warning-inline {
+font-size: 12px;
+color: #d88;
+margin-top: 6px;
+display: flex;
 gap: 6px;
-padding: 5px 14px;
-border-radius: 20px;
-border: 1px solid var(–border);
+}
+
+/* NEXT UP card */
+.next-card {
 background: var(–surface2);
-color: var(–text-muted);
+border: 1px solid var(–border);
+border-radius: 12px;
+padding: 14px 16px;
+margin-bottom: 8px;
+display: flex;
+align-items: center;
+gap: 14px;
+}
+.next-time {
+font-family: ‘DM Mono’, monospace;
+font-size: 16px;
+font-weight: 600;
+color: var(–accent);
+flex-shrink: 0;
+min-width: 72px;
+}
+.next-meds { flex: 1; }
+.next-med-name { font-size: 14px; color: var(–text); font-weight: 500; }
+.next-countdown {
+font-family: ‘DM Mono’, monospace;
+font-size: 11px;
+color: var(–muted);
+margin-top: 2px;
+}
+
+/* FULL SCHEDULE */
+.schedule-group { margin-bottom: 20px; }
+.schedule-time-header {
 font-family: ‘DM Mono’, monospace;
 font-size: 12px;
-cursor: pointer;
-transition: all 0.15s;
-margin: 3px;
+font-weight: 600;
+color: var(–accent);
+margin-bottom: 8px;
+display: flex;
+align-items: center;
+gap: 10px;
 }
-.dose-time-btn:hover { border-color: rgba(255,255,255,0.2); color: var(–text); }
-.dose-time-btn.checked {
-background: var(–green-soft);
-border-color: rgba(92,184,138,0.35);
-color: var(–green);
-}
-.dose-times-wrap { display: flex; flex-wrap: wrap; margin-top: 8px; margin-left: -3px; }
-
-/* TAPER VIEW */
-.taper-outer { overflow-x: auto; }
-.taper-table { min-width: 680px; }
-.taper-row {
+.schedule-time-header::after { content:’’; flex:1; height:1px; background: var(–border); }
+.schedule-med {
+background: var(–surface);
+border: 1px solid var(–border);
+border-radius: 10px;
+padding: 12px 14px;
+margin-bottom: 6px;
 display: flex;
 align-items: center;
 gap: 12px;
-margin-bottom: 8px;
 }
-.taper-name {
-width: 180px;
+.schedule-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.schedule-name { font-size: 14px; font-weight: 500; flex: 1; }
+.schedule-dose-label { font-size: 12px; color: var(–muted); font-family: ‘DM Mono’, monospace; }
+
+/* DAY PICKER */
+.day-picker {
+display: flex;
+overflow-x: auto;
+gap: 6px;
+padding-bottom: 4px;
+margin-bottom: 20px;
+-webkit-overflow-scrolling: touch;
+scrollbar-width: none;
+}
+.day-picker::-webkit-scrollbar { display: none; }
+.day-pill {
 flex-shrink: 0;
+padding: 8px 14px;
+border-radius: 20px;
+border: 1px solid var(–border);
+background: transparent;
+color: var(–muted);
+font-family: ‘DM Mono’, monospace;
 font-size: 12px;
-color: var(–text-muted);
-font-weight: 500;
-line-height: 1.3;
-}
-.taper-track {
-flex: 1;
-height: 26px;
-background: var(–surface2);
-border-radius: 6px;
-position: relative;
-overflow: hidden;
-}
-.taper-segment {
-position: absolute;
-height: 100%;
-border-radius: 0;
-display: flex;
-align-items: center;
-justify-content: center;
-font-family: ‘DM Mono’, monospace;
-font-size: 9px;
-color: rgba(0,0,0,0.7);
-font-weight: 700;
-overflow: hidden;
+cursor: pointer;
+transition: all 0.15s;
 white-space: nowrap;
-letter-spacing: 0.05em;
-padding: 0 4px;
-transition: opacity 0.2s;
 }
-.taper-segment:hover { opacity: 1 !important; }
-.week-labels {
-display: flex;
-padding-left: 192px;
-margin-bottom: 6px;
-}
-.week-label {
-flex: 0 0 25%;
-font-family: ‘DM Mono’, monospace;
-font-size: 10px;
-color: var(–text-dim);
-text-align: center;
-letter-spacing: 0.04em;
-}
-.taper-dividers {
-position: absolute;
-top: 0; left: 0; right: 0; bottom: 0;
-pointer-events: none;
-}
-.taper-div-line {
-position: absolute;
-top: 0; bottom: 0;
-width: 1px;
-background: rgba(255,255,255,0.04);
-}
+.day-pill:hover { background: var(–surface2); color: var(–text); }
+.day-pill.active { background: var(–accent); color: #0c0f18; border-color: var(–accent); font-weight: 600; }
+.day-pill.today-pill { border-color: rgba(200,169,110,0.3); }
 
-.caution-box {
-background: rgba(200,169,110,0.07);
-border: 1px solid rgba(200,169,110,0.2);
-border-radius: 12px;
-padding: 18px;
-margin-top: 20px;
-}
-.caution-title {
-font-family: ‘DM Mono’, monospace;
-font-size: 11px;
-letter-spacing: 0.12em;
-color: var(–accent);
-text-transform: uppercase;
-margin-bottom: 12px;
-}
-.caution-item {
+/* NARCAN banner */
+.narcan-banner {
+background: rgba(220,38,38,0.08);
+border: 1px solid rgba(220,38,38,0.2);
+border-radius: 10px;
+padding: 12px 16px;
+margin-bottom: 20px;
 display: flex;
-gap: 10px;
-font-size: 13px;
-color: var(–text-muted);
-margin-bottom: 8px;
-line-height: 1.5;
-}
-.caution-item:last-child { margin-bottom: 0; }
-
-/* Emergency box */
-.emergency-box {
-background: var(–red-soft);
-border: 1px solid rgba(224,92,92,0.25);
-border-radius: 12px;
-padding: 16px 18px;
-margin-bottom: 24px;
-display: flex;
-gap: 14px;
+gap: 12px;
 align-items: flex-start;
-}
-.emergency-icon { font-size: 20px; flex-shrink: 0; }
-.emergency-title { font-weight: 600; color: var(–red); font-size: 14px; margin-bottom: 4px; }
-.emergency-text { font-size: 13px; color: #e88; line-height: 1.5; }
-
-/* Empty state */
-.empty { text-align: center; padding: 48px 0; color: var(–text-dim); font-family: ‘DM Mono’, monospace; font-size: 12px; }
-
-/* Responsive */
-@media (max-width: 600px) {
-.header-title { font-size: 20px; }
-.header-top { flex-direction: column; }
-.day-badge { text-align: left; }
-.taper-name { width: 130px; }
-.week-labels { padding-left: 142px; }
-.nav-tab { padding: 10px 14px; font-size: 12px; }
+font-size: 13px;
+color: #e88;
 }
 
-/* Scrollbar */
-::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: var(–bg); }
-::-webkit-scrollbar-thumb { background: var(–surface2); border-radius: 3px; }
-
-/* Fade in */
-.view-panel { animation: fadeIn 0.2s ease; }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+.empty { text-align: center; padding: 40px 0; color: var(–dim); font-family: ‘DM Mono’, monospace; font-size: 12px; }
 
 .hidden { display: none; }
+.view { animation: fadeUp 0.2s ease; }
+@keyframes fadeUp { from { opacity:0; transform: translateY(6px); } to { opacity:1; transform: translateY(0); } }
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(–surface2); border-radius: 2px; }
 </style>
 
 </head>
 <body>
 
-<div class="header">
-  <div class="header-inner">
-    <div class="header-top">
-      <div>
-        <div class="header-label">Post-Operative Recovery</div>
-        <div class="header-title">Medication Planner</div>
-        <div class="header-sub">Suboccipital Craniectomy + C1 Laminectomy &nbsp;·&nbsp; Starting Mar 4, 2026</div>
-      </div>
-      <div class="day-badge">
-        <div class="day-badge-num" id="currentDayNum">—</div>
-        <div class="day-badge-label">Day of Recovery</div>
-      </div>
-    </div>
-    <nav class="nav-tabs">
-      <button class="nav-tab active" onclick="switchTab('overview')">Overview</button>
-      <button class="nav-tab" onclick="switchTab('dayview')">Day View</button>
-      <button class="nav-tab" onclick="switchTab('taper')">Taper Timeline</button>
-    </nav>
-  </div>
+<!-- CLOCK -->
+
+<div class="clock-hero">
+  <div class="clock-label">Recovery Medication Clock</div>
+  <div class="clock-time" id="clock-display">--:--<span class="ampm" id="clock-ampm">--</span></div>
+  <div class="clock-date" id="clock-date">---</div>
+  <div class="day-chip" id="day-chip">Loading...</div>
+</div>
+
+<!-- TABS -->
+
+<div class="tabs">
+  <button class="tab active" onclick="switchTab('now')">🕐 Now</button>
+  <button class="tab" onclick="switchTab('today')">Today</button>
+  <button class="tab" onclick="switchTab('schedule')">Full Schedule</button>
 </div>
 
 <div class="content">
 
-  <!-- EMERGENCY BANNER -->
+  <!-- NARCAN always visible -->
 
-  <div class="emergency-box">
-    <div class="emergency-icon">🚨</div>
-    <div>
-      <div class="emergency-title">Narcan (Naloxone) is co-prescribed</div>
-      <div class="emergency-text">If unresponsive or not breathing: spray 1 dose in nostril every 2 minutes. <strong>Call 911 immediately.</strong> Keep Narcan accessible at all times while taking oxycodone.</div>
+  <div class="narcan-banner">
+    <span>🚨</span>
+    <div><strong>Narcan on hand?</strong> If unresponsive: 1 spray per nostril every 2 min. <strong>Call 911.</strong></div>
+  </div>
+
+  <!-- NOW VIEW -->
+
+  <div id="view-now" class="view">
+    <div class="section-label"><span class="pulse"></span> Due Now or Recently</div>
+    <div id="now-list"></div>
+    <div style="margin-top:24px">
+      <div class="section-label">Coming Up Next</div>
+      <div id="next-list"></div>
     </div>
   </div>
 
-  <!-- OVERVIEW -->
+  <!-- TODAY VIEW -->
 
-  <div id="tab-overview" class="view-panel">
-    <div id="overview-list"></div>
+  <div id="view-today" class="view hidden">
+    <div id="today-list"></div>
   </div>
 
-  <!-- DAY VIEW -->
+  <!-- SCHEDULE VIEW -->
 
-  <div id="tab-dayview" class="view-panel hidden">
-    <div class="day-picker-wrap">
-      <div class="day-picker-label">Select Day</div>
-      <div class="day-grid" id="day-grid"></div>
-      <div class="day-heading" id="day-heading">Day 1 <span>Mar 4, 2026</span></div>
-    </div>
-    <div id="day-med-list"></div>
-  </div>
-
-  <!-- TAPER TIMELINE -->
-
-  <div id="tab-taper" class="view-panel hidden">
-    <div class="taper-outer">
-      <div class="taper-table">
-        <div class="week-labels">
-          <div class="week-label">Week 1<br><span style="opacity:0.6">Mar 4–10</span></div>
-          <div class="week-label">Week 2<br><span style="opacity:0.6">Mar 11–17</span></div>
-          <div class="week-label">Week 3<br><span style="opacity:0.6">Mar 18–24</span></div>
-          <div class="week-label">Week 4<br><span style="opacity:0.6">Mar 25–31</span></div>
-        </div>
-        <div id="taper-rows"></div>
-      </div>
-    </div>
-    <div class="caution-box">
-      <div class="caution-title">⚠ Key Reminders</div>
-      <div class="caution-item"><span style="color:var(--accent)">›</span><span>Oxycodone tapers off by Day 8. After that, lean on acetaminophen + gabapentin for pain.</span></div>
-      <div class="caution-item"><span style="color:var(--accent)">›</span><span>Gabapentin steps down twice: full dose through Day 14, reduced through Day 21, then nightly only through Day 28.</span></div>
-      <div class="caution-item"><span style="color:var(--accent)">›</span><span>Methocarbamol has a 3-step taper completing around Day 18.</span></div>
-      <div class="caution-item"><span style="color:var(--accent)">›</span><span>Cephalexin (antibiotic): finish all 10 days even if feeling well.</span></div>
-      <div class="caution-item"><span style="color:var(--accent)">›</span><span>Senna + MiraLAX are essential bowel coverage while on opioids. Don't skip them.</span></div>
-      <div class="caution-item"><span style="color:var(--accent)">›</span><span>Bupropion is an ongoing prescription — do not stop without provider guidance.</span></div>
-      <div class="caution-item"><span style="color:var(--accent)">›</span><span>Memantine (Namenda) steps down after Day 7. This is a neuroprotective taper, not a mistake.</span></div>
-    </div>
+  <div id="view-schedule" class="view hidden">
+    <div class="day-picker" id="day-picker"></div>
+    <div id="schedule-list"></div>
   </div>
 
 </div>
@@ -518,301 +406,461 @@ const TOTAL_DAYS = 28;
 
 function addDays(d, n) { const r = new Date(d); r.setDate(r.getDate()+n); return r; }
 function fmtDate(d) { return d.toLocaleDateString("en-US",{month:"short",day:"numeric"}); }
-function fmtDateLong(d) { return d.toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"}); }
+function fmtDateLong(d) { return d.toLocaleDateString("en-US",{weekday:"long",month:"long",day:"numeric"}); }
+
+// Parse "8:00 AM" -> minutes since midnight
+function timeToMin(str) {
+  if (!str || str.includes("needed") || str.includes("PRN") || str.includes("Emergency")) return -1;
+  const m = str.match(/(\d+):(\d+)\s*(AM|PM)/i);
+  if (!m) return -1;
+  let h = parseInt(m[1]), mn = parseInt(m[2]), ap = m[3].toUpperCase();
+  if (ap === "PM" && h !== 12) h += 12;
+  if (ap === "AM" && h === 12) h = 0;
+  return h*60 + mn;
+}
+
+function minToStr(m) {
+  const h = Math.floor(m/60) % 24, mn = m%60;
+  const ap = h >= 12 ? "PM" : "AM";
+  const h12 = h%12 || 12;
+  return `${h12}:${String(mn).padStart(2,"0")} ${ap}`;
+}
 
 const MEDS = [
   {
     name: "Acetaminophen",
-    generic: "TYLENOL EXTRA STRENGTH · 500 mg tablet",
+    short: "Tylenol ES",
     color: "#5b9cf6",
     prn: false,
     schedule: [
-      { label: "1,000 mg (2 tabs) every 8 hrs", days: [0,9], times: ["8:00 AM","4:00 PM","12:00 AM"] }
-    ],
-    warning: "Do not exceed 3,000 mg/day while taking opioids. Check all other products for acetaminophen."
+      { dose: "1,000 mg (2 tabs)", days: [0,9], times: ["8:00 AM","4:00 PM","12:00 AM"] }
+    ]
   },
   {
     name: "Memantine",
-    generic: "NAMENDA · 5 mg tablet",
+    short: "Namenda",
     color: "#a78bfa",
     prn: false,
     schedule: [
-      { label: "10 mg (2 tabs) twice daily", days: [0,6], times: ["8:00 AM","8:00 PM"] },
-      { label: "5 mg (1 tab) twice daily", days: [7,13], times: ["8:00 AM","8:00 PM"] }
-    ],
-    warning: null
+      { dose: "10 mg (2 tabs)", days: [0,6], times: ["8:00 AM","8:00 PM"] },
+      { dose: "5 mg (1 tab)", days: [7,13], times: ["8:00 AM","8:00 PM"] }
+    ]
   },
   {
     name: "Methocarbamol",
-    generic: "ROBAXIN · 500 mg tablet",
+    short: "Robaxin",
     color: "#f97316",
     prn: false,
+    warning: "May cause drowsiness.",
     schedule: [
-      { label: "1,000 mg 3× daily", days: [0,5], times: ["8:00 AM","2:00 PM","8:00 PM"] },
-      { label: "1,000 mg 2× daily", days: [6,9], times: ["8:00 AM","8:00 PM"] },
-      { label: "500 mg 2× daily", days: [10,13], times: ["8:00 AM","8:00 PM"] },
-      { label: "500 mg once daily", days: [14,17], times: ["8:00 AM"] }
-    ],
-    warning: "May cause drowsiness and dizziness. Do not drive."
+      { dose: "1,000 mg (2 tabs)", days: [0,5], times: ["8:00 AM","2:00 PM","8:00 PM"] },
+      { dose: "1,000 mg (2 tabs)", days: [6,9], times: ["8:00 AM","8:00 PM"] },
+      { dose: "500 mg (1 tab)", days: [10,13], times: ["8:00 AM","8:00 PM"] },
+      { dose: "500 mg (1 tab)", days: [14,17], times: ["8:00 AM"] }
+    ]
   },
   {
     name: "Ondansetron ODT",
-    generic: "ZOFRAN ODT · 4 mg dissolving tablet",
+    short: "Zofran ODT",
     color: "#2dd4bf",
     prn: true,
-    prnNote: "For nausea only · up to 5 days",
+    prnNote: "Only if nauseous",
     schedule: [
-      { label: "4 mg every 6 hrs as needed for nausea", days: [0,4], times: ["As needed"] }
-    ],
-    warning: null
+      { dose: "4 mg (dissolve 1 tab)", days: [0,4], times: ["As needed every 6 hrs"] }
+    ]
   },
   {
     name: "OxyCODONE",
-    generic: "ROXICODONE · 10 mg tablet",
+    short: "Roxicodone",
     color: "#ef4444",
     prn: true,
-    prnNote: "For moderate-to-severe pain only",
+    prnNote: "Only for moderate-severe pain",
+    warning: "⚠ Opioid. Narcan co-prescribed.",
     schedule: [
-      { label: "10 mg every 4 hrs PRN", days: [0,1], times: ["Every 4 hrs as needed"] },
-      { label: "10 mg every 6 hrs PRN", days: [2,3], times: ["Every 6 hrs as needed"] },
-      { label: "10 mg every 8 hrs PRN", days: [4,5], times: ["Every 8 hrs as needed"] },
-      { label: "10 mg every 12 hrs PRN", days: [6,6], times: ["Every 12 hrs as needed"] },
-      { label: "5 mg every 12 hrs PRN", days: [7,7], times: ["Every 12 hrs as needed"] }
-    ],
-    warning: "⚠ Opioid. Take only as needed for pain. Narcan co-prescribed — keep accessible."
-  },
-  {
-    name: "Naloxone",
-    generic: "NARCAN · 4 mg nasal spray",
-    color: "#dc2626",
-    prn: true,
-    prnNote: "Emergency rescue only — not a scheduled med",
-    schedule: [
-      { label: "Keep on hand while taking oxycodone", days: [0,7], times: ["Emergency use only — do not take proactively"] }
-    ],
-    warning: "1 spray in nostril every 2 min if unresponsive. CALL 911 immediately."
+      { dose: "10 mg (1 tab)", days: [0,1], times: ["Every 4 hrs PRN"] },
+      { dose: "10 mg (1 tab)", days: [2,3], times: ["Every 6 hrs PRN"] },
+      { dose: "10 mg (1 tab)", days: [4,5], times: ["Every 8 hrs PRN"] },
+      { dose: "10 mg (1 tab)", days: [6,6], times: ["Every 12 hrs PRN"] },
+      { dose: "5 mg (½ tab)", days: [7,7], times: ["Every 12 hrs PRN"] }
+    ]
   },
   {
     name: "Senna",
-    generic: "SENOKOT · 8.6 mg tablet",
+    short: "Senokot",
     color: "#94a3b8",
     prn: false,
     schedule: [
-      { label: "2 tabs twice daily (ongoing)", days: [0,29], times: ["8:00 AM","8:00 PM"] }
-    ],
-    warning: "Critical bowel regimen while on opioids. Do not skip."
+      { dose: "2 tabs", days: [0,60], times: ["8:00 AM","8:00 PM"] }
+    ]
   },
   {
     name: "Polyethylene Glycol",
-    generic: "MIRALAX · 17 g packet",
+    short: "MiraLAX",
     color: "#22c55e",
     prn: false,
     schedule: [
-      { label: "17 g once daily", days: [0,13], times: ["8:00 AM"] }
-    ],
-    warning: null
+      { dose: "17 g (1 packet)", days: [0,13], times: ["8:00 AM"] }
+    ]
   },
   {
     name: "Gabapentin",
-    generic: "NEURONTIN · 300 mg capsule",
+    short: "Neurontin",
     color: "#eab308",
+    warning: "May cause dizziness.",
     prn: false,
     schedule: [
-      { label: "600 mg (2 caps) every 8 hrs", days: [0,13], times: ["8:00 AM","4:00 PM","12:00 AM"] },
-      { label: "300 mg every 8 hrs", days: [14,20], times: ["8:00 AM","4:00 PM","12:00 AM"] },
-      { label: "300 mg nightly", days: [21,27], times: ["10:00 PM"] }
-    ],
-    warning: "May cause dizziness and sedation. Do not drive."
+      { dose: "600 mg (2 caps)", days: [0,13], times: ["8:00 AM","4:00 PM","12:00 AM"] },
+      { dose: "300 mg (1 cap)", days: [14,20], times: ["8:00 AM","4:00 PM","12:00 AM"] },
+      { dose: "300 mg (1 cap)", days: [21,27], times: ["10:00 PM"] }
+    ]
   },
   {
     name: "Cephalexin",
-    generic: "KEFLEX · 500 mg capsule",
+    short: "Keflex",
     color: "#38bdf8",
     prn: false,
     schedule: [
-      { label: "500 mg every 6 hrs", days: [0,9], times: ["8:00 AM","2:00 PM","8:00 PM","2:00 AM"] }
-    ],
-    warning: "Antibiotic — complete the full 10-day course even if feeling better."
+      { dose: "500 mg (1 cap)", days: [0,9], times: ["8:00 AM","2:00 PM","8:00 PM","2:00 AM"] }
+    ]
   },
   {
     name: "Bupropion SR",
-    generic: "WELLBUTRIN SR · 100 mg tablet",
+    short: "Wellbutrin SR",
     color: "#c084fc",
     prn: false,
     schedule: [
-      { label: "100 mg every 12 hrs (ongoing)", days: [0,60], times: ["8:00 AM","8:00 PM"] }
-    ],
-    warning: "Ongoing prescription. Do not stop without provider guidance."
+      { dose: "100 mg (1 tab)", days: [0,60], times: ["8:00 AM","8:00 PM"] }
+    ]
   }
 ];
 
-// Current day calculation
-const today = new Date();
-const dayIndex = Math.floor((today - START) / (1000*60*60*24));
-const displayDay = Math.max(1, Math.min(dayIndex+1, TOTAL_DAYS+1));
-document.getElementById("currentDayNum").textContent = (dayIndex >= 0 && dayIndex < TOTAL_DAYS) ? `Day ${dayIndex+1}` : "—";
-
-// --- OVERVIEW ---
-function buildOverview() {
-  const list = document.getElementById("overview-list");
-  list.innerHTML = "";
+// Get meds active on a given day index
+function getMedsForDay(dayIdx) {
+  const result = [];
   MEDS.forEach(med => {
-    const firstDay = med.schedule[0].days[0];
-    const lastDay = med.schedule[med.schedule.length-1].days[1];
-    const card = document.createElement("div");
-    card.className = "med-card";
-    card.innerHTML = `
-      <div class="med-card-inner">
-        <div class="med-accent-bar" style="background:${med.color}"></div>
-        <div class="med-body">
-          <div class="med-header">
-            <div>
-              <div class="med-name">${med.name}</div>
-              <div class="med-generic">${med.generic}</div>
-              ${med.prn ? `<div class="prn-badge">PRN · AS NEEDED</div>` : ""}
-            </div>
-            <div class="med-dates">${fmtDate(addDays(START, firstDay))} – ${fmtDate(addDays(START, Math.min(lastDay, TOTAL_DAYS-1)))}</div>
-          </div>
-          ${med.schedule.map(s => `
-            <div class="schedule-row">
-              <div class="schedule-dot" style="background:${med.color}"></div>
-              <div>
-                <span class="schedule-label">${s.label}</span>
-                ${s.times[0] !== "As needed" && !s.times[0].includes("PRN") && !s.times[0].includes("Emergency")
-                  ? `<span class="schedule-times"> &nbsp;·&nbsp; ${s.times.join(", ")}</span>` : ""}
-                <span class="schedule-daterange"> &nbsp;(${fmtDate(addDays(START, s.days[0]))}${s.days[0]!==s.days[1] ? " – "+fmtDate(addDays(START, s.days[1])) : ""})</span>
-              </div>
-            </div>
-          `).join("")}
-          ${med.warning ? `<div class="warning-box"><span>⚠</span><span>${med.warning}</span></div>` : ""}
-        </div>
-      </div>`;
-    list.appendChild(card);
+    med.schedule.forEach(s => {
+      if (dayIdx >= s.days[0] && dayIdx <= s.days[1]) {
+        result.push({ med, dose: s.dose, times: s.times });
+      }
+    });
   });
+  return result;
 }
 
-// --- DAY VIEW ---
-let selectedDay = Math.max(0, Math.min(dayIndex, TOTAL_DAYS-1));
-let checkedDoses = {};
+// Build dose list: [{name, short, color, dose, time, timeMin, prn, prnNote, warning}]
+function getDoseList(dayIdx) {
+  const doses = [];
+  getMedsForDay(dayIdx).forEach(({ med, dose, times }) => {
+    times.forEach(t => {
+      doses.push({
+        name: med.name,
+        short: med.short,
+        color: med.color,
+        dose,
+        time: t,
+        timeMin: timeToMin(t),
+        prn: med.prn || false,
+        prnNote: med.prnNote || null,
+        warning: med.warning || null
+      });
+    });
+  });
+  doses.sort((a,b) => {
+    if (a.timeMin < 0 && b.timeMin < 0) return 0;
+    if (a.timeMin < 0) return 1;
+    if (b.timeMin < 0) return -1;
+    return a.timeMin - b.timeMin;
+  });
+  return doses;
+}
 
-function buildDayGrid() {
-  const grid = document.getElementById("day-grid");
-  grid.innerHTML = "";
-  for (let d = 0; d < TOTAL_DAYS; d++) {
-    const dt = addDays(START, d);
-    const btn = document.createElement("button");
-    btn.className = "day-btn" + (d === selectedDay ? " active" : "");
-    btn.innerHTML = `<span>${d+1}</span><span class="day-month">${fmtDate(dt).split(" ")[0]}</span>`;
-    btn.onclick = () => selectDay(d);
-    grid.appendChild(btn);
+// Checked state (session)
+const checked = {};
+function toggleCheck(key, btn, item) {
+  checked[key] = !checked[key];
+  const row = btn.closest(".med-item, .schedule-med");
+  if (row) row.classList.toggle("taken", checked[key]);
+  btn.classList.toggle("checked", checked[key]);
+  btn.textContent = checked[key] ? "✓" : "";
+}
+
+// --- CLOCK ---
+function updateClock() {
+  const now = new Date();
+  const h = now.getHours(), m = now.getMinutes();
+  const ap = h >= 12 ? "PM" : "AM";
+  const h12 = h%12||12;
+  document.getElementById("clock-display").innerHTML = `${h12}:${String(m).padStart(2,"0")}<span class="ampm">${ap}</span>`;
+  document.getElementById("clock-date").textContent = fmtDateLong(now);
+
+  const dayIdx = Math.floor((now - START)/(1000*60*60*24));
+  if (dayIdx >= 0 && dayIdx < TOTAL_DAYS) {
+    document.getElementById("day-chip").textContent = `Recovery Day ${dayIdx+1} of ${TOTAL_DAYS}`;
+  } else if (dayIdx < 0) {
+    document.getElementById("day-chip").textContent = `Surgery starts ${fmtDate(START)}`;
+  } else {
+    document.getElementById("day-chip").textContent = `Day ${dayIdx+1} · Active recovery period complete`;
   }
-  updateDayHeading();
 }
 
-function selectDay(d) {
-  selectedDay = d;
-  document.querySelectorAll(".day-btn").forEach((b,i) => b.classList.toggle("active", i===d));
-  checkedDoses = {};
-  updateDayHeading();
-  buildDayMeds();
-}
+// --- NOW VIEW ---
+function buildNow() {
+  const now = new Date();
+  const dayIdx = Math.floor((now - START)/(1000*60*60*24));
+  const nowMin = now.getHours()*60 + now.getMinutes();
+  const WINDOW_PAST = 60; // show as "due now" within 60 min past
+  const WINDOW_SOON = 120; // show as "soon" within next 2 hrs
 
-function updateDayHeading() {
-  const dt = addDays(START, selectedDay);
-  document.getElementById("day-heading").innerHTML = `Day ${selectedDay+1} <span>${fmtDateLong(dt)}</span>`;
-}
+  const doses = getDoseList(Math.max(0, Math.min(dayIdx, TOTAL_DAYS-1)));
 
-function buildDayMeds() {
-  const list = document.getElementById("day-med-list");
-  list.innerHTML = "";
-  const active = MEDS.filter(med => med.schedule.some(s => selectedDay >= s.days[0] && selectedDay <= s.days[1]));
-  if (!active.length) { list.innerHTML = `<div class="empty">No scheduled medications this day.</div>`; return; }
-  active.forEach((med, mi) => {
-    const activeSchedules = med.schedule.filter(s => selectedDay >= s.days[0] && selectedDay <= s.days[1]);
+  const nowList = document.getElementById("now-list");
+  const nextList = document.getElementById("next-list");
+  nowList.innerHTML = "";
+  nextList.innerHTML = "";
+
+  const dueNow = [], comingUp = [];
+
+  doses.forEach((d, i) => {
+    if (d.timeMin < 0) {
+      // PRN — always show in "now" section
+      dueNow.push({ ...d, status: "prn", i });
+      return;
+    }
+    const diff = d.timeMin - nowMin;
+    if (diff >= -WINDOW_PAST && diff <= 0) {
+      dueNow.push({ ...d, status: "now", i });
+    } else if (diff > 0 && diff <= WINDOW_SOON) {
+      dueNow.push({ ...d, status: "soon", i });
+    } else if (diff > WINDOW_SOON) {
+      comingUp.push({ ...d, i });
+    }
+  });
+
+  if (!dueNow.length) {
+    nowList.innerHTML = `<div class="empty">Nothing due right now. Check "Today" for your full schedule.</div>`;
+  }
+
+  dueNow.forEach(d => {
+    const key = `now-${d.i}-${d.name}-${d.time}`;
+    const isTaken = checked[key];
+    let tagHtml = "";
+    if (d.status === "now") tagHtml = `<span class="med-time-tag tag-now">● Now · ${d.time}</span>`;
+    else if (d.status === "soon") {
+      const mins = d.timeMin - nowMin;
+      tagHtml = `<span class="med-time-tag tag-soon">↑ in ${mins}m · ${d.time}</span>`;
+    } else {
+      tagHtml = `<span class="med-time-tag tag-later">PRN</span>`;
+    }
+
+    const div = document.createElement("div");
+    div.className = `med-item${d.status==="now"?" due-now":d.status==="soon"?" due-soon":""}${isTaken?" taken":""}`;
+    div.innerHTML = `
+      <div class="med-dot" style="background:${d.color}"></div>
+      <div class="med-info">
+        <div class="med-name">${d.name}</div>
+        <div class="med-dose">${d.dose}</div>
+        ${tagHtml}
+        ${d.prn ? `<div class="prn-note">${d.prnNote || "As needed"}</div>` : ""}
+        ${d.warning ? `<div class="warning-inline"><span>⚠</span><span>${d.warning}</span></div>` : ""}
+      </div>
+      <button class="check-btn${isTaken?" checked":""}" onclick="toggleCheck('${key}',this)">${isTaken?"✓":""}</button>`;
+    nowList.appendChild(div);
+  });
+
+  // Group coming up by time
+  const byTime = {};
+  comingUp.forEach(d => {
+    const k = d.time;
+    if (!byTime[k]) byTime[k] = [];
+    byTime[k].push(d);
+  });
+
+  const timeKeys = Object.keys(byTime).sort((a,b) => timeToMin(a)-timeToMin(b)).slice(0,3);
+  if (!timeKeys.length) {
+    nextList.innerHTML = `<div class="empty">No more scheduled doses today.</div>`;
+  }
+  timeKeys.forEach(t => {
+    const group = byTime[t];
+    const minsUntil = timeToMin(t) - nowMin;
     const card = document.createElement("div");
-    card.className = "med-card";
-    let timesHtml = activeSchedules.map((s, si) => {
-      let inner = s.times.map((t, ti) => {
-        const key = `${mi}-${si}-${ti}`;
-        const checked = checkedDoses[key];
-        return `<button class="dose-time-btn${checked?" checked":""}" onclick="toggleDose('${key}', this)">${checked?"✓":""} ${t}</button>`;
-      }).join("");
-      return `<div style="margin-bottom:10px"><div style="font-size:13px;color:var(--text);font-weight:500;margin-bottom:2px">${s.label}</div><div class="dose-times-wrap">${inner}</div></div>`;
-    }).join("");
+    card.className = "next-card";
     card.innerHTML = `
-      <div class="med-card-inner">
-        <div class="med-accent-bar" style="background:${med.color}"></div>
-        <div class="med-body">
-          <div class="med-header">
-            <div>
-              <div class="med-name">${med.name}</div>
-              <div class="med-generic">${med.generic}</div>
-              ${med.prn ? `<div class="prn-badge">PRN · AS NEEDED</div>` : ""}
-            </div>
-          </div>
-          ${timesHtml}
-          ${med.warning ? `<div class="warning-box"><span>⚠</span><span>${med.warning}</span></div>` : ""}
-        </div>
+      <div class="next-time">${t}</div>
+      <div class="next-meds">
+        ${group.map(d => `<div class="next-med-name">${d.name} <span style="color:var(--muted);font-size:12px;font-weight:400">· ${d.dose}</span></div>`).join("")}
+        <div class="next-countdown">in ${minsUntil >= 60 ? Math.floor(minsUntil/60)+"h "+((minsUntil%60)||"")+"m" : minsUntil+"m"}</div>
       </div>`;
-    list.appendChild(card);
+    nextList.appendChild(card);
   });
 }
 
-function toggleDose(key, btn) {
-  checkedDoses[key] = !checkedDoses[key];
-  btn.classList.toggle("checked", checkedDoses[key]);
-  btn.textContent = (checkedDoses[key] ? "✓ " : "") + btn.textContent.replace("✓ ","");
+// --- TODAY VIEW ---
+function buildToday() {
+  const now = new Date();
+  const dayIdx = Math.max(0, Math.min(Math.floor((now - START)/(1000*60*60*24)), TOTAL_DAYS-1));
+  const nowMin = now.getHours()*60 + now.getMinutes();
+  const doses = getDoseList(dayIdx);
+  const list = document.getElementById("today-list");
+  list.innerHTML = "";
+
+  // Group by time
+  const byTime = {};
+  const prnGroup = [];
+  doses.forEach((d,i) => {
+    if (d.timeMin < 0) { prnGroup.push({...d,i}); return; }
+    if (!byTime[d.time]) byTime[d.time] = [];
+    byTime[d.time].push({...d,i});
+  });
+
+  const timeKeys = Object.keys(byTime).sort((a,b)=>timeToMin(a)-timeToMin(b));
+  timeKeys.forEach(t => {
+    const group = byTime[t];
+    const isPast = timeToMin(t) < nowMin - 60;
+    const header = document.createElement("div");
+    header.className = "schedule-group";
+    const tLabel = document.createElement("div");
+    tLabel.className = "schedule-time-header";
+    tLabel.innerHTML = `${t}${isPast ? ' <span style="color:var(--dim);font-weight:400;font-size:10px"> · past</span>' : ""}`;
+    header.appendChild(tLabel);
+
+    group.forEach(d => {
+      const key = `today-${d.i}-${d.name}-${d.time}`;
+      const isTaken = checked[key];
+      const div = document.createElement("div");
+      div.className = `med-item${isTaken?" taken":""}`;
+      div.innerHTML = `
+        <div class="med-dot" style="background:${d.color}"></div>
+        <div class="med-info">
+          <div class="med-name">${d.name}</div>
+          <div class="med-dose">${d.dose}</div>
+          ${d.warning ? `<div class="warning-inline"><span>⚠</span><span>${d.warning}</span></div>` : ""}
+        </div>
+        <button class="check-btn${isTaken?" checked":""}" onclick="toggleCheck('${key}',this)">${isTaken?"✓":""}</button>`;
+      header.appendChild(div);
+    });
+    list.appendChild(header);
+  });
+
+  if (prnGroup.length) {
+    const header = document.createElement("div");
+    header.className = "schedule-group";
+    const tLabel = document.createElement("div");
+    tLabel.className = "schedule-time-header";
+    tLabel.textContent = "As Needed (PRN)";
+    header.appendChild(tLabel);
+    prnGroup.forEach(d => {
+      const key = `today-prn-${d.i}-${d.name}`;
+      const isTaken = checked[key];
+      const div = document.createElement("div");
+      div.className = `med-item${isTaken?" taken":""}`;
+      div.innerHTML = `
+        <div class="med-dot" style="background:${d.color}"></div>
+        <div class="med-info">
+          <div class="med-name">${d.name}</div>
+          <div class="med-dose">${d.dose}</div>
+          <div class="prn-note">${d.prnNote || "As needed"} · ${d.time}</div>
+          ${d.warning ? `<div class="warning-inline"><span>⚠</span><span>${d.warning}</span></div>` : ""}
+        </div>
+        <button class="check-btn${isTaken?" checked":""}" onclick="toggleCheck('${key}',this)">${isTaken?"✓":""}</button>`;
+      header.appendChild(div);
+    });
+    list.appendChild(header);
+  }
 }
 
-// --- TAPER ---
-function buildTaper() {
-  const rows = document.getElementById("taper-rows");
-  rows.innerHTML = "";
-  MEDS.forEach(med => {
-    const row = document.createElement("div");
-    row.className = "taper-row";
-    const lastDisplayDay = Math.min(med.schedule[med.schedule.length-1].days[1], TOTAL_DAYS-1);
-    const firstDisplayDay = med.schedule[0].days[0];
-    const maxOpacity = 1;
-    const segments = med.schedule.map((s, si) => {
-      const startD = s.days[0];
-      const endD = Math.min(s.days[1], TOTAL_DAYS-1);
-      if (startD > TOTAL_DAYS-1) return "";
-      const startPct = (startD / TOTAL_DAYS)*100;
-      const widthPct = ((endD - startD + 1) / TOTAL_DAYS)*100;
-      const opacity = maxOpacity - si * 0.22;
-      const label = s.label.replace(" as needed","").replace(" PRN","");
-      return `<div class="taper-segment" style="left:${startPct}%;width:${widthPct}%;background:${med.color};opacity:${Math.max(0.3,opacity)}" title="${s.label} (${fmtDate(addDays(START,startD))} – ${fmtDate(addDays(START,endD))})">${widthPct > 12 ? label.split(" ").slice(0,3).join(" ") : widthPct > 5 ? label.split(" ")[0] : ""}</div>`;
-    }).join("");
-    row.innerHTML = `
-      <div class="taper-name">${med.name}</div>
-      <div class="taper-track">
-        <div class="taper-dividers">
-          <div class="taper-div-line" style="left:25%"></div>
-          <div class="taper-div-line" style="left:50%"></div>
-          <div class="taper-div-line" style="left:75%"></div>
-        </div>
-        ${segments}
-      </div>`;
-    rows.appendChild(row);
+// --- SCHEDULE VIEW ---
+let scheduleDay = Math.max(0, Math.min(Math.floor((new Date() - START)/(1000*60*60*24)), TOTAL_DAYS-1));
+
+function buildDayPicker() {
+  const picker = document.getElementById("day-picker");
+  picker.innerHTML = "";
+  const today = Math.floor((new Date() - START)/(1000*60*60*24));
+  for (let d = 0; d < TOTAL_DAYS; d++) {
+    const btn = document.createElement("button");
+    btn.className = `day-pill${d===scheduleDay?" active":""}${d===today?" today-pill":""}`;
+    btn.textContent = `Day ${d+1} · ${fmtDate(addDays(START,d))}`;
+    btn.onclick = () => {
+      scheduleDay = d;
+      document.querySelectorAll(".day-pill").forEach((b,i) => b.classList.toggle("active", i===d));
+      buildScheduleList();
+    };
+    picker.appendChild(btn);
+  }
+  // Scroll to today
+  const activePill = picker.querySelector(".active");
+  if (activePill) setTimeout(() => activePill.scrollIntoView({behavior:"smooth",inline:"center",block:"nearest"}), 100);
+}
+
+function buildScheduleList() {
+  const list = document.getElementById("schedule-list");
+  list.innerHTML = "";
+  const doses = getDoseList(scheduleDay);
+  if (!doses.length) { list.innerHTML = `<div class="empty">No medications this day.</div>`; return; }
+
+  const byTime = {};
+  const prnGroup = [];
+  doses.forEach((d,i) => {
+    if (d.timeMin < 0) { prnGroup.push({...d,i}); return; }
+    if (!byTime[d.time]) byTime[d.time] = [];
+    byTime[d.time].push({...d,i});
   });
+
+  Object.keys(byTime).sort((a,b)=>timeToMin(a)-timeToMin(b)).forEach(t => {
+    const group = byTime[t];
+    const grpEl = document.createElement("div");
+    grpEl.className = "schedule-group";
+    grpEl.innerHTML = `<div class="schedule-time-header">${t}</div>`;
+    group.forEach(d => {
+      const el = document.createElement("div");
+      el.className = "schedule-med";
+      el.innerHTML = `
+        <div class="schedule-dot" style="background:${d.color}"></div>
+        <div style="flex:1">
+          <div class="schedule-name">${d.name}</div>
+          <div class="schedule-dose-label">${d.dose}</div>
+        </div>`;
+      grpEl.appendChild(el);
+    });
+    list.appendChild(grpEl);
+  });
+
+  if (prnGroup.length) {
+    const grpEl = document.createElement("div");
+    grpEl.className = "schedule-group";
+    grpEl.innerHTML = `<div class="schedule-time-header">As Needed (PRN)</div>`;
+    prnGroup.forEach(d => {
+      const el = document.createElement("div");
+      el.className = "schedule-med";
+      el.innerHTML = `
+        <div class="schedule-dot" style="background:${d.color}"></div>
+        <div style="flex:1">
+          <div class="schedule-name">${d.name}</div>
+          <div class="schedule-dose-label">${d.dose} · <span style="color:var(--accent)">${d.prnNote||"As needed"}</span></div>
+        </div>`;
+      grpEl.appendChild(el);
+    });
+    list.appendChild(grpEl);
+  }
 }
 
 // --- TAB SWITCHING ---
 function switchTab(tab) {
-  ["overview","dayview","taper"].forEach(t => {
-    document.getElementById(`tab-${t}`).classList.toggle("hidden", t!==tab);
+  ["now","today","schedule"].forEach(t => {
+    document.getElementById(`view-${t}`).classList.toggle("hidden", t!==tab);
   });
-  document.querySelectorAll(".nav-tab").forEach((b,i) => {
-    b.classList.toggle("active", ["overview","dayview","taper"][i]===tab);
+  document.querySelectorAll(".tab").forEach((b,i) => {
+    b.classList.toggle("active", ["now","today","schedule"][i]===tab);
   });
+  if (tab==="now") buildNow();
+  if (tab==="today") buildToday();
+  if (tab==="schedule") { buildDayPicker(); buildScheduleList(); }
 }
 
 // --- INIT ---
-buildOverview();
-buildDayGrid();
-buildDayMeds();
-buildTaper();
+updateClock();
+setInterval(updateClock, 1000);
+buildNow();
+setInterval(buildNow, 60000); // refresh Now every minute
 </script>
 
 </body>
