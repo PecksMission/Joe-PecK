@@ -385,7 +385,7 @@
     .reply-cancel:hover{color:rgba(255,255,255,0.55);}
     .comment-children{margin-top:1.1rem;display:none;flex-direction:column;gap:1.2rem;padding-left:1rem;border-left:1px solid rgba(255,255,255,0.05);}
     .comment-children.open{display:flex;}
-    @media(max-width:640px){.comments-wrap{padding:0 1.4rem 4rem;}.comment-name-input.visible{max-width:180px;}.comment-children{padding-left:0.65rem;}}
+    @media(max-width:640px){.comments-wrap{padding:0 1.4rem 4rem;}.comment-name-input.visible{max-width:180px;}.comment-children{padding-left:0.65rem;}.walker-wrap{flex-direction:column !important;}.walker-wrap figure{width:100% !important;}}
     #tldr-btn{position:fixed;bottom:2rem;right:2rem;z-index:9000;background:#c9a84c;color:#0a0a0a;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;padding:0.65rem 1.2rem;border-radius:2px;box-shadow:0 4px 24px rgba(0,0,0,0.5);transition:background 0.2s,transform 0.15s;line-height:1;}
     #tldr-btn:hover{background:#e8c97a;transform:translateY(-2px);}
     #tldr-overlay{display:none;position:fixed;inset:0;z-index:9500;background:rgba(0,0,0,0.65);backdrop-filter:blur(4px);align-items:flex-end;justify-content:flex-end;padding:2rem;}
@@ -453,7 +453,19 @@
 
   <p>I've always been the provider. Never the patient. Me and my dad are cut from the same cloth — always doing something, always building, never sitting still. And now I've been on the same floor for five days, watching my mom cut up my food, asking doctors to stand directly in front of me — not beside me — because I can't rotate my neck yet and I want to look them in the eyes when they talk. My dad always says communication is 7% words, 38% tone, 55% body language. I want the whole conversation. So I ask them to move, and they do.</p>
 
-  <p>These are the small things nobody warns you about in recovery. I didn't know what they felt like until now. And I'm a medic. I've stood on the other side of that bed more times than I can count. I thought I understood. I didn't. But I do now — and that perspective is going to make me better at everything I do going forward. That's not a loss. That's a gift.</p>
+  <div class="walker-wrap" style="display: flex; gap: 2rem; align-items: flex-start; margin-bottom: 1.8rem;">
+    <p style="flex: 1; margin-bottom: 0;">These are the small things nobody warns you about in recovery. I didn't know what they felt like until now. And I'm a medic. I've stood on the other side of that bed more times than I can count. I thought I understood. I didn't. But I do now — and that perspective is going to make me better at everything I do going forward. That's not a loss. That's a gift.</p>
+    <figure style="flex-shrink: 0; width: 180px; margin: 0;">
+      <img
+        src="Walker.webp"
+        alt="Hospital room at Vanderbilt, walker in the foreground, whiteboard dated 3-3-26 with Walker checked under mobility"
+        style="width: 100%; display: block; filter: grayscale(1) contrast(1.1); border: 1px solid rgba(201,168,76,0.2);"
+      />
+      <figcaption style="font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-light); margin-top: 0.5rem; line-height: 1.5;">
+        VUMC — Day 5.<br>Whiteboard says Walker.
+      </figcaption>
+    </figure>
+  </div>
 
   <span class="pull-quote">This is the training ground. The fire is hot — and I think it's supposed to be.</span>
 
@@ -462,17 +474,6 @@
   <h2>The Walker Is My Bench Press</h2>
 
   <p>I called an old buddy of mine — an old Marine. Old leather neck. He told me my walker is my bench press and I need to treat it as such. That's my workout right now. And you know what? I'll take it.</p>
-
-  <figure style="margin: 2.5rem 0;">
-    <img
-      src="Walker.webp"
-      alt="Hospital room at Vanderbilt, walker in the foreground, whiteboard dated 3-3-26 with Walker checked under mobility"
-      style="width: 100%; display: block; filter: grayscale(1) contrast(1.1); border: 1px solid rgba(201,168,76,0.2);"
-    />
-    <figcaption style="font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-light); margin-top: 0.6rem; line-height: 1.5;">
-      Vanderbilt University Medical Center — Day 5. Whiteboard says Walker. Whiteboard is right.
-    </figcaption>
-  </figure>
 
   <p>When he said that, it made me think of a man named Roy Benavidez.</p>
 
