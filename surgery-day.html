@@ -504,11 +504,11 @@
 <div class="last-update-bar" id="last-update-bar">
   <div class="last-update-inner">
     <span class="last-update-label">Last Update</span>
-    <span class="last-update-time" id="lu-time">Mar 3 · 3:15 PM</span>
+    <span class="last-update-time" id="lu-time">Mar 4 · 10:00 PM</span>
     <div class="last-update-dot" style="background:var(--family)"></div>
-    <span class="last-update-headline" id="lu-headline">Still Sleeping.</span>
+    <span class="last-update-headline" id="lu-headline">Home. Nine Meds. Math Is Hard.</span>
     <span class="last-update-sep">—</span>
-    <span class="last-update-body" id="lu-body">Mar 3 · 3:15 PM — OT/PT cleared him, all motor functions intact. No inpatient rehab — therapy can be done at home. He's going home. Currently sleeping through the afternoon.</span>
+    <span class="last-update-body" id="lu-body">Mar 5 · 10:00 PM — Post-op day 7. Joe is home. Nine prescriptions, each on its own schedule. Bowls and pink Post-it notes are doing the heavy lifting. Math is hard. Especially after brain surgery.</span>
   </div>
 </div>
 
@@ -580,6 +580,21 @@
        WEDNESDAY, MARCH 4, 2026 — POST-OP DAY 6
        ═══════════════════════════════════════════════════ -->
   <p class="timeline-section-label" style="margin-top:3rem;letter-spacing:0.12em;">Wednesday, March 4, 2026 — Post-Op Day 6</p>
+
+  <!-- MARCH 4 — HOME, 9 MEDS, MOM'S SYSTEM — 10:00 PM -->
+  <div class="tl-entry confirmed family-entry" data-time="22:00">
+    <div class="tl-time">10:00<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">Home. Nine Meds. Math Is Hard.</h2>
+      <div class="tl-body">
+        <p>Nine prescriptions. Mom lined them up in bowls, labeled the times on pink Post-it notes, and made sure he knew what to take when. Math is hard after brain surgery. Moms aren't.</p>
+        <img src="meds.webp" alt="Nine post-op medications organized into bowls with pink Post-it note time labels on the kitchen counter" class="update-photo" style="max-width:480px; margin-top:1rem;">
+        <p class="update-photo-caption">March 4, 2026. Mom's system. Nine meds.</p>
+      </div>
+    </div>
+  </div>
 
   <!-- MARCH 4 — HOME -->
   <div class="tl-entry confirmed family-entry" data-time="16:22">
@@ -2307,7 +2322,7 @@
   function refreshLastUpdate() {
     var entries = document.querySelectorAll('.tl-entry.confirmed, .tl-entry.active-now');
     if (!entries.length) return;
-    var last = entries[entries.length - 1];
+    var last = entries[0];
     var timeEl = last.querySelector('.tl-time');
     var headEl = last.querySelector('.tl-headline');
     var bodyEl = last.querySelector('.tl-body p, .tl-body li');
