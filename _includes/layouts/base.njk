@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WT1126YN2Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WT1126YN2Q');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ pageTitle or title }}{% if title %} — {% endif %}Peck's Mission</title>
+  <meta property="og:title" content="Peck's Mission{% if title %} | {{ title }}{% endif %}" />
+  <meta name="description" content="{{ description or excerpt or site.description }}" />
+  <meta property="og:description" content="{{ description or excerpt or site.description }}" />
+  <meta property="og:image" content="{{ ogImage or site.ogImage }}" />
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+  <meta property="og:type" content="{{ ogType or 'website' }}" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Peck's Mission{% if title %} | {{ title }}{% endif %}" />
+  <meta name="twitter:description" content="{{ description or excerpt or site.description }}" />
+  <meta name="twitter:image" content="{{ ogImage or site.ogImage }}" />
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --black: #0a0a0a; --white: #f5f0e8; --gold: #c9a84c; --gold-light: #e8c97a; --red: #8b2020; --gray: #4a4a4a; --gray-light: #9a9a9a; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--white); font-family: 'Crimson Pro', Georgia, serif; font-size: 22px; line-height: 1.8; overflow-x: hidden; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; width: 100%; z-index: 100; padding: 1.2rem 3rem; display: flex; justify-content: space-between; align-items: center; background: rgba(10,10,10,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(201,168,76,0.15); }
+    .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 0.15em; color: var(--gold); text-decoration: none; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { color: var(--gray-light); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* HAMBURGER + MOBILE */
+    .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; z-index: 200; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--gold); transition: all 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: 60px; right: 1.5rem; width: 220px; background: rgba(10,10,10,0.97); border: 1px solid rgba(201,168,76,0.2); border-radius: 4px; z-index: 150; flex-direction: column; padding: 1.2rem 1.5rem; gap: 1.2rem; backdrop-filter: blur(8px); }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { color: var(--white); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+    .mobile-menu a:hover { color: var(--gold); }
+
+    /* FOOTER */
+    footer { padding: 3rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+    .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; letter-spacing: 0.15em; color: var(--gold); margin-bottom: 1rem; }
+    .footer-kipling { font-family: 'Crimson Pro', serif; font-size: 1.15rem; font-style: italic; color: var(--gray-light); margin-bottom: 0.5rem; }
+    .footer-line { font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); }
+    .nav-footer { display: flex; justify-content: center; gap: 2rem; list-style: none; margin-top: 1.5rem; flex-wrap: wrap; }
+    .nav-footer a { color: var(--gray); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-footer a:hover { color: var(--gold); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .hamburger { display: flex; }
+      .nav-links { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Peck's Mission</a>
+  <ul class="nav-links">
+    <li><a href="/about.html">My Story</a></li>
+    <li><a href="/chiari.html">What is Chiari</a></li>
+    <li><a href="/blog.html">From The Field</a></li>
+    <li><a href="/follow-along.html">Follow Along</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/" onclick="closeMobile()">Home</a>
+  <a href="/about.html" onclick="closeMobile()">My Story</a>
+  <a href="/chiari.html" onclick="closeMobile()">What is Chiari</a>
+  <a href="/blog.html" onclick="closeMobile()">From The Field</a>
+  <a href="/follow-along.html" onclick="closeMobile()">Follow Along</a>
+</div>
+
+{{ content | safe }}
+
+<footer>
+  <div class="footer-logo">Peck's Mission</div>
+  <p class="footer-kipling">"And so hold on when there is nothing in you except the Will which says to them: Hold on."</p>
+  <p class="footer-line">— Rudyard Kipling, If</p>
+  <p class="footer-line" style="margin-top:0.8rem;color:#555;">"The ceiling you hit your whole life wasn't your ceiling. It was the condition's ceiling."</p>
+  <ul class="nav-footer">
+    <li><a href="/">Home</a></li>
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/chiari.html">Chiari</a></li>
+    <li><a href="/blog.html">From The Field</a></li>
+    <li><a href="/follow-along.html">Follow Along</a></li>
+  </ul>
+</footer>
+
+<script>
+  var hamburger = document.getElementById('hamburger');
+  var mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  function closeMobile() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  }
+</script>
+
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

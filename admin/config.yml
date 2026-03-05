@@ -1,0 +1,30 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "posts"
+    label: "Blog Posts"
+    folder: "posts"
+    create: true
+    slug: "{{slug}}"
+    sortable_fields: ["date", "title"]
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - label: "Tag"
+        name: "tag"
+        widget: "select"
+        options:
+          - "Recovery"
+          - "Faith"
+          - "Diagnosis"
+          - "Community"
+          - "Clinical"
+          - "Surgery"
+      - { label: "Read Time", name: "readTime", widget: "string", default: "5 min read" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
