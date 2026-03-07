@@ -4,40 +4,36 @@ title: Updates
 permalink: /blog.html
 description: "Diagnosis to surgery to recovery — documented honestly, with the chart and the truth side by side."
 ---
-
 <style>
   .page-header { padding: 10rem 3rem 5rem; max-width: 820px; margin: 0 auto; }
-  .page-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .page-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.95rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
   .page-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 7vw, 6rem); line-height: 0.95; letter-spacing: 0.02em; margin-bottom: 1rem; }
-  .page-sub { font-size: 1.25rem; font-weight: 300; font-style: italic; color: var(--gray-light); max-width: 560px; }
-  .surgery-banner { background: rgba(201,168,76,0.04); border-top: 1px solid rgba(201,168,76,0.12); border-bottom: 1px solid rgba(201,168,76,0.12); padding: 1.5rem 3rem; display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-bottom: 4rem; }
+  .page-sub { font-size: 1.3rem; font-weight: 300; font-style: italic; color: #d0c8b8; max-width: 560px; }
+  .surgery-banner { background: rgba(201,168,76,0.04); border-top: 1px solid rgba(201,168,76,0.18); border-bottom: 1px solid rgba(201,168,76,0.18); padding: 1.5rem 3rem; display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-bottom: 4rem; }
   .surgery-banner-title { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--white); margin: 0 0 0.5rem; letter-spacing: 0.02em; }
-  .surgery-banner-link { font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(201,168,76,0.4); padding-bottom: 2px; }
+  .surgery-banner-link { font-family: 'DM Mono', monospace; font-size: 0.9rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(201,168,76,0.4); padding-bottom: 2px; }
   .surgery-banner-link:hover { color: var(--gold-light); }
   .posts-grid { max-width: 820px; margin: 0 auto; padding: 0 3rem 6rem; }
-  .post-card { border-bottom: 1px solid rgba(255,255,255,0.06); padding: 3rem 0; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: start; text-decoration: none; color: inherit; transition: opacity 0.2s; }
+  .post-card { border-bottom: 1px solid rgba(255,255,255,0.09); padding: 3rem 0; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: start; text-decoration: none; color: inherit; transition: opacity 0.2s; }
   .post-card:hover { opacity: 0.8; }
   .post-card:first-child { padding-top: 0; }
-  .post-tag { font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+  .post-tag { font-family: 'DM Mono', monospace; font-size: 0.9rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
   .post-card-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1; letter-spacing: 0.02em; color: var(--white); margin-bottom: 0.8rem; }
-  .post-excerpt { font-size: 1.15rem; font-weight: 300; color: var(--gray-light); line-height: 1.7; max-width: 560px; }
+  .post-excerpt { font-size: 1.2rem; font-weight: 300; color: #c8c0b0; line-height: 1.75; max-width: 560px; }
   .post-arrow { font-family: 'DM Mono', monospace; font-size: 1.5rem; color: var(--gold); align-self: center; }
   @media (max-width: 768px) { .page-header, .posts-grid { padding-left: 1.5rem; padding-right: 1.5rem; } .page-header { padding-top: 7rem; } .post-card { grid-template-columns: 1fr; } .post-arrow { display: none; } .surgery-banner { gap: 1.5rem; padding: 1.5rem; } }
 </style>
-
 <div class="page-header">
   <p class="page-eyebrow">From The Field</p>
   <h1 class="page-title">Walking Through This In Real Time.</h1>
   <p class="page-sub">From diagnosis to surgery to recovery. Documented honestly. The chart and the truth side by side.</p>
 </div>
-
 <div class="surgery-banner">
   <div style="width:100%;max-width:820px;margin:0 auto;padding:0 3rem;">
-    <p class="surgery-banner-title">Joe Made It Through Surgery. He's In Recovery.</p>
-    <a href="/surgery-day.html" class="surgery-banner-link">Read: Surgery Day →</a>
+    <p class="surgery-banner-title">Joe Made It Through Surgery. He's Home.</p>
+    <a href="/surgery-day.html" class="surgery-banner-link">For the latest updates, follow My Recovery Journey →</a>
   </div>
 </div>
-
 <div class="posts-grid">
   {%- for post in collections.allPosts -%}
   <a href="{{ post.url }}" class="post-card">
