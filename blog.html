@@ -37,9 +37,9 @@
     .nav-links a { color: #ccc; text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
     .nav-links a:hover { color: var(--gold); }
     .page-header { padding: 10rem 3rem 5rem; max-width: 820px; margin: 0 auto; }
-    .page-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .page-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.95rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
     .page-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 7vw, 6rem); line-height: 0.95; letter-spacing: 0.02em; margin-bottom: 1rem; }
-    .page-sub { font-size: 1.25rem; font-weight: 300; font-style: italic; color: var(--gray-light); max-width: 560px; }
+    .page-sub { font-size: 1.3rem; font-weight: 300; font-style: italic; color: #d0c8b8; max-width: 560px; }
 
     /* COUNTDOWN */
     .countdown-strip {
@@ -54,21 +54,21 @@
       flex-wrap: wrap;
       margin-bottom: 4rem;
     }
-    .cd-label { font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); text-align: center; margin-bottom: 0.2rem; }
+    .cd-label { font-family: 'DM Mono', monospace; font-size: 0.9rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); text-align: center; margin-bottom: 0.2rem; }
     .cd-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--white); line-height: 1; text-align: center; }
-    .cd-title { font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-light); }
+    .cd-title { font-family: 'DM Mono', monospace; font-size: 0.9rem; letter-spacing: 0.15em; text-transform: uppercase; color: #bbb; }
 
     .posts-grid { max-width: 820px; margin: 0 auto; padding: 0 3rem 6rem; }
     .post-card { border-bottom: 1px solid rgba(255,255,255,0.09); padding: 3rem 0; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: start; text-decoration: none; color: inherit; transition: opacity 0.2s; }
     .post-card:hover { opacity: 0.8; }
     .post-card:first-child { padding-top: 0; }
-    .post-tag { font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+    .post-tag { font-family: 'DM Mono', monospace; font-size: 0.9rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
     .post-card-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1; letter-spacing: 0.02em; color: var(--white); margin-bottom: 0.8rem; }
-    .post-excerpt { font-size: 1.15rem; font-weight: 300; color: var(--gray-light); line-height: 1.7; max-width: 560px; }
+    .post-excerpt { font-size: 1.2rem; font-weight: 300; color: #c8c0b0; line-height: 1.75; max-width: 560px; }
     .post-arrow { font-family: 'DM Mono', monospace; font-size: 1.5rem; color: var(--gold); align-self: center; }
     footer { padding: 3rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.08); }
     .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 0.15em; color: var(--gold); margin-bottom: 1rem; }
-    .footer-kipling { font-family: 'Crimson Pro', serif; font-size: 1.15rem; font-style: italic; color: #c0b8a8; margin-bottom: 0.5rem; }
+    .footer-kipling { font-family: 'Crimson Pro', serif; font-size: 1.2rem; font-style: italic; color: #c0b8a8; margin-bottom: 0.5rem; }
     .footer-line { font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; color: #888; }
     .nav-footer { display: flex; justify-content: center; gap: 2rem; list-style: none; margin-top: 1.5rem; }
     .nav-footer a { color: #aaa; text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
@@ -196,7 +196,6 @@
   </a>
 
 </div>
-
 </main>
 
 <footer>
@@ -215,8 +214,8 @@
 
 <script>
   function updateCountdown() {
-    const switchTime = new Date('2026-02-26T16:00:00Z'); // 10:00 AM CST = 16:00 UTC
-    const target = new Date('2026-02-26T19:00:00Z'); // 1:00 PM CST = 19:00 UTC
+    const switchTime = new Date('2026-02-26T16:00:00Z');
+    const target = new Date('2026-02-26T19:00:00Z');
     const now = new Date();
     if (now >= switchTime) {
       const strip = document.querySelector('.countdown-strip');
@@ -243,12 +242,10 @@
   hamburger.addEventListener('click', function() {
     hamburger.classList.toggle('open');
     mobileMenu.classList.toggle('open');
-    
   });
   function closeMobile() {
     hamburger.classList.remove('open');
     mobileMenu.classList.remove('open');
-    
   }
 </script>
 <style>
@@ -274,56 +271,19 @@
 (function(){
   var points = ["Six posts so far. Diagnosis. Community. Preparing for surgery. Surgery day. And writing from the recovery bed three days out.", "Surgery was February 26th — suboccipital craniectomy with C1 laminectomy and duraplasty.", "I'm writing all of it in real time. The clinical chart and the honest truth, side by side."];
   var title = "From The Field";
-
-  var btn = document.createElement('button');
-  btn.id = 'tldr-btn';
-  btn.textContent = 'TL;DR';
-  document.body.appendChild(btn);
-
-  var overlay = document.createElement('div');
-  overlay.id = 'tldr-overlay';
-
-  var box = document.createElement('div');
-  box.id = 'tldr-box';
-
-  var head = document.createElement('div');
-  head.id = 'tldr-head';
-
-  var headLeft = document.createElement('div');
-  headLeft.id = 'tldr-head-left';
-
-  var eyebrow = document.createElement('span');
-  eyebrow.id = 'tldr-eyebrow';
-  eyebrow.textContent = 'Too Long; Didn\u2019t Read';
-
-  var ptitle = document.createElement('span');
-  ptitle.id = 'tldr-ptitle';
-  ptitle.textContent = title;
-
-  headLeft.appendChild(eyebrow);
-  headLeft.appendChild(ptitle);
-
-  var xBtn = document.createElement('button');
-  xBtn.id = 'tldr-x';
-  xBtn.setAttribute('aria-label','Close');
-  xBtn.textContent = '\u2715';
-
-  head.appendChild(headLeft);
-  head.appendChild(xBtn);
-
-  var list = document.createElement('ul');
-  list.id = 'tldr-list';
-  points.forEach(function(p){
-    var li = document.createElement('li');
-    li.textContent = p;
-    list.appendChild(li);
-  });
-
-  box.appendChild(head);
-  box.appendChild(list);
-  overlay.appendChild(box);
-  document.body.appendChild(overlay);
-
+  var btn = document.createElement('button'); btn.id = 'tldr-btn'; btn.textContent = 'TL;DR'; document.body.appendChild(btn);
+  var overlay = document.createElement('div'); overlay.id = 'tldr-overlay';
+  var box = document.createElement('div'); box.id = 'tldr-box';
+  var head = document.createElement('div'); head.id = 'tldr-head';
+  var headLeft = document.createElement('div'); headLeft.id = 'tldr-head-left';
+  var eyebrow = document.createElement('span'); eyebrow.id = 'tldr-eyebrow'; eyebrow.textContent = 'Too Long; Didn\u2019t Read';
+  var ptitle = document.createElement('span'); ptitle.id = 'tldr-ptitle'; ptitle.textContent = title;
+  headLeft.appendChild(eyebrow); headLeft.appendChild(ptitle);
+  var xBtn = document.createElement('button'); xBtn.id = 'tldr-x'; xBtn.setAttribute('aria-label','Close'); xBtn.textContent = '\u2715';
+  head.appendChild(headLeft); head.appendChild(xBtn);
+  var list = document.createElement('ul'); list.id = 'tldr-list';
+  points.forEach(function(p){ var li = document.createElement('li'); li.textContent = p; list.appendChild(li); });
+  box.appendChild(head); box.appendChild(list); overlay.appendChild(box); document.body.appendChild(overlay);
   btn.addEventListener('click', function(){ overlay.classList.add('open'); });
   xBtn.addEventListener('click', function(){ overlay.classList.remove('open'); });
   overlay.addEventListener('click', function(e){ if(e.target===overlay) overlay.classList.remove('open'); });
