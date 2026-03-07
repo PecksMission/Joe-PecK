@@ -31,6 +31,7 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --black: #0a0a0a; --white: #f5f0e8; --gold: #c9a84c; --gold-light: #e8c97a; --red: #8b2020; --gray: #4a4a4a; --gray-light: #9a9a9a; }
+    :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
     html { scroll-behavior: smooth; }
     body { background: var(--black); color: var(--white); font-family: 'Crimson Pro', Georgia, serif; font-size: 22px; line-height: 1.8; overflow-x: hidden; }
 
@@ -38,7 +39,7 @@
     nav { position: fixed; top: 0; width: 100%; z-index: 100; padding: 1.2rem 3rem; display: flex; justify-content: space-between; align-items: center; background: rgba(10,10,10,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(201,168,76,0.15); }
     .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 0.15em; color: var(--gold); text-decoration: none; }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-    .nav-links a { color: var(--gray-light); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a { color: #ccc; text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
     .nav-links a:hover { color: var(--gold); }
 
     /* HAMBURGER + MOBILE */
@@ -53,12 +54,12 @@
     .mobile-menu a:hover { color: var(--gold); }
 
     /* FOOTER */
-    footer { padding: 3rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+    footer { padding: 3rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.08); }
     .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; letter-spacing: 0.15em; color: var(--gold); margin-bottom: 1rem; }
-    .footer-kipling { font-family: 'Crimson Pro', serif; font-size: 1.15rem; font-style: italic; color: var(--gray-light); margin-bottom: 0.5rem; }
-    .footer-line { font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); }
+    .footer-kipling { font-family: 'Crimson Pro', serif; font-size: 1.15rem; font-style: italic; color: #c0b8a8; margin-bottom: 0.5rem; }
+    .footer-line { font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; color: #888; }
     .nav-footer { display: flex; justify-content: center; gap: 2rem; list-style: none; margin-top: 1.5rem; flex-wrap: wrap; }
-    .nav-footer a { color: var(--gray); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-footer a { color: #aaa; text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
     .nav-footer a:hover { color: var(--gold); }
 
     /* RESPONSIVE */
@@ -77,7 +78,7 @@
     <li><a href="/about.html">My Story</a></li>
     <li><a href="/chiari.html">What is Chiari</a></li>
     <li><a href="/blog.html">From The Field</a></li>
-    <li><a href="/follow-along.html">Follow Along</a></li>
+    <li><a href="/follow-along.html">Reach Out</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -88,7 +89,7 @@
   <a href="/about.html" onclick="closeMobile()">My Story</a>
   <a href="/chiari.html" onclick="closeMobile()">What is Chiari</a>
   <a href="/blog.html" onclick="closeMobile()">From The Field</a>
-  <a href="/follow-along.html" onclick="closeMobile()">Follow Along</a>
+  <a href="/follow-along.html" onclick="closeMobile()">Reach Out</a>
 </div>
 
 {{ content | safe }}
@@ -103,7 +104,7 @@
     <li><a href="/about.html">About</a></li>
     <li><a href="/chiari.html">Chiari</a></li>
     <li><a href="/blog.html">From The Field</a></li>
-    <li><a href="/follow-along.html">Follow Along</a></li>
+    <li><a href="/follow-along.html">Reach Out</a></li>
   </ul>
 </footer>
 
