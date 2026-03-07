@@ -13,21 +13,37 @@ python3 --version
 
 ---
 
-## 1. Clone & Switch to the Branch
+## 1. Get the Code
+
+> **Important:** Clone into a **brand-new folder** so it stays completely separate from any existing copy of the repo. This avoids branch confusion — you won't accidentally mix up the live site files with the Flask CMS work.
+
+### Fresh clone (recommended)
+
+Pick a new folder name like `Pecks-Mission-CMS` so it lives alongside your existing copy without conflict:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/Pecks-Mission.git
-cd Pecks-Mission
-git checkout flask-cms
+cd ~/Code  # or wherever you keep projects
+git clone -b flask-cms https://github.com/dpeck76/Pecks-Mission.git Pecks-Mission-CMS
+cd Pecks-Mission-CMS
 ```
 
-If you already have the repo:
+That's it — you're on the `flask-cms` branch in a clean folder. Verify:
 
 ```bash
-cd Pecks-Mission
-git checkout flask-cms
-git pull
+git branch
+# should show: * flask-cms
 ```
+
+### If you already cloned into a separate folder
+
+```bash
+cd Pecks-Mission-CMS
+git pull origin flask-cms
+```
+
+### What NOT to do
+
+Don't run `git checkout flask-cms` inside your existing `Pecks-Mission` folder that's pointed at the live site. That switches branches in-place and can cause confusion with uncommitted files, `_site/` build artifacts, and node_modules. Keep them separate.
 
 ---
 
