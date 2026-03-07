@@ -1,0 +1,304 @@
+{% extends "base.html" %}
+
+{% block title %}What Is Chiari — Peck's Mission{% endblock %}
+
+{% block meta %}
+  <meta property="og:title" content="Peck's Mission | What is Chiari" />
+  <meta name="description" content="I had no idea what Chiari malformation was until a neurosurgeon told me I had a severe case of it — and then my entire life finally made sense." />
+  <meta property="og:description" content="I had no idea what Chiari malformation was until a neurosurgeon told me I had a severe case of it — and then my entire life finally made sense." />
+  <meta property="og:image" content="https://www.pecksmission.com/og-image.png" />
+  <meta property="og:url" content="https://www.pecksmission.com/chiari" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Peck's Mission | What Is Chiari" />
+  <meta name="twitter:description" content="I had no idea what Chiari malformation was until a neurosurgeon told me I had a severe case of it — and then my entire life finally made sense." />
+  <meta name="twitter:image" content="https://www.pecksmission.com/og-image.png" />
+  <link rel="canonical" href="https://www.pecksmission.com/chiari.html" />
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .page-header { padding: 10rem 3rem 4rem; max-width: 820px; margin: 0 auto; }
+    .page-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .page-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 7vw, 6rem); line-height: 0.95; letter-spacing: 0.02em; margin-bottom: 1rem; }
+    .page-sub { font-size: 1.25rem; font-weight: 300; font-style: italic; color: var(--gray-light); max-width: 600px; }
+    .chiari-body { max-width: 720px; margin: 0 auto; padding: 4rem 3rem 6rem; }
+    .chiari-body p { font-size: 1.15rem; font-weight: 300; color: #ccc; margin-bottom: 1.6rem; line-height: 1.85; }
+    .chiari-body h2 { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 0.05em; color: var(--white); margin: 3.5rem 0 1rem; }
+    .quote-block { background: rgba(201,168,76,0.05); border-left: 3px solid var(--gold); padding: 2rem 2.5rem; margin: 2.5rem 0; }
+    .quote-text { font-family: 'Crimson Pro', serif; font-size: 1.25rem; font-style: italic; font-weight: 300; color: var(--white); line-height: 1.6; margin-bottom: 0.8rem; }
+    .quote-attr { font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); }
+    .verse-block { background: rgba(139,32,32,0.08); border-left: 3px solid var(--red); padding: 2rem 2.5rem; margin: 2.5rem 0; }
+    .verse-text { font-family: 'Crimson Pro', serif; font-size: 1.2rem; font-style: italic; font-weight: 300; color: var(--white); line-height: 1.6; margin-bottom: 0.6rem; }
+    .verse-ref { font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-light); }
+
+    /* BRAIN SVG DIAGRAM */
+    .diagram-block { background: rgba(255,255,255,0.02); border: 1px solid rgba(201,168,76,0.1); padding: 3rem 2rem; margin: 2.5rem 0; text-align: center; }
+    .diagram-label { font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+    .diagram-sub { font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-light); margin-top: 1rem; }
+
+    .callout-block { background: rgba(201,168,76,0.04); border: 1px solid rgba(201,168,76,0.12); padding: 2.5rem 3rem; margin: 3rem 0; }
+    .callout-block h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.05em; color: var(--gold); margin-bottom: 0.8rem; }
+    .callout-block p { font-size: 1.15rem; color: #bbb; margin-bottom: 0; }
+    .divider { width: 4rem; height: 1px; background: rgba(201,168,76,0.3); margin: 3rem auto; }
+    .closing-callout { background: rgba(139,32,32,0.06); border: 1px solid rgba(139,32,32,0.15); padding: 3rem; margin: 3rem 0; }
+    .closing-callout h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.05em; color: var(--white); margin-bottom: 1.2rem; }
+    .closing-callout p { font-size: 1.15rem; color: #ccc; margin-bottom: 1rem; }
+    @media (max-width: 768px) { .page-header, .chiari-body { padding-left: 1.5rem; padding-right: 1.5rem; } .page-header { padding-top: 7rem; } }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <p class="page-eyebrow">Understanding Chiari</p>
+  <h1 class="page-title">The Condition Nobody Talks About</h1>
+  <p class="page-sub">I had no idea what Chiari malformation was until a neurosurgeon told me I had a severe case of it. And then everything made sense for the first time in my life.</p>
+</div>
+
+<div class="chiari-body">
+
+  <div class="verse-block">
+    <p class="verse-text">"My grace is sufficient for you, for my power is made perfect in weakness."</p>
+    <p class="verse-ref">— 2 Corinthians 12:9</p>
+  </div>
+
+  <p>I didn't understand that verse until I understood what my brain had been doing my whole life.</p>
+
+  <h2>What Is Chiari Malformation</h2>
+
+  <p>Your skull is like a sink. At the bottom of that sink is a drain — it's called the foramen magnum — and that's where your brain and spinal cord connect. Cerebrospinal fluid is supposed to flow freely through that drain in both directions. In Chiari malformation that drain is partially blocked because brain tissue — specifically the cerebellar tonsils — has herniated down through the opening and into the spinal canal where it doesn't belong.</p>
+
+  <p>In my case the tonsils were herniated between 12 and 15 millimeters. My neurosurgeon estimated 14. He said that number matters less than what it's actually doing. And what it was doing was pressing directly on my brainstem.</p>
+
+  <!-- BRAIN ANATOMY DIAGRAM -->
+  <div class="diagram-block">
+    <p class="diagram-label">Brain Anatomy — What Chiari Looks Like</p>
+    <svg viewBox="0 0 500 420" width="100%" max-width="500px" style="max-width:480px;margin:0 auto;display:block;" xmlns="http://www.w3.org/2000/svg">
+      <!-- Background -->
+      <rect width="500" height="420" fill="none"/>
+
+      <!-- Skull outline -->
+      <ellipse cx="240" cy="160" rx="160" ry="140" fill="none" stroke="#4a4a4a" stroke-width="2.5"/>
+
+      <!-- Brain tissue -->
+      <ellipse cx="240" cy="145" rx="130" ry="110" fill="rgba(201,168,76,0.06)" stroke="rgba(201,168,76,0.25)" stroke-width="1.5"/>
+
+      <!-- Cerebellum -->
+      <ellipse cx="240" cy="245" rx="75" ry="50" fill="rgba(201,168,76,0.1)" stroke="rgba(201,168,76,0.4)" stroke-width="2"/>
+      <text x="240" y="250" text-anchor="middle" fill="#c9a84c" font-family="'DM Mono', monospace" font-size="10" letter-spacing="1">CEREBELLUM</text>
+
+      <!-- Brainstem -->
+      <rect x="215" y="280" width="50" height="80" rx="8" fill="rgba(139,32,32,0.2)" stroke="rgba(139,32,32,0.6)" stroke-width="2"/>
+      <text x="240" y="325" text-anchor="middle" fill="#c17070" font-family="'DM Mono', monospace" font-size="9" letter-spacing="1">BRAINSTEM</text>
+
+      <!-- Foramen magnum opening -->
+      <path d="M200 355 Q240 365 280 355" fill="none" stroke="#c9a84c" stroke-width="2" stroke-dasharray="5,3"/>
+      <text x="240" y="385" text-anchor="middle" fill="rgba(201,168,76,0.7)" font-family="'DM Mono', monospace" font-size="9" letter-spacing="1">FORAMEN MAGNUM</text>
+
+      <!-- Herniated tonsils - the problem area -->
+      <ellipse cx="220" cy="345" rx="18" ry="22" fill="rgba(139,32,32,0.35)" stroke="#8b2020" stroke-width="2"/>
+      <ellipse cx="260" cy="345" rx="18" ry="22" fill="rgba(139,32,32,0.35)" stroke="#8b2020" stroke-width="2"/>
+
+      <!-- Arrow pointing to tonsils -->
+      <line x1="340" y1="330" x2="285" y2="340" stroke="rgba(201,168,76,0.6)" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+      <defs>
+        <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+          <polygon points="0 0, 8 3, 0 6" fill="rgba(201,168,76,0.6)"/>
+        </marker>
+      </defs>
+      <text x="345" y="318" text-anchor="start" fill="rgba(201,168,76,0.8)" font-family="'DM Mono', monospace" font-size="9" letter-spacing="1">HERNIATED</text>
+      <text x="345" y="330" text-anchor="start" fill="rgba(201,168,76,0.8)" font-family="'DM Mono', monospace" font-size="9" letter-spacing="1">TONSILS</text>
+
+      <!-- Spinal canal -->
+      <rect x="225" y="365" width="30" height="45" rx="4" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+
+      <!-- CSF flow arrows - blocked -->
+      <line x1="195" y1="300" x2="195" y2="260" stroke="rgba(100,150,200,0.4)" stroke-width="2" marker-end="url(#csfarrow)" stroke-dasharray="4,3"/>
+      <defs>
+        <marker id="csfarrow" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto">
+          <polygon points="0 0, 6 2.5, 0 5" fill="rgba(100,150,200,0.4)"/>
+        </marker>
+      </defs>
+
+      <!-- Title labels -->
+      <text x="50" y="140" fill="rgba(201,168,76,0.5)" font-family="'DM Mono', monospace" font-size="9" letter-spacing="1">SKULL</text>
+      <text x="240" y="60" text-anchor="middle" fill="rgba(201,168,76,0.5)" font-family="'DM Mono', monospace" font-size="9" letter-spacing="1">BRAIN</text>
+    </svg>
+    <p class="diagram-sub">Red area shows herniated tonsils pressing on brainstem · Dotted line shows foramen magnum</p>
+  </div>
+
+  <h2>Why The Brainstem Matters</h2>
+
+  <p>Your brainstem controls the functions your body runs automatically in the background. Swallowing. Balance. Coordination. Breathing. Heart rate. You don't think about these things. They just happen. Until they don't.</p>
+
+  <p>When your brainstem is compressed those functions start to fail. Not all at once. Not obviously. Gradually. In ways that are easy to miss or explain away as something else entirely.</p>
+
+  <div class="quote-block">
+    <p class="quote-text">"The brain stem is controlling all these vital functions that happen in the background. And they're not working well."</p>
+    <p class="quote-attr">— Neurosurgeon, Vanderbilt</p>
+  </div>
+
+  <p>Balance. Swallowing. Breathing. Heart rate. That's what was being compressed. That's what I was compensating for my whole life without knowing it.</p>
+
+  <h2>What It Looked Like In My Life</h2>
+
+  <p>I was sent to speech therapy as a kid. Written off as a slow developer. My balance was always terrible but nobody could explain why. I failed a field sobriety test in the military stone cold sober — blew zeros — because I couldn't balance well enough to pass it. I pushed through military physical training that should have been impossible given what was happening inside my skull. I built a career in a cardiovascular ICU and a neuro trauma bay while my own brainstem was being compressed.</p>
+
+  <p>Three times recently I woke up and my legs didn't work. Not weak. Gone. I made it to the bathroom like a drunk run. Couldn't keep myself upright. My buddy had to help me and I didn't want to let him.</p>
+
+  <p>Then one morning I couldn't swallow. That was the line.</p>
+
+  <h2>Why It Gets Missed</h2>
+
+  <p>Chiari gets misdiagnosed constantly. Here's what it got attributed to in my life — clumsiness, balance issues, a slow developer, anxiety, and things that just seemed like quirks of who I was. None of it was wrong exactly. All of it was incomplete.</p>
+
+  <p>The problem is that Chiari is invisible from the outside. You can look completely fine and be severely affected. I worked in critical care. I served in the military. Nobody knew. Including me.</p>
+
+  <p>The neurological compensation your brain performs over time — rewiring itself around the damage just to keep you functional — is called neuroplasticity. My brain did this for decades. It's remarkable from a clinical standpoint. It also means the condition masked itself well enough that I didn't get diagnosed until the compensation started failing.</p>
+
+  <div class="quote-block">
+    <p class="quote-text">"When we are no longer able to change a situation, we are challenged to change ourselves."</p>
+    <p class="quote-attr">— Viktor Frankl</p>
+  </div>
+
+  <p>That's neuroplasticity. That's also faith. Turns out they're not that different.</p>
+
+  <div class="callout-block">
+    <h3>If Any of This Sounds Familiar</h3>
+    <p>The balance issues. The unexplained symptoms. The feeling that something is slightly off but nobody can tell you why. Please talk to a neurosurgeon. Not just a neurologist. A neurosurgeon. And push for an MRI if you haven't had one. You deserve to know what you're dealing with.</p>
+  </div>
+
+  <h2>What The Surgery Actually Does</h2>
+
+  <p>The procedure is called a suboccipital craniectomy with C1 laminectomy and duraplasty. That's a mouthful. Here's what it actually means.</p>
+
+  <p>The surgeon removes two to three centimeters of bone at the base of the skull. Then the back of the C1 vertebra. Then they open the dura — the membrane that holds your spinal fluid — and sew in a patch to expand the space. The patch is made from pericranium which is tissue from your own scalp. Your body doesn't reject it and it's the least likely material to get infected.</p>
+
+  <p>The cerebellar tonsils get cauterized and shrunk. They're like the appendix — no real function, they just cause problems. Shrinking them gets them out of the way and takes the pressure off the brainstem.</p>
+
+  <div class="quote-block">
+    <p class="quote-text">"We'd shave off about two to three centimeters of this bone. And all of this would be nice free white space."</p>
+    <p class="quote-attr">— Neurosurgeon, Vanderbilt</p>
+  </div>
+
+  <!-- SURGICAL DIAGRAM -->
+  <div class="diagram-block">
+    <p class="diagram-label">The Surgery — Before & After</p>
+    <svg viewBox="0 0 500 240" width="100%" style="max-width:480px;margin:0 auto;display:block;" xmlns="http://www.w3.org/2000/svg">
+      <!-- BEFORE -->
+      <text x="125" y="25" text-anchor="middle" fill="rgba(201,168,76,0.7)" font-family="'DM Mono', monospace" font-size="10" letter-spacing="2">BEFORE</text>
+      <!-- Skull base before -->
+      <path d="M50 60 Q125 45 200 60 L200 110 Q125 100 50 110 Z" fill="rgba(100,100,100,0.2)" stroke="rgba(100,100,100,0.5)" stroke-width="2"/>
+      <!-- Compressed tonsils -->
+      <ellipse cx="100" cy="115" rx="22" ry="18" fill="rgba(139,32,32,0.4)" stroke="#8b2020" stroke-width="2"/>
+      <ellipse cx="148" cy="115" rx="22" ry="18" fill="rgba(139,32,32,0.4)" stroke="#8b2020" stroke-width="2"/>
+      <!-- Brainstem compressed -->
+      <rect x="100" y="133" width="48" height="60" rx="5" fill="rgba(139,32,32,0.2)" stroke="rgba(139,32,32,0.5)" stroke-width="1.5"/>
+      <text x="124" y="168" text-anchor="middle" fill="rgba(200,100,100,0.8)" font-family="'DM Mono', monospace" font-size="7">BRAINSTEM</text>
+      <text x="124" y="179" text-anchor="middle" fill="rgba(200,100,100,0.8)" font-family="'DM Mono', monospace" font-size="7">COMPRESSED</text>
+
+      <!-- Divider line -->
+      <line x1="250" y1="20" x2="250" y2="220" stroke="rgba(201,168,76,0.2)" stroke-width="1" stroke-dasharray="5,3"/>
+
+      <!-- AFTER -->
+      <text x="375" y="25" text-anchor="middle" fill="rgba(201,168,76,0.7)" font-family="'DM Mono', monospace" font-size="10" letter-spacing="2">AFTER</text>
+      <!-- Skull base after - removed bone shown as gap -->
+      <path d="M300 60 Q350 45 380 55" fill="none" stroke="rgba(100,100,100,0.5)" stroke-width="2"/>
+      <path d="M420 55 Q450 45 450 60 L450 110 Q425 105 420 100" fill="none" stroke="rgba(100,100,100,0.5)" stroke-width="2"/>
+      <path d="M300 60 L300 110 Q325 105 360 105" fill="rgba(100,100,100,0.1)" stroke="rgba(100,100,100,0.3)" stroke-width="1"/>
+      <!-- Free space indicator -->
+      <ellipse cx="375" cy="100" rx="40" ry="25" fill="rgba(201,168,76,0.06)" stroke="rgba(201,168,76,0.3)" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <text x="375" y="97" text-anchor="middle" fill="rgba(201,168,76,0.6)" font-family="'DM Mono', monospace" font-size="7">FREE</text>
+      <text x="375" y="108" text-anchor="middle" fill="rgba(201,168,76,0.6)" font-family="'DM Mono', monospace" font-size="7">SPACE</text>
+      <!-- Decompressed brainstem -->
+      <rect x="352" y="125" width="48" height="60" rx="5" fill="rgba(60,120,60,0.15)" stroke="rgba(80,160,80,0.4)" stroke-width="1.5"/>
+      <text x="376" y="160" text-anchor="middle" fill="rgba(100,180,100,0.8)" font-family="'DM Mono', monospace" font-size="7">BRAINSTEM</text>
+      <text x="376" y="171" text-anchor="middle" fill="rgba(100,180,100,0.8)" font-family="'DM Mono', monospace" font-size="7">FREE</text>
+    </svg>
+    <p class="diagram-sub">Bone removed at skull base · Tonsils shrunk · Brainstem decompressed · CSF flows freely</p>
+  </div>
+
+  <p>The result is more space. The tonsils float back. The brainstem decompresses. The fluid flows the way it's supposed to. My neurosurgeon told me — all of this would be nice free white space. That's what we're building toward. February 26th.</p>
+
+  <div class="divider"></div>
+
+  <div class="closing-callout">
+    <h3>What I Wish Someone Had Told Me Sooner</h3>
+    <p>You're not clumsy. You're not dramatic. You're not a slow developer. You're not anxious for no reason.</p>
+    <p>You might have Chiari.</p>
+    <p>And if you do — the diagnostic journey is hard, the condition is invisible, and finding the right surgeon matters enormously. But there is a surgery that works. There are surgeons who do it well. And most patients feel neurological improvement within the first day or two after the procedure.</p>
+    <p>You deserve to know what you're dealing with. That's why this page exists.</p>
+  </div>
+
+  <div class="verse-block">
+    <p class="verse-text">"God is our refuge and strength, an ever-present help in trouble."</p>
+    <p class="verse-ref">— Psalm 46:1</p>
+  </div>
+
+  <p style="font-size:0.9rem;color:var(--gray-light);font-style:italic;border-top:1px solid rgba(255,255,255,0.05);padding-top:1.5rem;">Medical disclaimer: This page shares my personal experience with Chiari malformation. It is not medical advice. Please consult a qualified neurosurgeon for diagnosis and treatment guidance.</p>
+
+</div>
+{% endblock %}
+
+{% block tldr %}
+<script>
+(function(){
+  var points = ["Your skull has a drain at the bottom where your brain and spinal cord connect. In Chiari, brain tissue falls through that drain and blocks the flow.", "That blockage compresses the brainstem \u2014 the part of your brain that controls swallowing, balance, breathing, and heart rate. The stuff that just runs.", "Mine was herniated 12 to 15 millimeters. My neurosurgeon said the number matters less than what it\u2019s doing. What it was doing was pressing on my brainstem.", "It gets missed because it\u2019s invisible from the outside. I looked fine. I served in the military. I worked critical care. Nobody knew.", "The surgery creates space. Remove bone. Open the dura. Patch it. The brain decompresses. Most patients feel it within the first couple days.", "If any of this sounds like you \u2014 the balance, the tingling, the symptoms nobody can name \u2014 push for an MRI and ask for a neurosurgeon. Not just a neurologist."];
+  var title = "What Is Chiari";
+
+  var btn = document.createElement('button');
+  btn.id = 'tldr-btn';
+  btn.textContent = 'TL;DR';
+  document.body.appendChild(btn);
+
+  var overlay = document.createElement('div');
+  overlay.id = 'tldr-overlay';
+
+  var box = document.createElement('div');
+  box.id = 'tldr-box';
+
+  var head = document.createElement('div');
+  head.id = 'tldr-head';
+
+  var headLeft = document.createElement('div');
+  headLeft.id = 'tldr-head-left';
+
+  var eyebrow = document.createElement('span');
+  eyebrow.id = 'tldr-eyebrow';
+  eyebrow.textContent = 'Too Long; Didn\'t Read';
+
+  var ptitle = document.createElement('span');
+  ptitle.id = 'tldr-ptitle';
+  ptitle.textContent = title;
+
+  headLeft.appendChild(eyebrow);
+  headLeft.appendChild(ptitle);
+
+  var xBtn = document.createElement('button');
+  xBtn.id = 'tldr-x';
+  xBtn.setAttribute('aria-label','Close');
+  xBtn.textContent = '\u2715';
+
+  head.appendChild(headLeft);
+  head.appendChild(xBtn);
+
+  var list = document.createElement('ul');
+  list.id = 'tldr-list';
+  points.forEach(function(p){
+    var li = document.createElement('li');
+    li.textContent = p;
+    list.appendChild(li);
+  });
+
+  box.appendChild(head);
+  box.appendChild(list);
+  overlay.appendChild(box);
+  document.body.appendChild(overlay);
+
+  btn.addEventListener('click', function(){ overlay.classList.add('open'); });
+  xBtn.addEventListener('click', function(){ overlay.classList.remove('open'); });
+  overlay.addEventListener('click', function(e){ if(e.target===overlay) overlay.classList.remove('open'); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') overlay.classList.remove('open'); });
+})();
+</script>
+{% endblock %}

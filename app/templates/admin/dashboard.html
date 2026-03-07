@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard — Peck's Mission{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="admin-wrap">
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for category, message in messages %}
+      <div class="flash flash-{{ category }}">{{ message }}</div>
+    {% endfor %}
+  {% endwith %}
+
+  <div class="admin-header">
+    <div>
+      <p class="admin-subtitle">Admin Panel</p>
+      <h1 class="admin-title">Posts</h1>
+    </div>
+    <div style="display:flex;gap:0.8rem;align-items:center;">
+      <a href="{{ url_for('admin.new_post') }}" class="admin-btn admin-btn-primary">+ New Post</a>
+      <a href="{{ url_for('admin.logout') }}" class="admin-btn admin-btn-secondary">Log Out</a>
+    </div>
+  </div>
+
+  {% if posts %}
+  <div class="post-list">
+    {% for post in posts %}
+    <div class="post-list-item">
+      <div>
+        <div class="post-list-title">{{ post.title }}</div>
+        <div class="post-list-meta">
+          {{ post.date.strftime('%b %-d, %Y') }}
+          {% if post.tag %} · <span class="tag">{{ post.tag }}</span>{% endif %}
+          · {{ post.content_type }}
+          {% if not post.is_published %} · <span class="draft">Draft</span>{% endif %}
+        </div>
+      </div>
+      <div class="post-list-actions">
+        <a href="/{{ post.slug }}.html" class="admin-btn admin-btn-secondary" target="_blank" style="padding:0.5rem 0.8rem;font-size:0.65rem;">View</a>
+        <a href="{{ url_for('admin.edit_post', post_id=post.id) }}" class="admin-btn admin-btn-primary" style="padding:0.5rem 0.8rem;font-size:0.65rem;">Edit</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p style="color:var(--gray-light);font-style:italic;">No posts yet. Create your first one.</p>
+  {% endif %}
+</div>
+{% endblock %}

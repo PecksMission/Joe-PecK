@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+
+{% block title %}{{ 'Edit' if post else 'New' }} Post — Peck's Mission{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="admin-wrap">
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for category, message in messages %}
+      <div class="flash flash-{{ category }}">{{ message }}</div>
+    {% endfor %}
+  {% endwith %}
+
+  <div class="admin-header">
+    <div>
+      <p class="admin-subtitle">{{ 'Edit Post' if post else 'New Post' }}</p>
+      <h1 class="admin-title">{{ post.title if post else 'Untitled' }}</h1>
+    </div>
+    <a href="{{ url_for('admin.dashboard') }}" class="admin-btn admin-btn-secondary">← Back</a>
+  </div>
+
+  <form method="POST" id="post-form">
+    <div class="form-group">
+      <label class="form-label" for="title">Title</label>
+      <input class="form-input" type="text" id="title" name="title" value="{{ post.title if post else '' }}" required placeholder="Post title">
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label" for="slug">Slug</label>
+        <input class="form-input" type="text" id="slug" name="slug" value="{{ post.slug if post else '' }}" placeholder="auto-generated-from-title">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="date">Date</label>
+        <input class="form-input" type="date" id="date" name="date" value="{{ post.date.strftime('%Y-%m-%d') if post and post.date else '' }}">
+      </div>
+    </div>
+
+    <div class="form-row-3">
+      <div class="form-group">
+        <label class="form-label" for="tag">Tag</label>
+        <select class="form-select" id="tag" name="tag">
+          <option value="">— Select —</option>
+          {% for t in ['Recovery', 'Faith', 'Diagnosis', 'Community', 'Clinical', 'Surgery'] %}
+          <option value="{{ t }}" {{ 'selected' if post and post.tag == t else '' }}>{{ t }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="read_time">Read Time (min)</label>
+        <input class="form-input" type="text" id="read_time" name="read_time" value="{{ post.read_time if post else '' }}" placeholder="5">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="comment_key">Comment Key</label>
+        <input class="form-input" type="text" id="comment_key" name="comment_key" value="{{ post.comment_key if post else '' }}" placeholder="auto from slug">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="excerpt">Excerpt</label>
+      <textarea class="form-textarea" id="excerpt" name="excerpt" rows="3" placeholder="Brief summary for the blog listing...">{{ post.excerpt if post else '' }}</textarea>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label" for="og_title">OG Title (optional)</label>
+        <input class="form-input" type="text" id="og_title" name="og_title" value="{{ post.og_title if post else '' }}">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="og_image">OG Image URL (optional)</label>
+        <input class="form-input" type="text" id="og_image" name="og_image" value="{{ post.og_image if post else '' }}">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="description">Meta Description (optional)</label>
+      <input class="form-input" type="text" id="description" name="description" value="{{ post.description if post else '' }}">
+    </div>
+
+    <!-- Content Editor -->
+    <input type="hidden" name="content_type" id="content_type" value="{{ mode }}">
+
+    {% if mode == 'html' %}
+    <div class="form-group">
+      <label class="form-label">Post Body (Raw HTML)</label>
+      <textarea class="html-editor" name="content_html" id="content_html">{{ post.content_html if post else '' }}</textarea>
+    </div>
+    {% else %}
+    <div class="form-group">
+      <label class="form-label">Post Body (Editor)</label>
+      <div class="editor-wrap" id="editorjs"></div>
+      <input type="hidden" name="content_json" id="content_json" value="{{ post.content_json if post else '' }}">
+    </div>
+    {% endif %}
+
+    <div class="form-actions">
+      <label class="form-checkbox">
+        <input type="checkbox" name="is_published" {{ 'checked' if (post and post.is_published) or not post else '' }}>
+        <span>Published</span>
+      </label>
+      <div class="form-actions-right" style="display:flex;gap:0.5rem;">
+        {% if post %}
+        <button type="button" class="admin-btn admin-btn-danger" onclick="if(confirm('Delete this post?'))document.getElementById('delete-form').submit()">Delete</button>
+        {% endif %}
+        <button type="submit" class="admin-btn admin-btn-primary">Save Post</button>
+      </div>
+    </div>
+  </form>
+
+  {% if post %}
+  <form id="delete-form" method="POST" action="{{ url_for('admin.delete_post', post_id=post.id) }}" style="display:none;"></form>
+  {% endif %}
+</div>
+{% endblock %}
+
+{% block extra_js %}
+{% if mode != 'html' %}
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@2.29.1/dist/editorjs.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/header@2.8.7/dist/header.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/list@1.9.0/dist/list.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/quote@2.7.2/dist/quote.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@1.4.2/dist/delimiter.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/image@2.9.3/dist/image.umd.min.js"></script>
+<script src="{{ url_for('static', filename='js/admin/editor.js') }}"></script>
+{% endif %}
+
+<script>
+  // Auto-generate slug from title
+  var titleInput = document.getElementById('title');
+  var slugInput = document.getElementById('slug');
+  {% if not post %}
+  titleInput.addEventListener('input', function() {
+    slugInput.value = titleInput.value.toLowerCase().trim()
+      .replace(/[^\w\s-]/g, '').replace(/[\s_]+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+  });
+  {% endif %}
+
+  // Save editor data before form submit
+  document.getElementById('post-form').addEventListener('submit', function(e) {
+    if (window.editorInstance) {
+      e.preventDefault();
+      window.editorInstance.save().then(function(data) {
+        document.getElementById('content_json').value = JSON.stringify(data);
+        e.target.submit();
+      });
+    }
+  });
+</script>
+{% endblock %}

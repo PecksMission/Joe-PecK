@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block title %}Updates — Peck's Mission{% endblock %}
+
+{% block meta %}
+  <meta property="og:title" content="Peck's Mission | Updates" />
+  <meta name="description" content="Diagnosis to surgery to recovery — documented honestly, with the chart and the truth side by side." />
+  <meta property="og:description" content="Diagnosis to surgery to recovery — documented honestly, with the chart and the truth side by side." />
+  <meta property="og:image" content="https://www.pecksmission.com/og-image.png" />
+  <meta property="og:url" content="https://www.pecksmission.com/blog" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://www.pecksmission.com/blog.html" />
+{% endblock %}
+
+{% block extra_css %}
+<style>
+  .countdown-strip {
+    background: rgba(201,168,76,0.04);
+    border-top: 1px solid rgba(201,168,76,0.12);
+    border-bottom: 1px solid rgba(201,168,76,0.12);
+    padding: 1.5rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+  }
+  .cd-label { font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); text-align: center; margin-bottom: 0.2rem; }
+  .cd-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--white); line-height: 1; text-align: center; }
+  .cd-title { font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-light); }
+  .posts-grid { max-width: 820px; margin: 0 auto; padding: 0 3rem 6rem; }
+  .post-card { border-bottom: 1px solid rgba(255,255,255,0.06); padding: 3rem 0; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: start; text-decoration: none; color: inherit; transition: opacity 0.2s; }
+  .post-card:hover { opacity: 0.8; }
+  .post-card:first-child { padding-top: 0; }
+  .post-tag { font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+  .post-card-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1; letter-spacing: 0.02em; color: var(--white); margin-bottom: 0.8rem; }
+  .post-excerpt { font-size: 1.15rem; font-weight: 300; color: var(--gray-light); line-height: 1.7; max-width: 560px; }
+  .post-arrow { font-family: 'DM Mono', monospace; font-size: 1.5rem; color: var(--gold); align-self: center; }
+  @media (max-width: 768px) {
+    .posts-grid { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .post-card { grid-template-columns: 1fr; }
+    .post-arrow { display: none; }
+    .countdown-strip { gap: 1.5rem; padding: 1.5rem; }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <p class="page-eyebrow">From The Field</p>
+  <h1 class="page-title">Walking Through This In Real Time.</h1>
+  <p class="page-sub">From diagnosis to surgery to recovery. Documented honestly. The chart and the truth side by side.</p>
+</div>
+
+<div class="countdown-strip" id="countdown-strip">
+  <p class="cd-title">Surgery: February 26th &nbsp;·&nbsp; Suboccipital Craniectomy with C1 Laminectomy &amp; Duraplasty</p>
+  <div style="display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;">
+    <div><div class="cd-label">Days</div><div class="cd-num" id="cd-days">--</div></div>
+    <div><div class="cd-label">Hours</div><div class="cd-num" id="cd-hours">--</div></div>
+    <div><div class="cd-label">Minutes</div><div class="cd-num" id="cd-mins">--</div></div>
+    <div><div class="cd-label">Seconds</div><div class="cd-num" id="cd-secs">--</div></div>
+  </div>
+</div>
+
+<div class="posts-grid">
+  {% for entry in posts %}
+  <a href="{{ entry.url }}" class="post-card">
+    <div>
+      <p class="post-tag">{{ entry.date_str }} &nbsp;·&nbsp; {{ entry.tag }} &nbsp;·&nbsp; {{ entry.read_time }}</p>
+      <h2 class="post-card-title">{{ entry.title }}</h2>
+      <p class="post-excerpt">{{ entry.excerpt }}</p>
+    </div>
+    <span class="post-arrow">→</span>
+  </a>
+  {% endfor %}
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+  function updateCountdown() {
+    const switchTime = new Date('2026-02-26T16:00:00Z');
+    const target = new Date('2026-02-26T19:00:00Z');
+    const now = new Date();
+    if (now >= switchTime) {
+      const strip = document.getElementById('countdown-strip');
+      if (strip) {
+        strip.innerHTML = '<div style="width:100%;max-width:820px;margin:0 auto;padding:0 3rem;"><p style="font-family:\'Bebas Neue\',sans-serif;font-size:2rem;color:var(--white);margin:0 0 0.5rem;letter-spacing:0.02em;">Joe Made It Through Surgery. He\'s In Recovery.</p><a href="/surgery-day.html" style="font-family:\'DM Mono\',monospace;font-size:0.8rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.4);padding-bottom:2px;">Read: Surgery Day →</a></div>';
+      }
+      return;
+    }
+    const diff = target - now;
+    document.getElementById('cd-days').textContent = String(Math.floor(diff/86400000)).padStart(2,'0');
+    document.getElementById('cd-hours').textContent = String(Math.floor((diff%86400000)/3600000)).padStart(2,'0');
+    document.getElementById('cd-mins').textContent = String(Math.floor((diff%3600000)/60000)).padStart(2,'0');
+    document.getElementById('cd-secs').textContent = String(Math.floor((diff%60000)/1000)).padStart(2,'0');
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+{% endblock %}
+
+{% block tldr %}
+<script>
+(function(){
+  var points = ["Six posts so far. Diagnosis. Community. Preparing for surgery. Surgery day. And writing from the recovery bed three days out.", "Surgery was February 26th — suboccipital craniectomy with C1 laminectomy and duraplasty.", "I'm writing all of it in real time. The clinical chart and the honest truth, side by side."];
+  var title = "From The Field";
+  var btn = document.createElement('button'); btn.id = 'tldr-btn'; btn.textContent = 'TL;DR'; document.body.appendChild(btn);
+  var overlay = document.createElement('div'); overlay.id = 'tldr-overlay';
+  var box = document.createElement('div'); box.id = 'tldr-box';
+  var head = document.createElement('div'); head.id = 'tldr-head';
+  var headLeft = document.createElement('div'); headLeft.id = 'tldr-head-left';
+  var eyebrow = document.createElement('span'); eyebrow.id = 'tldr-eyebrow'; eyebrow.textContent = 'Too Long; Didn\u2019t Read';
+  var ptitle = document.createElement('span'); ptitle.id = 'tldr-ptitle'; ptitle.textContent = title;
+  headLeft.appendChild(eyebrow); headLeft.appendChild(ptitle);
+  var xBtn = document.createElement('button'); xBtn.id = 'tldr-x'; xBtn.setAttribute('aria-label','Close'); xBtn.textContent = '\u2715';
+  head.appendChild(headLeft); head.appendChild(xBtn);
+  var list = document.createElement('ul'); list.id = 'tldr-list';
+  points.forEach(function(p){ var li = document.createElement('li'); li.textContent = p; list.appendChild(li); });
+  box.appendChild(head); box.appendChild(list); overlay.appendChild(box); document.body.appendChild(overlay);
+  btn.addEventListener('click', function(){ overlay.classList.add('open'); });
+  xBtn.addEventListener('click', function(){ overlay.classList.remove('open'); });
+  overlay.addEventListener('click', function(e){ if(e.target===overlay) overlay.classList.remove('open'); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') overlay.classList.remove('open'); });
+})();
+</script>
+{% endblock %}

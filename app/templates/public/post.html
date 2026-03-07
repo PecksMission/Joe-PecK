@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }} — Peck's Mission{% endblock %}
+
+{% block meta %}
+  <meta property="og:title" content="Peck's Mission | {{ post.og_title or post.title }}" />
+  <meta name="description" content="{{ post.description or post.excerpt }}" />
+  <meta property="og:description" content="{{ post.description or post.excerpt }}" />
+  <meta property="og:image" content="{{ post.og_image or 'https://www.pecksmission.com/og-image.png' }}" />
+  <meta property="og:url" content="https://www.pecksmission.com/{{ post.slug }}.html" />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Peck's Mission | {{ post.og_title or post.title }}" />
+  <meta name="twitter:description" content="{{ post.description or post.excerpt }}" />
+  <meta name="twitter:image" content="{{ post.og_image or 'https://www.pecksmission.com/og-image.png' }}" />
+  <link rel="canonical" href="https://www.pecksmission.com/{{ post.slug }}.html" />
+{% endblock %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/post.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="post-header">
+  <p class="post-eyebrow">From The Field &nbsp;·&nbsp; {{ post.date.strftime('%B %-d, %Y') }}</p>
+  <h1 class="post-title">{{ post.title }}</h1>
+  <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+    <div>
+      <p class="post-meta">By Peck &nbsp;·&nbsp; Combat Medic &nbsp;·&nbsp; CVICU &nbsp;·&nbsp; Chiari Patient</p>
+      {% if post.read_time %}
+      <p style="font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-top: 0.5rem;">{{ post.read_time }} min read</p>
+      {% endif %}
+    </div>
+    <a href="{{ url_for('public.follow_along') }}#reach-out" style="background: var(--gold); color: var(--black); padding: 1rem 2.5rem; font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; display: inline-block; transition: background 0.2s;"
+      onmouseover="this.style.background='#e8c97a'" onmouseout="this.style.background='#c9a84c'">
+      Follow Along
+    </a>
+  </div>
+</div>
+
+<article class="post-body">
+  {{ body_html|safe }}
+</article>
+
+<!-- Post Navigation -->
+<div class="post-nav">
+  <div class="post-nav-inner">
+    {% if prev_post %}
+    <a href="{{ url_for('public.post', slug=prev_post.slug) }}" class="post-nav-card">
+      <span class="post-nav-direction">← Previous</span>
+      <span class="post-nav-title">{{ prev_post.title }}</span>
+      <span class="post-nav-date">{{ prev_post.date.strftime('%B %-d, %Y') }}</span>
+    </a>
+    {% else %}
+    <div class="post-nav-card empty"></div>
+    {% endif %}
+    {% if next_post %}
+    <a href="{{ url_for('public.post', slug=next_post.slug) }}" class="post-nav-card next">
+      <span class="post-nav-direction">Next →</span>
+      <span class="post-nav-title">{{ next_post.title }}</span>
+      <span class="post-nav-date">{{ next_post.date.strftime('%B %-d, %Y') }}</span>
+    </a>
+    {% else %}
+    <div class="post-nav-card next empty"></div>
+    {% endif %}
+  </div>
+</div>
+
+{% if post.comment_key %}
+{% include "partials/comments.html" %}
+{% endif %}
+
+{% include "partials/mailchimp.html" %}
+{% endblock %}
+
+{% block tldr %}
+{% if tldr_points %}
+<script>
+(function(){
+  var points = {{ tldr_points|tojson }};
+  var title = {{ post.title|tojson }};
+  var btn = document.createElement('button'); btn.id = 'tldr-btn'; btn.textContent = 'TL;DR'; document.body.appendChild(btn);
+  var overlay = document.createElement('div'); overlay.id = 'tldr-overlay';
+  var box = document.createElement('div'); box.id = 'tldr-box';
+  var head = document.createElement('div'); head.id = 'tldr-head';
+  var headLeft = document.createElement('div'); headLeft.id = 'tldr-head-left';
+  var eyebrow = document.createElement('span'); eyebrow.id = 'tldr-eyebrow'; eyebrow.textContent = 'Too Long; Didn\u2019t Read';
+  var ptitle = document.createElement('span'); ptitle.id = 'tldr-ptitle'; ptitle.textContent = title;
+  headLeft.appendChild(eyebrow); headLeft.appendChild(ptitle);
+  var xBtn = document.createElement('button'); xBtn.id = 'tldr-x'; xBtn.setAttribute('aria-label','Close'); xBtn.textContent = '\u2715';
+  head.appendChild(headLeft); head.appendChild(xBtn);
+  var list = document.createElement('ul'); list.id = 'tldr-list';
+  points.forEach(function(p){ var li = document.createElement('li'); li.textContent = p; list.appendChild(li); });
+  box.appendChild(head); box.appendChild(list); overlay.appendChild(box); document.body.appendChild(overlay);
+  btn.addEventListener('click', function(){ overlay.classList.add('open'); });
+  xBtn.addEventListener('click', function(){ overlay.classList.remove('open'); });
+  overlay.addEventListener('click', function(e){ if(e.target===overlay) overlay.classList.remove('open'); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') overlay.classList.remove('open'); });
+})();
+</script>
+{% endif %}
+{% endblock %}

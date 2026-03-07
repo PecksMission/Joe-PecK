@@ -1,0 +1,16 @@
+[Unit]
+Description=Peck's Mission Flask CMS
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/pecksmission
+Environment="FLASK_ENV=production"
+Environment="SECRET_KEY=CHANGE_THIS_TO_A_REAL_SECRET_KEY"
+ExecStart=/opt/pecksmission/venv/bin/gunicorn --workers 3 --bind 127.0.0.1:8000 wsgi:application
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

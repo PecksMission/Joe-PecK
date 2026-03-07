@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/comments.css') }}">
+
+<section class="comments-wrap" id="comments" data-post="{{ comment_key }}">
+  <div class="comments-rule"></div>
+  <div class="comments-header">
+    <p class="comments-eyebrow">Leave a thought</p>
+    <div class="post-salute-wrap">
+      <button class="post-salute-btn" id="post-salute-btn" type="button">
+        <span class="salute-emoji">🫡</span>
+        <span class="post-salute-label">Salute</span>
+        <span class="post-salute-count" id="post-salute-count">0</span>
+      </button>
+    </div>
+  </div>
+  <div class="comment-form">
+    <textarea class="comment-textarea" id="cm-text" placeholder="Say something…" rows="3"></textarea>
+    <div class="comment-name-row">
+      <button class="comment-name-toggle" id="cm-name-toggle" type="button">
+        <span class="caret">▶</span> Add your name
+      </button>
+      <input class="comment-name-input" id="cm-name" type="text" placeholder="Your name (optional)" autocomplete="off" />
+    </div>
+    <button class="comment-submit" id="cm-submit" type="button">Post</button>
+  </div>
+  <div class="comment-list" id="cm-list"></div>
+</section>
+
+<script src="{{ url_for('static', filename='js/comments.js') }}" type="module"></script>

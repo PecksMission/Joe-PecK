@@ -1,0 +1,200 @@
+{% extends "base.html" %}
+
+{% block title %}About — Peck's Mission{% endblock %}
+
+{% block meta %}
+  <meta property="og:title" content="Peck's Mission | A Combat Medic's Brain Surgery Journey" />
+  <meta name="description" content="Real-time documentation of a combat medic's Chiari malformation diagnosis and brain surgery. Bridging the gap between clinical care and patient experience." />
+  <meta property="og:description" content="Real-time documentation of a combat medic's Chiari malformation diagnosis and brain surgery. Bridging the gap between clinical care and patient experience." />
+  <meta property="og:image" content="https://www.pecksmission.com/og-image.png" />
+  <meta property="og:url" content="https://www.pecksmission.com/about" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Peck's Mission | A Combat Medic's Brain Surgery Journey" />
+  <meta name="twitter:description" content="Real-time documentation of a combat medic's Chiari malformation diagnosis and brain surgery. Bridging the gap between clinical care and patient experience." />
+  <meta name="twitter:image" content="https://www.pecksmission.com/og-image.png" />
+  <link rel="canonical" href="https://www.pecksmission.com/about.html" />
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .page-header{padding:10rem 3rem 4rem;max-width:900px;margin:0 auto}
+    .page-eyebrow{font-family:'DM Mono',monospace;font-size:0.85rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+    .page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,6vw,5rem);line-height:0.95;letter-spacing:0.02em;margin-bottom:2rem}
+    .photo-trio{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;max-width:900px;margin:0 auto;padding:0 3rem;justify-content:center}
+    .photo-slot{aspect-ratio:3/4;background:rgba(255,255,255,0.03);border:1px solid rgba(201,168,76,0.1);position:relative;overflow:hidden;display:flex;justify-content:center;align-items:center}
+    .photo-slot img{width:100%;height:100%;object-fit:cover;object-position:center center}
+    .photo-year{position:absolute;bottom:0;left:0;right:0;text-align:center;font-family:'DM Mono',monospace;font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);background:rgba(10,10,10,0.85);padding:0.5rem}
+    .kipling-section{max-width:720px;margin:0 auto;padding:4rem 3rem;border-top:1px solid rgba(201,168,76,0.12)}
+    .kipling-label{font-family:'DM Mono',monospace;font-size:0.8rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem}
+    .kipling-poem{font-family:'Crimson Pro',serif;font-size:1.15rem;font-weight:300;color:#bbb;line-height:2;white-space:pre-line}
+    .kipling-poem strong{color:var(--gold-light);font-weight:400}
+    .kipling-attr{font-family:'DM Mono',monospace;font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray-light);margin-top:1.5rem}
+    .kipling-response{font-family:'Crimson Pro',serif;font-size:1.4rem;font-style:italic;font-weight:300;color:var(--white);margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(201,168,76,0.12)}
+    .about-body{max-width:720px;margin:0 auto;padding:2rem 3rem 6rem}
+    .about-body p{font-size:1.15rem;font-weight:300;color:#ccc;margin-bottom:1.6rem;line-height:1.85}
+    .about-body h2{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:0.05em;color:var(--white);margin:3rem 0 1rem}
+    .quote-block{background:rgba(201,168,76,0.05);border-left:3px solid var(--gold);padding:2rem 2.5rem;margin:2.5rem 0}
+    .quote-text{font-family:'Crimson Pro',serif;font-size:1.25rem;font-style:italic;font-weight:300;color:var(--white);line-height:1.6;margin-bottom:0.8rem}
+    .quote-attr{font-family:'DM Mono',monospace;font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold)}
+    .verse-block{background:rgba(139,32,32,0.08);border-left:3px solid var(--red);padding:2rem 2.5rem;margin:2.5rem 0}
+    .verse-text{font-family:'Crimson Pro',serif;font-size:1.2rem;font-style:italic;font-weight:300;color:var(--white);line-height:1.6;margin-bottom:0.6rem}
+    .verse-ref{font-family:'DM Mono',monospace;font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray-light)}
+    .tattoo-block{background:rgba(255,255,255,0.02);border:1px solid rgba(201,168,76,0.12);padding:3rem;margin:3rem 0;text-align:center}
+    .tattoo-word{font-family:'Bebas Neue',sans-serif;font-size:4rem;letter-spacing:0.2em;color:var(--gold);display:block;margin-bottom:0.5rem}
+    .tattoo-sub{font-family:'DM Mono',monospace;font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gray-light)}
+    .divider{width:4rem;height:1px;background:rgba(201,168,76,0.3);margin:3rem auto}
+    .closing-block{text-align:center;padding:3rem 0;border-top:1px solid rgba(201,168,76,0.12)}
+    @media(max-width:768px){.page-header,.kipling-section,.about-body{padding-left:1.5rem;padding-right:1.5rem}.photo-trio{padding:0 1.5rem;gap:0.5rem}.page-header{padding-top:7rem}}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <p class="page-eyebrow">My Story</p>
+  <h1 class="page-title">I Wasn't a Slow Developer.<br>My Brain Was Running Out of Room.</h1>
+</div>
+
+<div class="photo-trio">
+  <div class="photo-slot">
+    <img src="Cointoss.webp" alt="Cointoss.webp">
+    <div class="photo-year">2009</div>
+  </div>
+  <div class="photo-slot">
+    <img src="Army-Jet.webp" alt="Army-Jet.webp">
+    <div class="photo-year">2020</div>
+  </div>
+  <div class="photo-slot">
+    <img src="IMG_0615.webp" alt="Joe, 2025">
+    <div class="photo-year">2026</div>
+  </div>
+</div>
+
+<div class="about-body">
+  <h2>As a Kid</h2>
+  <p>As a kid I attended speech therapy — not because I had trouble learning language, but because the neurological pressure on my brainstem affected how I processed and produced speech. Nobody knew that then. I didn't know it until this week.</p>
+  <p>Physically, I had a really hard time keeping my balance, but I rode bikes like every other kid. My dexterity wasn't great — that was something I had to work at. I couldn't stay focused on anything. I constantly felt like I was running into a wall. Doctor's appointment after doctor's appointment. Everyone chalked it up to ADHD. But I knew it was something else. Something I couldn't put my finger on.</p>
+
+  <h2>The Military</h2>
+  <p>When I joined the military they put you through MEPS — various tests to evaluate your physical and mental capabilities. They do a balance test: the walk, the one leg stand, the Romberg test. All of it was difficult for me. I had to redo one. But I passed. I pressed on.</p>
+  <p>On the way to my first duty station I got pulled over in Ura, Colorado. There was a case of beer in the front seat. The trooper conducted a field sobriety test. I failed the balance portion — not because I had been drinking, but because of my Chiari malformation. I blew zeros. Stone cold sober. They let me off with a warning but I knew something was wrong. I just didn't know why.</p>
+  <p>Another time in the military I got onto a pogo stick. Tried my hardest. No matter what I did I couldn't keep my balance. I got out of the military and kept moving. That's all I knew how to do. Little did I know it was because my brainstem was being compressed the entire time.</p>
+
+  <div class="verse-block">
+    <p class="verse-text">"We also glory in our sufferings, because we know that suffering produces perseverance; perseverance, character; and character, hope."</p>
+    <p class="verse-ref">— Romans 5:3-4</p>
+  </div>
+
+  <h2>After The Military</h2>
+  <p>When I got out I accepted a job at a Cardiovascular ICU. I was clumsy. My coworkers made jokes about how I lost grip of cups and drinks. Walking with a tray of food and just eating it as I went — food everywhere. Tripping over nothing. Never knowing why.</p>
+  <p>But I was good at what I did. I understood how to take care of patients. I got emails sent to hospital presidents about the care I provided. I worked in a Neuro Trauma Bay — caring for patients with strokes, brain injuries, spinal cord damage. The exact conditions caused by what I had. I understood what it meant to care for people in their most vulnerable moments. And I was doing it while carrying my own invisible neurological condition the entire time.</p>
+  <p>Then last spring — months before my neurosurgeon appointment this week — I prayed something specific. "Lord, I need to learn how to be more empathetic toward my rowdier patients. Give me a heart that loves them." Two weeks later, everything surfaced. I don't think that's a coincidence. I'm just not ready to write the ending of that story yet.</p>
+
+  <div class="quote-block">
+    <p class="quote-text">"Most people probably would not have pushed as much as you have."</p>
+    <p class="quote-attr">— Neurosurgeon, Vanderbilt</p>
+  </div>
+
+  <h2>When I Knew Something Was Really Wrong</h2>
+  <p>One day, just on a whim, I climbed onto a swing set — of all things — and came off of it nauseous. Something definitely felt off. I went to work that night feeling rocky, like when you're on a boat. Went to urgent care. Diagnosed with BPPV, a type of vertigo. Followed up with an ENT. Two MRIs later — one of them a flow MRI — showed complete blockage of CSF (cerebrospinal fluid) flow within my head. But I pressed on.</p>
+  <p>Then one morning at my buddy Kevin's house I woke up and could not walk. Kevin describes it as not-walking — bracing my upper body just to move forward, holding onto everything, lurching. Three episodes like that happened. I kept waiting to get into a neurologist. Then came the swallowing. I began having difficulty swallowing and I thought — okay. This is life or death now. This is not something I can push past anymore. I walked into the ER. Then into Dr. Lee's office. He confirmed everything. My whole life. My brain has been severely compressed my whole entire life.</p>
+
+  <div class="divider"></div>
+
+  <h2>Who I Am Outside Of All This</h2>
+  <p>Someone who abides in Jesus Christ. A stubborn man — once I make a decision that's what I do. I don't want help. I want to do it on my own. Hence not going to the hospital when I should have. Now I'm learning to receive it. Learning to be the patient. Learning to rely on the Lord for my strength — knowing that He is strongest when I am weakest.</p>
+  <p>I tell it like it is. I don't sugarcoat. I'm going to say what I think when I think it. But I say it with love. I care about people deeply. And I'm going to tell you the truth about how I feel whether it's comfortable or not. I believe God is going to use that.</p>
+  <p>A woman at my Bible study told me recently that I was vulnerable. I heard it as a criticism at first. I'm a combat medic. I don't do vulnerable. But she wasn't telling me I was weak. She was telling me I was safe to be around — that I showed up and told the truth about what was actually happening while still standing up straight. That's the real definition of vulnerability. It took me a while to understand that's not something to be ashamed of. It's something to protect.</p>
+
+  <div class="tattoo-block">
+    <span class="tattoo-word">SEND ME</span>
+    <p class="tattoo-sub">Isaiah 6:8 · Tattooed on my arm</p>
+    <p style="font-size:1.15rem;color:#aaa;font-weight:300;font-family:'Crimson Pro',serif;margin-top:1.2rem;line-height:1.7;">When I was in the military I saw that as sending me to a war zone. After the attacks in Afghanistan it was an encouragement. Lord you're going to send me where you want me and I'm willing to go. I still don't fully know where that is. But I'm here. And I'm ready to be sent.</p>
+  </div>
+
+  <h2>Why I Built This</h2>
+  <p>I don't want people to have to suffer the way I did. I want the person searching for answers about their Chiari at 2am to find something real. Something honest. Something that doesn't just treat the disease but treats the person who has the disease.</p>
+
+  <div class="quote-block">
+    <p class="quote-text">"Good physicians treat the disease. Great physicians treat the patient that has the disease."</p>
+    <p class="quote-attr">— William Osler, Founder of Johns Hopkins</p>
+  </div>
+
+  <p>That gap almost swallowed me whole. This site exists to close it.</p>
+
+  <div class="verse-block">
+    <p class="verse-text">"But he knows the way that I take; when he has tested me, I will come forth as gold."</p>
+    <p class="verse-ref">— Job 23:10</p>
+  </div>
+
+  <div class="closing-block">
+    <p style="font-size:1.25rem;font-style:italic;color:var(--gold-light);font-family:'Crimson Pro',serif;margin-bottom:0.5rem;">"We must be ready to allow ourselves to be interrupted by God."</p>
+    <p style="font-family:'DM Mono',monospace;font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray-light);margin-bottom:2rem;">— Dietrich Bonhoeffer</p>
+    <p style="color:#ccc;font-size:1.15rem;margin-bottom:0.5rem;">I got interrupted.</p>
+    <p style="color:#ccc;font-size:1.15rem;">I'm starting to understand why.</p>
+  </div>
+</div>
+{% endblock %}
+
+{% block tldr %}
+<script>
+(function(){
+  var points = ["Speech therapy as a kid. Terrible balance my whole life. Misdiagnosed with ADHD, then vertigo. It was Chiari the whole time.", "I failed a field sobriety test in the military \u2014 stone cold sober, blew zeros \u2014 because my brainstem was being compressed.", "I worked in a CVICU and a neuro trauma bay while carrying a severe neurological condition the entire time. Nobody knew. Including me.", "Three times I woke up and my legs didn\u2019t work. Then one morning I couldn\u2019t swallow. That was the line.", "Last spring I prayed for empathy toward my patients. Two weeks later, all of this surfaced. I\u2019m not calling that a coincidence.", "I built this because I don\u2019t want someone else searching for answers at 2am and finding nothing real."];
+  var title = "My Story";
+
+  var btn = document.createElement('button');
+  btn.id = 'tldr-btn';
+  btn.textContent = 'TL;DR';
+  document.body.appendChild(btn);
+
+  var overlay = document.createElement('div');
+  overlay.id = 'tldr-overlay';
+
+  var box = document.createElement('div');
+  box.id = 'tldr-box';
+
+  var head = document.createElement('div');
+  head.id = 'tldr-head';
+
+  var headLeft = document.createElement('div');
+  headLeft.id = 'tldr-head-left';
+
+  var eyebrow = document.createElement('span');
+  eyebrow.id = 'tldr-eyebrow';
+  eyebrow.textContent = 'Too Long; Didn\'t Read';
+
+  var ptitle = document.createElement('span');
+  ptitle.id = 'tldr-ptitle';
+  ptitle.textContent = title;
+
+  headLeft.appendChild(eyebrow);
+  headLeft.appendChild(ptitle);
+
+  var xBtn = document.createElement('button');
+  xBtn.id = 'tldr-x';
+  xBtn.setAttribute('aria-label','Close');
+  xBtn.textContent = '\u2715';
+
+  head.appendChild(headLeft);
+  head.appendChild(xBtn);
+
+  var list = document.createElement('ul');
+  list.id = 'tldr-list';
+  points.forEach(function(p){
+    var li = document.createElement('li');
+    li.textContent = p;
+    list.appendChild(li);
+  });
+
+  box.appendChild(head);
+  box.appendChild(list);
+  overlay.appendChild(box);
+  document.body.appendChild(overlay);
+
+  btn.addEventListener('click', function(){ overlay.classList.add('open'); });
+  xBtn.addEventListener('click', function(){ overlay.classList.remove('open'); });
+  overlay.addEventListener('click', function(e){ if(e.target===overlay) overlay.classList.remove('open'); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') overlay.classList.remove('open'); });
+})();
+</script>
+{% endblock %}
